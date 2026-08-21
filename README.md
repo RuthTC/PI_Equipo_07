@@ -114,7 +114,7 @@ Con este proyecto se logrará:
 -Promover un reciclaje de orgánicos más sostenible, moderno, automatizado y responsable.
 
 </p>
----
+
 
 ### Bibliografia 
 [1] Senzemo, "Compost Temperature Measuring with IoT Sensors," Senzemo IoT Solutions, 2025.
