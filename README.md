@@ -114,4 +114,11 @@ Con este proyecto se logrará:
 -Promover un reciclaje de orgánicos más sostenible, moderno, automatizado y responsable.
 
 </p>
+---
 
+### Bibliografia 
+[1] Senzemo, "Compost Temperature Measuring with IoT Sensors," Senzemo IoT Solutions, 2025.
+
+[2] A. Kumar y S. Sharma, "Smart Compost Guardian: An IOT-Based Real-Time Compost Monitoring and Alert System," Int. J. Eng. Res. Technol. (IJERT), vol. 14, no. 4, pp. 112-118, Abr. 2025.
+
+[3] M. Antoniou y P. Georgiou, "Smart Compost Monitoring System using Open Source Technologies," en Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017), Rodas, Grecia, 2017, pp. 1-5.
