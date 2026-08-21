@@ -7,8 +7,7 @@
 
 ---
 <div align="center">
-  
-#🌍 Descripción del Equipo
+# 🌍 Descripción del Equipo
 </div>
 
 Somos el Equipo 06 del curso de Proyecto Integrador 2026-2 , conformado por estudiantes de la carrera de Ingeniería Ambiental / Informática / Industrial.
