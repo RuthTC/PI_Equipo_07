@@ -40,6 +40,7 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
   <br>
   <em>Figura 1. Fotografía del equipo PI_Equipo_6</em>
 </p>
+
 ## 👥 Integrantes del Equipo
 
 | Foto | Nombre | Rol | Intereses |
