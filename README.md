@@ -17,43 +17,16 @@ Nuestro objetivo es aplicar la metodología de diseño para generar soluciones i
 Nos interesa trabajar en los siguientes Objetivos de Desarrollo Sostenible (ODS):
 
 ### ♻️ ODS 12: Producción y Consumo Responsables
-* 📌 **12.3:** Contribuir al aprovechamiento de residuos orgánicos mediante un proceso de compostaje controlado, reduciendo su desperdicio y disposición final.
-* 📌 **12.5:** Promover la reducción de residuos mediante su transformación en compost aprovechable.
-* 📌 **12.8:** Fomentar prácticas sostenibles de manejo y aprovechamiento de residuos.
 
 ### 🏙️ ODS 11: Ciudades y Comunidades Sostenibles
-* 📌 **11.6:** Contribuir a mejorar la gestión de los residuos municipales mediante una alternativa tecnológica para el tratamiento de residuos orgánicos.
-* 📌 **11.a:** Favorecer soluciones sostenibles que puedan aplicarse a nivel local en hogares, instituciones, mercados y comunidades.
+
 
 ### 🌿 ODS 13: Acción por el Clima
-* 📌 **13.3:** Promover conocimientos y prácticas relacionadas con el manejo sostenible de residuos orgánicos y el compostaje.
 
-> *El proyecto busca optimizar el proceso mediante sensores y control automático, favoreciendo un tratamiento más eficiente de la materia orgánica.*
 
 ---
 
 <div align="center">
-
-# 🔍 PLANTEAMIENTO DEL PROBLEMA Y JUSTIFICACIÓN
-
-</div>
-
-### 🚨 Planteamiento del Problema
-
-El manejo inadecuado de los residuos orgánicos genera una problemática ambiental debido a que una parte importante de estos residuos termina en botaderos o rellenos sanitarios sin ser aprovechada. Aunque el compostaje permite transformar los residuos orgánicos en un recurso útil para el suelo, su proceso depende de condiciones adecuadas de humedad, temperatura, pH y aireación. Cuando estas condiciones no se mantienen, la descomposición puede volverse lenta o ineficiente. Además, el control suele realizarse de manera manual, lo que dificulta un monitoreo continuo.
-
-> **💡 Nuestra Solución:**
-> Por ello, se plantea desarrollar **COMPOST-IoT**, un sistema que utilice sensores de bajo costo para monitorear las condiciones del compost y activar automáticamente una pequeña cantidad de agua cuando la humedad se encuentre por debajo del rango establecido, además de generar alertas cuando sea necesaria una intervención.
-
----
-
-### 💡 Justificación
-
-El proyecto se justifica porque busca mejorar y automatizar el control del compostaje mediante una tecnología accesible. La incorporación de sensores permitirá conocer en tiempo real las condiciones del proceso y tomar decisiones oportunas, evitando problemas como el exceso o déficit de humedad.
-
-Además, el sistema contribuye al aprovechamiento de residuos orgánicos, transformándolos en compost en lugar de destinarlos únicamente a disposición final. De esta manera, **COMPOST-IoT** integra tecnología, gestión de residuos y aprovechamiento de recursos, relacionándose principalmente con el **ODS 12: Producción y Consumo Responsables**, y aportando también a los **ODS 11 y 13**.
-
----
 
 ## 📷 Fotografía del Equipo
 
