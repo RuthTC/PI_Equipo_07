@@ -1,3 +1,12 @@
+# Sistema Inteligente de Monitoreo y Control de Compostaje
+
+**Carrera de Ingeniería Ambiental / Informática / Industrial**
+
+**Universidad Peruana Cayetano Heredia**
+
+---
+
+
 ## 📷 Fotografía del Equipo
 
 <p align="center">
