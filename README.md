@@ -8,11 +8,9 @@
 ---
 <div align="center">
 # 🌍 Descripción del Equipo
+</div>
 Somos el Equipo 06 del curso de Proyecto Integrador 2026-2 , conformado por estudiantes de la carrera de Ingeniería Ambiental / Informática / Industrial.
 Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.
-  
----
-<div align="center">
   
 Nos interesa trabajar en los siguientes Objetivos de Desarrollo Sostenible (ODS):
 
