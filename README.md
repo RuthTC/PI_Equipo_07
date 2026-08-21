@@ -1,6 +1,5 @@
-Equipo 6 - Proyecto Integrador 
-
-# Sistema Inteligente de Monitoreo y Control de Compostaje - CompostTech
+# Equipo 06 - Proyecto Integrador 
+</div>
 
 **Carrera de Ingeniería Ambiental / Informática / Industrial**
 
@@ -8,10 +7,14 @@ Equipo 6 - Proyecto Integrador
 
 ---
 <div align="center">
-
-# 🎯 ALINEACIÓN CON LOS ODS Y SUBOBJETIVOS RELACIONADOS
-
-</div>
+# 🌍 Descripción del Equipo
+Somos el Equipo 06 del curso de Proyecto Integrador 2026-2 , conformado por estudiantes de la carrera de Ingeniería Ambiental / Informática / Industrial.
+Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.
+  
+---
+<div align="center">
+  
+Nos interesa trabajar en los siguientes Objetivos de Desarrollo Sostenible (ODS):
 
 ### ♻️ ODS 12: Producción y Consumo Responsables
 * 📌 **12.3:** Contribuir al aprovechamiento de residuos orgánicos mediante un proceso de compostaje controlado, reduciendo su desperdicio y disposición final.
