@@ -14,15 +14,25 @@
 Somos el **Equipo 06** del curso de **Proyecto Integrador 2026-2** , conformado por estudiantes de la carrera de Ingeniería Ambiental / Informática / Industrial.
 Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.
   
-Nos interesa trabajar en los siguientes Objetivos de Desarrollo Sostenible (ODS):
+Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS)**:
 
-### ♻️ ODS 12: Producción y Consumo Responsables
+**ODS 12: Producción y Consumo Responsables**
 
-### 🏙️ ODS 11: Ciudades y Comunidades Sostenibles
+<p align="left">
+  <img src="Recursos _Imágenes/ODS12.png" width="400" alt="ODS 12 Producción y Consumo Responsables">
+</p>
 
+**ODS 11: Ciudades y Comunidades Sostenibles**
 
-### 🌿 ODS 13: Acción por el Clima
+<p align="left">
+  <img src="Recursos _Imágenes/ODS 11.png" width="400" alt="ODS 11 Ciudades y Comunidades Sostenibles">
+</p>
 
+**ODS 13: Acción por el Clima**
+
+<p align="left">
+  <img src="Recursos _Imágenes/ODS 13.png" width="400" alt="ODS 13 Acción por el Clima">
+</p>
 
 ---
 
