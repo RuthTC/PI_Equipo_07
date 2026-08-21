@@ -108,9 +108,13 @@ Frente a esto, el proyecto COMPOST-IoT propone analizar la compostera de manera 
 Con este proyecto se logrará:
 
 -Optimizar el tiempo invertido en el cuidado y mantenimiento de las composteras.
+</p>
 -Mejorar la calidad del abono resultante al asegurar rangos ideales de temperatura y humedad.
+</p>
 -Reducir el riesgo de malos olores.
+</p>
 -Tomar decisiones de riego y aireación basadas en datos objetivos mediante alertas visuales claras y gamificadas.
+</p>
 -Promover un reciclaje de orgánicos más sostenible, moderno, automatizado y responsable.
 
 </p>
