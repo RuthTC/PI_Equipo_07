@@ -1,3 +1,5 @@
+Equipo 6 - Proyecto Integrador 
+
 # Sistema Inteligente de Monitoreo y Control de Compostaje - CompostTech
 
 **Carrera de Ingeniería Ambiental / Informática / Industrial**
