@@ -1,4 +1,4 @@
-# Informe de Simulación Estructural: Soporte para Módulo ESP32 (Perno M3)
+# Simulación Estructural del Soporte del Tornillo (Sin contorno)
 
 ## 1. Introducción
 Como parte del diseño del sistema de control para la compostera inteligente, se diseñó un recinto (caja) independiente alojar el microcontrolador ESP32 y sus componentes electrónicos. Este módulo se acopla directamente a la pared exterior del contenedor principal mediante soportes cilíndricos y pernos M3 ($3\text{ mm}$).
