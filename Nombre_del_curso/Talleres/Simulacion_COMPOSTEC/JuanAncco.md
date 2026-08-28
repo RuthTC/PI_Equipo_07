@@ -12,7 +12,7 @@ El modelo fue preparado en Onshape y posteriormente importado a SimScale para re
 
 La zona de estudio corresponde principalmente a los soportes sobre los cuales se coloca la placa o galleta.
 
-![Modelo 3D](<img width="607" height="362" alt="Captura de pantalla 2026-08-27 192421" src="https://github.com/user-attachments/assets/6bb97503-1814-49cf-9e9c-c4c6b66ee018" />)
+![Modelo 3D](<img width="607" height="362" alt="Captura de pantalla 2026-08-27 192421" src="https://github.com/user-attachments/assets/8263f861-7896-4a91-be18-4e37e6405183" />)
 
 ---
 
