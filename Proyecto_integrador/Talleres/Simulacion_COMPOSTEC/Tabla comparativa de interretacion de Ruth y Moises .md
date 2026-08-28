@@ -1,6 +1,6 @@
-### Cuadro Comparativo: Soporte con Contorno (Moises) vs. Soporte sin Contorno (PI_parte 1)
+### Cuadro Comparativo de Diseños
 
-| Criterio / Parámetro | Soporte con Contorno (Diseño Moises) | Soporte sin Contorno (Diseño PI_parte 1) |
+| Criterio / Parámetro | Soporte con Contorno (Diseño Moises)<br>![Soporte con Contorno](../../../Recursos%20_Im%C3%A1genes/Moises2.jpeg) | Soporte sin Contorno (Diseño PI_parte 1)<br>![Soporte sin Contorno](../../../Recursos%20_Im%C3%A1genes/PI_parte%201.png) |
 | :--- | :--- | :--- |
 | **Geometría en la Base** | Transición con relieve / curvatura de refuerzo hacia la pared. | Unión recta lisa a $90^\circ$ sin nervaduras ni filete. |
 | **Fuerzas Aplicadas** | Compresión: $-350\text{ N}$ \| Torque: $0.25\text{ N}\cdot\text{m}$ | Compresión: $-350\text{ N}$ \| Torque: $0.25\text{ N}\cdot\text{m}$ |
