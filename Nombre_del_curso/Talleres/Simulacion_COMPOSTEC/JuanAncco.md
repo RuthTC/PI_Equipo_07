@@ -1,139 +1,63 @@
-# Análisis estructural de los soportes en SimScale
+# Simulación estructural de los soportes
 
 ## Objetivo
 
-Evaluar la resistencia mecánica de los soportes donde se coloca la placa o galleta, con el fin de comprobar su comportamiento cuando reciben una fuerza durante la colocación y manipulación de la placa.
+Comprobar el comportamiento de los soportes donde se coloca la placa o galleta cuando se aplica una fuerza durante su colocación o manipulación.
 
----
+## Modelo
 
-## Modelo 3D
+El modelo fue trabajado en Onshape y posteriormente importado a SimScale para realizar una simulación estructural.
 
-El modelo fue preparado en Onshape y posteriormente importado a SimScale para realizar el análisis estructural.
-
-La zona de estudio corresponde principalmente a los soportes sobre los cuales se coloca la placa o galleta.
+La parte analizada corresponde principalmente a los soportes donde se apoya la placa.
 
 <img width="607" height="362" alt="JuanSimulacion" src="https://github.com/user-attachments/assets/479c5377-20f8-443e-a168-59189109a5e1" />
 
+## Configuración de la simulación
 
----
+Para realizar la prueba se utilizaron los siguientes datos:
 
-## Tipo de simulación
+- Software: SimScale
+- Tipo de simulación: Static Structural
+- Material: PLA
+- Fuerza aplicada: 10 N
+- Zona de aplicación: soportes donde se coloca la placa o galleta
 
-Se realizó una simulación de tipo **Static Structural** en SimScale.
+## ¿Por qué se utilizaron 10 N?
 
-Este análisis permite estudiar los esfuerzos y deformaciones que se producen en una pieza cuando se aplica una carga estática.
+Se utilizó una fuerza de 10 N como valor inicial para comprobar la resistencia de los soportes.
 
----
-
-## Material utilizado
-
-El material considerado para la fabricación de la pieza es:
-
-**PLA (Ácido Poliláctico)**
-
-El PLA es un material comúnmente utilizado en impresión 3D y permite fabricar la estructura y sus soportes mediante manufactura aditiva.
-
----
-
-## Condiciones de simulación
-
-- **Software:** SimScale
-- **Tipo de análisis:** Static Structural
-- **Material:** PLA
-- **Fuerza aplicada:** 10 N
-- **Zona de aplicación:** Superficie de apoyo de la placa o galleta
-- **Tipo de carga:** Fuerza estática
-- **Restricción:** Se fijó la estructura para evitar desplazamientos del cuerpo durante la aplicación de la fuerza.
-
----
-
-## Justificación de la fuerza aplicada
-
-Se utilizó una fuerza de **10 N** como carga inicial de prueba para analizar el comportamiento de los soportes durante la colocación y manipulación de la placa.
-
-La fuerza se puede relacionar con una masa mediante:
+La fuerza puede calcularse mediante:
 
 **F = m × g**
 
-Considerando una masa aproximada de 1 kg:
+Tomando como referencia una masa aproximada de 1 kg:
 
 **F = 1 kg × 9.81 m/s²**
 
-**F = 9.81 N**
-
-Por aproximación:
-
 **F ≈ 10 N**
 
-Por lo tanto, una fuerza de 10 N representa aproximadamente la fuerza producida por una masa de 1 kg bajo la acción de la gravedad.
+Por esta razón se utilizó una fuerza de 10 N, que representa aproximadamente la fuerza generada por una masa de 1 kg.
 
-Además, esta fuerza no representa únicamente el peso de la placa, sino también una posible fuerza adicional producida cuando una persona coloca, presiona o manipula la placa sobre los soportes.
-
-Por esta razón se utilizó **10 N como una carga inicial de evaluación estructural**.
-
----
+Además, al colocar o manipular la placa se puede aplicar una fuerza adicional sobre los soportes, por lo que este valor permite realizar una primera prueba de su comportamiento.
 
 ## Aplicación de la fuerza
 
-La fuerza de **10 N** fue aplicada sobre la superficie del soporte donde se produce el contacto con la placa o galleta.
+La fuerza de 10 N fue aplicada en la zona donde la placa hace contacto con los soportes.
 
-De esta manera se busca representar una situación en la cual el soporte recibe una carga durante la instalación o manipulación de la placa.
+El objetivo fue observar cómo responde la estructura cuando recibe una carga durante la colocación o manipulación de la placa.
 
+## Resultados
 
+Después de ejecutar la simulación en SimScale se pudo observar el comportamiento de la estructura frente a la fuerza aplicada.
 
----
+Se analizaron principalmente la deformación de la pieza y las zonas donde se concentra una mayor cantidad de esfuerzo.
 
-## Mallado
-
-Para realizar el análisis, SimScale genera una malla sobre la geometría.
-
-La malla divide el modelo en pequeños elementos sobre los cuales se realizan los cálculos estructurales.
-
-Las zonas cercanas a los soportes son especialmente importantes, debido a que en estas regiones pueden aparecer mayores concentraciones de esfuerzo.
-
----
-
-## Resultados analizados
-
-Durante la simulación se observaron principalmente los siguientes parámetros:
-
-- Esfuerzo de Von Mises.
-- Deformación de la estructura.
-- Distribución de esfuerzos.
-- Zonas de concentración de esfuerzos.
-- Comportamiento de los soportes bajo una carga de 10 N.
-
----
-
-## Resultado de la simulación
-
-La siguiente imagen muestra la distribución obtenida durante el análisis estructural realizado en SimScale.
-
-
-Los colores permiten identificar las zonas que presentan diferentes niveles de esfuerzo o deformación.
-
-Las regiones con valores mayores representan las zonas más críticas del modelo.
-
----
-
-## Interpretación
-
-El análisis permite observar cómo responde el soporte cuando recibe una fuerza de 10 N.
-
-La zona de unión entre el soporte y la estructura principal es especialmente importante, debido a que normalmente en esta región se produce una mayor concentración de esfuerzos.
-
-Los resultados obtenidos permiten determinar si el soporte mantiene su integridad estructural bajo la carga aplicada.
-
----
+Esto permite identificar qué partes de los soportes pueden ser más críticas cuando reciben una carga.
 
 ## Conclusión
 
-Se realizó una simulación estructural estática en SimScale para evaluar los soportes donde se coloca la placa o galleta.
+La simulación permitió analizar el comportamiento de los soportes fabricados en PLA cuando reciben una fuerza de 10 N.
 
-La pieza fue considerada de **PLA** y se aplicó una fuerza de **10 N**, equivalente aproximadamente a la fuerza ejercida por una masa de 1 kg.
+Con esta prueba se pueden identificar las zonas que presentan mayor esfuerzo y evaluar si el diseño actual necesita algún refuerzo o modificación.
 
-Esta carga fue utilizada para representar no solamente el peso de la placa, sino también posibles fuerzas adicionales que pueden producirse durante su colocación o manipulación.
-
-La simulación permitió observar la distribución de esfuerzos y deformaciones en la estructura, especialmente en las zonas donde los soportes se unen al cuerpo principal.
-
-A partir de estos resultados se puede evaluar si el diseño actual es adecuado o si es necesario aumentar el espesor, modificar la geometría o reforzar los soportes para mejorar su resistencia.
+Los 10 N utilizados corresponden a una carga inicial de prueba y no representan necesariamente la fuerza máxima que puede soportar la pieza antes de romperse.
