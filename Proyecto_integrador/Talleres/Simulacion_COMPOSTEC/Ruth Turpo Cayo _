@@ -1,1 +1,39 @@
+# Simulación Estructural del Soporte del Perno M3
 
+## 1. Introducción
+Como parte del diseño de la carcasa electrónica para la compostera inteligente, se realizó una simulación estructural en **SimScale** para evaluar la resistencia del soporte cilíndrico del contenedor.
+
+El modelo en Onshape presenta postes cilíndricos **sin nervaduras ni relieves de refuerzo**. Se analiza si esta geometría simple soporta las cargas reales de enroscado y apriete de un perno M3 (3 mm) en plástico **ABS**.
+
+---
+
+## 2. Configuración y Fuerzas Aplicadas
+Se configuró un análisis estático estructural (*Static Structural*) con dos condiciones de contorno:
+
+| Parámetro | Valor | Ubicación | Sustentación Técnica |
+| :--- | :--- | :--- | :--- |
+| **Material** | ABS | Toda la pieza | Termoplástico base del contenedor |
+| **Compresión ($f_z$)** | `-350 N` | Cara plana superior (Dona) | Precarga de apriete de la cabeza del tornillo ($F = \frac{T}{K \cdot D}$). Signo negativo indica empuje hacia dentro. |
+| **Torque ($m_z$)** | `0.25 N·m` | Pared cilíndrica interna | Par de apriete máximo recomendado para roscar en ABS sin barrer el agujero. |
+
+![Configuración de la Fuerza Remota en SimScale](PI_parte%201.png)
+
+---
+
+## 3. Resultados obtenidos (Von Mises)
+El mapa de esfuerzos en escala de colores reflejó una respuesta altamente localizada:
+
+* **Azul oscuro ($1.983 \times 10^{-7}\text{ Pa}$ a $\sim 10\text{ Pa}$):** La mayor parte de la carcasa permanece sin tensión ni deformación.
+* **Verde / Amarillo ($\sim 20\text{ Pa}$ a $40\text{ Pa}$):** Esfuerzo de compresión distribuido en la cara anular por el impacto del perno.
+* **Rojo / Máximo ($\approx 50.09\text{ Pa}$):** Esfuerzo combinado (compresión y torsión) concentrado en el borde superior interno.
+
+![Vista de Planta de la Distribución de Esfuerzos](PI_parte%202.png)
+
+![Vista en Isométrico del Soporte Cilíndrico](PI_parte%203.png)
+
+---
+
+## 4. Evaluación del Diseño y Conclusión
+Aunque la falta de relieves crea una unión lisa a $90^\circ$ que actúa como concentrador de esfuerzos natural ante la torsión, el valor máximo alcanzado de **$50.09\text{ Pa}$** está extremadamente lejos del límite elástico del plástico ABS ($\approx 30\text{ a } 45\text{ MPa}$).
+
+**Conclusión:** La geometría cilíndrica lisa actual **es estructuralmente segura y apta**, soportando sin riesgo de rotura el ensamblaje del perno M3.
