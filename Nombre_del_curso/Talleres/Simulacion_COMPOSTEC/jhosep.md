@@ -150,3 +150,10 @@ Como siguiente paso, sería conveniente aumentar progresivamente la fuerza para 
 
 <img width="1113" height="812" alt="WhatsApp Image 2026-08-27 at 7 22 56 PM" src="https://github.com/user-attachments/assets/41033fdf-62db-4d85-a140-9bfb207fe7e0" />
 
+
+<img width="398" height="302" alt="WhatsApp Image 2026-08-27 at 8 02 11 PM" src="https://github.com/user-attachments/assets/1489d0d8-578b-4a5f-9649-6195ee18871b" />
+
+
+
+
+
