@@ -12,7 +12,8 @@ El modelo fue preparado en Onshape y posteriormente importado a SimScale para re
 
 La zona de estudio corresponde principalmente a los soportes sobre los cuales se coloca la placa o galleta.
 
-![Modelo 3D](<img width="607" height="362" alt="Captura de pantalla 2026-08-27 192421" src="https://github.com/user-attachments/assets/8263f861-7896-4a91-be18-4e37e6405183" />)
+<img width="607" height="362" alt="JuanSimulacion" src="https://github.com/user-attachments/assets/479c5377-20f8-443e-a168-59189109a5e1" />
+
 
 ---
 
@@ -78,7 +79,7 @@ La fuerza de **10 N** fue aplicada sobre la superficie del soporte donde se prod
 
 De esta manera se busca representar una situación en la cual el soporte recibe una carga durante la instalación o manipulación de la placa.
 
-![Aplicación de fuerza](aplicacion_fuerza.png)
+
 
 ---
 
@@ -108,7 +109,6 @@ Durante la simulación se observaron principalmente los siguientes parámetros:
 
 La siguiente imagen muestra la distribución obtenida durante el análisis estructural realizado en SimScale.
 
-![Resultado de SimScale](resultado_simscale.png)
 
 Los colores permiten identificar las zonas que presentan diferentes niveles de esfuerzo o deformación.
 
