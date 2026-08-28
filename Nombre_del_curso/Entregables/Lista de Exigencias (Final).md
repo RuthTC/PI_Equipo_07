@@ -39,16 +39,28 @@
 
 ## Referencias Bibliográficas
 
-1. **IEC Standard 60529:1989+AMD1:1999+AMD2:2013**, *Degrees of Protection Provided by Enclosures (IP Code)*, 2013.
-2. M. Lazrak, G. Ait Baddi, F. Achemchem, J. Ayour, S. Zaidouni, and B. Chebli, "AI-driven and sensor-based composting in a connected bioreactor: A novel framework for predicting maturity and quality dynamics," *Waste Manage. Bull.*, vol. 3, no. 4, Art. no. 100254, 2025, doi: `10.1016/j.wmb.2025.100254`.
-3. A. Al-Fuqaha et al., "Compost monitoring system for kitchen waste management: Development, deployment and analysis," *IoT*, vol. 6, no. 4, Art. no. 64, 2025, doi: `10.3390/iot6040064`.
-4. R. Chaves-Arias et al., "Compostaje de residuos sólidos biodegradables del restaurante institucional del Tecnológico de Costa Rica," *Rev. Cienc. Ambientales*, vol. 33, no. 1, pp. 39-54, 2019, doi: `10.15359/rca.33-1.4`.
-5. B. Liu, K. Zhang, Y. Wei, G. Ding, T. Xu, L. Zhang, and J. Li, "Towards data-driven smart composting techniques and control systems," *Bioresour. Technol.*, vol. 440, Art. no. 133514, 2026, doi: `10.1016/j.biortech.2025.133514`.
-6. **ISO Standard 7250-1:2017**, *Basic Human Body Measurements for Technological Design - Part 1: Body Measurement Definitions and Landmarks*, 2017.
-7. **ISO Standard 6385:2016**, *Ergonomics Principles in the Design of Work Systems*, 2016.
-8. L. Sugiarto, I. A. Saputra, and R. W. Abdullah, "Automated and efficient monitoring system for organic waste compost processing based on the Internet of Things (IoT)," *BEST J. Appl. Electr. Sci. Technol.*, vol. 8, no. 1, pp. 1-6, 2026, doi: `10.36456/7madhs96`.
-9. A. A. Stipniece, V. Vladinovskis, P. Daugulis, M. Zemite, L. Vitola, and L. Mezule, "Advantages and challenges of composting reactors for household use: Smart reactor concept," *Sustainability*, vol. 14, no. 16, Art. no. 10030, Aug. 2022, doi: `10.3390/su141610030`.
-10. A. G. Naser, N. M. Nawi, M. R. Zakaria, M. S. M. Kassim, A. A. Mutalovich, and K. K. Katibi, "Design and implementation of an integrated sensor network for monitoring abiotic parameters during composting," *Sustainability*, vol. 17, no. 21, Art. no. 9780, Nov. 2025, doi: `10.3390/su17219780`.
-11. **ISO Standard 468:1982**, *Surface Roughness - Parameters, Their Values and General Rules for Specifying Requirements*, 1982.
-12. M. A. Rengifo, C. A. Ramos, and J. E. Ortiz, "Diseño e implementación de un sistema de adquisición y monitoreo de variables físicas y químicas en pilas de compostaje," *Rev. Fac. Ing. Univ. Antioquia*, no. 88, pp. 45-55, 2018, doi: `10.17533/udea.redin.n88a06`.
-13. D. C. Moreno, H. F. Velasco, and E. R. Peña, "Desarrollo y validación de una plataforma IoT de bajo costo para el monitoreo de variables ambientales agrícolas," *Inf. Tecnol.*, vol. 31, no. 5, pp. 113-122, 2020, doi: `10.4067/S0718-07642020000500113`.
+[1] R. Chaves-Arias, R. Campos-Rodríguez, and L. Brenes-Peralta, "Compostaje de residuos sólidos biodegradables del restaurante institucional del Tecnológico de Costa Rica," *Rev. Cienc. Ambientales*, vol. 33, no. 1, pp. 39–54, 2019, doi: 10.15359/rca.33-1.4.
+
+[2] M. Lazrak, G. Ait Baddi, F. Achemchem, J. Ayour, S. Zaidouni, and B. Chebli, "AI-driven and sensor-based composting in a connected bioreactor: A novel framework for predicting maturity and quality dynamics," *Waste Manage. Bull.*, vol. 3, no. 4, Art. no. 100254, 2025, doi: 10.1016/j.wmb.2025.100254.
+
+[3] S. G. V. Kameswari, A. Basavaraju, C. S. Kumar, and J. Bapat, "Compost monitoring system for kitchen waste management: Development, deployment and analysis," *IoT*, vol. 6, no. 4, Art. no. 64, 2025, doi: 10.3390/iot6040064.
+
+[4] B. Liu, K. Zhang, Y. Wei, G. Ding, T. Xu, and L. Zhang, "Towards data-driven smart composting techniques and control systems," *Bioresour. Technol.*, vol. 440, Art. no. 133514, 2026, doi: 10.1016/j.biortech.2025.133514.
+
+[5] L. Sugiarto, I. A. Saputra, and R. W. Abdullah, "Automated and efficient monitoring system for organic waste compost processing based on the Internet of Things (IoT)," *BEST J. Appl. Electr. Sci. Technol.*, vol. 8, no. 1, pp. 1–6, 2026, doi: 10.36456/7madhs96.
+
+[6] *Degrees of Protection Provided by Enclosures (IP Code)*, IEC Standard 60529:1989+AMD1:1999+AMD2:2013, International Electrotechnical Commission, 2013.
+
+[7] *Basic Human Body Measurements for Technological Design — Part 1: Body Measurement Definitions and Landmarks*, ISO Standard 7250-1:2017, International Organization for Standardization, 2017.
+
+[8] *Ergonomics Principles in the Design of Work Systems*, ISO Standard 6385:2016, International Organization for Standardization, 2016.
+
+[9] A. A. Stipniece, V. Vladinovskis, P. Daugulis, M. Zemite, L. Vitola, and L. Mezule, "Advantages and challenges of composting reactors for household use: Smart reactor concept," *Sustainability*, vol. 14, no. 16, Art. no. 10030, Aug. 2022, doi: 10.3390/su141610030.
+
+[10] A. G. Naser, N. M. Nawi, M. R. Zakaria, M. S. M. Kassim, A. A. Mutalovich, and K. K. Katibi, "Design and implementation of an integrated sensor network for monitoring abiotic parameters during composting," *Sustainability*, vol. 17, no. 21, Art. no. 9780, Nov. 2025, doi: 10.3390/su17219780.
+
+[11] *Surface Roughness — Parameters, Their Values and General Rules for Specifying Requirements*, ISO Standard 468:1982, International Organization for Standardization, 1982.
+
+[12] M. A. Rengifo, C. A. Ramos, and J. E. Ortiz, "Diseño e implementación de un sistema de adquisición y monitoreo de variables físicas y químicas en pilas de compostaje," *Rev. Fac. Ing. Univ. Antioquia*, no. 88, pp. 45–55, 2018, doi: 10.17533/udea.redin.n88a06.
+
+[13] D. C. Moreno, H. F. Velasco, and E. R. Peña, "Desarrollo y validación de una plataforma IoT de bajo costo para el monitoreo de variables ambientales agrícolas," *Inf. Tecnol.*, vol. 31, no. 5, pp. 113–122, 2020, doi: 10.4067/S0718-07642020000500113.
