@@ -18,15 +18,19 @@ El diseño se implementó sobre un sustrato de dos capas para optimizar el espac
 ## 2. Documentación del Desarrollo en EDA
 
 ### 2.1. Diagrama Esquemático del Sistema
-<img src="/Recursos_%C3%8Im%C3%A1genes/P1.Schematic1%20Ruth.png" alt="Esquemático PCB - Ruth" width="100%">
+![Esquemático PCB - Ruth](../../../../Recursos_Im%C3%A1genes/P1.Schematic1%20Ruth.png)
 
 **Descripción:** Representación del circuito lógico y conexionado eléctrico principal correspondiente al módulo de lectura de lixiviados. Muestra la interconexión entre el microcontrolador ESP32 DevKit V1, la etapa de acondicionamiento de señal para el sensor, la interfaz de comunicación RS-485 (MAX3485ESA) y los bornes de conexión KF301-4P.
 
 ### 2.2. Diseño de Pistas y Disposición en Placa (Layout PCB 2D)
-<img src="/Recursos_%C3%8Im%C3%A1genes/PCB_Ruth.png" alt="Layout PCB 2D - Ruth" width="100%">
+![Layout PCB 2D - Ruth](../../../../Recursos_Im%C3%A1genes/PCB_Ruth.png)
 
 **Descripción:** Distribución física de componentes y ruteo bifaz de la placa de circuito impreso. Se evidencia la separación entre los planos de potencia y los trazos de señal del sensor de lixiviados (pistas rojas en cara superior y azules en inferior), garantizando una serigrafía clara para facilitar el ensamblado manual.
 
+### 2.3. Prototipado y Validación Visual en 3D
+![Vista 3D PCB - Ruth](../../../../Recursos_Im%C3%A1genes/3D_Ruth.png)
+
+**Descripción:** Renderizado tridimensional de la PCB dedicada al sensor de lixiviados para la verificación dimensional y de tolerancias físicas. Permite validar el espacio libre alrededor de la bornera para el ingreso de los cables del sensor, la accesibilidad al puerto USB del ESP32 y la coincidencia de los orificios de sujeción M3 con la estructura del contenedor.
 ### 2.3. Prototipado y Validación Visual en 3D
 <img src="/Recursos_%C3%8Im%C3%A1genes/3D_Ruth.png" alt="Vista 3D PCB - Ruth" width="100%">
 
