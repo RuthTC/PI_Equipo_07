@@ -2,47 +2,47 @@
 
 En esta carpeta se encuentra el diseño de la PCB desarrollada para el proyecto COMPOSTEC.
 
-La placa utiliza un ESP32 DevKit V1 como controlador principal y permite conectar los sensores que se usarán para el monitoreo del compostaje.
-
-## Esquemático
-
-En el esquemático se realizaron las conexiones del ESP32 con los siguientes sensores:
-
-- Sensor de temperatura DS18B20
-- 2 sensores capacitivos de humedad v1.2
-- Sensor de gases MQ-135
-- Sensor flotador vertical P45
-
-También se agregaron las resistencias y capacitores necesarios para las señales de los sensores.
-
-<img width="963" height="502" alt="planificacion" src="https://github.com/user-attachments/assets/abe68784-1ce6-4aac-8596-94b86e577d22" />
-
+La placa utiliza un ESP32 DevKit V1 como controlador principal y permite conectar los sensores utilizados para el monitoreo del compostaje.
 
 ## Diseño de la PCB
 
-Después de realizar el esquemático, los componentes fueron distribuidos en la placa y se realizaron las pistas correspondientes.
+En esta vista se observa la distribución de los componentes, conectores y pistas dentro de la placa.
 
-Se añadieron cuatro agujeros de montaje M3 para poder fijar la PCB dentro de la estructura del prototipo.
+<img width="750" height="570" alt="Captura de pantalla 2026-09-03 191105" src="https://github.com/user-attachments/assets/b291bdfa-c786-46a7-b434-700bd92681e6" />
 
-<img width="450" height="342" alt="2d" src="https://github.com/user-attachments/assets/d4b08da1-d094-43d8-9990-d19e07fbc3b8" />
+## Vista posterior
+
+Esta imagen muestra la parte posterior de la PCB y permite observar el recorrido de las pistas y los puntos de conexión.
+
+<img width="830" height="696" alt="Captura de pantalla 2026-09-03 191027" src="https://github.com/user-attachments/assets/72d2abff-3a03-4fe6-8c55-3674d6fd4ac8" />
 
 
 ## Vista 3D
 
-La vista 3D permite comprobar la posición de los componentes y tener una referencia de cómo quedará físicamente la placa.
+La vista 3D permite visualizar cómo quedarán ubicados los componentes sobre la placa.
 
-### Vista frontal
+<img width="732" height="547" alt="Captura de pantalla 2026-09-03 191011" src="https://github.com/user-attachments/assets/7df1ecee-1a31-4ce8-863e-9457052d6868" />
 
-<img width="887" height="697" alt="3D" src="https://github.com/user-attachments/assets/d5ada6d0-79d4-407a-a1e7-3afc74f7efc3" />
+## Esquemático
 
+En el esquemático se muestran las conexiones entre el ESP32 y los diferentes sensores del proyecto.
 
-### Vista posterior
+Se incluyen:
 
-<img width="760" height="593" alt="3Dvolteado" src="https://github.com/user-attachments/assets/2abfd2e1-be31-4af9-bc23-febec8e0a34e" />
+- 2 sensores capacitivos de humedad
+- Sensor de gases MQ-135
+- Sensor de temperatura DS18B20
+- Sensor flotador para nivel de lixiviados
+- Pantalla OLED I2C
+- Conector de alimentación
+- Resistencias y capacitor utilizados en el circuito
 
+<img width="871" height="520" alt="Captura de pantalla 2026-09-03 194420" src="https://github.com/user-attachments/assets/40a0f4c3-5a10-4177-acdc-b724eb3b678b" />
 
-## Archivo del proyecto
+## Software utilizado
 
-El archivo editable de EasyEDA Pro se encuentra en esta misma carpeta:
+- EasyEDA Pro
 
-`diseño_pcb_completo.epro2`
+## Proyecto
+
+COMPOSTEC - Sistema de monitoreo para compostaje.
