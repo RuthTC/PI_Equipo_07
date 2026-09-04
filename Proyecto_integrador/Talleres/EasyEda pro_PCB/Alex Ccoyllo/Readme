@@ -1,0 +1,36 @@
+## Sensor de gas MQ-135
+
+Para el monitoreo de gases en el proyecto se utilizó el sensor **MQ-135**, debido a que permite detectar cambios en la calidad del aire y la presencia de diferentes gases presentes en el ambiente. Este sensor es adecuado para el proyecto porque puede utilizarse junto con un microcontrolador ESP32 para obtener lecturas y posteriormente procesarlas o enviarlas a un sistema de monitoreo.
+
+### Conexiones realizadas
+
+El sensor MQ-135 fue conectado al ESP32 utilizando su salida analógica **AO**, ya que permite obtener un valor variable correspondiente a la concentración detectada por el sensor.
+
+Las conexiones principales fueron:
+
+- **VCC del MQ-135 → 5V del ESP32**
+- **GND del MQ-135 → GND del ESP32**
+- **AO del MQ-135 → entrada analógica del ESP32**
+- Se utilizaron dos resistencias para formar un divisor de voltaje:
+  - **R1 = 10 kΩ**
+  - **R2 = 20 kΩ**
+
+El divisor de voltaje permite reducir la señal de salida del sensor antes de que ingrese al ESP32, protegiendo la entrada del microcontrolador, ya que el MQ-135 puede trabajar con una alimentación de 5 V mientras que el ESP32 utiliza niveles de aproximadamente 3.3 V.
+
+### Esquema general de conexión
+
+```text
+MQ-135 AO ── R1 10kΩ ──●──── Entrada ADC ESP32
+                        │
+                      R2 20kΩ
+                        │
+                       GND
+
+MQ-135 VCC ──────────── 5V
+MQ-135 GND ──────────── GND
+
+![img](Recursos_Imagenes/Recursos _Imágenes/Captura de pantalla 2026-09-03 182940.png)
+
+![img](Recursos_Imagenes/Captura de pantalla 2026-09-03 185137.png)
+
+![img](Recursos_Imagenes/Captura de pantalla 2026-09-03 192919.png)
