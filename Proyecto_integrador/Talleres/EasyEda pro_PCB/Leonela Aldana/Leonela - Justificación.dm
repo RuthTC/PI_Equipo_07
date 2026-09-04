@@ -1,4 +1,4 @@
-![Image](link)
+
 El sensor de temperatura es un componente fundamental en el sistema Compostec, ya que permite monitorear de manera constante las condiciones internas del compost. La temperatura es uno de los principales indicadores del proceso de descomposición de la materia orgánica, debido a que los microorganismos responsables de este proceso generan calor durante su actividad. Por ello, conocer la temperatura permite determinar si el proceso de compostaje se desarrolla adecuadamente y detectar posibles condiciones que puedan afectar su eficiencia.
 
 La conexión del sensor de temperatura con el ESP32 permite convertir este monitoreo en un proceso automatizado. El sensor obtiene la temperatura del compost y envía los datos al ESP32, que se encarga de procesarlos y, según la programación establecida, puede mostrar la información, almacenarla o transmitirla a una plataforma de monitoreo. De esta manera, se reduce la necesidad de realizar mediciones manuales y se obtiene información en tiempo real sobre el estado del compost.
