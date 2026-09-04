@@ -4,3 +4,10 @@ El sensor de temperatura es un componente fundamental en el sistema Compostec, y
 La conexión del sensor de temperatura con el ESP32 permite convertir este monitoreo en un proceso automatizado. El sensor obtiene la temperatura del compost y envía los datos al ESP32, que se encarga de procesarlos y, según la programación establecida, puede mostrar la información, almacenarla o transmitirla a una plataforma de monitoreo. De esta manera, se reduce la necesidad de realizar mediciones manuales y se obtiene información en tiempo real sobre el estado del compost.
 
 Esta integración es importante para Compostec, porque permite desarrollar un sistema de monitoreo más eficiente, económico y accesible. Además, el ESP32 cuenta con conectividad inalámbrica, lo que facilita la implementación de sistemas de supervisión remota y permite tomar decisiones oportunas cuando la temperatura se encuentre fuera de los valores esperados. En consecuencia, el sensor de temperatura junto con el ESP32 constituye una parte esencial para mejorar el control, seguimiento y automatización del proceso de compostaje.
+
+![Imagen](Proyecto_integrador/Talleres/EasyEda%20pro_PCB/Leonela%20Aldana/Captura%20de%20pantalla%202026-09-03%20182725.png)
+
+![Imagen](Proyecto_integrador/Talleres/EasyEda%20pro_PCB/Leonela%20Aldana/Captura%20de%20pantalla%202026-09-03%20182736.png)
+
+![Imagen](Proyecto_integrador/Talleres/EasyEda%20pro_PCB/Leonela%20Aldana/Captura%20de%20pantalla%202026-09-03%20182806.png)
+
