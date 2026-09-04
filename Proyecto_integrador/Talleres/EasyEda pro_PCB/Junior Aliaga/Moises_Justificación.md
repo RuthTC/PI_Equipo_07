@@ -13,13 +13,13 @@ El diseño se implementó sobre un sustrato de dos capas (Top y Bottom Layer) pa
 ### 2. Documentación del Desarrollo en EDA
 
 #### 2.1. Diagrama Esquemático del Sistema
-![Diagrama Esquemático](Recursos%20_Imágenes/SCH_Schematic1_1-P1_2026-09-03(Moises1).png)
+<img width="750" alt="Diagrama Esquemático del Sistema" src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/SCH_Schematic1_1-P1_2026-09-03(Moises1).png" />.
 * **Descripción:** Representación del circuito lógico y conexionado eléctrico principal. Se define la arquitectura de control basada en el módulo ESP32 DevKit V1, la etapa de interfaz diferencial con el transceptor MAX3485ESA (comunicación RS-485 / Modbus industrial), la bornera de alimentación y datos KF301-4P, y los taladros de sujeción mecánica tipo M3.
 
 #### 2.2. Diseño de Pistas y Disposición en Placa (Layout PCB 2D)
-![Diseño PCB 2D](Recursos%20_Imágenes/PCB_PCB1_2026-09-03(Moises)1.png)
+<img width="750" alt="Diseño de Pistas y Disposición en Placa" src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/PCB_PCB1_2026-09-03(Moises)1.png" />.
 * **Descripción:** Distribución física de componentes y ruteo bifaz de la placa de circuito impreso. Muestra el trazado de pistas en la cara superior (rojo) e inferior (azul), la separación entre planos de señal y potencia, y la serigrafía de identificación para facilitar el ensamblaje de los componentes electrónicos y la orientación de los pines.
 
 #### 2.3. Prototipado y Validación Visual en 3D
-![Vista 3D de la PCB](Recursos%20_Imágenes/3D_PCB1_2026-09-03(Moises1).png)
+<img width="750" alt="Prototipado y Validación Visual en 3D" src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/3D_PCB1_2026-09-03(Moises1).png" />.
 * **Descripción:** Renderizado tridimensional de la PCB para la verificación dimensional y verificación de colisiones (*clearance*). Permite validar la altura de los conectores, la accesibilidad de los terminales de tornillo de la bornera para el ingreso de cables, la orientación del puerto USB del ESP32 y la correcta coincidencia de los agujeros de montaje con la carcasa del prototipo.
