@@ -100,6 +100,11 @@ Definición: Adoptar medidas urgentes para combatir el cambio climático y sus e
 
 Relación: Se relaciona con la Meta 13.3 al promover conocimientos y prácticas tecnológicas que optimizan el compostaje, mitigando la emisión de gases nocivos (como el metano) generados por la descomposición anaeróbica descontrolada.
 
+ODS 9: Industria, Innovación e Infraestructura
+Definición: Construir infraestructuras resilientes, promover una industrialización inclusiva y sostenible y fomentar la innovación.
+
+Relación: El proyecto se relaciona directamente con el ODS 9, especialmente con la Meta 9.5, al incorporar innovación tecnológica en el proceso de compostaje. Mediante el uso de sensores y sistemas de monitoreo en tiempo real, es posible controlar variables como la temperatura, humedad y otras condiciones necesarias para optimizar la descomposición de los residuos orgánicos. Esta propuesta integra tecnología e innovación para desarrollar un sistema de compostaje más eficiente, accesible y escalable, demostrando cómo las soluciones tecnológicas pueden contribuir a una gestión sostenible de los residuos y al aprovechamiento de los recursos.
+
 </p>
 
 ### Enfoque y sustento
