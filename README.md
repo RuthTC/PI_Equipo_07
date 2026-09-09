@@ -108,20 +108,20 @@ Relación: El proyecto se relaciona directamente con el ODS 9, especialmente con
 </p>
 
 ### Enfoque y sustento
-El aprovechamiento de residuos orgánicos es uno de los pilares para una economía circular urbana. Pese a esto, surge un problema constante en el manejo del compostaje doméstico y comunitario. Actualmente, no se monitorea adecuadamente la condición interna de la biomasa, lo que provoca que se intervenga muy tarde o que el proceso se pudra y fracase.
-Frente a esto, el proyecto COMPOST-IoT propone analizar la compostera de manera precisa utilizando un sistema equipado con microcontroladores, sensores ambientales y un asistente virtual que permitan saber exactamente cuál es el estado del proceso. Así, se podrán tomar decisiones oportunas e incluso automatizar correcciones (como el riego) basándose en datos reales.
+El aprovechamiento de residuos orgánicos de origen vegetal, como restos de frutas, verduras, cáscaras de papa y hojas, es uno de los pilares para impulsar una economía circular urbana. Sin embargo, en el compostaje doméstico y comunitario de este tipo de residuos surge un problema constante: actualmente, no se monitorea adecuadamente la condición interna de la biomasa, lo que puede provocar que se intervenga demasiado tarde, generando malos olores, exceso de humedad o incluso que el proceso de compostaje se pudra y fracase.
+
+Frente a esta problemática, el proyecto COMPOST-IoT propone analizar y monitorear de manera precisa el proceso de compostaje de restos de frutas, verduras, cáscaras de papa y hojas, mediante un sistema equipado con microcontroladores, sensores ambientales y un asistente virtual que permitan conocer exactamente el estado de la compostera. De esta manera, se podrán tomar decisiones oportunas e incluso automatizar determinadas acciones de corrección, como el riego, basándose en datos reales obtenidos durante el proceso.
+
+El sistema permitirá controlar las condiciones de los residuos vegetales en descomposición, especialmente los niveles de temperatura y humedad, para favorecer la transformación adecuada de las cáscaras y restos de frutas, verduras y papa, así como de las hojas, hasta obtener un abono aprovechable.
+
 Con este proyecto se logrará:
 
--Optimizar el tiempo invertido en el cuidado y mantenimiento de las composteras.
-</p>
--Mejorar la calidad del abono resultante al asegurar rangos ideales de temperatura y humedad.
-</p>
--Reducir el riesgo de malos olores.
-</p>
--Tomar decisiones de riego y aireación basadas en datos objetivos mediante alertas visuales claras y gamificadas.
-</p>
--Promover un reciclaje de orgánicos más sostenible, moderno, automatizado y responsable.
-
+Optimizar el tiempo invertido en el cuidado y mantenimiento de las composteras que procesan residuos de frutas, verduras, papa y hojas.
+Mejorar la calidad del abono resultante, asegurando condiciones adecuadas de temperatura y humedad durante la descomposición de estos residuos vegetales.
+Reducir el riesgo de malos olores y del deterioro del proceso ocasionado por un exceso de humedad o un manejo inadecuado de los residuos.
+Tomar decisiones de riego y aireación basadas en datos objetivos, mediante alertas visuales claras y gamificadas que indiquen el estado de los residuos dentro de la compostera.
+Promover el aprovechamiento sostenible de residuos orgánicos vegetales, específicamente restos de frutas, verduras, cáscaras de papa y hojas, transformándolos en abono mediante un proceso moderno, automatizado y responsable.
+Impulsar la innovación tecnológica aplicada al compostaje, utilizando sensores y herramientas IoT para mejorar el aprovechamiento de estos residuos y contribuir a una gestión más eficiente de los residuos orgánicos.
 </p>
 
 
