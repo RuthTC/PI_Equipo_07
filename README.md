@@ -102,8 +102,10 @@ El proyecto **COMPOST-IoT** aborda directamente esta problemática mediante un s
 
 ### Bibliografía
 
-[1] Senzemo, "Compost Temperature Measuring with IoT Sensors," *Senzemo IoT Solutions*, 2025.
+[1] Senzemo, "Compost Temperature Measuring with IoT Sensors," Senzemo IoT Solutions, 2025. [En línea]. Disponible en: https://senzemo.com/iot-compost-temperature-monitoring/ (accedido el 10 de sep. de 2026).
 
-[2] A. Kumar y S. Sharma, "Smart Compost Guardian: An IOT-Based Real-Time Compost Monitoring and Alert System," *Int. J. Eng. Res. Technol. (IJERT)*, vol. 14, no. 4, pp. 112-118, Abr. 2025.
+[2] A. Kumar y S. Sharma, "Smart Compost Guardian: An IOT-Based Real-Time Compost Monitoring and Alert System," Int. J. Eng. Res. Technol. (IJERT), vol. 14, no. 4, pp. 112-118, Abr. 2025.
 
-[3] M. Antoniou y P. Georgiou, "Smart Compost Monitoring System using Open Source Technologies," en *Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017)*, Rodas, Grecia, 2017, pp. 1-5.
+[3] M. Antoniou y P. Georgiou, "Smart Compost Monitoring System using Open Source Technologies," en Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017), Rodas, Grecia, 2017, pp. 1-5.
+
+[4] Naciones Unidas, "Objetivos de Desarrollo Sostenible", Desarrollo Sostenible. [En línea]. Disponible en: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/ (accedido el 10 de sep. de 2026).
