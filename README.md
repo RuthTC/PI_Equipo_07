@@ -42,7 +42,7 @@ Nos enfocamos en contribuir a los siguientes **Objetivos de Desarrollo Sostenibl
 
 ### ¿Por qué este proyecto?
 
-Elegimos abordar la gestión de **residuos orgánicos domésticos de origen exclusivamente vegetal** (restos de frutas, verduras, cáscaras y hojas), excluyendo restos de origen animal (carnes, grasas, huesos) u otros materiales aprovechables (papel o cartón). Este tipo de biomasa representa la mayor proporción de los desechos en los hogares urbanos y posee un alto potencial para la generación de compost de calidad.
+Elegimos abordar la gestión de **residuos orgánicos domésticos de origen exclusivamente vegetal** (restos de frutas, verduras, cáscaras y hojas), excluyendo restos de origen animal (carnes, grasas, huesos) u otros materiales aprovechables (papel o cartón). Este tipo de biomasa representa la mayor proporción de los desechos en los hogares urbanos y posee un alto potencial para la generación de compost de calidad [3].
 
 Para fundamentar la viabilidad de una solución tecnológica adaptada al contexto local, se analizó la caracterización por sectores urbanos y la distribución territorial de los distritos de Lima Metropolitana, presentadas en la **Fig. 1** y la **Fig. 2** respectivamente.
 
@@ -53,7 +53,7 @@ Para fundamentar la viabilidad de una solución tecnológica adaptada al context
 
 Como se observa en la **Fig. 1**, el Cono Sur y el Cono Centro agrupan la mayor concentración de distritos con alta generación de materia orgánica. Asimismo, la **Fig. 2** demuestra la extensión geográfica de esta problemática a nivel metropolitano. Estos datos justifican la necesidad de implementar **COMPOST-IoT** como un sistema modular y accesible, idóneo para su adopción en los hogares de estos sectores con alta densidad demográfica.
 
-Sin embargo, el proceso biológico de descomposición requiere un control riguroso de las condiciones ambientales. Actualmente, el mantenimiento de las composteras domésticas se realiza de forma manual e intuitiva, lo que dificulta determinar con exactitud el estado del proceso o el momento preciso en que se requiere hidratar o airear la mezcla. Con este proyecto buscamos automatizar el monitoreo y control de variables críticas, facilitando el manejo al usuario y garantizando las condiciones biológicas idóneas para obtener un abono orgánico estabilizado y de alta calidad.
+Sin embargo, el proceso biológico de descomposición requiere un control riguroso de las condiciones ambientales. Actualmente, el mantenimiento de las composteras domésticas se realiza de forma manual e intuitiva, lo que dificulta determinar con exactitud el estado del proceso o el momento preciso en que se requiere hidratar o airear la mezcla. Con este proyecto buscamos automatizar el monitoreo y control de variables críticas, facilitando el manejo al usuario y garantizando las condiciones biológicas idóneas para obtener un abono orgánico estabilizado y de alta calidad [6].
 
 ---
 
@@ -119,4 +119,6 @@ El proyecto **COMPOST-IoT** aborda directamente esta problemática mediante un s
 
 [4] Naciones Unidas, "Objetivos de Desarrollo Sostenible", Desarrollo Sostenible. [En línea]. Disponible en: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/ (accedido el 10 de sep. de 2026).
 
-[5] J. A. Rodríguez-Gonzáles, C. A. M. Bendezú-Gonzales, y L. M. E. Rivas-Díaz, "Análisis de agrupamiento de los distritos de Lima Metropolitana según variables socioeconómicas y ambientales," *Revista Científica de la Universidad Científica del Sur*, vol. 5, no. 2, pp. 1-15, 2025. [En línea]. Disponible en: https://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S2709-36892025000200011. [Accedido: 10-Sep-2026].
+[5] A. M. Yactayo-Flores, A. Huiman Cruz, and I. F. Reyes-Mandujano, “Agrupamiento de los distritos de la provincia de Lima, Perú, por similitud en los niveles de residuos sólidos (orgánicos e inorgánicos) domiciliarios aprovechables,” Revista Kawsaypacha: Sociedad y Medio Ambiente, no. 16, 2025, doi: 10.18800/kawsaypacha.202502.D010.
+
+[6] Y. H. Huapaya Cruz, “Evaluación del compostaje a diferentes composiciones para aprovechar los residuos orgánicos domiciliarios de la ciudad de Puno para contribuir en contrarrestar el cambio climático,” Revista de Investigaciones Altoandinas, vol. 26, no. 1, pp. 24–35, 2024, doi: 10.18271/ria.2024.577.
