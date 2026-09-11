@@ -46,7 +46,7 @@ Elegimos abordar la gestión de **residuos orgánicos domésticos de origen excl
 | | |
 | :---: | :---: |
 | <img src="Recursos _Imágenes/Comparativo1.1.png" width="300"> | <img src="Recursos _Imágenes/mapa 1.2.png" width="300"> |
-| *Fig. 1. Porcentaje de distritos por sectores en grupos de clustering [4].* | *Fig. 2. Distribución espacial de los distritos de Lima Metropolitana según grupos de clustering [4].* |
+| *Fig. 1. Porcentaje de distritos por sectores en grupos de clustering [5].* | *Fig. 2. Distribución espacial de los distritos de Lima Metropolitana según grupos de clustering [5].* |
 
 Sin embargo, el proceso biológico de descomposición requiere un control riguroso de las condiciones ambientales. Actualmente, el mantenimiento de las composteras domésticas se realiza de forma manual e intuitiva, lo que dificulta determinar con exactitud el estado del proceso o el momento preciso en que se requiere hidratar o airear la mezcla. Con este proyecto buscamos automatizar el monitoreo y control de variables críticas, facilitando el manejo al usuario y garantizando las condiciones biológicas idóneas para obtener un abono orgánico estabilizado y de alta calidad.
 
