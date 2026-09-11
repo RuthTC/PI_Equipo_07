@@ -42,11 +42,16 @@ Nos enfocamos en contribuir a los siguientes **Objetivos de Desarrollo Sostenibl
 
 ### ¿Por qué este proyecto?
 
-Elegimos abordar la gestión de **residuos orgánicos domésticos de origen exclusivamente vegetal** (restos de frutas, verduras, cáscaras y hojas), excluyendo restos de origen animal (carnes, grasas, huesos) u otros materiales aprovechables (papel o cartón). Este tipo de biomasa representa la mayor proporción de los desechos en los hogares urbanos y posee un alto potencial para la generación de compost de calidad. 
+Elegimos abordar la gestión de **residuos orgánicos domésticos de origen exclusivamente vegetal** (restos de frutas, verduras, cáscaras y hojas), excluyendo restos de origen animal (carnes, grasas, huesos) u otros materiales aprovechables (papel o cartón). Este tipo de biomasa representa la mayor proporción de los desechos en los hogares urbanos y posee un alto potencial para la generación de compost de calidad.
+
+Para fundamentar la viabilidad de una solución tecnológica adaptada al contexto local, se analizó la caracterización por sectores urbanos y la distribución territorial de los distritos de Lima Metropolitana, presentadas en la **Fig. 1** y la **Fig. 2** respectivamente.
+
 | | |
 | :---: | :---: |
 | <img src="Recursos _Imágenes/Comparativo1.1.png" width="300"> | <img src="Recursos _Imágenes/mapa 1.2.png" width="300"> |
 | *Fig. 1. Porcentaje de distritos por sectores en grupos de clustering [5].* | *Fig. 2. Distribución espacial de los distritos de Lima Metropolitana según grupos de clustering [5].* |
+
+Como se observa en la **Fig. 1**, el Cono Sur y el Cono Centro agrupan la mayor concentración de distritos con alta generación de materia orgánica. Asimismo, la **Fig. 2** demuestra la extensión geográfica de esta problemática a nivel metropolitano. Estos datos justifican la necesidad de implementar **COMPOST-IoT** como un sistema modular y accesible, idóneo para su adopción en los hogares de estos sectores con alta densidad demográfica.
 
 Sin embargo, el proceso biológico de descomposición requiere un control riguroso de las condiciones ambientales. Actualmente, el mantenimiento de las composteras domésticas se realiza de forma manual e intuitiva, lo que dificulta determinar con exactitud el estado del proceso o el momento preciso en que se requiere hidratar o airear la mezcla. Con este proyecto buscamos automatizar el monitoreo y control de variables críticas, facilitando el manejo al usuario y garantizando las condiciones biológicas idóneas para obtener un abono orgánico estabilizado y de alta calidad.
 
