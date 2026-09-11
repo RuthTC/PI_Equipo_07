@@ -13,7 +13,7 @@ Nos enfocamos en contribuir a los siguientes **Objetivos de Desarrollo Sostenibl
 
 | **ODS 12: Producción y Consumo Responsables** | **ODS 13: Acción por el Clima** |
 | :---: | :---: |
-| <img src="Recursos _Imágenes/ODS12.png" width="300"> | <img src="Recursos _Imágenes/ODS 13.png" width="300"> |
+| <img src="Recursos _Imágenes/ODS12.png" width="450"> | <img src="Recursos _Imágenes/ODS 13.png" width="350"> |
 
 | **ODS 11: Ciudades y Comunidades Sostenibles** | **ODS 9: Industria, Innovación e Infraestructura** |
 | :---: | :---: |
