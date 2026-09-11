@@ -13,7 +13,7 @@ Nos enfocamos en contribuir a los siguientes **Objetivos de Desarrollo Sostenibl
 
 | **ODS 12: Producción y Consumo Responsables** | **ODS 13: Acción por el Clima** |
 | :---: | :---: |
-| <img src="Recursos _Imágenes/ODS12.png" width="450"> | <img src="Recursos _Imágenes/ODS 13.png" width="350"> |
+| <img src="Recursos _Imágenes/ODS12.png" width="300"> | <img src="Recursos _Imágenes/ODS 13.png" width="300"> |
 
 | **ODS 11: Ciudades y Comunidades Sostenibles** | **ODS 9: Industria, Innovación e Infraestructura** |
 | :---: | :---: |
@@ -48,7 +48,7 @@ Para fundamentar la viabilidad de una solución tecnológica adaptada al context
 
 | | |
 | :---: | :---: |
-| <img src="Recursos _Imágenes/Comparativo1.1.png" width="300"> | <img src="Recursos _Imágenes/mapa 1.2.png" width="300"> |
+| <img src="Recursos _Imágenes/Comparativo1.1.png" width="450"> | <img src="Recursos _Imágenes/mapa 1.2.png" width="350"> |
 | *Fig. 1. Porcentaje de distritos por sectores en grupos de clustering [5].* | *Fig. 2. Distribución espacial de los distritos de Lima Metropolitana según grupos de clustering [5].* |
 
 Como se observa en la **Fig. 1**, el Cono Sur y el Cono Centro agrupan la mayor concentración de distritos con alta generación de materia orgánica. Asimismo, la **Fig. 2** demuestra la extensión geográfica de esta problemática a nivel metropolitano. Estos datos justifican la necesidad de implementar **COMPOST-IoT** como un sistema modular y accesible, idóneo para su adopción en los hogares de estos sectores con alta densidad demográfica.
