@@ -43,6 +43,10 @@ Nos enfocamos en contribuir a los siguientes **Objetivos de Desarrollo Sostenibl
 ### ¿Por qué este proyecto?
 
 Elegimos abordar la gestión de **residuos orgánicos domésticos de origen exclusivamente vegetal** (restos de frutas, verduras, cáscaras y hojas), excluyendo restos de origen animal (carnes, grasas, huesos) u otros materiales aprovechables (papel o cartón). Este tipo de biomasa representa la mayor proporción de los desechos en los hogares urbanos y posee un alto potencial para la generación de compost de calidad. 
+| | |
+| :---: | :---: |
+| <img src="Recursos _Imágenes/Comparativo1.1.png" width="300"> | <img src="Recursos _Imágenes/mapa 1.2.png" width="300"> |
+| *Fig. 1. Porcentaje de distritos por sectores en grupos de clustering [4].* | *Fig. 2. Distribución espacial de los distritos de Lima Metropolitana según grupos de clustering [4].* |
 
 Sin embargo, el proceso biológico de descomposición requiere un control riguroso de las condiciones ambientales. Actualmente, el mantenimiento de las composteras domésticas se realiza de forma manual e intuitiva, lo que dificulta determinar con exactitud el estado del proceso o el momento preciso en que se requiere hidratar o airear la mezcla. Con este proyecto buscamos automatizar el monitoreo y control de variables críticas, facilitando el manejo al usuario y garantizando las condiciones biológicas idóneas para obtener un abono orgánico estabilizado y de alta calidad.
 
@@ -109,3 +113,5 @@ El proyecto **COMPOST-IoT** aborda directamente esta problemática mediante un s
 [3] M. Antoniou y P. Georgiou, "Smart Compost Monitoring System using Open Source Technologies," en Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017), Rodas, Grecia, 2017, pp. 1-5.
 
 [4] Naciones Unidas, "Objetivos de Desarrollo Sostenible", Desarrollo Sostenible. [En línea]. Disponible en: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/ (accedido el 10 de sep. de 2026).
+
+[5] J. A. Rodríguez-Gonzáles, C. A. M. Bendezú-Gonzales, y L. M. E. Rivas-Díaz, "Análisis de agrupamiento de los distritos de Lima Metropolitana según variables socioeconómicas y ambientales," *Revista Científica de la Universidad Científica del Sur*, vol. 5, no. 2, pp. 1-15, 2025. [En línea]. Disponible en: https://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S2709-36892025000200011. [Accedido: 10-Sep-2026].
