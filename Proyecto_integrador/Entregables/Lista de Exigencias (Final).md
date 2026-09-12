@@ -30,7 +30,7 @@
 | **22/08/26** | **E** | **Transporte:** Peso y tamaño reducidos para fácil traslado manual. Protección contra golpes/humedad y sin necesidad de equipos especiales. | M.P |
 | **21/08/26** | **D** | **Uso:** Uso en entornos domésticos, educativos o de tratamiento de residuos. Resistencia a variaciones térmicas/humedad del compost. | M.P |
 | **21/08/26** | **E** | **Mantenimiento:** Sensores de fácil acceso y extracción rápida sin desmontar el sistema completo. Módulos electrónicos aislados y reemplazables en caso de falla [10]. | J.M |
-| **21/08/26** | **E** | **Costos:** Presupuesto estimado de **S/300 a S/400** (sensores, ESP32, pantalla, alimentación, contenedor e integración). Fácil reemplazo de piezas. | B.M |
+| **21/08/26** | **E** | **Costos:** Presupuesto estimado de **S/300 a S/600** (sensores, ESP32, pantalla, alimentación, contenedor e integración). Fácil reemplazo de piezas. | B.M |
 | **24/08/26** | **E** | **Plazos:** Inicio: 18 de septiembre. Término: 3 de diciembre a las 8 a.m. Total de ~138 horas de trabajo. Control mediante diagrama de Gantt. | J.M |
 
 *Leyenda: **E** = Exigencia | **D** = Deseo*
