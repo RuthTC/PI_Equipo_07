@@ -83,14 +83,34 @@ Optimizar la gestión y el seguimiento del proceso de compostaje de residuos org
 
 Este proyecto integra tecnología IoT para impulsar la gestión responsable de residuos de origen vegetal, alineándose con las metas de la Organización de las Naciones Unidas:
 
-* **ODS 12: Producción y Consumo Responsables**
-  * *Relación:* Contribuye directamente a las **Metas 12.3 y 12.5**. Al monitorear en tiempo real el compostaje de residuos vegetales domésticos, se asegura su correcta transformación en abono de alta calidad, reduciendo el volumen de biomasa orgánica que se destina a rellenos sanitarios.
-* **ODS 11: Ciudades y Comunidades Sostenibles**
-  * *Relación:* Se alinea con las **Metas 11.6 y 11.a** al proporcionar una alternativa tecnológica modular y escalable para la gestión descentralizada de residuos sólidos orgánicos en hogares y comunidades urbanas.
-* **ODS 13: Acción por el Clima**
-  * *Relación:* Impacta en la **Meta 13.3** al controlar los parámetros de aireación e humedad en la biomasa vegetal, evitando la descomposición anaeróbica y mitigando la generación descontrolada de gases de efecto invernadero (como metano y amoniaco).
-* **ODS 9: Industria, Innovación e Infraestructura**
-  * *Relación:* Vinculado a la **Meta 9.5**, al incorporar innovación tecnológica e IoT (microcontroladores y sensores) en procesos biológicos de pequeña escala, promoviendo el desarrollo de infraestructura limpia y soluciones sostenibles.
+♻️ ODS 12 — Producción y consumo responsables
+
+Meta 12.3 — Reducción de las pérdidas y desperdicios de alimentos
+Meta 12.3 — Reducción de las pérdidas y desperdicios de alimentos. El proyecto CompostTech facilita la revalorización de los residuos orgánicos de cocina mediante un monitoreo en tiempo real, transformando los desechos vegetales en compost de alta calidad e impidiendo que terminen arrojados a la basura.
+
+Meta 12.5 — Reducción de la generación de desechos mediante prevención, reciclaje y reutilización
+Meta 12.5 — Reducción de la generación de desechos mediante prevención, reciclaje y reutilización. Al optimizar las condiciones biológicas del compostaje doméstico, el dispositivo evita que la biomasa orgánica termine en los rellenos sanitarios, promoviendo el reciclaje de nutrientes directo desde el hogar.
+
+---
+
+🏙️ ODS 11 — Ciudades y comunidades sostenibles
+
+Meta 11.6 — Reducción del impacto ambiental negativo per cápita de las ciudades
+Meta 11.6 — Reducción del impacto ambiental negativo per cápita de las ciudades. El sistema ofrece una alternativa tecnológica descentralizada y modular para que los hogares urbanos gestionen localmente sus propios residuos orgánicos, reduciendo el volumen de basura que debe ser transportado por la ciudad.
+
+---
+
+🌍 ODS 13 — Acción por el clima
+
+Meta 13.3 — Mejora de la educación, la sensibilización y la capacidad humana e institucional respecto de la mitigación del cambio climático
+Meta 13.3 — Mejora de la educación, la sensibilización y la capacidad humana e institucional respecto de la mitigación del cambio climático. El prototipo controla de forma automática el flujo de aire y alerta sobre la humedad del núcleo para evitar procesos anaeróbicos, previniendo la emisión de gases de efecto invernadero (como el metano y el amoniaco) durante la descomposición.
+
+---
+
+🏗️ ODS 9 — Industria, innovación e infraestructura
+
+Meta 9.5 — Aumento de la investigación científica y mejora de la capacidad tecnológica
+Meta 9.5 — Aumento de la investigación científica y mejora de la capacidad tecnológica. CompostTech integra sensores de bajo costo y microcontroladores IoT a un proceso biológico tradicional, demostrando cómo la innovación tecnológica de pequeña escala facilita el cuidado ambiental.
 
 ---
 
@@ -111,13 +131,13 @@ El proyecto **COMPOST-IoT** aborda directamente esta problemática mediante un s
 
 ### Referencias Bibliográficas
 
-[1] Senzemo, "Compost Temperature Measuring with IoT Sensors," Senzemo IoT Solutions, 2025. [Online]. Available: https://senzemo.com/iot-compost-temperature-monitoring/. [Accessed: Sep. 10, 2026].
+[1] Senzemo, "Compost temperature measuring with IoT sensors," Senzemo IoT Solutions, 2025. [Online]. Available: https://senzemo.com/iot-compost-temperature-monitoring/. [Accessed: Sep. 10, 2026].
 
 [2] A. Kumar and S. Sharma, "Smart Compost Guardian: An IOT-based real-time compost monitoring and alert system," *Int. J. Eng. Res. Technol.*, vol. 14, no. 4, pp. 112–118, Apr. 2025.
 
 [3] M. Antoniou and P. Georgiou, "Smart compost monitoring system using open source technologies," in *Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017)*, Rhodes, Greece, 2017, pp. 1–5.
 
-[4] United Nations, "Objetivos de Desarrollo Sostenible," Sustainable Development Goals. [Online]. Available: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/. [Accessed: Sep. 10, 2026].
+[4] Naciones Unidas, "Objetivos de Desarrollo Sostenible," Desarrollo Sostenible. [Online]. Available: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/. [Accessed: Sep. 10, 2026].
 
 [5] A. M. Yactayo-Flores, A. Huiman Cruz, and I. F. Reyes-Mandujano, "Agrupamiento de los distritos de la provincia de Lima, Perú, por similitud en los niveles de residuos sólidos (orgánicos e inorgánicos) domiciliarios aprovechables," *Rev. Kawsaypacha: Soc. Medio Ambiente*, no. 16, Art. no. D010, 2025, doi: 10.18800/kawsaypacha.202502.D010.
 
