@@ -109,16 +109,16 @@ El proyecto **COMPOST-IoT** aborda directamente esta problemática mediante un s
 
 ---
 
-### Bibliografía
+### Referencias Bibliográficas
 
-[1] Senzemo, "Compost Temperature Measuring with IoT Sensors," Senzemo IoT Solutions, 2025. [En línea]. Disponible en: https://senzemo.com/iot-compost-temperature-monitoring/ (accedido el 10 de sep. de 2026).
+[1] Senzemo, "Compost Temperature Measuring with IoT Sensors," Senzemo IoT Solutions, 2025. [Online]. Available: https://senzemo.com/iot-compost-temperature-monitoring/. [Accessed: Sep. 10, 2026].
 
-[2] A. Kumar y S. Sharma, "Smart Compost Guardian: An IOT-Based Real-Time Compost Monitoring and Alert System," Int. J. Eng. Res. Technol. (IJERT), vol. 14, no. 4, pp. 112-118, Abr. 2025.
+[2] A. Kumar and S. Sharma, "Smart Compost Guardian: An IOT-based real-time compost monitoring and alert system," *Int. J. Eng. Res. Technol.*, vol. 14, no. 4, pp. 112–118, Apr. 2025.
 
-[3] M. Antoniou y P. Georgiou, "Smart Compost Monitoring System using Open Source Technologies," en Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017), Rodas, Grecia, 2017, pp. 1-5.
+[3] M. Antoniou and P. Georgiou, "Smart compost monitoring system using open source technologies," in *Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017)*, Rhodes, Greece, 2017, pp. 1–5.
 
-[4] Naciones Unidas, "Objetivos de Desarrollo Sostenible", Desarrollo Sostenible. [En línea]. Disponible en: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/ (accedido el 10 de sep. de 2026).
+[4] United Nations, "Objetivos de Desarrollo Sostenible," Sustainable Development Goals. [Online]. Available: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/. [Accessed: Sep. 10, 2026].
 
-[5] A. M. Yactayo-Flores, A. Huiman Cruz, and I. F. Reyes-Mandujano, “Agrupamiento de los distritos de la provincia de Lima, Perú, por similitud en los niveles de residuos sólidos (orgánicos e inorgánicos) domiciliarios aprovechables,” Revista Kawsaypacha: Sociedad y Medio Ambiente, no. 16, 2025, doi: 10.18800/kawsaypacha.202502.D010.
+[5] A. M. Yactayo-Flores, A. Huiman Cruz, and I. F. Reyes-Mandujano, "Agrupamiento de los distritos de la provincia de Lima, Perú, por similitud en los niveles de residuos sólidos (orgánicos e inorgánicos) domiciliarios aprovechables," *Rev. Kawsaypacha: Soc. Medio Ambiente*, no. 16, Art. no. D010, 2025, doi: 10.18800/kawsaypacha.202502.D010.
 
-[6] Y. H. Huapaya Cruz, “Evaluación del compostaje a diferentes composiciones para aprovechar los residuos orgánicos domiciliarios de la ciudad de Puno para contribuir en contrarrestar el cambio climático,” Revista de Investigaciones Altoandinas, vol. 26, no. 1, pp. 24–35, 2024, doi: 10.18271/ria.2024.577.
+[6] Y. H. Huapaya Cruz, "Evaluación del compostaje a diferentes composiciones para aprovechar los residuos orgánicos domiciliarios de la ciudad de Puno para contribuir en contrarrestar el cambio climático," *Rev. Investig. Altoandinas*, vol. 26, no. 1, pp. 24–35, 2024, doi: 10.18271/ria.2024.577.
