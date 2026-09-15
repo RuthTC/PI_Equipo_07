@@ -126,13 +126,13 @@ El proyecto **COMPOST-IoT** aborda directamente esta problemática mediante un s
 
 ### Referencias Bibliográficas
 
-[1] Senzemo, "Compost temperature measuring with IoT sensors," Senzemo IoT Solutions, 2025. [Online]. Available: https://senzemo.com/iot-compost-temperature-monitoring/. [Accessed: Sep. 10, 2026].
+[1] Senzemo, "Compost temperature measuring with IoT sensors," Senzemo IoT Solutions, 2025.
 
-[2] A. Kumar and S. Sharma, "Smart Compost Guardian: An IOT-based real-time compost monitoring and alert system," *Int. J. Eng. Res. Technol.*, vol. 14, no. 4, pp. 112–118, Apr. 2025.
+[2] A. Kumar and S. Sharma, "Smart Compost Guardian: An IOT-based real-time compost monitoring and alert system," *Int. J. Eng. Res. Technol.*, vol. 14, no. 4, pp. 112–118, Apr. 2025, doi: 10.17577/IJERTV14IS040050.
 
-[3] M. Antoniou and P. Georgiou, "Smart compost monitoring system using open source technologies," in *Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017)*, Rhodes, Greece, 2017, pp. 1–5.
+[3] M. Antoniou and P. Georgiou, "Smart compost monitoring system using open source technologies," in *Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017)*, Rhodes, Greece, 2017, pp. 1–5, doi: 10.30955/gnc2017.01427.
 
-[4] Naciones Unidas, "Objetivos de Desarrollo Sostenible," Desarrollo Sostenible. [Online]. Available: https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/. [Accessed: Sep. 10, 2026].
+[4] Naciones Unidas, "Objetivos de Desarrollo Sostenible," Desarrollo Sostenible, 2026.
 
 [5] A. M. Yactayo-Flores, A. Huiman Cruz, and I. F. Reyes-Mandujano, "Agrupamiento de los distritos de la provincia de Lima, Perú, por similitud en los niveles de residuos sólidos (orgánicos e inorgánicos) domiciliarios aprovechables," *Rev. Kawsaypacha: Soc. Medio Ambiente*, no. 16, Art. no. D010, 2025, doi: 10.18800/kawsaypacha.202502.D010.
 
