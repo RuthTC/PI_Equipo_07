@@ -42,7 +42,7 @@ Nos enfocamos en contribuir a los siguientes **Objetivos de Desarrollo Sostenibl
 
 ### ¿Por qué este proyecto?
 
-Elegimos abordar la gestión de **residuos orgánicos domésticos de origen exclusivamente vegetal** (restos de frutas, verduras, cáscaras y hojas), excluyendo restos de origen animal (carnes, grasas, huesos) u otros materiales aprovechables (papel o cartón). Este tipo de biomasa representa la mayor proporción de los desechos en los hogares urbanos y posee un alto potencial para la generación de compost de calidad [3].
+Elegimos abordar la gestión de **residuos orgánicos domésticos de origen exclusivamente vegetal** (restos de frutas, verduras y cáscaras), excluyendo restos de origen animal (carnes, grasas, huesos) u otros materiales aprovechables (papel o cartón). Este tipo de biomasa representa la mayor proporción de los desechos en los hogares urbanos y posee un alto potencial para la generación de compost de calidad [3].
 
 Para fundamentar la viabilidad de una solución tecnológica adaptada al contexto local, se analizó la caracterización por sectores urbanos y la distribución territorial de los distritos de Lima Metropolitana, presentadas en la **Fig. 1** y la **Fig. 2** respectivamente.
 
