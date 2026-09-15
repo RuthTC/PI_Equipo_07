@@ -85,34 +85,29 @@ Este proyecto integra tecnología IoT para impulsar la gestión responsable de r
 
 ♻️ ODS 12 — Producción y consumo responsables
 
-Meta 12.3 — Reducción de las pérdidas y desperdicios de alimentos
-Meta 12.3 — Reducción de las pérdidas y desperdicios de alimentos. El proyecto CompostTech facilita la revalorización de los residuos orgánicos de cocina mediante un monitoreo en tiempo real, transformando los desechos vegetales en compost de alta calidad e impidiendo que terminen arrojados a la basura.
-
-Meta 12.5 — Reducción de la generación de desechos mediante prevención, reciclaje y reutilización
-Meta 12.5 — Reducción de la generación de desechos mediante prevención, reciclaje y reutilización. Al optimizar las condiciones biológicas del compostaje doméstico, el dispositivo evita que la biomasa orgánica termine en los rellenos sanitarios, promoviendo el reciclaje de nutrientes directo desde el hogar.
+Meta 12.5 — Reducir considerablemente la generación de desechos mediante actividades de prevención, reducción, reciclado y reutilización.
+El proyecto monitorea en tiempo real las variables del compostaje doméstico para garantizar la transformación eficiente de los residuos vegetales en abono, evitando que la biomasa orgánica sea descartada hacia los rellenos sanitarios.
 
 ---
 
 🏙️ ODS 11 — Ciudades y comunidades sostenibles
 
-Meta 11.6 — Reducción del impacto ambiental negativo per cápita de las ciudades
-Meta 11.6 — Reducción del impacto ambiental negativo per cápita de las ciudades. El sistema ofrece una alternativa tecnológica descentralizada y modular para que los hogares urbanos gestionen localmente sus propios residuos orgánicos, reduciendo el volumen de basura que debe ser transportado por la ciudad.
+Meta 11.6 — Reducir el impacto ambiental negativo per cápita de las ciudades, prestando especial atención a la gestión de los desechos municipales.
+El dispositivo ofrece una solución tecnológica modular y descentralizada para que los hogares urbanos traten sus propios residuos orgánicos en el punto de origen, disminuyendo la carga en la recolección municipal de basura.
 
 ---
 
 🌍 ODS 13 — Acción por el clima
 
-Meta 13.3 — Mejora de la educación, la sensibilización y la capacidad humana e institucional respecto de la mitigación del cambio climático
-Meta 13.3 — Mejora de la educación, la sensibilización y la capacidad humana e institucional respecto de la mitigación del cambio climático. El prototipo controla de forma automática el flujo de aire y alerta sobre la humedad del núcleo para evitar procesos anaeróbicos, previniendo la emisión de gases de efecto invernadero (como el metano y el amoniaco) durante la descomposición.
+Meta 13.3 — Mejorar la educación, la sensibilización y la capacidad humana e institucional respecto de la mitigación del cambio climático y la reducción de sus efectos.
+El sistema regula automáticamente la ventilación y advierte los niveles de humedad para evitar la descomposición anaeróbica de la biomasa, previniendo directamente la emisión de gases de efecto invernadero como el metano.
 
 ---
 
 🏗️ ODS 9 — Industria, innovación e infraestructura
 
-Meta 9.5 — Aumento de la investigación científica y mejora de la capacidad tecnológica
-Meta 9.5 — Aumento de la investigación científica y mejora de la capacidad tecnológica. CompostTech integra sensores de bajo costo y microcontroladores IoT a un proceso biológico tradicional, demostrando cómo la innovación tecnológica de pequeña escala facilita el cuidado ambiental.
-
----
+Meta 9.5 — Aumentar la investigación científica y mejorar la capacidad tecnológica de los sectores industriales de todos los países.
+El prototipo aplica innovación accesible al integrar sensores de bajo costo y microcontroladores con IoT a un proceso biológico, democratizando el uso de tecnología limpia para la gestión ambiental a pequeña escala.
 
 ### Enfoque y Sustento
 
