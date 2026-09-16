@@ -21,8 +21,8 @@ plt.ylabel("Densidad del kernel", fontsize=18)
 
 sns.distplot([y_test-predictions])
 ```
-![Histograma de residuos](Captura de pantalla 2026-09-15 230753.png)
-![Histograma de residuos](Captura de pantalla 2026-09-15 230803.png)
+![Histograma de residuos](Cap2.png)
+![Histograma de residuos](Cap1.png)
 Este código permite generar un **histograma de los residuos obtenidos en el modelo de regresión**.
 
 Los residuos representan la diferencia entre los valores reales y los valores que fueron predichos por el modelo. En este caso, se calculan mediante:
