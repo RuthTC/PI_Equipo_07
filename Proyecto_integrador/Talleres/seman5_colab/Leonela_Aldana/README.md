@@ -18,11 +18,11 @@ En **Compostec**, este análisis complementa la información obtenida mediante l
 
 Una de las partes del código que más me llamó la atención fue la creación y entrenamiento del **árbol de decisión**. Este modelo permite aprender patrones a partir de un conjunto de datos y posteriormente utilizarlos para realizar predicciones.
 
-![Código del árbol de decisión](Captura%20de%20pantalla%202026-09-15%20203531.png)
+![Resultado del modelo](Captura%20de%20pantalla%202026-09-15%20203541.png)
 
 En esta parte del código se dividen los datos en entrenamiento y prueba, se crea el modelo `DecisionTreeRegressor` y posteriormente se entrena utilizando los datos disponibles. Me llamó la atención porque permite observar cómo, a partir de información previamente registrada, el modelo puede generar predicciones sobre nuevos datos.
 
-![Resultado del modelo](Captura%20de%20pantalla%202026-09-15%20203541.png)
+![Código del árbol de decisión](Captura%20de%20pantalla%202026-09-15%20203531.png)
 
 ### Importancia para Compostec
 
