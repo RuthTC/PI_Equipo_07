@@ -1,6 +1,5 @@
- # Exploración de Datos y Análisis de Consumo de Energía 
-      (Análisis de Regresión y Machine Learning)
-
+ # Análisis Exploratorio de Datos y Modelo de Regresión para el Consumo de Energía
+  
 En esta sesión trabajé con el conjunto de datos `Data_PI_regresion.csv`. El objetivo principal fue realizar un Análisis Exploratorio de Datos (EDA) utilizando Python en Google Colab / Jupyter Notebooks.
 
 Nos enfocamos en cargar la información, verificar que no tuviéramos datos faltantes, calcular las estadísticas cuantitativas clave y graficar las variables para analizar cómo se relacionan la Temperatura, las Horas de Operación, la Carga y la Humedad con el Consumo de Energía.
