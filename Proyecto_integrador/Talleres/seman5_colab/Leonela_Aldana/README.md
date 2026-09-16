@@ -1,31 +1,30 @@
 
-# Aplicación de los códigos en Compostec
+ # Aplicación e importancia de los códigos utilizados
 
-La utilización de estos códigos permite analizar e interpretar los datos obtenidos durante el funcionamiento de **Compostec**. Mediante herramientas estadísticas y modelos como la **regresión lineal y los árboles de decisión**, se pueden estudiar las relaciones entre las variables monitoreadas durante el proceso de compostaje.
+Durante el desarrollo de este trabajo se utilizaron diferentes códigos de Python para realizar el análisis de datos, desde la exploración y visualización de la información hasta la creación de modelos capaces de realizar predicciones. Se emplearon herramientas como **Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn y Statsmodels**, que permitieron trabajar con los datos de una manera más ordenada y comprender mejor su comportamiento.
 
-Estos códigos permiten generar gráficos, analizar correlaciones e identificar qué variables presentan una mayor influencia en los resultados. De esta manera, los datos recolectados pueden convertirse en información útil para comprender y controlar mejor el proceso.
+Entre los códigos utilizados se realizaron histogramas y gráficos de densidad para observar la distribución de los datos, matrices de correlación y mapas de calor para identificar relaciones entre las variables, y gráficos de dispersión para visualizar su comportamiento. También se trabajó con **regresión lineal** y **árboles de decisión**, utilizando una parte de los datos para entrenar los modelos y otra para comprobar su capacidad de predicción.
 
-En **Compostec**, este análisis complementa la información obtenida mediante los sensores y facilita la toma de decisiones basada en datos. Por ejemplo, permite evaluar el comportamiento de variables como la temperatura y la humedad, detectar condiciones inadecuadas y orientar las acciones necesarias para mantener un proceso de compostaje más eficiente y controlado.
+## Código que más me llamó la atención
 
-## Importancia para Compostec
+Una de las líneas que más me llamó la atención fue:
 
-- Analizar los datos obtenidos durante el compostaje.
-- Identificar relaciones entre las variables estudiadas.
-- Visualizar los resultados mediante gráficos.
-- Determinar qué variables tienen mayor importancia mediante modelos como los árboles de decisión.
-- Utilizar los datos obtenidos para mejorar el seguimiento y control del proceso de compostaje.
-## Árbol de decisión
+```python
+test_pred = tree_model.predict(x_test)
+```
 
-Una de las partes del código que más me llamó la atención fue la creación y entrenamiento del **árbol de decisión**. Este modelo permite aprender patrones a partir de un conjunto de datos y posteriormente utilizarlos para realizar predicciones.
-
-![Resultado del modelo](Captura%20de%20pantalla%202026-09-15%20203541.png)
-
-En esta parte del código se dividen los datos en entrenamiento y prueba, se crea el modelo `DecisionTreeRegressor` y posteriormente se entrena utilizando los datos disponibles. Me llamó la atención porque permite observar cómo, a partir de información previamente registrada, el modelo puede generar predicciones sobre nuevos datos.
+Esta línea permite que el **árbol de decisión realice predicciones utilizando datos que no fueron empleados directamente para entrenar el modelo**. Me llamó la atención porque muestra de una manera sencilla cómo un modelo puede aprender a partir de datos anteriores y posteriormente utilizar lo aprendido para estimar nuevos resultados.
 
 ![Código del árbol de decisión](Captura%20de%20pantalla%202026-09-15%20203531.png)
 
-### Importancia para Compostec
+Después de realizar las predicciones, el código compara los **valores reales con los valores predichos** mediante un gráfico de dispersión. Esto permite observar visualmente qué tan próximas son las predicciones del modelo a los valores reales.
 
-Considero que este modelo puede ser importante para **Compostec**, ya que los datos recolectados por los sensores pueden ser analizados para identificar patrones en variables como la temperatura y la humedad. Esto permitiría aprovechar los datos obtenidos durante el compostaje para apoyar el monitoreo del sistema y facilitar la toma de decisiones.
+![Valores reales vs predichos](Captura%20de%20pantalla%202026-09-15%20203541.png)
 
-De esta manera, el código no solo permite analizar información, sino también explorar cómo los datos obtenidos por **Compostec** podrían utilizarse para desarrollar herramientas de predicción y mejorar progresivamente el control del proceso de compostaje.
+También se calcula el **error cuadrático medio (MSE)**, que permite cuantificar la diferencia entre los valores reales y los valores estimados por el modelo. En el ejercicio se obtuvo un MSE de aproximadamente **7931.57**. Este valor debe interpretarse considerando la escala y los datos utilizados; por sí solo no indica si el modelo es bueno o malo.
+
+## Importancia de los códigos utilizados
+
+En conjunto, los códigos utilizados son importantes porque permiten pasar de tener solamente una base de datos a **explorarla, visualizarla, identificar relaciones entre variables y construir modelos de predicción**. La regresión lineal permite estudiar relaciones entre las variables, mientras que el árbol de decisión permite aprender patrones y realizar predicciones. Los gráficos y las métricas permiten posteriormente evaluar e interpretar los resultados obtenidos.
+
+Estos conocimientos también pueden ser útiles para **Compostec**, ya que un sistema que recopila información mediante sensores genera datos que necesitan ser analizados. Aplicando este tipo de herramientas se podrían estudiar variables monitoreadas durante el compostaje, identificar patrones y, con datos adecuados, desarrollar modelos que apoyen la predicción y la toma de decisiones para mejorar el seguimiento y control del proceso.
