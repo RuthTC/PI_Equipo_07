@@ -26,4 +26,7 @@ df.describe().round(1)
 La función `head()` permitió observar los primeros registros (por ejemplo, el 01/01/2022 se registró una concentración de 0.4 ppm de CO con un AQI de 5). La función `info()` confirmó que las 365 filas no tienen valores nulos y que las variables numéricas relevantes son de tipo `float64` e `int64`. Finalmente, `describe()` mostró que la concentración de CO oscila entre **0.0 y 1.0 ppm**, con una media de **0.284 ppm**, mientras que el AQI diario varía entre **0 y 11**, con una media de **3.15**.
 
 **Imagen 1 – Exploración inicial del conjunto de datos**
-![Figura 1](https://github.com/RuthTC/PI_Equipo_07/tree/main/Proyecto_integrador/Talleres/seman5_colab/Clasificacion/Ruth%20Turpo/Imagenes).
+
+![Figura 1](./Imagenes/imagen%201.png)
+
+**Figura 1.** *Primeros registros del conjunto de datos de Monóxido de Carbono.*
