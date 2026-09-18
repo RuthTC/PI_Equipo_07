@@ -1,4 +1,3 @@
-```md
 # Clasificación de datos de NO₂
 
 ## Descripción
@@ -44,5 +43,4 @@ Aprendí que primero se deben revisar y preparar los datos antes de entrenar un 
 Además, pude practicar con KNN, Naive Bayes y Regresión Logística y ver cómo se evalúan sus resultados.
 
 Lo que más reforcé fue que no basta con ejecutar un modelo, sino que también hay que revisar sus métricas para saber si está clasificando correctamente los datos.
-```
 
