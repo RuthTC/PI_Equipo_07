@@ -42,7 +42,9 @@ La función `head()` permitió observar los primeros registros (por ejemplo, el 
 ---
 ### 1.2. Análisis exploratorio y correlación
 
-Se realizó un análisis exploratorio para observar visualmente las relaciones entre las variables. Para ello se utilizó `pairplot()` de la biblioteca `seaborn`, aplicado sobre las cuatro variables numéricas que sí varían en el conjunto de datos (`Daily Max 8-hour CO Concentration`, `Daily AQI Value`, `Daily Obs Count` y `Percent Complete`; el resto de columnas numéricas —coordenadas, códigos de sitio y de parámetro— son constantes porque los datos provienen de una única estación).
+Se realizó un análisis exploratorio para observar visualmente las relaciones entre las variables utilizando un gráfico de pares (`pairplot`). Este análisis se enfocó en las cinco variables numéricas del DataFrame `df` que presentan variabilidad real: **Daily Max CO Concentration**, **Daily AQI Value**, **Daily Obs Count**, **Percent Complete** y **Probe Height (m)**. 
+
+Se excluyeron del análisis gráfico las demás columnas numéricas (como coordenadas geográficas, elevación, códigos AQS o de método), ya que mantienen valores constantes o no aportan información sobre la dinámica del monóxido de carbono en la estación. Asimismo, se descartaron temporalmente los registros con valores faltantes en la altura de la sonda (`Probe Height (m)`) para asegurar la correcta generación de las distribuciones y diagramas de dispersión.
 
 ```python
 sns.pairplot(df1)
@@ -50,3 +52,26 @@ sns.pairplot(df1)
 
 **Imagen 2 – Relaciones entre variables**
 ![Figura 1](./Imagenes/imagen%203.png)
+*Figura 2. Relaciones entre las variables del conjunto de datos.*
+
+**Interpretación:** el panel más relevante es el que relaciona `Daily Max CO Concentration` con `Daily AQI Value`: los puntos se alinean casi perfectamente sobre una recta creciente, lo que anticipa una correlación lineal casi perfecta entre ambas variables (el AQI de CO se calcula directamente a partir de la concentración de CO, por lo que esta relación es, en la práctica, una transformación matemática y no una asociación empírica). En cambio, `Daily Obs Count` y `Percent Complete` se concentran mayoritariamente en un único valor (24 observaciones y 100 % de datos completos), con un grupo reducido de días con menos observaciones y menor porcentaje de completitud; estos puntos corresponden a días con fallas o interrupciones en el equipo de medición y no muestran una relación clara con la concentración de CO. Por su parte, `Probe Height (m)` se distribuye en valores discretos fijos para el monitoreo de la estación, sin presentar ninguna relación funcional con las variaciones en los niveles de CO.
+
+
+### Distribución de la variable objetivo
+
+```
+pythondf["Daily Max CO Concentration"].plot.hist(bins=25, figsize=(8,4))
+df['Daily Max CO Concentration'].plot.density()
+```
+**Imagen 3 – Histograma de la variable objetivo**
+<table>
+  <tr>
+    <td align="center">
+      <strong>Imagen 4 – [Nombre de la imagen]</strong><br>
+      <img src="./Imagenes/imagen%204.png" width="700">
+      <br><br>
+      <strong>Imagen 5 – [Nombre de la imagen]</strong><br>
+      <img src="./Imagenes/imagen%205.png" width="700">
+    </td>
+  </tr>
+</table>
