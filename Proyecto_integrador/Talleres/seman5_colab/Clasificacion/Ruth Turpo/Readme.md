@@ -16,33 +16,23 @@ Adicionalmente, como pruebas complementarias de IA, se generó un conjunto de da
 
 ### 1. Exploración del conjunto de datos
 
-Se importó el archivo de datos con **2,603 registros y 28 variables** correspondientes al período **2023–2025**. Para realizar una exploración inicial del conjunto de datos, se utilizaron las funciones de `pandas`: `head()`, `info()` y `describe()`.
+Se utilizó un conjunto de datos de calidad del aire correspondiente a la estación **Copper View** (Salt Lake City, Utah), que contiene **365 registros y 21 variables**, uno por cada día del año 2022. Entre las variables disponibles se encuentran la **concentración máxima diaria de CO en 8 horas** (variable objetivo), el **valor diario del AQI**, la **cantidad de observaciones diarias**, el **porcentaje de datos completos** y distintos campos identificativos de la estación (ubicación, códigos de método y de parámetro, coordenadas), que son constantes para todo el dataset al provenir de un único sitio de monitoreo.
+
+Para conocer la estructura de los datos se utilizaron funciones básicas de `pandas`, principalmente `head()`, `info()` y `describe()`.
 
 ```python
-df.head()
-df.info()
-df.describe().round(1)
+df1 = pd.read_csv(file)
+df1.head()
+df1.info(verbose=True)
+df1.describe().round(1)
 ```
+
 La función `head()` permitió observar los primeros registros (por ejemplo, el 01/01/2022 se registró una concentración de 0.4 ppm de CO con un AQI de 5). La función `info()` confirmó que las 365 filas no tienen valores nulos y que las variables numéricas relevantes son de tipo `float64` e `int64`. Finalmente, `describe()` mostró que la concentración de CO oscila entre **0.0 y 1.0 ppm**, con una media de **0.284 ppm**, mientras que el AQI diario varía entre **0 y 11**, con una media de **3.15**.
 
 **Imagen 1 – Exploración inicial del conjunto de datos**
 
-![Figura 1](./Imagenes/imagen%201.png)
+![Figura 1](./Imagenes/imagen%201.png) y ![Figura 1](./Imagenes/imagen%202.png)
 
-**Figura 1.** *Primeros registros del conjunto de datos de Monóxido de Carbono.*
+*Figura 1. Primeros registros del conjunto de datos.*
 
 ---
-
-### 2. Análisis exploratorio y correlación
-
-Se generó un gráfico de dispersión múltiple mediante la función `pairplot()` de la librería `seaborn`, con el objetivo de observar visualmente las relaciones entre las principales variables numéricas del conjunto de datos: `Daily Max CO Concentration`, `Daily AQI Value`, `Daily Obs Count`, `Percent Complete` y `Probe Height (m)`.
-
-```python
-sns.pairplot(df)
-```
-**Imagen 2 – Relaciones entre variables**
-![Figura 1](./Imagenes/imagen%202.png)
-
-**Figura 2.** Relaciones entre las variables numéricas del conjunto de datos.
-
-A continuación, se calculó la matriz de correlación para medir numéricamente la fuerza de la relación lineal entre cada par de variables.
