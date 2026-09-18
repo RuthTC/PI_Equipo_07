@@ -67,11 +67,12 @@ df['Daily Max CO Concentration'].plot.density()
 <table>
   <tr>
     <td align="center">
-      <strong>Imagen 4 – [Nombre de la imagen]</strong><br>
-      <img src="./Imagenes/imagen%204.png" width="700">
-      <br><br>
-      <strong>Imagen 5 – [Nombre de la imagen]</strong><br>
-      <img src="./Imagenes/imagen%205.png" width="700">
+      <strong>Imagen 4</strong><br>
+      <img src="./Imagenes/imagen%204.png" width="400">
+    </td>
+    <td align="center">
+      <strong>Imagen 5</strong><br>
+      <img src="./Imagenes/imagen%205.png" width="400">
     </td>
   </tr>
 </table>
