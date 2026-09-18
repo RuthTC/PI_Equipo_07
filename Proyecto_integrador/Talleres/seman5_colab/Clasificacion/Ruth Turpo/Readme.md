@@ -31,8 +31,22 @@ La función `head()` permitió observar los primeros registros (por ejemplo, el 
 
 **Imagen 1 – Exploración inicial del conjunto de datos**
 
-![Figura 1](./Imagenes/imagen%201.png) y ![Figura 1](./Imagenes/imagen%202.png)
+![Figura 1](./Imagenes/imagen%201.png) 
+
+---
+
+![Figura 1](./Imagenes/imagen%202.png)
 
 *Figura 1. Primeros registros del conjunto de datos.*
 
 ---
+### 1.2. Análisis exploratorio y correlación
+
+Se realizó un análisis exploratorio para observar visualmente las relaciones entre las variables. Para ello se utilizó `pairplot()` de la biblioteca `seaborn`, aplicado sobre las cuatro variables numéricas que sí varían en el conjunto de datos (`Daily Max 8-hour CO Concentration`, `Daily AQI Value`, `Daily Obs Count` y `Percent Complete`; el resto de columnas numéricas —coordenadas, códigos de sitio y de parámetro— son constantes porque los datos provienen de una única estación).
+
+```python
+sns.pairplot(df1)
+```
+
+**Imagen 2 – Relaciones entre variables**
+![Figura 1](./Imagenes/imagen%203.png)
