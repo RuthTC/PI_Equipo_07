@@ -30,3 +30,19 @@ La función `head()` permitió observar los primeros registros (por ejemplo, el 
 ![Figura 1](./Imagenes/imagen%201.png)
 
 **Figura 1.** *Primeros registros del conjunto de datos de Monóxido de Carbono.*
+
+---
+
+### 2. Análisis exploratorio y correlación
+
+Se generó un gráfico de dispersión múltiple mediante la función `pairplot()` de la librería `seaborn`, con el objetivo de observar visualmente las relaciones entre las principales variables numéricas del conjunto de datos: `Daily Max CO Concentration`, `Daily AQI Value`, `Daily Obs Count`, `Percent Complete` y `Probe Height (m)`.
+
+```python
+sns.pairplot(df)
+```
+**Imagen 2 – Relaciones entre variables**
+![Figura 1](./Imagenes/imagen%202.png)
+
+**Figura 2.** Relaciones entre las variables numéricas del conjunto de datos.
+
+A continuación, se calculó la matriz de correlación para medir numéricamente la fuerza de la relación lineal entre cada par de variables.
