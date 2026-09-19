@@ -27,8 +27,7 @@ df1.info(verbose=True)
 df1.describe().round(1)
 ```
 
-La función `head()` permitió observar los primeros registros (por ejemplo, el 01/01/2022 se registró una concentración de 0.4 ppm de CO con un AQI de 5). La función `info()` confirmó que las 365 filas no tienen valores nulos y que las variables numéricas relevantes son de tipo `float64` e `int64`. Finalmente, `describe()` mostró que la concentración de CO oscila entre **0.0 y 1.0 ppm**, con una media de **0.284 ppm**, mientras que el AQI diario varía entre **0 y 11**, con una media de **3.15**.
-
+La función `head()` permitió observar los primeros registros del conjunto de datos. La función `info()` confirmó que los 2,603 registros no presentan valores nulos y que las variables numéricas de interés son de tipo `float64` e `int64`. Finalmente, `describe()` mostró que la concentración máxima diaria de CO en 8 horas oscila entre **0.0 y 1.6 ppm**, con una media de **0.285 ppm**, mientras que el AQI diario varía entre **0 y 18**, con una media de **3.23**.
 **Imagen 1 – Exploración inicial del conjunto de datos**
 
 ![Figura 1](./Imagenes/imagen%201.png) 
