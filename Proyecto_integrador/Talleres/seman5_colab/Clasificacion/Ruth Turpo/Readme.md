@@ -353,7 +353,7 @@ Finalmente, la prueba con los datos sintéticos creados con `make_regression()` 
   
 ## 4. Conclusiones
 
-* Revisamos el conjunto de datos de la estación de North Birmingham (2018–2024) usando `head()`, `info()` y `describe()`, logrando confirmar un total de 2,603 registros listos para analizar.
+* Revisamos el conjunto de datos de la estación de North Birmingham (2023–2025) usando `head()`, `info()` y `describe()`, logrando confirmar un total de 2,603 registros listos para analizar.
 * Analizamos cómo se relacionaban las variables con `pairplot()` y la matriz de correlación, encontrando que el CO y el AQI tienen una relación casi perfecta ($r = 0.996$), mientras que las variables de control de datos no influyen casi nada.
 * Armamos un modelo de regresión lineal múltiple separando los datos en 70 % para entrenamiento y 30 % para prueba (`random_state=123`).
 * El modelo funcionó súper bien y logró un **R² de 0.992 en la prueba**, con errores muy pequeños (MAE de 0.0152 ppm y RMSE de 0.0219 ppm), lo cual se debe principalmente a lo directo que se conecta el CO con el AQI.
