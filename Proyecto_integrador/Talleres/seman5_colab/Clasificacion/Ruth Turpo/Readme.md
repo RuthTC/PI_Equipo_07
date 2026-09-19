@@ -16,7 +16,7 @@ Adicionalmente, como pruebas complementarias de IA, se generó un conjunto de da
 
 ### 1. Exploración del conjunto de datos
 
-Se utilizó un conjunto de datos de calidad del aire correspondiente a la estación **Copper View** (Salt Lake City, Utah), que contiene **365 registros y 21 variables**, uno por cada día del año 2022. Entre las variables disponibles se encuentran la **concentración máxima diaria de CO en 8 horas** (variable objetivo), el **valor diario del AQI**, la **cantidad de observaciones diarias**, el **porcentaje de datos completos** y distintos campos identificativos de la estación (ubicación, códigos de método y de parámetro, coordenadas), que son constantes para todo el dataset al provenir de un único sitio de monitoreo.
+Se utilizó un conjunto de datos de calidad del aire correspondiente a la estación **North Birmingham** (Jefferson, Alabama), que contiene **2,603 registros y 28 variables**, abarcando el periodo del **2023 al 2025**. Entre las variables disponibles se encuentran la **concentración máxima diaria de CO en 8 horas** (variable objetivo), el **valor diario del AQI** (`Daily AQI Value`), la **cantidad de observaciones diarias** (`Daily Obs Count`), el **porcentaje de datos completos** (`Percent Complete`) y distintos campos identificativos de la estación (como el código AQS: 01-073-0023, ubicación, coordenadas y códigos de método), los cuales se mantienen constantes al provenir de un único sitio de monitoreo.
 
 Para conocer la estructura de los datos se utilizaron funciones básicas de `pandas`, principalmente `head()`, `info()` y `describe()`.
 
