@@ -1,4 +1,4 @@
-# IInforme: Análisis mediante Regresión Lineal — Concentración de CO (Salt Lake City, 2023)
+# Informe: Análisis mediante Regresión Lineal — Concentración de CO (North Birmingham, 2023–2025)
 
 ## Introducción
 
@@ -336,26 +336,10 @@ print(stat_result.summary())
 ## 2. Resultados
 
 ### **Resumen del Dataset y Análisis Exploratorio**
-* **Volumen de datos:** Un conjunto de **2,603 registros y 21 columnas** correspondientes a mediciones diarias de monóxido de carbono (CO) en la estación de *North Birmingham* (AQS: 01-073-0023) durante el periodo 2018–2024.
+* **Volumen de datos:** Un conjunto de **2,603 registros y 21 columnas** correspondientes a mediciones diarias de monóxido de carbono (CO) en la estación de *North Birmingham* (AQS: 01-073-0023) durante el periodo **2023–2025**.
 * **Comportamiento de variables:** La concentración máxima diaria de CO en 8 horas presentó valores entre **0.0 y 1.6 ppm** (media de 0.285 ppm), mientras que el índice de calidad del aire (`Daily AQI Value`) varió entre **0 y 18** (media de 3.23).
 * **Correlaciones principales:** Se identificó una relación lineal casi perfecta ($r = 0.996$) entre el CO diario y el `Daily AQI Value`. Por el contrario, las variables operativas (`Daily Obs Count` y `Percent Complete`) mostraron correlaciones prácticamente nulas con la variable objetivo.
-
-### **Desempeño del Modelo de Regresión Lineal**
-* **Partición de datos:** División 70 % entrenamiento (~1,822 registros) y 30 % prueba (~781 registros) con `random_state=123`.
-* **Métricas de ajuste:**
-  * **$R^2$ Entrenamiento:** 0.993
-  * **$R^2$ Prueba:** 0.992
-  * **MAE:** 0.0152 ppm
-  * **MSE:** 0.00048
-  * **RMSE:** 0.0219 ppm
-* **Evaluación de predicciones:** La dispersión entre valores reales y predichos mostró una alineación prácticamente directa sobre la diagonal perfecta.
-* **Diagnóstico de residuos:** Distribución simétrica centrada en -0.003 ppm con homocedasticidad estable, presentando una ligera bimodalidad producida por lecturas atípicas en concentraciones elevadas.
-
-### **Análisis Complementario (Datos Sintéticos)**
-* **Configuración:** Generación de un entorno controlado mediante `make_regression()` ($n = 100$, $p = 6$, $n\_informative = 3$, noise = 20).
-* **Validación de señal vs. ruido:** Tanto el modelo OLS como el Árbol de Decisión (`max_depth=5`, MSE de 7,931.6) concentraron más del 92 % de la importancia explicativa en las variables informativas ($x_1$, $x_2$ y $x_3$), descartando de forma efectiva las variables ruidosas ($x_4$, $x_5$ y $x_6$).
-
----
+  
 ## 4. Conclusiones
 
 * Revisamos el conjunto de datos de la estación de North Birmingham (2018–2024) usando `head()`, `info()` y `describe()`, logrando confirmar un total de 2,603 registros listos para analizar.
@@ -372,5 +356,4 @@ print(stat_result.summary())
 
 [1] Notebook de trabajo: *CO_Regresion.ipynb*, 2026.
 
-[2] Conjunto de datos: *ad_viz_plotval_data.csv* — Concentración máxima diaria de CO (8 horas), estación North Birmingham, Jefferson, AL, 2018–2024 (AQS/EPA AirData).
-
+[2] Conjunto de datos: *ad_viz_plotval_data.csv* — Concentración máxima diaria de CO (8 horas), estación North Birmingham, Jefferson, AL, **2023–2025** (AQS/EPA AirData).
