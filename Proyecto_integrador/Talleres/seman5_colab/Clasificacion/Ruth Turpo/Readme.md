@@ -340,6 +340,18 @@ print(stat_result.summary())
 * **Comportamiento de variables:** La concentración máxima diaria de CO en 8 horas presentó valores entre **0.0 y 1.6 ppm** (media de 0.285 ppm), mientras que el índice de calidad del aire (`Daily AQI Value`) varió entre **0 y 18** (media de 3.23).
 * **Correlaciones principales:** Se identificó una relación lineal casi perfecta ($r = 0.996$) entre el CO diario y el `Daily AQI Value`. Por el contrario, las variables operativas (`Daily Obs Count` y `Percent Complete`) mostraron correlaciones prácticamente nulas con la variable objetivo.
   
+## 3. Discusión
+
+Los resultados obtenidos muestran que el modelo de regresión lineal ajusta prácticamente a la perfección los datos de la estación de North Birmingham ($R^2 = 0.992$). Sin embargo, al analizar estos hallazgos con más detenimiento, es importante destacar que la altísima correlación ($r = 0.996$) con la variable `Daily AQI Value` no necesariamente refleja un descubrimiento complejo sobre la calidad del aire, sino más bien la propia definición matemática del AQI. Como el índice de calidad del aire se calcula directamente a partir de la concentración del contaminante (en este caso, el CO), el modelo está utilizando una variable que es esencialmente un reflejo de la variable objetivo.
+
+Por otro lado, variables operativas como `Daily Obs Count` o `Percent Complete` demostraron no aportar información relevante al modelo, lo cual era de esperarse, ya que la cantidad de lecturas tomadas en un día no cambia la cantidad de monóxido de carbono que hay en el ambiente. 
+
+Respecto a los supuestos del modelo, los residuos se comportan de manera bastante homogénea (homocedasticidad), aunque se observa una pequeña bimodalidad en la distribución. Esto puede deberse a la presencia de días atípicos o eventos puntuales en los que las concentraciones de CO subieron más de lo normal en la zona industrial de North Birmingham durante el periodo 2023–2025.
+
+Finalmente, la prueba con los datos sintéticos creados con `make_regression()` fue un ejercicio muy útil para poner a prueba los algoritmos en un entorno controlado. Tanto el modelo de regresión lineal como el Árbol de Decisión demostraron ser capaces de identificar correctamente las verdaderas variables predictivas ($x_1, x_2, x_3$) y descartar las variables con ruido. Esto confirma que el flujo de trabajo programado en Colab es metodológicamente correcto y confiable para distinguir señales reales en los datos.
+
+---
+  
 ## 4. Conclusiones
 
 * Revisamos el conjunto de datos de la estación de North Birmingham (2018–2024) usando `head()`, `info()` y `describe()`, logrando confirmar un total de 2,603 registros listos para analizar.
