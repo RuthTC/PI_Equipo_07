@@ -340,7 +340,7 @@ print(df.describe())
 #### Paso 3: Análisis de Correlación y Patrones
 
 * **En el ejemplo:** Generaste el gráfico `sns.pairplot(df)` para relacionar $AQI$ con la concentración de $Humedad$.
-* **En tu proyecto real:** Te permite entender cómo interactúan los parámetros. Por ejemplo: ¿Cuando sube la temperatura, disminuye la humedad? ¿Aparecen gases si los lixiviados se acumulan?
+* **Para nuestro proyecto:** Te permite entender cómo interactúan los parámetros. Por ejemplo: ¿Cuando sube la temperatura, disminuye la humedad? ¿Aparecen gases si los lixiviados se acumulan?
 
 ```
 import seaborn as sns
