@@ -145,6 +145,10 @@ test_loader_tl = DataLoader(test_dataset_tl, batch_size=64, shuffle=False, num_w
   
 ---
  ## 2. KERAS
+ 
+No tenemos que programar desde cero
+Nos permite construir y entrenar redes neuronales de una manera más sencilla.
+Tenemos reseñas de películas y queremos clasificarlas en dos categorías: positivas o negativas.
 
 ### Introducción y Carga de Datos
 
