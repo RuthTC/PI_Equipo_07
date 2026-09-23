@@ -67,8 +67,8 @@ show_glass_plastic(train_dataset)
 ```
 * **Interpretación**: el x.squeeze(0) elimina la dimensión del canal para poder graficar con imshow. Esta visualización sirve para verificar que los datos se cargan correctamente y notar algo clave: las botellas de vidrio y de plástico se parecen mucho (ambas transparentes). Esto anticipa que una CNN entrenada desde cero tendrá dificultades.
 
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RN_1.png">
 
----
 ## 4. DataLoaders y device 
 Se define device para usar GPU (CUDA) si está disponible. Los DataLoader dividen el dataset en batches (128 imágenes) y, en el caso de train, mezclan el orden con shuffle=True para que la red no memorice el orden de las imágenes. Los workers cargan datos en paralelo mientras la GPU entrena.
 
@@ -101,8 +101,8 @@ class SimpleCNN(nn.Module):
 5. AdaptiveAvgPool → resume todo en un vector de 64 números.
 
 6. Linear(64, 2) → decide entre las 2 clases.
-
-padding=1 con kernel 3 mantiene el tamaño espacial. ReLU introduce no linealidad (sin ella, toda la red sería equivalente a una sola capa lineal).
+   
+ padding=1 con kernel 3 mantiene el tamaño espacial. ReLU introduce no linealidad (sin ella, toda la red sería equivalente a una sola capa lineal).
 
 ---
 * **Funciones de entrenamiento y evaluación**
@@ -112,6 +112,7 @@ La función evaluate desactiva gradientes (@torch.no_grad()) y pone el modelo en
 ```python
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model_scratch.parameters(), lr=1e-3)
+```
 
 for epoch in range(1, epochs + 1):
     train_loss = train_one_epoch(model_scratch, train_loader, optimizer, criterion)
