@@ -17,7 +17,8 @@ Durante el desarrollo revisé:
 
 ## Pérdida durante el entrenamiento
 
-![Pérdida](images/perdida.png)
+<img width="835" height="735" alt="Captura de pantalla 2026-09-22 185203" src="https://github.com/user-attachments/assets/57b1ad0a-e960-4fb9-a82b-c04bef047108" />
+
 
 La función de pérdida permite observar cómo va aprendiendo el modelo durante el entrenamiento.
 
@@ -27,7 +28,8 @@ Al inicio el error es mayor, pero conforme pasan las épocas la pérdida disminu
 
 ## Métricas del modelo
 
-![Métricas](images/metricas.png)
+<img width="835" height="735" alt="Captura de pantalla 2026-09-22 185203" src="https://github.com/user-attachments/assets/a693f590-117f-49d3-ba54-82519075b5e7" />
+
 
 Para conocer el rendimiento del modelo se utilizaron métricas como:
 
