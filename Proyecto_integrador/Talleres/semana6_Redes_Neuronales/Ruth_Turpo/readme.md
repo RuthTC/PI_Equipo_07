@@ -350,7 +350,7 @@ sns.pairplot(df[['Temperatura', 'Humedad', 'Gases', 'Lixiviados']])
 ```
 #### Paso 4: Entrenamiento del Modelo de Machine Learning
 
-Usarás un modelo de Clasificación (ej. Random Forest) para predecir el Estado del Compost (Óptimo, Falta Aireación, Exceso de Agua, Crítico):
+Podemos usar un modelo de Clasificación (ej. Random Forest) para predecir el Estado del Compost (Óptimo, Falta Aireación, Exceso de Agua, Crítico):
 
 ```
 from sklearn.model_selection import train_test_split
