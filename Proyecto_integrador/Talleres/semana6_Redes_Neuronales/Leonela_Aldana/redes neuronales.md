@@ -94,3 +94,41 @@ La línea naranja (`regularization - validation`) representa la pérdida de vali
 La línea verde discontinua (`original`) corresponde a la pérdida de validación del modelo original. También disminuye al inicio y posteriormente aumenta de manera más pronunciada.
 
 Esto indica la presencia de **sobreajuste**, porque mientras el error de entrenamiento continúa disminuyendo, el error de validación comienza a aumentar. La gráfica también permite comparar cómo la regularización modifica el comportamiento del modelo frente a datos que no fueron utilizados directamente para entrenarlo.
+
+# Perceptrón
+
+## Código importante
+
+![Código Perceptrón](Captura%20de%20pantalla%202026-09-22%20220052.png)
+
+## Importancia y función del código
+
+Este código permite representar gráficamente las fronteras de decisión de las compuertas lógicas **AND y OR**, mostrando cómo un perceptrón puede separar diferentes grupos de datos.
+
+Una de las líneas más importantes que aparece en el código es:
+
+`plt.plot([0, 1.5], [1.5, 0], 'g-', linewidth=2)`
+
+Esta línea dibuja la frontera de decisión correspondiente a la compuerta **AND**. Permite separar el punto `(1,1)` de los demás puntos.
+
+También se utiliza:
+
+`plt.plot([-0.3, 0.5], [0.5, -0.3], 'r-', linewidth=2)`
+
+Esta línea representa la frontera de decisión de la compuerta **OR**, separando el punto `(0,0)` de los demás.
+
+La importancia de este código está en que permite visualizar cómo un perceptrón puede utilizar una **frontera de decisión lineal** para clasificar datos.
+
+## Resultado obtenido
+
+![Resultado Perceptrón](Captura%20de%20pantalla%202026-09-22%20220146.png)
+
+## Interpretación
+
+El gráfico representa las cuatro combinaciones posibles de dos entradas binarias: `(0,0)`, `(0,1)`, `(1,0)` y `(1,1)`.
+
+La línea verde representa la frontera de decisión de **AND**. Esta separa el punto `(1,1)` de los demás, ya que AND solamente tiene una salida igual a 1 cuando ambas entradas son 1.
+
+La línea roja representa la frontera de decisión de **OR**. Esta separa el punto `(0,0)` de los demás, debido a que OR tiene una salida igual a 1 cuando al menos una de las entradas es 1.
+
+El gráfico demuestra que los problemas **AND y OR son linealmente separables**, por lo que pueden ser resueltos mediante un perceptrón.
