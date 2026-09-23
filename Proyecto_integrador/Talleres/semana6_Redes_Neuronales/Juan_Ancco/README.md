@@ -2,107 +2,137 @@
 
 ## Introducción
 
-En esta práctica aprendí los conceptos básicos de Deep Learning utilizando una Red Neuronal Convolucional (CNN) para la clasificación de imágenes.
+En esta práctica realicé una introducción al uso de Deep Learning mediante una Red Neuronal Convolucional (CNN) utilizando Keras.
 
-El objetivo fue entender cómo una red neuronal aprende patrones, cómo se evalúa su desempeño y qué técnicas existen para mejorar su capacidad de predicción.
+El objetivo fue comprender cómo una red neuronal aprende patrones a partir de imágenes, cómo se puede evaluar su rendimiento y qué técnicas ayudan a mejorar la capacidad de generalización del modelo.
 
-Durante el desarrollo revisé:
+Durante el desarrollo revisé principalmente:
 
-- La pérdida durante el entrenamiento.
-- Las métricas de evaluación.
-- La matriz de confusión.
-- La regularización del modelo.
-
----
-
-## Pérdida durante el entrenamiento
-
-<img width="835" height="735" alt="Captura de pantalla 2026-09-22 185203" src="https://github.com/user-attachments/assets/57b1ad0a-e960-4fb9-a82b-c04bef047108" />
-
-
-La función de pérdida permite observar cómo va aprendiendo el modelo durante el entrenamiento.
-
-Al inicio el error es mayor, pero conforme pasan las épocas la pérdida disminuye, lo que indica que la red está ajustando sus parámetros y mejorando sus predicciones.
+- Entrenamiento de una CNN.
+- Función de pérdida (Loss).
+- Métricas de evaluación.
+- Matriz de confusión.
+- Regularización para evitar sobreajuste.
 
 ---
 
-## Métricas del modelo
+# Entrenamiento del modelo CNN
 
-<img width="835" height="735" alt="Captura de pantalla 2026-09-22 185203" src="https://github.com/user-attachments/assets/a693f590-117f-49d3-ba54-82519075b5e7" />
+Durante el entrenamiento se observa cómo el modelo modifica sus parámetros para reducir el error y mejorar sus predicciones.
 
+La función de pérdida permite conocer si el modelo está aprendiendo correctamente durante las épocas de entrenamiento.
 
-Para conocer el rendimiento del modelo se utilizaron métricas como:
+<img src="imagenes/perdida_metricas.png">
 
-- **Accuracy:** indica qué porcentaje de predicciones fueron correctas.
-- **ROC-AUC:** permite evaluar qué tan bien el modelo separa las diferentes clases.
+En la gráfica se observa la evolución de la pérdida y las métricas de validación del modelo.
 
-Estas métricas ayudan a entender si el modelo realmente está aprendiendo y no solamente memorizando los datos.
-
----
-
-## Matriz de confusión
-
-<img width="507" height="532" alt="Captura de pantalla 2026-09-22 185214" src="https://github.com/user-attachments/assets/75df63d4-6da6-4990-84fd-c9378ba0969b" />
-
-
-La matriz de confusión permite observar dónde el modelo acertó y dónde tuvo errores.
-
-Gracias a esta herramienta se puede identificar qué clases son más difíciles de reconocer y qué aspectos podrían mejorarse, como aumentar los datos de entrenamiento o ajustar el modelo.
+La pérdida disminuye progresivamente durante el entrenamiento, mientras que las métricas permiten analizar el comportamiento del modelo con datos que no fueron utilizados directamente para entrenarlo.
 
 ---
 
-## Regularización
+# Evaluación mediante métricas
 
+Para evaluar el rendimiento del modelo se utilizaron las siguientes métricas:
 
+### Accuracy
 
-<img width="826" height="756" alt="Captura de pantalla 2026-09-22 185259" src="https://github.com/user-attachments/assets/c4c16c8f-f81d-4251-98ec-e1edb6974857" />
+Indica la cantidad de predicciones correctas realizadas por el modelo respecto al total de muestras evaluadas.
 
+### ROC-AUC
 
-La regularización ayuda a evitar el overfitting, que ocurre cuando un modelo aprende demasiado los datos de entrenamiento pero falla con datos nuevos.
+Permite observar la capacidad del modelo para diferenciar entre las clases.
 
-Esta técnica permite que el modelo tenga una mejor capacidad de generalización.
+Estas métricas ayudan a comprobar si el modelo realmente está aprendiendo patrones y no solamente memorizando los datos de entrenamiento.
 
 ---
 
-# Relación con mi proyecto Compostec
+# Matriz de confusión
 
-Después de revisar Deep Learning, analicé si era la mejor opción para mi proyecto Compostec.
+<img src="imagenes/matriz_confusion.png">
 
-Aunque las CNN son muy útiles para trabajar con imágenes, actualmente Compostec utiliza información obtenida mediante sensores:
+La matriz de confusión permite observar los aciertos y errores del modelo durante la clasificación.
+
+Los valores muestran:
+
+- Predicciones correctas.
+- Predicciones incorrectas.
+- Clases donde el modelo presenta mayor dificultad.
+
+Esta herramienta es importante porque permite analizar qué aspectos pueden mejorarse, por ejemplo aumentando la cantidad de datos o ajustando la arquitectura del modelo.
+
+---
+
+# Regularización
+
+<img src="imagenes/regularizacion.png">
+
+Durante el entrenamiento también se revisó el concepto de regularización.
+
+Esta técnica busca reducir el overfitting, que ocurre cuando un modelo aprende demasiado los datos de entrenamiento y tiene un peor desempeño con datos nuevos.
+
+La comparación entre entrenamiento y validación permite observar si el modelo logra generalizar correctamente.
+
+---
+
+# Keras y Perceptrón
+
+## Keras
+
+Keras es una biblioteca utilizada para construir modelos de Deep Learning de manera más sencilla.
+
+En esta práctica fue utilizada para crear la CNN, definir sus capas, entrenar el modelo y evaluar sus resultados.
+
+## Perceptrón
+
+El perceptrón es uno de los modelos más básicos dentro de las redes neuronales artificiales.
+
+Su funcionamiento se basa en recibir entradas, aplicar pesos y generar una salida.
+
+Aunque es un modelo simple, representa la base de modelos neuronales más complejos utilizados actualmente.
+
+---
+
+# Aplicación en el proyecto Compostec
+
+Después de revisar el funcionamiento de CNN, Keras y redes neuronales, se evaluó si este enfoque era adecuado para el proyecto Compostec.
+
+Actualmente Compostec obtiene información mediante sensores:
 
 - Temperatura.
 - Humedad.
 - Gases.
 - Nivel de lixiviados.
 
-Por esta razón, considero que **Machine Learning es una mejor alternativa para la primera versión del proyecto**.
+Estos datos son valores numéricos obtenidos mediante un sistema IoT, por lo que el problema no está enfocado en imágenes.
 
-Modelos como:
+Por esta razón, para la primera versión del proyecto se considera más adecuado utilizar modelos de Machine Learning como:
 
 - Random Forest.
 - Gradient Boosting.
 - XGBoost.
 
-pueden aprender la relación entre las variables de los sensores y determinar el estado del compost.
+Estos modelos pueden aprender la relación entre las variables de los sensores y ayudar a determinar el estado del compost.
 
 ---
 
-# ¿Por qué no Deep Learning?
+# ¿Por qué no utilizar CNN actualmente?
 
-Deep Learning sería una buena opción si en el futuro se agrega una cámara para analizar imágenes del compost.
+Las CNN tienen un gran rendimiento en problemas donde existen imágenes, por ejemplo:
 
-Por ejemplo:
+- Reconocimiento de objetos.
+- Clasificación visual.
+- Análisis de fotografías.
 
+Sin embargo, Compostec actualmente no cuenta con una cámara ni un conjunto de imágenes del compost para entrenar este tipo de modelo.
 
-
-Pero para la versión actual se necesitarían más imágenes, más datos y mayor capacidad computacional.
+En una versión futura se podría agregar visión artificial para analizar características visuales del compost y complementar la información obtenida por los sensores.
 
 ---
 
 # Conclusión
 
-Esta práctica me permitió comprender cómo funcionan las redes neuronales convolucionales y cómo evaluar un modelo de Deep Learning.
+Esta práctica permitió comprender cómo funcionan las redes neuronales convolucionales, cómo se evalúa un modelo y cómo técnicas como la regularización ayudan a mejorar los resultados.
 
-Para Compostec se utilizará principalmente Machine Learning porque los datos vienen de sensores y son variables numéricas, por lo que estos modelos se adaptan mejor al problema actual.
+Para Compostec se considera utilizar principalmente Machine Learning debido a que la información obtenida proviene de sensores y corresponde a datos numéricos.
 
-Deep Learning queda como una posible mejora futura mediante visión artificial.
+El uso de Deep Learning queda como una posible mejora futura si se incorporan imágenes y un sistema de visión artificial.
