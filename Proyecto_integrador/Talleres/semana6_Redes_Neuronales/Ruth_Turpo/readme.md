@@ -43,7 +43,8 @@ A continuación se muestran los ejemplos visuales generados:
 
 | Código de Visualización (img 2) | Resultados Visuales (img 3) |
 | :---: | :---: |
-| ![Código de visualización](rutas/a/tu/img2.png) | ![Resultados visuales](rutas/a/tu/img3.png) |
+
+| ![img 1](imagenes/img%202.png) |![img 1](imagenes/img%203.png) |
 
 ### 1.4: Aspectos Técnicos Destacados
 
