@@ -305,7 +305,7 @@ Es como trazar una línea recta en un plano. Con la puerta OR puedes dibujar una
   
 ---
 
-###  Cómo se aplicaría esto al proyecto Compostech
+###  🤔​ Cómo se aplicaría esto al proyecto Compostech
 
 En esta etapa evaluamos las redes neuronales profundas y Keras, pero descartamos las CNN porque no vamos a trabajar con cámaras ni análisis visual. Compostech recolecta información directamente de sensores IoT que miden temperatura, humedad, gases y lixiviados, lo que genera una base de datos puramente numérica y tabular.
 
