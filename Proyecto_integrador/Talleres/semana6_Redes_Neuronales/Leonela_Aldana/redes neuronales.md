@@ -29,7 +29,7 @@ Se utiliza principalmente para realizar **clasificaciones o decisiones sencillas
 
 ## Código importante
 
-![Código CNN](images/Captura%20de%20pantalla%202026-09-22%20190540.png)
+<img src="images/Captura%20de%20pantalla%202026-09-22%20190540.png" width="800">
 
 ## Importancia y función del código
 
@@ -45,16 +45,16 @@ Este código es importante porque permite conocer la clasificación realizada po
 
 ## Resultado obtenido
 
-![Resultado Grad-CAM](images/Captura%20de%20pantalla%202026-09-22%20183358.png)
+<img src="images/Captura%20de%20pantalla%202026-09-22%20183358.png" width="1000">
 
 ## Interpretación
 
-La primera imagen corresponde al residuo analizado y tiene una **etiqueta real igual a 0 (`label=0`)**.
+La primera imagen corresponde al residuo analizado y presenta una **etiqueta real igual a 0 (`label=0`)**.
 
 La segunda imagen corresponde al **Grad-CAM**. Las zonas amarillas y verdes representan las regiones que tuvieron mayor influencia en la decisión de la CNN.
 
 El modelo obtuvo una **predicción igual a 0 (`pred=0`)**, por lo que la predicción coincide con la etiqueta real.
 
-La tercera imagen muestra la **superposición** del Grad-CAM sobre la imagen original. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
+La tercera imagen muestra la superposición del mapa Grad-CAM sobre la imagen original. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
 
-Esto permite identificar visualmente **qué partes de la imagen fueron importantes para que la CNN realizara su clasificación**.
+Esto permite identificar visualmente qué partes de la imagen fueron importantes para que la CNN realizara su clasificación.
