@@ -88,18 +88,33 @@ class SimpleCNN(nn.Module):
     def forward(self, x):
         return self.classifier(self.features(x))
 ```
-Arquitectura explicada:
+* **Arquitectura explicada:**
 
-1.Conv1 → 16 filtros detectan bordes simples.
+1. Conv1 → 16 filtros detectan bordes simples.
 
-2.MaxPool → reduce tamaño.
+2. MaxPool → reduce tamaño.
 
-3.Conv2 → combina bordes en formas más complejas.
+3. Conv2 → combina bordes en formas más complejas.
 
-4.Conv3 → detecta partes concretas (cuello, tapa).
+4. Conv3 → detecta partes concretas (cuello, tapa).
 
-5.AdaptiveAvgPool → resume todo en un vector de 64 números.
+5. AdaptiveAvgPool → resume todo en un vector de 64 números.
 
-6.Linear(64, 2) → decide entre las 2 clases.
+6. Linear(64, 2) → decide entre las 2 clases.
 
 padding=1 con kernel 3 mantiene el tamaño espacial. ReLU introduce no linealidad (sin ella, toda la red sería equivalente a una sola capa lineal).
+
+---
+* **Funciones de entrenamiento y evaluación**
+La función train_one_epoch ejecuta el ciclo clásico de PyTorch en cada batch: limpiar gradientes, hacer forward, calcular la pérdida con CrossEntropyLoss, retropropagar (backward) y actualizar pesos (step). Devuelve el promedio de pérdida de la época.
+
+La función evaluate desactiva gradientes (@torch.no_grad()) y pone el modelo en modo evaluación (eval()), lo que desactiva dropout y batchnorm en modo entrenamiento. Calcula accuracy y ROC-AUC sobre todo el set. ROC-AUC es importante porque mide la capacidad de separar clases independientemente del umbral de decisión.
+```python
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model_scratch.parameters(), lr=1e-3)
+
+for epoch in range(1, epochs + 1):
+    train_loss = train_one_epoch(model_scratch, train_loader, optimizer, criterion)
+    val_acc, val_auc, _, _, _ = evaluate(model_scratch, val_loader)
+    print(f"Epoch {epoch:02d} | loss={train_loss:.4f} | val_acc={val_acc:.4f}")
+```
