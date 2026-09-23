@@ -29,7 +29,9 @@ Se utiliza principalmente para realizar **clasificaciones o decisiones sencillas
 
 ## Código importante
 
-![Código CNN](c%C3%B3digo_cnn.png.png)
+## Código importante
+
+![Código CNN](https://raw.githubusercontent.com/RuthTC/PI_Equipo_07/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Leonela_Aldana/c%C3%B3digo_cnn.png.png)
 
 ## Importancia y función del código
 
