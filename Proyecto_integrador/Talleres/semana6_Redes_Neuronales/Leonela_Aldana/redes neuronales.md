@@ -132,3 +132,24 @@ La línea verde representa la frontera de decisión de **AND**. Esta separa el p
 La línea roja representa la frontera de decisión de **OR**. Esta separa el punto `(0,0)` de los demás, debido a que OR tiene una salida igual a 1 cuando al menos una de las entradas es 1.
 
 El gráfico demuestra que los problemas **AND y OR son linealmente separables**, por lo que pueden ser resueltos mediante un perceptrón.
+# Aplicación de Machine Learning en ComposTec
+
+## Importancia del Machine Learning
+
+El Machine Learning será importante en ComposTec porque permitirá utilizar los datos obtenidos por los sensores para conocer y predecir el estado del proceso de compostaje.
+
+En lugar de limitarse a mostrar valores de temperatura, humedad y gases, el sistema podrá aprender de los datos registrados e identificar patrones que indiquen si el compostaje se está desarrollando adecuadamente o si necesita alguna intervención.
+
+## ¿Cómo se utilizará en el proyecto?
+
+Los sensores recopilarán continuamente datos como **temperatura, humedad y concentración de gases**. Estos datos serán almacenados y utilizados como variables de entrada para entrenar un modelo de Machine Learning.
+
+El modelo podrá utilizarse para:
+
+- Clasificar el estado del compostaje según las condiciones registradas.
+- Detectar condiciones anormales durante el proceso.
+- Predecir cuándo las condiciones podrían dejar de ser adecuadas.
+- Generar alertas cuando sea necesaria una intervención.
+- Apoyar decisiones como la activación del sistema de riego cuando las condiciones lo requieran.
+
+De esta manera, Machine Learning permitirá que ComposTec evolucione de un sistema que únicamente **monitorea variables** a uno capaz de **analizar los datos y apoyar la toma de decisiones durante el proceso de compostaje**.
