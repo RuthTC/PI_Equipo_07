@@ -1,6 +1,6 @@
 # REDES NEURONALES 
-
-## 1. Fundamentos e Infraestructura
+---
+## 1.  CNN
 
 Las **Redes Neuronales Convolucionales (CNN)** permiten realizar el análisis de imágenes evaluando píxeles cercanos mediante patrones pequeños. Frente a una red densa tradicional, una CNN presenta dos ventajas principales:
 
@@ -15,7 +15,6 @@ Para construir y entrenar nuestros modelos, utilizaremos **PyTorch** como entorn
 2. **`MaxPooling2D`:** Realiza una reducción de escala espacial (por ejemplo, $2 \times 2$), disminuyendo las dimensiones de los mapas de características para optimizar el costo computacional y mitigar el sobreajuste (*overfitting*).
 3. **`Flatten` y `Dense`:** Transforma el mapa de características multidimensional a un vector 1D que ingresa a capas densamente conectadas para la clasificación final.
 
----
 ![img 1](imagenes/img%201.png)
 
 ## 1.2: Preparación de Datos y Clasificación Binaria
@@ -35,7 +34,6 @@ El conjunto de datos `TrashDataset` realiza una partición automática de los da
 
 Al confirmar que el conjunto contiene únicamente las clases `['glass', 'plastic']`, se establece la naturaleza supervisada del problema. Esto condiciona de forma directa el diseño de la capa final de salida y la selección de la función de pérdida.
 
----
 
 ## 1.3: Visualización y Análisis Exploratorio
 
@@ -53,7 +51,6 @@ A continuación se muestran los ejemplos visuales generados:
 > ⚠️ **Observación Visual:**
 > El vidrio y el plástico presentan una gran similitud visual (formas análogas, transparencias y ausencia de información de color). Este factor representa un desafío alto para la CNN, la cual deberá aprender a extraer patrones muy finos de textura y bordes para discriminar ambas clases.
 
----
 
 ## 1.5: Modelo 1: CNN Desde Cero
 
@@ -69,7 +66,6 @@ Este código define la arquitectura completa de la CNN desde cero, separando el 
 * **ROC-AUC:** Mide la capacidad del modelo para separar ambas clases.
 * **Matriz de Confusión, Precision, Recall y F1-Score:** Permiten evaluar la precisión real del modelo frente a posibles desbalances de datos entre vidrio y plástico.
 
----
 
 ## 1.7: Curvas de Entrenamiento y Diagnóstico
 
@@ -83,6 +79,7 @@ plt.plot(history_scratch["val_acc"])    # Rendimiento sobre datos nuevos de vali
 plt.plot(history_scratch["val_auc"])    # Rendimiento sobre datos nuevos de validación (ROC-AUC)
 ## 5. Curvas de Entrenamiento
 ```
+
 | Gráficas de Pérdida y Métricas |
 | :---: |
 | <img src="imagenes/img%206.png" width="400" style="display:inline-block;" /> <img src="imagenes/img%207.png" width="400" style="display:inline-block;" /> |
@@ -97,7 +94,6 @@ plt.plot(history_scratch["val_auc"])    # Rendimiento sobre datos nuevos de vali
 * **Accuracy (Azul - Aciertos):** Al inicio es baja y plana (~50%, equivalente a adivinar al azar). A partir de la época 4 sube y alcanza un 63.27%.
 * **ROC-AUC (Naranja - Capacidad de separar clases):** Se mantiene estable entre 0.67 y 0.70. Significa que la red diferencia razonablemente bien entre vidrio y plástico.
 
----
 
 ## 1.8: Matriz de confusion
 
@@ -146,8 +142,9 @@ test_loader_tl = DataLoader(test_dataset_tl, batch_size=64, shuffle=False, num_w
 ```
 * **¿Qué hace?** Toma el primer lote de imágenes del cargador de entrenamiento y revisa su forma (shape).
 * **Resultado esperado:** Retorna un tensor de dimensión `[64, 3, 224, 224]`, confirmando que tenemos 64 imágenes por lote, con 3 canales de color y una resolución de $224 \times 224$, listas para entrar a ResNet-18.
-
- ## 2. Clasificación binaria con Keras
+  
+---
+ ## 2. KERAS
 
 ### Introducción y Carga de Datos
 
@@ -248,7 +245,7 @@ La predicción del índice 10 dio **99.4%**: reseña positiva con un 99.4% de pr
 
 * **Qué se aprendió:** cómo armar una red densa simple con Keras y, sobre todo, cómo detectar y reducir el sobreajuste con distintas técnicas (modelo más chico, regularización, dropout).
 
-
+---
   ## 3. PERCEPTRÓN
 
 Modelo sencillo de IA que recibe datos, los combina con pesos y produce una salida (predicción).
@@ -305,8 +302,10 @@ Es como trazar una línea recta en un plano. Con la puerta OR puedes dibujar una
 * **Separabilidad Lineal:** Un perceptrón simple actúa como un hiperplano de decisión ($w_1 x_1 + w_2 x_2 + b = 0$). Funciones como AND y OR son linealmente separables, por lo que un perceptrón basta para resolverlas.
 * **El Problema del XOR:** El problema de XOR no es linealmente separable. Ninguna combinación de pesos $w$ y sesgo $b$ en una sola ecuación lineal puede separar las entradas $(0,1)$ y $(1,0)$ de $(0,0)$ y $(1,1)$.
 * **Solución Multicapa (MLP):** Para resolver XOR se requiere proyectar los datos a un espacio de mayor dimensión donde sí sean separables. Esto se logra usando una capa oculta (mínimo 2 perceptrones que actúan como detectores de características) más una capa de salida que combina sus resultados.
+  
+---
 
-### Cómo se aplicaría esto al proyecto Compostech
+###  Cómo se aplicaría esto al proyecto Compostech
 
 En esta etapa evaluamos las redes neuronales profundas y Keras, pero descartamos las CNN porque no vamos a trabajar con cámaras ni análisis visual. Compostech recolecta información directamente de sensores IoT que miden temperatura, humedad, gases y lixiviados, lo que genera una base de datos puramente numérica y tabular.
 
