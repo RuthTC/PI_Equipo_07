@@ -29,7 +29,7 @@ Se utiliza principalmente para realizar **clasificaciones o decisiones sencillas
 
 ## Código importante
 
-![Código CNN](código_cnn.png.png)
+![Código CNN](c%C3%B3digo_cnn.png.png)
 
 ## Importancia y función del código
 
