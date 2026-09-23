@@ -1,88 +1,102 @@
-# Aprendizaje de Deep Learning con CNN
+# Aprendiendo Deep Learning con CNN
 
 ## Introducción
 
-En esta práctica se implementó una **Red Neuronal Convolucional (CNN)** para clasificación de imágenes con el objetivo de comprender el entrenamiento, evaluación y mejora de modelos de Deep Learning.
+En esta práctica aprendí los conceptos básicos de Deep Learning utilizando una Red Neuronal Convolucional (CNN) para la clasificación de imágenes.
 
-Se analizaron cuatro elementos principales:
+El objetivo fue entender cómo una red neuronal aprende patrones, cómo se evalúa su desempeño y qué técnicas existen para mejorar su capacidad de predicción.
 
-- Pérdida del entrenamiento.
-- Métricas de evaluación.
-- Matriz de confusión.
-- Regularización.
+Durante el desarrollo revisé:
+
+- La pérdida durante el entrenamiento.
+- Las métricas de evaluación.
+- La matriz de confusión.
+- La regularización del modelo.
 
 ---
 
-## 1. Pérdida durante el entrenamiento
+## Pérdida durante el entrenamiento
 
 ![Pérdida](images/perdida.png)
 
-La función de pérdida (**Loss**) permite conocer el error del modelo durante el entrenamiento.
+La función de pérdida permite observar cómo va aprendiendo el modelo durante el entrenamiento.
 
-Se observa que la pérdida disminuye con las épocas, indicando que la red aprende patrones de las imágenes y mejora sus predicciones.
+Al inicio el error es mayor, pero conforme pasan las épocas la pérdida disminuye, lo que indica que la red está ajustando sus parámetros y mejorando sus predicciones.
 
 ---
 
-## 2. Métricas de validación
+## Métricas del modelo
 
 ![Métricas](images/metricas.png)
 
-Se evaluó el modelo mediante:
+Para conocer el rendimiento del modelo se utilizaron métricas como:
 
-- **Accuracy:** porcentaje de predicciones correctas.
-- **ROC-AUC:** capacidad del modelo para diferenciar entre clases.
+- **Accuracy:** indica qué porcentaje de predicciones fueron correctas.
+- **ROC-AUC:** permite evaluar qué tan bien el modelo separa las diferentes clases.
 
-Estas métricas permiten conocer el rendimiento del modelo con datos de validación.
+Estas métricas ayudan a entender si el modelo realmente está aprendiendo y no solamente memorizando los datos.
 
 ---
 
-## 3. Matriz de confusión
+## Matriz de confusión
 
 ![Matriz de confusión](images/matriz_confusion.png)
 
-La matriz de confusión permite identificar los aciertos y errores del modelo.
+La matriz de confusión permite observar dónde el modelo acertó y dónde tuvo errores.
 
-Ayuda a observar qué clases son confundidas y qué aspectos pueden mejorarse mediante más datos o ajustes del modelo.
+Gracias a esta herramienta se puede identificar qué clases son más difíciles de reconocer y qué aspectos podrían mejorarse, como aumentar los datos de entrenamiento o ajustar el modelo.
 
 ---
 
-## 4. Regularización
+## Regularización
 
 ![Regularización](images/regularizacion.png)
 
-La regularización permite reducir el **overfitting**, evitando que el modelo memorice los datos de entrenamiento.
+La regularización ayuda a evitar el overfitting, que ocurre cuando un modelo aprende demasiado los datos de entrenamiento pero falla con datos nuevos.
 
-Su objetivo es mejorar la capacidad del modelo para trabajar con datos nuevos.
+Esta técnica permite que el modelo tenga una mejor capacidad de generalización.
 
 ---
 
-# Aplicación al proyecto Compostec
+# Relación con mi proyecto Compostec
 
-Para Compostec se evaluó el uso de Deep Learning y Machine Learning.
+Después de revisar Deep Learning, analicé si era la mejor opción para mi proyecto Compostec.
 
-Aunque Deep Learning es útil para imágenes mediante CNN, nuestro proyecto trabaja principalmente con datos de sensores:
+Aunque las CNN son muy útiles para trabajar con imágenes, actualmente Compostec utiliza información obtenida mediante sensores:
 
 - Temperatura.
 - Humedad.
 - Gases.
 - Nivel de lixiviados.
 
-Por esta razón, se selecciona **Machine Learning** como modelo principal.
+Por esta razón, considero que **Machine Learning es una mejor alternativa para la primera versión del proyecto**.
 
-Los modelos recomendados serían:
+Modelos como:
 
 - Random Forest.
 - Gradient Boosting.
 - XGBoost.
 
-Estos modelos se adaptan mejor a datos tabulares, requieren menos datos y tienen menor costo computacional.
+pueden aprender la relación entre las variables de los sensores y determinar el estado del compost.
 
-Deep Learning quedaría como una mejora futura si se incorpora una cámara para analizar imágenes del compost.
+---
+
+# ¿Por qué no Deep Learning?
+
+Deep Learning sería una buena opción si en el futuro se agrega una cámara para analizar imágenes del compost.
+
+Por ejemplo:
+
+
+
+Pero para la versión actual se necesitarían más imágenes, más datos y mayor capacidad computacional.
 
 ---
 
 # Conclusión
 
-La práctica permitió comprender el funcionamiento de una CNN y sus métricas de evaluación.
+Esta práctica me permitió comprender cómo funcionan las redes neuronales convolucionales y cómo evaluar un modelo de Deep Learning.
 
-Para Compostec, Machine Learning es la alternativa más adecuada debido a que los datos provienen de sensores y no de imágenes.
+Para Compostec se utilizará principalmente Machine Learning porque los datos vienen de sensores y son variables numéricas, por lo que estos modelos se adaptan mejor al problema actual.
+
+Deep Learning queda como una posible mejora futura mediante visión artificial.
