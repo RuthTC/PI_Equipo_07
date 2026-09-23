@@ -16,7 +16,7 @@ Para construir y entrenar nuestros modelos, utilizaremos **PyTorch** como entorn
 3. **`Flatten` y `Dense`:** Transforma el mapa de características multidimensional a un vector 1D que ingresa a capas densamente conectadas para la clasificación final.
 
 ---
-![img 1](rutas/a/tu/img1.png)
+![img 1](imagenes/img%201.png)
 
 ## 1.2: Preparación de Datos y Clasificación Binaria
 
