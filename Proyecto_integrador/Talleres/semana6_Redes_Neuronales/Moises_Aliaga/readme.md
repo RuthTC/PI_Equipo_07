@@ -104,3 +104,159 @@ A fin de auditar la confiabilidad espacial de la red y descartar sesgos inducido
 <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RN_6.png">*Figura 7. Mapa de calor generado mediante Grad-CAM sobre una imagen de prueba, superpuesto a la imagen original.*
 
 Interpretación: Los gradientes térmicos de mayor excitación (tonalidades amarillas y luminosas) se concentran focalizadamente sobre la silueta central, el relieve estructural y las aristas perimetrales de los recipientes. Este diagnóstico certifica que la red basa su discriminación en la morfología intrínseca del material y no en artefactos periféricos de la superficie de soporte, validando técnica y espacialmente el 87.92 % de acierto obtenido.
+---
+* **2. Método Keras**
+
+**Keras** es una interfaz o *framework* de alto nivel desarrollada en Python, diseñada para simplificar la creación, compilación y entrenamiento de redes neuronales. 
+
+A diferencia de trabajar con bibliotecas de bajo nivel (como PyTorch o TensorFlow puro), Keras actúa como una capa de abstracción que permite construir modelos de aprendizaje profundo de manera modular, intuitiva y con pocas líneas de código, evitando la manipulación compleja de matrices y tensores a mano.
+
+#### Características principales:
+* **Prototipado rápido:** Facilita diseñar y probar diferentes arquitecturas neuronales (como redes densas o convolucionales) en muy poco tiempo.
+* **Modularidad:** Sus componentes —tales como las capas (*Layers*), funciones de activación, optimizadores y funciones de pérdida— funcionan como bloques de construcción totalmente independientes y combinables.
+* **Facilidad de uso:** Está enfocado en ofrecer una experiencia de desarrollo limpia y accesible, lo que reduce significativamente la curva de aprendizaje en proyectos de Inteligencia Artificial.
+
+* **2.1. Preparación y Vectorización del Corpus (Dataset IMDB)**
+
+El proceso inició con la carga estructurada del repositorio IMDB limitando el espacio de características léxicas a las 10,000 palabras más habituales (`num_words=10000`), omitiendo los tres índices de control iniciales (`index_from=3`). Debido a que las redes neuronales operan exclusivamente con estructuras numéricas fijas, las secuencias de texto de longitud variable se transformaron mediante codificación binaria directa (*One-Hot Encoding*), dimensionando vectores densos de 10,000 posiciones donde cada columna refleja la presencia (1) o ausencia (0) de un término en el vocabulario. Para el monitoreo durante el entrenamiento, los datos se particionaron configurando un subconjunto de validación con los primeros 10,000 registros y un segmento de entrenamiento parcial a partir del índice 10,000 en adelante.
+
+* **2.2. Implementación del Modelo Base y Detección de Sobreajuste**
+
+Se estructuró una red densa (*Multi-Layer Perceptron*) compuesta por una capa inicial de entrada con 16 neuronas y activación ReLU (configurada para recibir vectores de 10,000 dimensiones), una capa oculta intermedia idéntica de 16 neuronas con activación ReLU, y una capa terminal de salida con una sola neurona y función de activación sigmoide para acotar la probabilidad de predicción entre 0 y 1[cite: 1]. El entrenamiento se configuró a lo largo de 20 épocas con un tamaño de lote (*batch size*) de 512, empleando el optimizador RMSprop y la función de pérdida de entropía cruzada binaria (`binary_crossentropy`)[cite: 1].
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNK_2.png">*Figura 8. Curva de pérdida del conjunto de entrenamiento y del conjunto de validación del modelo base de Keras.*
+
+Interpretación: Durante los ciclos iniciales, la red experimenta una optimización acelerada: en la época 1 la pérdida de entrenamiento se sitúa en 0.5603 (exactitud de 77.27 %) frente a una pérdida de validación de 0.4426 (exactitud de 84.55 %); hacia la época 3 el error de entrenamiento disminuye a 0.2735 y la validación alcanza su cúspide de precisión con 88.31 %. Sin embargo, a partir de la época 4-5 se manifiesta un fenómeno crítico de sobreajuste (*overfitting*): la pérdida de entrenamiento sigue descendiendo de forma continua hasta alcanzar un valor marginal de 0.0140 (99.93 % de acierto) en la época 20, mientras que la pérdida de validación repunta severamente hasta 0.5444. En la evaluación definitiva sobre el conjunto de prueba independiente, el modelo obtuvo una pérdida de 0.5801 y una exactitud general de 86.14 %[cite: 10], demostrando que una capacidad de parametrización excesiva deteriora la generalización al memorizar los datos de entrenamiento.
+
+* **2.3. Control de Capacidad con un Modelo Reducido**
+
+Para examinar el impacto del dimensionamiento de la red sobre la memorización de datos, se estructuró una arquitectura simplificada reduciendo la capacidad de las capas ocultas a únicamente 4 neuronas con activación ReLU y manteniendo la salida sigmoidea.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNK_2.1.png">*Figura 9. Comparación de la pérdida de validación entre el modelo original y un modelo con menos neuronas.*
+
+Interpretación: Al restringir el espacio de representación interna, la divergencia ascendente en la curva de pérdida de validación se aplaca notablemente. Aunque el sobreajuste no se anula por completo debido a la naturaleza estocástica del texto, el punto óptimo de error se mantiene contenido durante un mayor número de épocas. Esto evidencia que un modelo sobredimensionado frente a la complejidad intrínseca del problema tiende a sobreaprender los detalles particulares del corpus de origen.
+
+* **2.4. Aplicación de Regularización L2 y Dropout**
+
+Con el propósito de frenar el sobreajuste sin comprometer la capacidad estructural de la red original de 16 neuronas, se evaluaron dos estrategias de regularización independientes: la penalización de pesos L2 y la técnica de abandono estocástico (*Dropout*).
+
+Para el modelo con regularización L2, se integró una penalización matemática (`kernel_regularizer=regularizers.l2(0.001)`) sobre los pesos de las capas densas. Durante su ejecución, el registro de entrenamiento avanzó desde una pérdida inicial de 0.5835 (exactitud de 76.95 %) en la época 1 hasta una pérdida de 0.1420 (exactitud de 97.71 %) en la época 20, registrando en paralelo una pérdida de validación de 0.4280 (87.41 % de acierto).
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNK_2.2.png">*Figura 10. Curvas de pérdida de entrenamiento y validación aplicando regularización L2, comparadas con el modelo original.*
+
+Interpretación: La penalización L2 restringe el crecimiento desmedido de los parámetros sinápticos. Si bien esto genera pequeñas oscilaciones en la ruta de validación, frena eficazmente la sobreestimación de pesos específicos logrando que el error posterior se mantenga controlado.
+
+Por otro lado, la incorporación de capas de *Dropout* con una tasa de desactivación del 50 % (`layers.Dropout(0.5)`) tras cada capa oculta modificó sustancialmente la dinámica de aprendizaje: la época 1 inició con un error de 0.6366 y una exactitud de 62.85 %, estabilizándose en la época 5 con una pérdida de entrenamiento de 0.3037 y una validación óptima con un error de 0.2786 y una exactitud de 88.86 %. Al concluir la vigésima época, la red registró una pérdida de 0.0669 y un acierto general en validación de 88.28 %.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNK_2.3.png">*Figura 11. Curva de pérdida de validación aplicando Dropout, comparada con el modelo original.*
+
+Interpretación: El uso de *Dropout* interrumpe de forma aleatoria las coadaptaciones neuronales durante los ciclos de propagación, forzando a la red a generar representaciones redundantes y robustas. Esto retrasó de manera drástica la aparición del sobreajuste y estabilizó la métrica de validación por encima del 88 %.
+
+* **2.5. Inferencia y Predicción de Ejemplos**
+
+Finalmente, se validó la operatividad del clasificador texturizado realizando una predicción puntual sobre un vector de prueba seleccionado (específicamente la reseña correspondiente al índice 10).
+
+Interpretación: El modelo procesó la secuencia y emitió un valor de salida continuo equivalente a un arreglo numérico de `[0.9932768]` (*dtype=float32*). Esta probabilidad cercana al 100% confirma una clasificación sumamente certera como reseña positiva, validando el funcionamiento integral del pipeline de vectorización e inferencia desarrollado en Keras.
+---
+# 🚩 Perceptrón
+
+## ¿Qué es?
+
+El **Perceptrón** es la unidad más básica de una red neuronal. Recibe entradas, las combina con **pesos** y un **sesgo (bias)**, y pasa el resultado por una **función de activación** que decide la salida.
+
+**Cómo funciona:**
+1. Multiplica cada entrada por su peso.
+2. Suma los productos y agrega el sesgo.
+3. Aplica la función de activación.
+4. Devuelve la salida.
+
+Es la versión más simple de una neurona artificial y la base de arquitecturas como las CNN.
+
+---
+
+## 1. Funciones de activación
+
+| Función | Comportamiento | Rango |
+|---|---|---|
+| **Escalón** | `1` si la suma es `≥ 0`, `0` si es negativa. | `{0, 1}` |
+| **tanh** | Transforma a un valor continuo con forma de S. | `[-1, 1]` |
+
+La escalón da una decisión **binaria** (sí/no); `tanh` da una **intensidad** (qué tan cerca está del límite).
+
+---
+
+## 2. Caso práctico: sobrecalentamiento industrial
+
+Se modeló una alerta de sobrecalentamiento usando dos sensores:
+
+- **Temperatura:** 100 · **Vibración:** 50
+- **Pesos:** `[0.5, -0.5]` · **Bias:** `-30`
+
+$$
+(100 \times 0.5) + (50 \times -0.5) - 30 = 50 - 25 - 30 = -5
+$$
+
+Como el resultado es **negativo**, la escalón devuelve `0` y `tanh` devuelve ≈ `-1`. En ambos casos: **no se activa la alerta**.
+
+**Idea clave:** el perceptrón no depende solo de las entradas — los pesos y el bias determinan la decisión. Eso es lo que la red **aprende** durante el entrenamiento.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNP_1.png">
+
+---
+
+## 3. Compuertas lógicas: AND, OR y XOR
+
+Se probaron las cuatro combinaciones posibles: `(0,0)`, `(0,1)`, `(1,0)` y `(1,1)`.
+
+### 3.1. AND
+
+Con pesos `[0.4, 0.4]` y bias `-0.5`, solo `(1,1)` supera el umbral:
+
+$$
+0.4 \times 1 + 0.4 \times 1 - 0.5 = 0.3 > 0 \;\Rightarrow\; 1
+$$
+
+El resto da `0`. Comportamiento **idéntico a AND**.
+
+### 3.2. OR
+
+Con pesos `[2, 1]` y bias `-0.5`, basta con que una entrada sea `1`:
+
+- `(0,0)` → `0`
+- `(0,1)` → `1`
+- `(1,0)` → `1`
+- `(1,1)` → `1`
+
+Comportamiento **clásico de OR**.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNP_2.png">
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNP_2.1.png">
+
+
+
+**Interpretación geométrica:** AND y OR son **linealmente separables** — una sola línea recta divide el plano entre las salidas `0` y `1`.
+
+### 3.3. XOR: donde falla
+
+XOR da `1` solo cuando las entradas son **diferentes**:
+
+- `(0,0)` → `0`
+- `(0,1)` → `1`
+- `(1,0)` → `1`
+- `(1,1)` → `0`
+
+Los puntos con salida `1` quedan en **diagonal** respecto a los de salida `0`. **No existe ninguna línea recta** que los separe.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNP_3.png">
+
+**Conclusión:** un solo perceptrón **no puede resolver XOR**.
+
+### 3.4. La solución: combinar perceptrones
+
+Usando **dos perceptrones en paralelo** más una capa final, se trazan **dos fronteras de decisión** que juntas resuelven XOR.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/RNP_4.png">
+
+**¿Por qué importa?** Es la idea que da origen a las **redes multicapa** y, después, a arquitecturas como las CNN.
+
+---
