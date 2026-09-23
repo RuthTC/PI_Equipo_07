@@ -99,7 +99,7 @@ Esto indica la presencia de **sobreajuste**, porque mientras el error de entrena
 
 ## Código importante
 
-![Código Perceptrón](Captura%20de%20pantalla%202026-09-22%20220052.png)
+![Resultado Perceptrón](Captura%20de%20pantalla%202026-09-22%20220146.png)
 
 ## Importancia y función del código
 
@@ -121,7 +121,7 @@ La importancia de este código está en que permite visualizar cómo un perceptr
 
 ## Resultado obtenido
 
-![Resultado Perceptrón](Captura%20de%20pantalla%202026-09-22%20220146.png)
+![Código Perceptrón](Captura%20de%20pantalla%202026-09-22%20220052.png)
 
 ## Interpretación
 
