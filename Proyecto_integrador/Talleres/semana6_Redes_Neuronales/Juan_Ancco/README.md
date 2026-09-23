@@ -40,7 +40,8 @@ Estas métricas ayudan a entender si el modelo realmente está aprendiendo y no 
 
 ## Matriz de confusión
 
-![Matriz de confusión](images/matriz_confusion.png)
+<img width="507" height="532" alt="Captura de pantalla 2026-09-22 185214" src="https://github.com/user-attachments/assets/75df63d4-6da6-4990-84fd-c9378ba0969b" />
+
 
 La matriz de confusión permite observar dónde el modelo acertó y dónde tuvo errores.
 
