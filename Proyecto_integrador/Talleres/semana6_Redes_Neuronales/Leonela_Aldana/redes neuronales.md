@@ -29,32 +29,30 @@ Se utiliza principalmente para realizar **clasificaciones o decisiones sencillas
 
 ## Código importante
 
-<img src="images/Captura%20de%20pantalla%202026-09-22%20190540.png" width="800">
+![Código CNN](código_cnn.png.png)
 
 ## Importancia y función del código
 
-Este código permite seleccionar una imagen del conjunto de prueba y analizar la predicción realizada por la **CNN mediante Grad-CAM**.
+Este código permite seleccionar una imagen del conjunto de prueba y analizar la predicción realizada por la CNN mediante Grad-CAM.
 
 La línea más importante es:
 
 `cam, pred_class = grad_cam(resnet, x)`
 
-Esta línea aplica **Grad-CAM al modelo ResNet**. `cam` genera el mapa de calor que muestra las zonas de la imagen que más influyeron en la decisión, mientras que `pred_class` indica la clase predicha por el modelo.
+Esta línea aplica Grad-CAM al modelo ResNet. `cam` genera un mapa de calor que muestra las zonas de la imagen que más influyeron en la decisión, mientras que `pred_class` indica la clase predicha por el modelo.
 
-Este código es importante porque permite conocer la clasificación realizada por la CNN y también **visualizar qué partes de la imagen utilizó el modelo para tomar su decisión**.
+Su importancia está en que permite conocer la predicción de la CNN y visualizar qué partes de la imagen fueron más importantes para tomar esa decisión.
 
 ## Resultado obtenido
 
-<img src="images/Captura%20de%20pantalla%202026-09-22%20183358.png" width="1000">
+![Resultado CNN](resultado_cnn.png.png)
 
 ## Interpretación
 
-La primera imagen corresponde al residuo analizado y presenta una **etiqueta real igual a 0 (`label=0`)**.
+La imagen presenta tres resultados: la imagen original, el mapa Grad-CAM y la superposición.
 
-La segunda imagen corresponde al **Grad-CAM**. Las zonas amarillas y verdes representan las regiones que tuvieron mayor influencia en la decisión de la CNN.
+La imagen original tiene una etiqueta real igual a `0`. El modelo también realizó una predicción igual a `0`, por lo que la clasificación coincide con la etiqueta real.
 
-El modelo obtuvo una **predicción igual a 0 (`pred=0`)**, por lo que la predicción coincide con la etiqueta real.
+En el mapa Grad-CAM, las zonas amarillas y verdes representan las regiones que tuvieron mayor influencia en la predicción. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
 
-La tercera imagen muestra la superposición del mapa Grad-CAM sobre la imagen original. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
-
-Esto permite identificar visualmente qué partes de la imagen fueron importantes para que la CNN realizara su clasificación.
+La superposición permite visualizar directamente sobre la imagen las regiones que la CNN consideró más importantes para realizar la clasificación.
