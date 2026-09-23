@@ -29,11 +29,11 @@ Se utiliza principalmente para realizar **clasificaciones o decisiones sencillas
 
 ## Código importante
 
-![Código CNN](codigo_cnn.png.png)
+![Código CNN](Captura%20de%20pantalla%202026-09-22%20213736.png)
 
 ## Importancia y función del código
 
-Este código permite seleccionar una imagen del conjunto de prueba y analizar la predicción realizada por la CNN mediante Grad-CAM.
+Este código permite seleccionar una imagen del conjunto de prueba y analizar la predicción realizada por la CNN mediante **Grad-CAM**.
 
 La línea más importante es:
 
@@ -45,14 +45,16 @@ Su importancia está en que permite conocer la predicción de la CNN y visualiza
 
 ## Resultado obtenido
 
-![Resultado CNN](resultado_cnn.png.png)
+![Resultado Grad-CAM](Captura%20de%20pantalla%202026-09-22%20213751.png)
 
 ## Interpretación
 
-La imagen presenta tres resultados: la imagen original, el mapa Grad-CAM y la superposición.
+La imagen presenta tres resultados: la **imagen original**, el **mapa Grad-CAM** y la **superposición**.
 
-La imagen original tiene una etiqueta real igual a `0`. El modelo también realizó una predicción igual a `0`, por lo que la clasificación coincide con la etiqueta real.
+La primera corresponde a la imagen que se proporciona al modelo y tiene una etiqueta real igual a `0`.
 
-En el mapa Grad-CAM, las zonas amarillas y verdes representan las regiones que tuvieron mayor influencia en la predicción. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
+La segunda corresponde al mapa **Grad-CAM**. Las zonas amarillas y verdes muestran las regiones que tuvieron mayor influencia en la decisión de la CNN. En este caso, el modelo obtuvo una predicción igual a `0`, por lo que coincide con la etiqueta real.
 
-La superposición combina el mapa Grad-CAM con la imagen original, permitiendo identificar visualmente las regiones que la CNN consideró más importantes para realizar la clasificación.
+La tercera imagen corresponde a la **superposición** del mapa Grad-CAM sobre la imagen original. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
+
+Esto permite identificar visualmente qué partes de la imagen fueron más importantes para que la CNN realizara su clasificación.
