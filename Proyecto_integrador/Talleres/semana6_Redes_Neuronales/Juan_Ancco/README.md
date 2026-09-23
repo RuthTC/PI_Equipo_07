@@ -22,7 +22,8 @@ Durante el entrenamiento se observa cómo el modelo modifica sus parámetros par
 
 La función de pérdida permite conocer si el modelo está aprendiendo correctamente durante las épocas de entrenamiento.
 
-<img src="imagenes/perdida_metricas.png">
+<img width="835" height="735" alt="Captura de pantalla 2026-09-22 185203" src="https://github.com/user-attachments/assets/b455bff5-dd03-4a43-a50e-a30a54eef3c3" />
+
 
 En la gráfica se observa la evolución de la pérdida y las métricas de validación del modelo.
 
@@ -48,7 +49,8 @@ Estas métricas ayudan a comprobar si el modelo realmente está aprendiendo patr
 
 # Matriz de confusión
 
-<img src="imagenes/matriz_confusion.png">
+<img width="507" height="532" alt="Captura de pantalla 2026-09-22 185214" src="https://github.com/user-attachments/assets/d522ac1e-997e-4491-936b-144c55e2617f" />
+
 
 La matriz de confusión permite observar los aciertos y errores del modelo durante la clasificación.
 
@@ -58,13 +60,15 @@ Los valores muestran:
 - Predicciones incorrectas.
 - Clases donde el modelo presenta mayor dificultad.
 
-Esta herramienta es importante porque permite analizar qué aspectos pueden mejorarse, por ejemplo aumentando la cantidad de datos o ajustando la arquitectura del modelo.
+Esta herramienta es importante porque permite analizar qué aspectos pueden mejorarse, por ejemplo aumentando la cantidad de datos o ajustando la arquitectura del modelo.![Uploading Captura de pantalla 2026-09-22 185214.png…]()
+
 
 ---
 
 # Regularización
 
-<img src="imagenes/regularizacion.png">
+<img width="822" height="727" alt="Captura de pantalla 2026-09-22 185229" src="https://github.com/user-attachments/assets/09bd241a-8687-47aa-80a8-8d24b4c6b54f" />
+
 
 Durante el entrenamiento también se revisó el concepto de regularización.
 
