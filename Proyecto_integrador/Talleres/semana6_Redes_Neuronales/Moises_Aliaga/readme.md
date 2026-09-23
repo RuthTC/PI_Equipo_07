@@ -68,3 +68,38 @@ show_glass_plastic(train_dataset)
 * **Interpretación**: el x.squeeze(0) elimina la dimensión del canal para poder graficar con imshow. Esta visualización sirve para verificar que los datos se cargan correctamente y notar algo clave: las botellas de vidrio y de plástico se parecen mucho (ambas transparentes). Esto anticipa que una CNN entrenada desde cero tendrá dificultades.
 
 
+---
+## 4. DataLoaders y device 
+Se define device para usar GPU (CUDA) si está disponible. Los DataLoader dividen el dataset en batches (128 imágenes) y, en el caso de train, mezclan el orden con shuffle=True para que la red no memorice el orden de las imágenes. Los workers cargan datos en paralelo mientras la GPU entrena.
+
+## 5. Modelo: CNN desde cero.
+```python
+class SimpleCNN(nn.Module):
+    def __init__(self, num_classes):
+        super().__init__()
+        self.features = nn.Sequential(
+            nn.Conv2d(1, 16, 3, padding=1), nn.ReLU(), nn.MaxPool2d(2),
+            nn.Conv2d(16, 32, 3, padding=1), nn.ReLU(), nn.MaxPool2d(2),
+            nn.Conv2d(32, 64, 3, padding=1), nn.ReLU(),
+            nn.AdaptiveAvgPool2d((1, 1))
+        )
+        self.classifier = nn.Sequential(nn.Flatten(), nn.Linear(64, num_classes))
+
+    def forward(self, x):
+        return self.classifier(self.features(x))
+```
+Arquitectura explicada:
+
+1.Conv1 → 16 filtros detectan bordes simples.
+
+2.MaxPool → reduce tamaño.
+
+3.Conv2 → combina bordes en formas más complejas.
+
+4.Conv3 → detecta partes concretas (cuello, tapa).
+
+5.AdaptiveAvgPool → resume todo en un vector de 64 números.
+
+6.Linear(64, 2) → decide entre las 2 clases.
+
+padding=1 con kernel 3 mantiene el tamaño espacial. ReLU introduce no linealidad (sin ella, toda la red sería equivalente a una sola capa lineal).
