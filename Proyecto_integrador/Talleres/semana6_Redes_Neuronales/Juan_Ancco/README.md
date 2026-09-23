@@ -1,4 +1,3 @@
-<img width="826" height="756" alt="Captura de pantalla 2026-09-22 185259" src="https://github.com/user-attachments/assets/94a02620-90b7-4fc2-8774-3899b6f48964" />
 # Aprendiendo Deep Learning con CNN
 
 ## Introducción
@@ -50,6 +49,8 @@ Gracias a esta herramienta se puede identificar qué clases son más difíciles 
 ---
 
 ## Regularización
+
+
 
 <img width="826" height="756" alt="Captura de pantalla 2026-09-22 185259" src="https://github.com/user-attachments/assets/c4c16c8f-f81d-4251-98ec-e1edb6974857" />
 
