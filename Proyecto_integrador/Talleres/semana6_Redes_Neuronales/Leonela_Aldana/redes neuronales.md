@@ -29,9 +29,7 @@ Se utiliza principalmente para realizar **clasificaciones o decisiones sencillas
 
 ## Código importante
 
-## Código importante
-
-![Código CNN](codigo_cnn.png.png)
+![Código CNN](código_cnn.png.png.png)
 
 ## Importancia y función del código
 
@@ -57,4 +55,4 @@ La imagen original tiene una etiqueta real igual a `0`. El modelo también reali
 
 En el mapa Grad-CAM, las zonas amarillas y verdes representan las regiones que tuvieron mayor influencia en la predicción. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
 
-La superposición permite visualizar directamente sobre la imagen las regiones que la CNN consideró más importantes para realizar la clasificación.
+La superposición combina el mapa Grad-CAM con la imagen original, permitiendo identificar visualmente las regiones que la CNN consideró más importantes para realizar la clasificación.
