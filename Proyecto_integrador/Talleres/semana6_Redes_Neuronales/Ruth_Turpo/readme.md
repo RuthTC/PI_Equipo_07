@@ -328,7 +328,7 @@ df.head()
 #### Paso 2: Limpieza y Preprocesamiento (EDA)
 
 * **En el ejemplo:** Usaste `df.info()` y `df.describe()` para ver valores nulos y promedios.
-* **En tu proyecto real:** Sirve para detectar fallas en sensores (por ejemplo, si la humedad marca $0\%$ por un fallo eléctrico o valores atípicos fuera de rango).
+* **Para nuestro proyecto :** Sirve para detectar fallas en sensores (por ejemplo, si la humedad marca $0\%$ por un fallo eléctrico o valores atípicos fuera de rango).
 
 ```
 # Verificación de datos nulos o errores de lectura
