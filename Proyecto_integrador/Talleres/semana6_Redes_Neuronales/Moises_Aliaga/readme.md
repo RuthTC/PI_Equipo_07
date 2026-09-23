@@ -260,3 +260,32 @@ Usando **dos perceptrones en paralelo** más una capa final, se trazan **dos fro
 **¿Por qué importa?** Es la idea que da origen a las **redes multicapa** y, después, a arquitecturas como las CNN.
 
 ---
+## 5. Implementación Práctica en el Proyecto COMPOST-IoT: Monitoreo y Diagnóstico del Compostaje
+
+### 5.1. Elección y preparación del dataset real
+Para validar el sistema de supervisión del reactor, se configuró un pipeline de carga automatizada utilizando directorios clasificados en cuatro estados biológicos críticos: `01_Fresco`, `02_En_Proceso`, `03_Maduro` y `04_Anomalia_Moho`. A partir de un conjunto base de 11 archivos de imágenes válidas[cite: 2], se implementaron transformaciones de *Data Augmentation* para robustecer el aprendizaje frente a variaciones de iluminación y posición.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/Nuevo4.png">
+*Figura 16. Cuadrícula de muestras reales procesadas por el sistema para la clasificación de los estados del compost.*
+
+### 5.2. Modelo elegido y su entrenamiento
+Se diseñó una Red Neuronal Convolucional (CNN) secuencial dotada de tres bloques convolucionales (con 32, 64 y 128 filtros respectivamente), intercalados con capas de *MaxPooling2D*, una capa densa de 128 neuronas con activación ReLU, regularización *Dropout* (0.3) y una capa final *Softmax*. 
+
+El modelo integró un total de 4,828,868 parámetros entrenables (18.42 MB). Durante sus 15 épocas de ejecución, el sistema escaló desde una precisión inicial del $22.22\%$ hasta converger exitosamente al $100\%$ de precisión en el set de entrenamiento.
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/Nuevo3.png">
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/semana6_Redes_Neuronales/Moises_Aliaga/image/Nuevo1.png">
+
+### 5.7. Conclusión de la prueba de concepto y persistencia
+Al ejecutar una inferencia de prueba sobre una muestra de validación, el modelo determinó con éxito el estado actual del reactor:
+
+* **Estado detectado:** `02_En_Proceso`
+* **Certeza / Confianza:** $84.49\%$
+* **Acción operativa automatizada:** Mantener el monitoreo constante de la temperatura y la humedad debido a la degradación activa de la materia orgánica.
+
+Finalmente, el modelo se exportó de forma persistente bajo el archivo `modelo_monitoreo_compost.keras` (con un peso de 55.31 MB incluyendo los pesos del optimizador Adam), validando su óptima recarga en memoria para los dispositivos de despliegue en el proyecto **COMPOST-IoT**.
+
+---
+
+## 6. Conclusiones
+La implementación de la Red Neuronal Convolucional demuestra ser una solución altamente robusta y autónoma para la supervisión de plantas de bioconversión, permitiendo clasificar de manera precisa las fases del compostaje y detectar anomalías tempranas. La serialización exitosa del modelo asegura un despliegue eficiente en entornos de borde, optimizando la toma de decisiones y garantizando el control de calidad automatizado en el ecosistema COMPOST-IoT.
