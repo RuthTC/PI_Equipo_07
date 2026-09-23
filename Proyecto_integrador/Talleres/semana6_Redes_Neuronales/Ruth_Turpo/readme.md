@@ -41,10 +41,9 @@ Al confirmar que el conjunto contiene únicamente las clases `['glass', 'plastic
 
 A continuación se muestran los ejemplos visuales generados:
 
-| Código de Visualización (img 2) | Resultados Visuales (img 3) |
-| :---: | :---: |
-
-| ![img 1](imagenes/img%202.png) |![img 1](imagenes/img%203.png) |
+| Visualización y Resultados |
+| :---: |
+| <img src="imagenes/img%202.png" width="400" style="display:inline-block;" /> <img src="imagenes/img%203.png" width="400" style="display:inline-block;" /> |
 
 ### 1.4: Aspectos Técnicos Destacados
 
@@ -58,7 +57,7 @@ A continuación se muestran los ejemplos visuales generados:
 
 ## 1.5: Modelo 1: CNN Desde Cero
 
-![Modelo 1 Architecture](rutas/a/tu/img4.png)
+![img 1](imagenes/img%204.png)
 
 Este código define la arquitectura completa de la CNN desde cero, separando el proceso en dos etapas:
 * **`features`:** Extrae bordes y texturas mediante capas convolucionales.
@@ -74,7 +73,7 @@ Este código define la arquitectura completa de la CNN desde cero, separando el 
 
 ## 1.7: Curvas de Entrenamiento y Diagnóstico
 
-![Curvas de entrenamiento](rutas/a/tu/img5.png)
+![img 1](imagenes/img%205.png)
 
 ### Análisis del Código de Graficación
 
@@ -83,12 +82,12 @@ plt.plot(history_scratch["train_loss"]) # Grafica el error que comete la red dur
 plt.plot(history_scratch["val_acc"])    # Rendimiento sobre datos nuevos de validación (Accuracy)
 plt.plot(history_scratch["val_auc"])    # Rendimiento sobre datos nuevos de validación (ROC-AUC)
 ## 5. Curvas de Entrenamiento
-
-| Gráfica 1: Pérdida (img 6) | Gráfica 2: Métricas (img 7) |
-| :---: | :---: |
-| ![img 6](rutas/a/tu/img6.png) | ![img 7](rutas/a/tu/img7.png) |
-
 ```
+| Gráficas de Pérdida y Métricas |
+| :---: |
+| <img src="imagenes/img%206.png" width="400" style="display:inline-block;" /> <img src="imagenes/img%207.png" width="400" style="display:inline-block;" /> |
+
+
 ### Gráfica 1: Pérdida de Entrenamiento
 * **¿Qué significa?** La "pérdida" mide cuántos errores comete el modelo.
 * **Resultado:** La línea va hacia abajo en cada época (de ~0.697 a ~0.672).
@@ -102,14 +101,14 @@ plt.plot(history_scratch["val_auc"])    # Rendimiento sobre datos nuevos de vali
 
 ## 1.8: Matriz de confusion
 
-![img 8](rutas/a/tu/img8.png)
+![img 1](imagenes/img%208.png)
 
 * `plt.imshow(cm)`: Muestra la matriz de confusión como una gráfica de colores para comparar las predicciones del modelo frente a los datos reales.
 * `plt.title(...)`, `plt.xlabel(...)`, `plt.ylabel(...)`: Añaden el título "Matriz de confusión (CNN desde cero)" y etiquetan los ejes horizontal (lo que predijo el modelo) y vertical (lo que era en realidad).
 * `plt.colorbar()`: Agrega la barra lateral de color que indica qué número representa cada tono (amarillo para valores altos y morado para valores bajos).
 * `plt.show()`: Renderiza el gráfico en pantalla.
 
-![img 9](rutas/a/tu/img9.png)
+![img 1](imagenes/img%209.png)
 
 #### Aciertos (Diagonal Principal):
 * **68 en Vidrio (0,0):** De las imágenes que eran vidrio, predijo correctamente 68.
@@ -206,7 +205,7 @@ plt.show()
 Graficamos la pérdida del entrenamiento frente a la de validación para ver si la red está aprendiendo bien o si se está "memorizando" los datos.
 Diagnóstico de Sobreajuste (Overfitting): Si la línea de entrenamiento (training) sigue bajando pero la de validación (val) empieza a subir a partir de ciertas épocas, indica que el modelo memorizó las reseñas de entrenamiento y perdió capacidad de generalizar sobre datos nuevos.
 Toma de Decisiones: Ayuda a determinar la época exacta para aplicar Early Stopping (detener el entrenamiento antes de que empiece a sobreajustar).
-![img 10](rutas/a/tu/img10.png)
+![img 1](imagenes/img%2010.png)
 
 Azul: error del modelo en entrenamiento.
 Anaranjado: error sobre datos de validación.
@@ -224,8 +223,7 @@ Aquí reducimos drásticamente la capacidad de la red: pasamos de 2 capas oculta
 
 *(subida como img 11)*
 
-![img 11](rutas/a/tu/img11.png)
-
+![img 1](imagenes/img%2011.png)
 * Con la muestra original hubo sobreajuste.
 * Con el modelo más chico, el mínimo de pérdida se mantiene más épocas y el incremento posterior es menor. Sigue habiendo sobreajuste, pero menos pronunciado.
 
@@ -238,7 +236,7 @@ model3.add(layers.Dense(16, activation='relu', kernel_regularizer=regularizers.l
 ```
 Aquí le ponemos un "freno" a la red. La regularización L2 castiga a la neurona si sus pesos se vuelven demasiado grandes o exagerados al memorizar palabras específicas. El valor 0.001 es la fuerza de esa penalización: obliga a la red a mantener sus pesos pequeños y distribuidos de forma más pareja.
 
-![img 12](rutas/a/tu/img12.png)
+![img 1](imagenes/img%2012.png)
 
 Durante el entrenamiento se apagan aleatoriamente el 50% de las neuronas. Esto obliga a la red a aprender de diferentes combinaciones de neuronas, para reducir el sobreajuste.
 ### 2.5: Predicciones
@@ -297,9 +295,9 @@ def test_perceptron(inputs, weights, bias, activation_func):
 * **OR** (pesos `[2, 1]`, bias `-0.5`): da 1 cuando al menos una entrada es 1.
 * **XOR**: da 1 cuando las entradas son diferentes.
 
-| AND | OR | XOR |
-| :---: | :---: | :---: |
-| ![img 13](rutas/a/tu/img13.png) | ![img 14](rutas/a/tu/img14.png) | ![img 15](rutas/a/tu/img15.png) |
+| Operadores Lógicos (AND, OR, XOR) |
+| :---: |
+| <img src="imagenes/img%2013.png" width="250" style="display:inline-block;" /> <img src="imagenes/img%2014.png" width="250" style="display:inline-block;" /> <img src="imagenes/img%2015.png" width="250" style="display:inline-block;" /> |
 
 ### Lógica Booleana en el Perceptrón (AND, OR y XOR)
 
@@ -376,7 +374,7 @@ modelo.fit(X_train, y_train)
 
 Para hacer la compostera realmente "inteligente" e interactiva con el usuario, la información procesada por el modelo se mostrará en dos interfaces complementarias:
 
-![img 16](rutas/a/tu/img16.png)
+![img 1](imagenes/img%2016.png)
 
 #### A. Pantalla LCD / OLED (Ubicada físicamente en la Compostera)
 Muestra la información de primera necesidad en tiempo real mediante mensajes directos y notas simples:
