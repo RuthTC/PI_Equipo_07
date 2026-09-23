@@ -1,1 +1,70 @@
+# 🚩 Redes Neuronales Convolucionales (CNN)
+
+## ¿Qué es una CNN y para qué sirve?
+
+Una **CNN (Red Neuronal Convolucional)** es una red diseñada para procesar imágenes. En lugar de ver la imagen como una lista plana de píxeles, entiende que los píxeles vecinos están relacionados y que los patrones (bordes, formas, texturas) pueden aparecer en cualquier parte de la imagen.
+
+**Cómo "ve" una CNN:**
+
+1. **Bordes** → contornos de la botella.
+2. **Formas** → cuello, cuerpo, tapa.
+3. **Texturas** → transparencia, brillo.
+4. **Decisión** → "esto es vidrio" o "esto es plástico".
+
+**Componentes clave:**
+
+| Componente | Función |
+|---|---|
+| **Conv2D** | Aplica filtros que detectan patrones locales. |
+| **ReLU** | Introduce no linealidad: `max(0, x)`. |
+| **MaxPool** | Reduce resolución manteniendo lo importante. |
+| **Dense/Linear** | Decide la clase final. |
+
+**Ventaja frente a una red densa:** comparte filtros (menos parámetros) y respeta la estructura espacial.
+
+---
+
+## 1. Preparación del entorno
+
+Se instalan las dependencias necesarias: `torch` y `torchvision` (construcción del modelo), `numpy` y `matplotlib` (cálculo y gráficas), `scikit-learn` (métricas), `tqdm` (barras de progreso) y `pillow` (carga de imágenes). También se monta Google Drive para acceder a datos y guardar resultados.
+
+---
+
+## 2. Carga del dataset (TrashNet)
+
+Se trabaja con **clasificación binaria**:
+
+- `0 = glass`
+- `1 = plastic`
+
+El `TrashDataset` divide automáticamente las imágenes en **train (70%)**, **validation (15%)** y **test (15%)**. La conversión a tensor con `T.ToTensor()` transforma los valores de la imagen (0–255) a tensores con valores entre 0 y 1.
+
+---
+
+## 3. Visualización de ejemplos
+
+```python
+def show_glass_plastic(dataset):
+    glass, plastic = [], []
+    for i in range(len(dataset)):
+        x, y = dataset[i]
+        label = int(y.item())
+        if label == 0 and len(glass) < 6:
+            glass.append((x, label))
+        elif label == 1 and len(plastic) < 6:
+            plastic.append((x, label))
+        if len(glass) == 6 and len(plastic) == 6:
+            break
+
+    for i, (x, label) in enumerate(glass + plastic):
+        plt.subplot(3, 4, i + 1)
+        plt.imshow(x.squeeze(0), cmap="gray")
+        plt.title(DataClass.classes[label])
+        plt.axis("off")
+    plt.show()
+
+show_glass_plastic(train_dataset)
+```
+* **Interpretación**: el x.squeeze(0) elimina la dimensión del canal para poder graficar con imshow. Esta visualización sirve para verificar que los datos se cargan correctamente y notar algo clave: las botellas de vidrio y de plástico se parecen mucho (ambas transparentes). Esto anticipa que una CNN entrenada desde cero tendrá dificultades.
+
 
