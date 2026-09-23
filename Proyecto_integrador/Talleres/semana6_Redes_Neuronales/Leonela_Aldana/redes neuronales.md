@@ -58,3 +58,39 @@ La segunda corresponde al mapa **Grad-CAM**. Las zonas amarillas y verdes muestr
 La tercera imagen corresponde a la **superposición** del mapa Grad-CAM sobre la imagen original. Se observa que el modelo concentra principalmente su atención en la zona central del objeto.
 
 Esto permite identificar visualmente qué partes de la imagen fueron más importantes para que la CNN realizara su clasificación.
+
+# Keras
+
+## Código importante
+
+![Código Keras](Captura%20de%20pantalla%202026-09-22%20215545.png)
+
+## Importancia y función del código
+
+Este código permite comparar el comportamiento del modelo durante el entrenamiento y la validación mediante los valores de pérdida (`loss`).
+
+Las líneas más importantes son:
+
+`loss_values = modelb_dict['loss']`
+
+`val_loss_values3 = modelb3.history['val_loss']`
+
+Estas líneas obtienen la pérdida durante el entrenamiento y la pérdida durante la validación. Posteriormente, estos valores se representan en una gráfica para observar cómo cambia el error a medida que avanzan las épocas.
+
+La importancia de este código está en que permite identificar si el modelo está aprendiendo correctamente o si presenta **sobreajuste (overfitting)**. También permite comparar el comportamiento del modelo original con el modelo al que se aplicó regularización.
+
+## Resultado obtenido
+
+![Resultado Keras](Captura%20de%20pantalla%202026-09-22%20215633.png)
+
+## Interpretación
+
+El gráfico muestra el comportamiento de la pérdida durante 20 épocas.
+
+La línea azul (`regularization - train`) representa la pérdida durante el entrenamiento. Esta disminuye progresivamente, lo que indica que el modelo aprende cada vez mejor los datos utilizados para entrenarlo.
+
+La línea naranja (`regularization - validation`) representa la pérdida de validación del modelo con regularización. Inicialmente disminuye, pero después comienza a aumentar.
+
+La línea verde discontinua (`original`) corresponde a la pérdida de validación del modelo original. También disminuye al inicio y posteriormente aumenta de manera más pronunciada.
+
+Esto indica la presencia de **sobreajuste**, porque mientras el error de entrenamiento continúa disminuyendo, el error de validación comienza a aumentar. La gráfica también permite comparar cómo la regularización modifica el comportamiento del modelo frente a datos que no fueron utilizados directamente para entrenarlo.
