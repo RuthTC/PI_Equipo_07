@@ -1,6 +1,8 @@
-╔══════════════════════════════════════════════╗
-║          🧠 TALLER DE REDES CNN              ║
-╚══════════════════════════════════════════════╝
+# ╔══════════════════════════════════════════════╗
+# ║          🧠 TALLER DE REDES CNN              ║
+# ╚══════════════════════════════════════════════╝
+
+
 ## ✿ Descripción de la actividad
 
 En esta actividad se desarrolla un modelo de **Red Neuronal Convolucional (CNN)** para la clasificación de imágenes relacionadas con la **retinopatía diabética**. El objetivo es analizar las imágenes y realizar una clasificación mediante técnicas de aprendizaje profundo.
