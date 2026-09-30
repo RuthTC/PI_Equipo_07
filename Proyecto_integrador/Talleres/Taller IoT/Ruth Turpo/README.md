@@ -1,7 +1,7 @@
 # Reporte de Actividades - Taller de Internet de las Cosas (IoT)
 ---
 
-## 🛠️ Equipamiento y Herramientas Utilizadas
+## Equipamiento y Herramientas Utilizadas
 * **Microcontrolador:** ESP32 Dev Kit v1[cite: 1]
 * **Sensores/Actuadores:** Potenciómetro, Kit de sensores Keystudio 48 en 1 (LM35, LDR, etc.), LED[cite: 1]
 * **Entornos y Plataformas:** Arduino IDE / Cloud, Ubidots, ThingSpeak[cite: 1]
@@ -52,7 +52,7 @@ void loop() {
   delay(500);
 }
 ```
-![img 1](imagenes/p%201.png)
+![Lectura Analógica con Promediado](p1.jpeg)
 
 #### **Análisis Técnico y Explicación**
 1. **Resolución del ADC:** El Convertidor Analógico a Digital (ADC) integrado en el ESP32 opera a una resolución por defecto de **12 bits**[cite: 1]. Esto significa que mapea el voltaje de entrada (0V a 3.3V) en un rango discreto de valores entre **0 y 4095** ($2^{12} - 1$)[cite: 1].
