@@ -331,12 +331,11 @@ Enlace de la API (Petición Web)
 ---
 
 
-Al escribir la dirección de la API en el navegador web con el valor field1=1 o field1=0, le enviamos una instrucción directa a ThingSpeak. El número que responde la página (como un 4 o 5) indica el número total de mensajes o comandos guardados en el canal.
-
-En el circuito físico, conectamos un LED con su resistencia al pin de salida del ESP32. De esta forma, cuando el microcontrolador lee el valor almacenado en la nube, enciende o apaga el LED según la orden enviada desde la web.
+Alcance de las Evidencias
+Las capturas muestran el envío de los comandos mediante la API de ThingSpeak y la confirmación del servidor al recibir la entrada. La respuesta física del sistema se valida mediante las fotografías del montaje y la activación en tiempo real del LED conectado al puerto GPIO del ESP32.
 
 Análisis
-Esta actividad nos enseñó que IoT no solo sirve para leer sensores, sino también para controlar cosas a distancia. Aprendimos a usar enlaces de API REST desde el navegador para mandar órdenes hacia la nube y lograr que un componente físico (como un LED) responda a esos comandos.
+Esta actividad nos enseñó que IoT no solo sirve para leer sensores, sino también para controlar actuadores a distancia. Aprendimos a usar peticiones HTTP REST desde el navegador para enviar instrucciones hacia la nube y lograr que un componente físico responda a esos comandos de forma bidireccional.
 
 Resultado
-Se logró probar el control bidireccional en ThingSpeak, cambiando el estado del canal mediante peticiones HTTP para la posterior activación y desactivación del actuador en la placa.
+Se logró establecer el control remoto del actuador, permitiendo modificar el estado del LED mediante comandos digitales enviados a ThingSpeak y procesados correctamente por el ESP32.
