@@ -52,7 +52,7 @@ void loop() {
   delay(500);
 }
 ```
-![Lectura Analógica con Promediado](img/p1.jpeg)
+![Lectura Analógica con Promediado](Img/p1.jpeg)
 
 #### **Análisis Técnico y Explicación**
 1. **Resolución del ADC:** El Convertidor Analógico a Digital (ADC) integrado en el ESP32 opera a una resolución por defecto de **12 bits**[cite: 1]. Esto significa que mapea el voltaje de entrada (0V a 3.3V) en un rango discreto de valores entre **0 y 4095** ($2^{12} - 1$)[cite: 1].
