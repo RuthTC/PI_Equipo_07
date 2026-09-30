@@ -314,6 +314,9 @@ Se probó el envío de comandos desde un navegador web usando la API REST de Thi
 
 </div>
 
+| Encendido del LED|
+![Lectura Analógica con Promediado](Img/p6.jpeg)
+
 Enlace de la API (Petición Web)
 ---
 **https://api.thingspeak.com/update?api_key=5YDHAABMXBWI1K8U&field1=1**
