@@ -52,9 +52,13 @@ void loop() {
   delay(500);
 }
 ```
-|  Resultados del cambio de Voltio  | Protoboard y Conexiones | 
-| :---: | :---: | 
-| ![Actualización de Field 1](Img/p1.jpeg) | ![Confirmación del Servidor](Img/p1_1.jpeg) | 
+<div align="center">
+
+| Resultados del Cambio de Voltaje en Monitor Serie | Protoboard y Conexiones |
+| :---: | :---: |
+| <img src="Img/p1.jpeg" alt="Resultados del Cambio de Voltaje en Monitor Serie" width="400"> | <img src="Img/p1_1.jpeg" alt="Protoboard y Conexiones" width="400"> |
+
+</div> 
 
 
 ###El promediado de las 10 muestras permite obtener una lectura más estable del potenciómetro. Al girarlo, el valor promedio del ADC aumenta o disminuye dependiendo de su posición física.
