@@ -1,4 +1,4 @@
-# Taller de Internet de las Cosas (IoT) con ESP32
+
 
 ## Actividad 1: Lectura de un potenciómetro con ESP32
 
