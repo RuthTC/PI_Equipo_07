@@ -13,7 +13,7 @@
 
 ---
 
-Actividad 01: Lectura Analógica con Promediado y Conversión a Voltaje (ESP32)
+## Actividad 01: Lectura Analógica con Promediado y Conversión a Voltaje (ESP32)
 
 #### **Descripción de la Actividad**
 Se configuró una entrada analógica en el puerto GPIO del ESP32 para realizar lecturas filtradas mediante el método de promediado de 10 muestras continuas. Posteriormente, el valor promedio del convertidor analógico-digital (ADC) se escaló a su correspondiente valor de tensión en voltios.
@@ -66,7 +66,7 @@ La técnica de promediado incrementa la precisión global del sistema de medici�
 
 ---
 
-Actividad 02: Escaneo de Redes e Interconexión Wi-Fi mediante Hotspot
+## Actividad 02: Escaneo de Redes e Interconexión Wi-Fi mediante Hotspot
 
 #### **Descripción de la Actividad**
 Se programó el módulo ESP32 en modo Estación (STA) para conectarse a un punto de acceso inalámbrico personal. El objetivo principal fue verificar el proceso de autenticación en la red y la obtención de una dirección IP dinámica válida mediante el protocolo DHCP.
@@ -115,7 +115,7 @@ El ESP32 quedó configurado y conectado exitosamente a la red Wi-Fi, establecien
 
 ---
 
-Actividad 03: Telemetría en Tiempo Real del Potenciómetro a la Nube (Arduino Cloud, ThingSpeak, Ubidots)
+## Actividad 03: Telemetría en Tiempo Real del Potenciómetro a la Nube (Arduino Cloud, ThingSpeak, Ubidots)
 
 #### **Descripción de la Actividad**
 Se conectó el potenciómetro al ESP32 para enviar sus lecturas hacia la plataforma en la nube ThingSpeak a través de Wi-Fi. El objetivo fue aprender a mandar datos desde un sensor físico hacia un servidor web en tiempo real.
@@ -201,7 +201,7 @@ Logramos enviar con éxito los valores del potenciómetro a la nube de ThingSpea
 
 ---
 
-Actividad 04: Monitoreo Múltiple con Sensores del Kit Keystudio (LM35 / LDR)
+## Actividad 04: Monitoreo Múltiple con Sensores del Kit Keystudio (LM35 / LDR)
 
 #### **Descripción de la Actividad**
 Se conectó un sensor ultrasónico HC-SR04 al ESP32 para medir la distancia a un objeto en centímetros y enviar automáticamente esos valores a la nube en ThingSpeak, comprobando que el servidor reciba la información correctamente.
@@ -302,7 +302,7 @@ Resultado
 Se logró medir la distancia en tiempo real e integrar el sensor HC-SR04 con ThingSpeak, confirmando el correcto envío de la información en cada intervalo mediante la respuesta HTTP 200.
 ---
 
-Actividad 05: Control Bidireccional Remoto de Actuador (LED) mediante Plataforma Web
+## Actividad 05: Control Bidireccional Remoto de Actuador (LED) mediante Plataforma Web
 
 #### **Descripción de la Actividad**
 Se probó el envío de comandos desde un navegador web usando la API REST de ThingSpeak para cambiar el estado de un campo en la nube (field1) a 1 o 0, y así controlar de forma remota un LED conectado al ESP32.
