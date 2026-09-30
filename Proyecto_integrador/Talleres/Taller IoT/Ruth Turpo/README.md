@@ -329,7 +329,6 @@ Enlace de la API (Petición Web)
 ---
 **https://api.thingspeak.com/update?api_key=5YDHAABMXBWI1K8U&field1=1**
 ---
-
 Alcance de las Evidencias
 Las capturas muestran el envío de los comandos mediante la API de ThingSpeak y la confirmación del servidor al recibir la entrada. La respuesta física del sistema se valida mediante las fotografías del montaje y la activación en tiempo real del LED conectado al puerto GPIO del ESP32.
 
