@@ -314,8 +314,9 @@ Se probó el envío de comandos desde un navegador web usando la API REST de Thi
 
 </div>
 
-| Encendido del LED|
-![Lectura Analógica con Promediado](Img/p6.jpeg)
+| Encendido del LED |
+| :---: |
+| ![Encendido del LED](Img/P6.jpeg) |
 
 Enlace de la API (Petición Web)
 ---
