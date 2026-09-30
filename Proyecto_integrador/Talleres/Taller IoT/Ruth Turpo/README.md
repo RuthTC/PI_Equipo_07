@@ -54,78 +54,278 @@ void loop() {
 ```
 ![Lectura Analógica con Promediado](Img/p1.jpeg)
 
-#### **Análisis Técnico y Explicación**
-1. **Resolución del ADC:** El Convertidor Analógico a Digital (ADC) integrado en el ESP32 opera a una resolución por defecto de **12 bits**[cite: 1]. Esto significa que mapea el voltaje de entrada (0V a 3.3V) en un rango discreto de valores entre **0 y 4095** ($2^{12} - 1$)[cite: 1].
-2. **Filtrado por Promediado (Suavizado):** Para atenuar las fluctuaciones de alta frecuencia causadas por interferencias electromagnéticas o ruido térmico, se captura un conjunto de $N$ muestras consecutivas y se calcula su media aritmética:
-   $$\bar{X} = \frac{1}{N} \sum_{i=1}^{N} \text{ADC}_i$$
-3. **Conversión a Voltaje:** Aplicando la relación de proporcionalidad directa para la referencia de tensión del ESP32 ($V_{\text{ref}} = 3.3\text{V}$):
-   $$V_{\text{calculado}} = \left( \frac{\bar{X}}{4095} \right) \times 3.3\,\text{V}$$
+###El promediado de las 10 muestras permite obtener una lectura más estable del potenciómetro. Al girarlo, el valor promedio del ADC aumenta o disminuye dependiendo de su posición física.
 
-#### **Conclusión/Resultado**
-La técnica de promediado incrementa la precisión global del sistema de medición, estabilizando los datos presentados por el puerto serie antes de que sean procesados o transmitidos hacia la nube[cite: 1].
+La conversión a voltaje permite interpretar la lectura de una forma más directa. La relación entre el valor del ADC y el voltaje calculado utiliza la referencia teórica del ESP32 para escalar la señal analógica entre 0V y 3.3V.
+
+**Análisis**
+La actividad permitió comprobar la lectura de una señal analógica utilizando el ESP32. El uso del promedio reduce las variaciones causadas por el ruido eléctrico y permite obtener valores más consistentes. Además, la conversión de la lectura digital a voltios facilita la interpretación directa de los datos obtenidos en el Monitor Serie.
+
+#### **Resultado**
+La técnica de promediado incrementa la precisión global del sistema de medición, estabilizando los datos presentados por el puerto serie antes de que sean procesados o transmitidos hacia la nube.
 
 ---
 
 ### 🔹 Actividad 02: Escaneo de Redes e Interconexión Wi-Fi mediante Hotspot
 
 #### **Descripción de la Actividad**
-Se utilizó la biblioteca `<WiFi.h>` para inicializar la interfaz de red del ESP32 en modo estación (STA), realizando la detección activa de Access Points (AP) cercanos y, posteriormente, estableciendo enlace con un punto de acceso móvil (*Smartphone Hotspot*) para obtener una IP local[cite: 1].
+Se programó el módulo ESP32 en modo Estación (STA) para conectarse a un punto de acceso inalámbrico personal. El objetivo principal fue verificar el proceso de autenticación en la red y la obtención de una dirección IP dinámica válida mediante el protocolo DHCP.
+**Código Fuente**
+```
+#include <WiFi.h>
 
-#### **Análisis Técnico y Explicación**
-1. **Escaneo Wi-Fi:** Mediante el método `WiFi.scanNetworks()`, el microcontrolador rastrea los canales de la banda de 2.4 GHz[cite: 1]. Se extraen variables fundamentales de diagnóstico como:
-   * **SSID:** Nombre del punto de acceso[cite: 1].
-   * **RSSI (Received Signal Strength Indicator):** Indicador de potencia de señal expresado en dBm (valores cercanos a 0 representan mejor recepción)[cite: 1].
-   * **Tipo de Cifrado:** Identificación del esquema de seguridad (WPA2, WEP, Open)[cite: 1].
-2. **Gestión de Conexión:** La librería `<WiFi.h>` implementa el *stack* TCP/IP que gestiona el proceso de autenticación de cuatro vías (WPA2) y la solicitud de parámetros de red vía **DHCP**[cite: 1].
-3. **Obtención de Dirección IP:** Tras autenticarse, el servidor DHCP asigna una dirección IP privada al ESP32[cite: 1]. Esta IP es verificada mediante `WiFi.localIP()` y desplegada en el Monitor Serie para confirmar la conectividad lógica dentro de la red[cite: 1].
+const char* ssid = "iPhone";
+const char* password = "leonela18";
+
+void setup() {
+  Serial.begin(115200);
+
+  Serial.println();
+  Serial.print("Conectando a: ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("¡Conectado al WiFi!");
+
+  Serial.print("Direccion IP: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+
+}
+```
+![Lectura Analógica con Promediado](Img/p2.jpeg)
+La inicialización del módulo Wi-Fi permite al ESP32 autenticarse en la red local y solicitar una dirección IP pública/privada. Al restablecer el microcontrolador, el sistema intenta la conexión hasta confirmar el enlace exitoso.
+
+La asignación de la dirección IP confirma que el ESP32 está correctamente integrado en la red local. Esto habilita al dispositivo para enviar y recibir datos a través de protocolos de internet en las siguientes actividades.
+
+Análisis
+La actividad permitió verificar la conectividad inalámbrica del ESP32 utilizando la librería WiFi.h. La impresión de los puntos de espera en el Monitor Serie ayuda a monitorear el proceso de enlace en tiempo real, mientras que la obtención de la dirección IP valida que el dispositivo cuenta con acceso a la red local.
+
+Resultado
+El ESP32 quedó configurado y conectado exitosamente a la red Wi-Fi, estableciendo la base de comunicación necesaria para la transmisión de telemetría hacia servicios IoT en la nube.
 
 ---
 
 ### 🔹 Actividad 03: Telemetría en Tiempo Real del Potenciómetro a la Nube (Arduino Cloud, ThingSpeak, Ubidots)
 
 #### **Descripción de la Actividad**
-Se programó el ESP32 para publicar periódicamente las lecturas procesadas del potenciómetro de forma simultánea o enrutada hacia tres plataformas de gestión IoT Middleware: **Arduino IoT Cloud**, **ThingSpeak** y **Ubidots**[cite: 1].
+Se conectó el potenciómetro al ESP32 para enviar sus lecturas hacia la plataforma en la nube ThingSpeak a través de Wi-Fi. El objetivo fue aprender a mandar datos desde un sensor físico hacia un servidor web en tiempo real.
+**Código Fuente**
+```
+#include <WiFi.h>
+#include "ThingSpeak.h"
 
-#### **Análisis Técnico y Explicación**
-1. **Arquitectura Middleware:** La actividad conecta la capa de *Hardware* (ESP32) con la capa de *Aplicación* usando servidores intermedios en la nube[cite: 1].
-2. **Mecanismo de Envío por Plataforma:**
-   * **Arduino IoT Cloud:** Utiliza sincronización basada en variables con seguimiento de estado (*Device Property Synchronization*)[cite: 1].
-   * **ThingSpeak:** Utiliza solicitudes HTTP POST o GET enviando la clave de API (*Write API Key*) y mapeando el valor analógico al `field1`[cite: 1].
-   * **Ubidots:** Emplea payloads formateados en JSON a través de sockets o llamadas HTTP/MQTT enviando el token de autenticación para actualizar la variable definida[cite: 1].
-3. **Frecuencia de Muestreo y Limitaciones:** Se implementó una temporización no bloqueante mediante `millis()` para respetar los límites de velocidad (*rate limits*) e intervalos mínimos de publicación de las APIs de las plataformas gratuitas[cite: 1].
+// ===== WIFI =====
+const char* ssid = "iPhone";
+const char* password = "leonela18";
+
+// ===== THINGSPEAK =====
+unsigned long channelID = 3515313;
+const char* writeAPIKey = "IPJ4ESZWMBTPQAQI";
+
+// ===== POTENCIOMETRO =====
+const int potPin = 34;
+
+WiFiClient client;
+
+void setup() {
+
+  Serial.begin(115200);
+
+  pinMode(potPin, INPUT);
+
+  // Conectar al WiFi
+  WiFi.begin(ssid, password);
+
+  Serial.print("Conectando al WiFi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("WiFi conectado");
+
+  Serial.print("Direccion IP: ");
+  Serial.println(WiFi.localIP());
+
+  // Iniciar ThingSpeak
+  ThingSpeak.begin(client);
+}
+
+void loop() {
+
+  // Leer potenciometro
+  int valorPot = analogRead(potPin);
+
+  Serial.print("Potenciometro: ");
+  Serial.println(valorPot);
+
+  // Enviar valor al Field 1
+  ThingSpeak.setField(1, valorPot);
+
+  int respuesta = ThingSpeak.writeFields(channelID, writeAPIKey);
+
+  if (respuesta == 200) {
+    Serial.println("Dato enviado correctamente a ThingSpeak");
+  } else {
+    Serial.print("Error al enviar. Codigo HTTP: ");
+    Serial.println(respuesta);
+  }
+
+  // Esperar antes del siguiente envio
+  delay(20000);
+}
+```
+![Lectura Analógica con Promediado](Img/p3.jpeg)
+
+El envío de los datos nos permite ver en pantalla la lectura que toma el potenciómetro y confirmar que llegó bien a la nube. Cada vez que giramos la perilla, la lectura cambia y el programa manda ese nuevo número al canal de ThingSpeak.
+
+Para que el servidor acepte nuestros datos, fue necesario usar una clave única (API Key) y el número de canal. Además, tuvimos que poner un tiempo de espera de 20 segundos entre cada envío porque la plataforma gratuita no permite mandar datos muy seguido.
+
+Análisis
+Esta actividad nos ayudó a entender cómo funciona la telemetría en IoT. Aprendimos que no basta con leer el sensor en el microcontrolador, sino que usando internet y una librería especial (ThingSpeak.h) podemos guardar y consultar la información de nuestro circuito desde cualquier lugar a través de la web.
+
+Resultado
+Logramos enviar con éxito los valores del potenciómetro a la nube de ThingSpeak, verificando en el Monitor Serie que cada paquete de datos se transmite correctamente sin interrupciones.
 
 ---
 
 ### 🔹 Actividad 04: Monitoreo Múltiple con Sensores del Kit Keystudio (LM35 / LDR)
 
 #### **Descripción de la Actividad**
-Se sustituyó el potenciómetro por un sensor del kit Keystudio (como el sensor de temperatura analógico **LM35** o el fotorresistor **LDR**) para capturar variables físicas reales del entorno y transmitirlas en tiempo real a los dashboards de la nube[cite: 1].
+Se conectó un sensor ultrasónico HC-SR04 al ESP32 para medir la distancia a un objeto en centímetros y enviar automáticamente esos valores a la nube en ThingSpeak, comprobando que el servidor reciba la información correctamente.
+**Código Fuente**
+```
+#include <WiFi.h>
+#include "ThingSpeak.h"
 
-#### **Análisis Técnico y Explicación**
-1. **Acondicionamiento según el Sensor:**
-   * **LM35:** Otorga una respuesta lineal de $10\,\text{mV}/^\circ\text{C}$. La temperatura se escala mediante:
-     $$T (^\circ\text{C}) = \frac{V_{\text{medido}} (\text{mV})}{10\,\text{mV}/^\circ\text{C}}$$
-   * **LDR (Fotorresistor):** Dispuesto en un divisor de tensión, donde la variación de luminiscencia modifica su resistencia interna y altera el voltaje entregado al pin del ADC[cite: 1].
-2. **Comportamiento del Sistema IoT:** Se demostró la versatilidad de la arquitectura: la capa física del sistema puede intercambiarse (diferentes tipos de sensores) manteniendo la misma infraestructura de transmisión y visualización en el Middleware (dashboards)[cite: 1].
+// ===== WIFI =====
+const char* ssid = "iPhone";
+const char* password = "leonela18";
 
+// ===== THINGSPEAK =====
+unsigned long channelID = 3515313;
+const char* writeAPIKey = "IPJ4ESZWMBTPQAQI";
+
+// ===== SENSOR ULTRASONICO =====
+const int trigPin = 5;
+const int echoPin = 18;
+
+WiFiClient client;
+
+void setup() {
+
+  Serial.begin(115200);
+
+  // Configurar pines del HC-SR04
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  // Conectar al WiFi
+  WiFi.begin(ssid, password);
+
+  Serial.print("Conectando al WiFi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("WiFi conectado");
+
+  Serial.print("Direccion IP: ");
+  Serial.println(WiFi.localIP());
+
+  // Iniciar ThingSpeak
+  ThingSpeak.begin(client);
+}
+
+void loop() {
+
+  // Generar pulso ultrasónico
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  // Medir tiempo que demora en regresar el sonido
+  long duracion = pulseIn(echoPin, HIGH, 30000);
+
+  // Calcular distancia en centimetros
+  float distancia = duracion * 0.0343 / 2;
+
+  Serial.print("Distancia: ");
+  Serial.print(distancia);
+  Serial.println(" cm");
+
+  // Enviar distancia a Field 1
+  ThingSpeak.setField(1, distancia);
+
+  int respuesta = ThingSpeak.writeFields(channelID, writeAPIKey);
+
+  if (respuesta == 200) {
+    Serial.println("Dato enviado correctamente a ThingSpeak");
+  } else {
+    Serial.print("Error al enviar. Codigo HTTP: ");
+    Serial.println(respuesta);
+  }
+
+  // Esperar 20 segundos antes del siguiente envio
+  delay(20000);
+}
+```
+![Lectura Analógica con Promediado](Img/p4.jpeg)
+
+La medición de distancia nos permite calcular qué tan cerca o lejos está un objeto usando el tiempo que tarda el sonido en rebotar. Al mover la mano frente al sensor, vemos en el Monitor Serie cómo la distancia cambia en centímetros.
+
+El código de respuesta HTTP 200 es la señal que nos da ThingSpeak para avisarnos que el dato llegó sin problemas a la plataforma. Si saliera otro número, sabríamos que hubo un error de conexión o de clave.
+
+Análisis
+En esta actividad aprendimos a trabajar con un sensor digital de ultrasonido y a interpretar las respuestas de un servidor web. Comprendimos que cuando el ESP32 hace una petición en la nube, el servidor nos devuelve un código (como el 200) para confirmarnos que los datos fueron guardados con éxito.
+
+Resultado
+Se logró medir la distancia en tiempo real e integrar el sensor HC-SR04 con ThingSpeak, confirmando el correcto envío de la información en cada intervalo mediante la respuesta HTTP 200.
 ---
 
 ### 🔹 Actividad 05: Control Bidireccional Remoto de Actuador (LED) mediante Plataforma Web
 
 #### **Descripción de la Actividad**
-Se implementó un esquema de control descendente (*Cloud-to-Device*), permitiendo encender y apagar un LED físico conectado a un pin digital del ESP32 accionando un interruptor virtual (*Widget Switch*) en la plataforma web[cite: 1].
+Se probó el envío de comandos desde un navegador web usando la API REST de ThingSpeak para cambiar el estado de un campo en la nube (field1) a 1 o 0, y así controlar de forma remota un LED conectado al ESP32.
+<div align="center">
 
-#### **Análisis Técnico y Explicación**
-1. **Comunicación Bidireccional:** A diferencia de la telemetría (donde el dispositivo es emisor), aquí el ESP32 actúa como receptor/suscriptor de comandos generados en la nube[cite: 1].
-2. **Consumo de Eventos y Callbacks:**
-   * Cuando el usuario presiona el botón en la interfaz web, la plataforma actualiza el valor del estado (1 o 0) y lo envía al ESP32.
-   * La biblioteca en el ESP32 ejecuta una función de interrupción por software (*Callback*) al detectar un cambio en el valor recibido.
-   * La función procesa el cambio y ajusta el estado lógico del pin digital mediante `digitalWrite(LED_PIN, estado)`.
-3. **Relevancia del Protocolo:** Se sienta la base de los sistemas de automatización y control distribuido, donde la latencia de red influye directamente en el tiempo de respuesta del actuador[cite: 1].
+| Petición API (`field1=1`) | Respuesta del Servidor | Circuito Actuador LED |
+| :---: | :---: | :---: |
+| ![Actualización de Field 1](Img/p5_1.jpeg) | ![Confirmación del Servidor](Img/p5_2.jpeg) | ![Montaje de Circuito LED](Img/p5_3.jpeg) |
 
+</div>
+
+Enlace de la API (Petición Web)
+---
+**https://api.thingspeak.com/update?api_key=5YDHAABMXBWI1K8U&field1=1**
 ---
 
-## 📌 Conclusiones del Taller
-1. **Consolidación de Arquitecturas IoT:** Se integraron de manera funcional las capas de adquisición (sensores/ADC), comunicación (Wi-Fi/TCP/IP), procesamiento intermedio (Middleware) y capa de usuario (Dashboards/Nube)[cite: 1].
-2. **Gestión de Datos Analógicos:** La aplicación de algoritmos básicos como el promediado resulta esencial para garantizar la fidelidad de las mediciones antes de ser publicadas en entornos de IoT[cite: 1].
-3. **Flexibilidad de Control e Interacción:** El soporte bidireccional del ESP32 permite estructurar tanto redes de monitoreo de variables ambientales como sistemas de telecontrol e interacción remota en tiempo real[cite: 1].
+
+Al escribir la dirección de la API en el navegador web con el valor field1=1 o field1=0, le enviamos una instrucción directa a ThingSpeak. El número que responde la página (como un 4 o 5) indica el número total de mensajes o comandos guardados en el canal.
+
+En el circuito físico, conectamos un LED con su resistencia al pin de salida del ESP32. De esta forma, cuando el microcontrolador lee el valor almacenado en la nube, enciende o apaga el LED según la orden enviada desde la web.
+
+Análisis
+Esta actividad nos enseñó que IoT no solo sirve para leer sensores, sino también para controlar cosas a distancia. Aprendimos a usar enlaces de API REST desde el navegador para mandar órdenes hacia la nube y lograr que un componente físico (como un LED) responda a esos comandos.
+
+Resultado
+Se logró probar el control bidireccional en ThingSpeak, cambiando el estado del canal mediante peticiones HTTP para la posterior activación y desactivación del actuador en la placa.
