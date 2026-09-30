@@ -52,7 +52,10 @@ void loop() {
   delay(500);
 }
 ```
-![Lectura Analógica con Promediado](Img/p1.jpeg)
+|  Resultados del cambio de Voltio  | Protoboard y Conexiones | 
+| :---: | :---: | 
+| ![Actualización de Field 1](Img/p1.jpeg) | ![Confirmación del Servidor](Img/p1_1.jpeg) | 
+
 
 ###El promediado de las 10 muestras permite obtener una lectura más estable del potenciómetro. Al girarlo, el valor promedio del ADC aumenta o disminuye dependiendo de su posición física.
 
