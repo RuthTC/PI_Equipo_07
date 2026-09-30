@@ -138,6 +138,12 @@ Desde el navegador se envía una solicitud a la API de ThingSpeak con el valor c
 
 <img src="WhatsApp%20Image%202026-09-29%20at%207.33.10%20PM.jpeg" alt="Configuración de la API de ThingSpeak" width="600">
 
+### Evidencia del montaje de la actividad 5
+
+<img src="WhatsApp%20Image%202026-09-29%20at%207.28.51%20PM.jpeg" alt="LED encendido conectado al ESP32" width="600">
+
+**Figura 8.** Montaje del circuito de la actividad 5. Se observa el LED rojo encendido en la protoboard, junto con la resistencia y los cables de conexión al ESP32.
+
 **Figura 7.** Configuración de las claves y solicitudes de la API del canal de ThingSpeak.
 
 ### Alcance de las evidencias
