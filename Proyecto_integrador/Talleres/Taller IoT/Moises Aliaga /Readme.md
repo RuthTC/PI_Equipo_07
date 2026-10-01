@@ -287,6 +287,146 @@ La gráfica **"Potenciometro ESP32"** (Field 1) muestra **5 entradas** (*Entries
 La ESP32 está montada en la protoboard y alimentada por USB. El potenciómetro se conecta con cables jumper de colores: 3V3, GND y la señal al GPIO 34. En la foto se gira la perilla con la mano, lo que hace variar los valores que aparecen en la gráfica.
 
 ---
+## Ejercicio 4: Sensor ultrasónico HC-SR04 con ESP32 y envío de datos a ThingSpeak
+
+### 1. Descripción de lo que hicimos
+
+Conectamos un **sensor ultrasónico HC-SR04** del kit de sensores a la ESP32 para medir la **distancia a un objeto** y enviar esa medida a **ThingSpeak**. La ESP32 se conecta a una red WiFi, emite un pulso ultrasónico, mide el tiempo que tarda el eco en regresar, calcula la distancia en centímetros y la envía al **Field 1** del canal cada 20 segundos. El monitor serie muestra cada medición y si el envío fue exitoso.
+
+### 2. Código
+
+```cpp
+#include <WiFi.h>
+#include "ThingSpeak.h"
+
+// ===== WIFI =====
+const char* ssid = "iPhone";
+const char* password = "leonela18";
+
+// ===== THINGSPEAK =====
+unsigned long channelID = 3515313;
+const char* writeAPIKey = "IPJ4ESZWMBTPQAQI";
+
+// ===== SENSOR ULTRASONICO =====
+const int trigPin = 5;
+const int echoPin = 18;
+
+WiFiClient client;
+
+void setup() {
+
+  Serial.begin(115200);
+
+  // Configurar pines del HC-SR04
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  // Conectar al WiFi
+  WiFi.begin(ssid, password);
+
+  Serial.print("Conectando al WiFi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("WiFi conectado");
+
+  Serial.print("Direccion IP: ");
+  Serial.println(WiFi.localIP());
+
+  // Iniciar ThingSpeak
+  ThingSpeak.begin(client);
+}
+
+void loop() {
+
+  // Generar pulso ultrasónico
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  // Medir tiempo que demora en regresar el sonido
+  long duracion = pulseIn(echoPin, HIGH, 30000);
+
+  // Calcular distancia en centimetros
+  float distancia = duracion * 0.0343 / 2;
+
+  Serial.print("Distancia: ");
+  Serial.print(distancia);
+  Serial.println(" cm");
+
+  // Enviar distancia a Field 1
+  ThingSpeak.setField(1, distancia);
+
+  int respuesta = ThingSpeak.writeFields(channelID, writeAPIKey);
+
+  if (respuesta == 200) {
+    Serial.println("Dato enviado correctamente a ThingSpeak");
+  } else {
+    Serial.print("Error al enviar. Codigo HTTP: ");
+    Serial.println(respuesta);
+  }
+
+  // Esperar 20 segundos antes del siguiente envio
+  delay(20000);
+}
+```
+
+### 3. Evidencia del código y del resultado en el Monitor Serie
+
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/Taller%20IoT/Moises%20Aliaga%20/imagen/image.png"> 
+
+### 4. Resultados y análisis
+
+**Salida del monitor serie:**
+
+```
+Distancia: 6.45 cm
+Dato enviado correctamente a ThingSpeak
+Distancia: 8.80 cm
+Dato enviado correctamente a ThingSpeak
+Distancia: 14.34 cm
+Dato enviado correctamente a ThingSpeak
+```
+
+**Interpretación:**
+
+- **Conexión WiFi:** la ESP32 se conectó y recibió la IP `172.20.10.3`, una dirección privada asignada por el hotspot del smartphone.
+- **Distancias medidas:** 6.45 cm → 8.80 cm → 14.34 cm. Los valores aumentan en cada lectura, lo que indica que el objeto se fue **alejando** del sensor entre mediciones.
+- **Envío exitoso:** tras cada medición aparece *"Dato enviado correctamente a ThingSpeak"*. Esto significa que `writeFields()` devolvió el código **200**, es decir, ThingSpeak recibió y guardó el dato.
+- **Intervalo de 20 s:** supera el mínimo de 15 s que exige ThingSpeak en su versión gratuita, por eso no hubo rechazos.
+
+**Cómo funciona la medición:**
+
+1. Se envía un pulso de 10 µs por el pin **Trig** (GPIO 5), que hace que el sensor emita una ráfaga de ultrasonido.
+2. `pulseIn(echoPin, HIGH, 30000)` mide cuántos microsegundos permanece en alto el pin **Echo** (GPIO 18), que es el tiempo que tarda el sonido en ir al objeto y volver. El límite de 30 000 µs evita que el programa se quede esperando si no hay eco.
+3. La distancia se calcula con `duracion × 0.0343 / 2`:
+   - `0.0343` cm/µs es la velocidad del sonido (≈ 343 m/s).
+   - Se divide entre 2 porque el sonido recorre el camino de **ida y vuelta**.
+4. Si no regresa ningún eco, `pulseIn` devuelve 0 y la distancia resulta 0 cm; ese valor indica que no hubo una lectura válida.
+
+### 5. ¿Por qué es importante su aplicación?
+
+- **Medición de distancia sin contacto:** es la base de sistemas como sensores de estacionamiento, robots que evitan obstáculos y medición del nivel de líquidos en tanques.
+- **Monitoreo remoto del mundo físico:** al enviar la distancia a la nube, se puede supervisar desde cualquier lugar y guardar un historial. Un ejemplo es saber cuándo un tanque o un contenedor de residuos está por llenarse.
+- **Integra todo el flujo IoT:** sensor → microcontrolador → WiFi → plataforma en la nube. Es el mismo esquema del Ejercicio 3, ahora con un sensor digital en lugar de uno analógico.
+- **Aprendizaje de señales de tiempo:** aquí la información está en el *tiempo* de un pulso, no en un voltaje. Esto muestra otra forma de adquirir datos con un microcontrolador.
+
+### 6. Conexiones del montaje
+
+| HC-SR04 | ESP32 |
+|---|---|
+| Trig | GPIO 5 |
+| Echo | GPIO 18 |
+| VCC y GND | Alimentación y tierra de la placa |
+
 ---
 ## Ejercicio 5: LED con ESP32 y registro de su estado en ThingSpeak
 
