@@ -161,11 +161,16 @@ Los nodos `mqtt in` (`equipo07/sensor/datos`) y `Publicar Comandos` aparecen com
 - **Control LED:** el interruptor aparece activado, lo que corresponde al comando `ON` publicado en `equipo07/actuadores/led`, que el ESP32 recibe y ejecuta con `digitalWrite(LED_PIN, HIGH)`.
 - Los valores del dashboard (25.3 °C y 72 %) difieren ligeramente de los del monitor serie (25.4 °C y 67 a 69 %) porque las capturas corresponden a momentos distintos. La humedad del DHT11 cambia rápido con la cercanía de las manos o la respiración.
 
-### 5.5 Circuito físico 
+### 5.5 Gráfico de tendencias (Imagen 6)
+ 
+El gráfico muestra la temperatura publicada en `equipo07/sensor/datos` entre aproximadamente las 7:38 y las 7:58, y se distinguen tres partes:
+ 
+- **Tramo inicial (7:38 a 7:46):** la temperatura salta de forma brusca entre unos 24 y 34 °C de una lectura a la siguiente. Ese rango coincide exactamente con el que genera el código de datos simulados (24.0 a 33.9 °C), por lo que corresponde a la **primera etapa, con valores aleatorios**.
+- **Línea recta descendente (7:46 a 7:56):** no es una medición. Es la unión que dibuja el gráfico entre el último dato y el siguiente cuando no llegaron mensajes, lo que corresponde al tiempo en que se detuvo el ESP32 y se cargó la versión con el DHT11.
+- **Tramo final (desde 7:56):** los puntos aparecen estables en torno a 13 °C, ya sin las oscilaciones aleatorias, lo que es propio de un sensor real. 
+La diferencia entre el tramo inicial (cambios bruscos sin relación física) y el tramo con sensor (valores estables) permite visualizar la diferencia entre datos simulados y mediciones reales. El gráfico de tendencias es útil en ingeniería porque permite detectar variaciones, picos y comportamientos anómalos que no se aprecian en un medidor que muestra solo el valor instantáneo.
 
-Se observa el ESP32 conectado por USB a la laptop, el DHT11 y el LED con su resistencia en la protoboard. El montaje coincide con los pines definidos en el código (DHT11 en el GPIO 4 y LED en el GPIO 2).
-
----
+ <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/Taller%20IoT/imagen/Tablero%20de%20grafica%20de%20tendencia.jpg">
 
 ## 6. Conclusiones
 
