@@ -70,10 +70,10 @@ El mantenimiento convencional se basa en inspecciones esporádicas e intuitivas 
 ### Objetivo
 
 **Objetivo General:**  
-Optimizar la gestión y el seguimiento del proceso de compostaje de residuos orgánicos domésticos vegetales mediante el monitoreo continuo de variables ambientales (temperatura, humedad y gases $CO_2$/$NH_3#) e integración de tecnología IoT, asegurando la viabilidad biológica del proceso, facilitando la toma de decisiones del usuario mediante una interfaz interactiva y automatizando acciones correctivas de hidratación.
+Optimizar la gestión y el seguimiento del proceso de compostaje de residuos orgánicos domésticos vegetales mediante el monitoreo continuo de variables ambientales (temperatura, humedad y gases $CO_2$/NH_3) e integración de tecnología IoT, asegurando la viabilidad biológica del proceso, facilitando la toma de decisiones del usuario mediante una interfaz interactiva y automatizando acciones correctivas de hidratación.
 
 **Objetivos Específicos:**
-* **Medir y registrar** cuantitativamente la temperatura interna (hasta rango termofílico de 65°C), la humedad relativa de la biomasa y la concentración de gases ($CO_2$/$NH_3#) mediante un arreglo de sensores conectados a un microcontrolador ESP32 para determinar el estado de descomposición de los residuos vegetales.
+* **Medir y registrar** cuantitativamente la temperatura interna (hasta rango termofílico de 65°C), la humedad relativa de la biomasa y la concentración de gases ($CO_2$/NH_3) mediante un arreglo de sensores conectados a un microcontrolador ESP32 para determinar el estado de descomposición de los residuos vegetales.
 * **Visualizar e interactuar** con el usuario a través de un módulo de visualización de datos (pantalla TFT/OLED) con interfaz gráfica, que exponga en tiempo real el estado del compost y solicite intervenciones manuales (como aireación o volteo) según las lecturas obtenidas.
 * **Activar automáticamente** un sistema de riego integrado al detectar niveles de humedad inferiores al rango óptimo (<50%), garantizando la hidratación necesaria para la actividad microbiana sin requerir intervención manual constante.
 
