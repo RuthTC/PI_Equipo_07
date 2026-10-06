@@ -61,7 +61,7 @@ Sin embargo, el proceso biológico de descomposición requiere un control riguro
 
 En los entornos urbanos, el manejo inadecuado de los residuos orgánicos genera un impacto ambiental negativo considerable. En el ámbito doméstico, la falta de herramientas para monitorear las condiciones internas del compostaje dificulta mantener la actividad microbiana aeróbica idónea.
 
-Esta problemática surge cuando los **residuos exclusivamente vegetales** pierden sus rangos óptimos de operación: **humedad (por debajo del 50%)** y **temperatura (rango mesofílico de 35°C a 45°C y termofílico de hasta 65°C)** [1]. La falta de aireación y el desequilibrio hídrico generan condiciones anaeróbicas que derivan en la emisión de malos olores y gases como dióxido de carbono ($CO_2$) y amoniaco ($NH_3$), indicadores directos de pérdidas de nitrógeno y una degradación ineficiente de la materia orgánica.
+Esta problemática surge cuando los **residuos exclusivamente vegetales** pierden sus rangos óptimos de operación: **humedad (por debajo del 50%)** y **temperatura (rango mesofílico de 35°C a 45°C y termofílico de hasta 65°C)** [1]. La falta de aireación y el desequilibrio hídrico generan condiciones anaeróbicas que derivan en la emisión de malos olores y gases como dióxido de carbono ($CO_2$) y amoniaco ($NH_3#), indicadores directos de pérdidas de nitrógeno y una degradación ineficiente de la materia orgánica.
 
 El mantenimiento convencional se basa en inspecciones esporádicas e intuitivas sin conocer el estado del núcleo de la biomasa vegetal. Esto provoca intervenciones erróneas (sobrehidratación o sequedad extrema). Diversos estudios demuestran que el monitoreo mediante sensores IoT optimiza la descomposición, reduce emisiones nocivas y asegura la calidad del producto final [2], [3]. La ausencia de un sistema accesible de monitoreo continuo provoca frustración en el usuario, el abandono de la práctica y la disposición final de estos residuos en vertederos, perdiendo la oportunidad de aplicar economía circular en los hogares.
 
@@ -70,10 +70,10 @@ El mantenimiento convencional se basa en inspecciones esporádicas e intuitivas 
 ### Objetivo
 
 **Objetivo General:**  
-Optimizar la gestión y el seguimiento del proceso de compostaje de residuos orgánicos domésticos vegetales mediante el monitoreo continuo de variables ambientales (temperatura, humedad y gases $CO_2$/$NH_3$) e integración de tecnología IoT, asegurando la viabilidad biológica del proceso, facilitando la toma de decisiones del usuario mediante una interfaz interactiva y automatizando acciones correctivas de hidratación.
+Optimizar la gestión y el seguimiento del proceso de compostaje de residuos orgánicos domésticos vegetales mediante el monitoreo continuo de variables ambientales (temperatura, humedad y gases $CO_2$/$NH_3#) e integración de tecnología IoT, asegurando la viabilidad biológica del proceso, facilitando la toma de decisiones del usuario mediante una interfaz interactiva y automatizando acciones correctivas de hidratación.
 
 **Objetivos Específicos:**
-* **Medir y registrar** cuantitativamente la temperatura interna (hasta rango termofílico de 65°C), la humedad relativa de la biomasa y la concentración de gases ($CO_2$/$NH_3$) mediante un arreglo de sensores conectados a un microcontrolador ESP32 para determinar el estado de descomposición de los residuos vegetales.
+* **Medir y registrar** cuantitativamente la temperatura interna (hasta rango termofílico de 65°C), la humedad relativa de la biomasa y la concentración de gases ($CO_2$/$NH_3#) mediante un arreglo de sensores conectados a un microcontrolador ESP32 para determinar el estado de descomposición de los residuos vegetales.
 * **Visualizar e interactuar** con el usuario a través de un módulo de visualización de datos (pantalla TFT/OLED) con interfaz gráfica, que exponga en tiempo real el estado del compost y solicite intervenciones manuales (como aireación o volteo) según las lecturas obtenidas.
 * **Activar automáticamente** un sistema de riego integrado al detectar niveles de humedad inferiores al rango óptimo (<50%), garantizando la hidratación necesaria para la actividad microbiana sin requerir intervención manual constante.
 
