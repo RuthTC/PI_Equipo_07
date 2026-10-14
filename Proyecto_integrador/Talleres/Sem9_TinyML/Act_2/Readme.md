@@ -1,4 +1,4 @@
-
+<img width="1153" height="708" alt="Captura de pantalla 2026-10-13 183744" src="https://github.com/user-attachments/assets/606b2a52-5a00-4dda-8d67-547c17e8738b" />
 
 # Clasificación de imágenes con SenseCraft AI
 
@@ -33,7 +33,10 @@ Se definieron tres categorías:
 
 Se capturaron 26 imágenes para las categorías Mouse y Lentes utilizando la cámara del dispositivo.
 
-![Recolección de imágenes](imagenes/imagen1.png)
+<img width="1153" height="708" alt="Captura de pantalla 2026-10-13 183744" src="https://github.com/user-attachments/assets/c20a3699-e059-4f43-b0db-1e9ba5f6a52e" />
+
+
+
 
 ### Evidencia 2: Tercera categoría
 
