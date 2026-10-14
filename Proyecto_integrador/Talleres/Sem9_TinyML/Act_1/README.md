@@ -176,12 +176,14 @@ Formato del registro: `boxes: [[x, y, w, h, score, clase]]`, con clase **0 = mal
 *Confianza = 51 · Umbral IoU = 60*
 
 ### 8.3 Detección de hombres: Juan y Moisés
-
+| | |
+|---|---|
 <img width="1600" height="872" alt="WhatsApp Image 2026-10-13 at 6 25 12 PM" src="https://github.com/user-attachments/assets/f78b7a25-0420-437a-ab71-584f12f06b45" />
 *Izquierda: **Juan**, `male` 76 % · Derecha: **Moisés**, `male` 59 %*
 
 ### 8.4 Detección de mujeres: Ruth y Leonela
-
+| | |
+|---|---|
 <img width="1600" height="871" alt="WhatsApp Image- 2026-10-13 at 6 25 13 PM" src="https://github.com/user-attachments/assets/4bd59348-1bc6-43f4-8cf3-25f272e5939e" />
 *Izquierda: **Ruth**, `female` 83 % · Derecha: **Leonela**, `female` 83 %*
 
