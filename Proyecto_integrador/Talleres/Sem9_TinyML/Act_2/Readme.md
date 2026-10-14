@@ -41,7 +41,10 @@ Se capturaron 26 imágenes para las categorías Mouse y Lentes utilizando la cá
 
 Se agregó la categoría Lentes Negro con 26 imágenes para completar el conjunto de entrenamiento.
 
-![Categoría Lentes Negro](imagenes/imagen2.png)
+
+<img width="962" height="207" alt="Captura de pantalla 2026-10-13 190350" src="https://github.com/user-attachments/assets/0ccba202-56c7-4171-8cc6-76be52c8eda2" />
+
+
 
 ## 4. Entrenamiento del modelo
 
@@ -57,13 +60,17 @@ Se realizaron pruebas utilizando distintos objetos frente a la cámara para comp
 
 El modelo identificó la categoría **Lentes** con una confianza del 97 %.
 
-![Reconocimiento de lentes](imagenes/imagen3.png)
+<img width="1152" height="707" alt="Captura de pantalla 2026-10-13 183824" src="https://github.com/user-attachments/assets/2ab4cdf2-72d5-484b-a767-bfb6a4c7f65c" />
+
 
 ### Evidencia 4: Reconocimiento de mouse
 
 Al colocar un mouse frente a la cámara, el modelo identificó la categoría **Mouse** con una confianza del 96 %.
 
-![Reconocimiento de mouse](imagenes/imagen4.png)
+
+<img width="378" height="582" alt="Captura de pantalla 2026-10-13 190713" src="https://github.com/user-attachments/assets/a976ddaa-b4a2-4328-9269-de7bb1f26a97" />
+
+
 
 ### Evidencia 5: Reconocimiento de lentes negros
 
@@ -75,7 +82,8 @@ Al colocar lentes negros frente a la cámara, se obtuvo el siguiente resultado:
 
 El modelo identificó correctamente la categoría de mayor confianza.
 
-![Reconocimiento de lentes negros](imagenes/imagen5.png)
+<img width="245" height="360" alt="Captura de pantalla 2026-10-13 190818" src="https://github.com/user-attachments/assets/21936132-3579-4fc9-8c6c-56f313f992e1" />
+
 
 ## 6. Resultados
 
