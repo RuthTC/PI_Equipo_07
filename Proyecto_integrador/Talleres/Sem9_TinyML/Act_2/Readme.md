@@ -62,6 +62,9 @@ El modelo identificó la categoría **Lentes** con una confianza del 91 %.
 
 
 
+<img width="320" height="492" alt="Captura de pantalla 2026-10-13 191151" src="https://github.com/user-attachments/assets/086111a5-2e22-4fd1-8917-c8ce7fea2f80" />
+
+
 
 
 ### Evidencia 4: Reconocimiento de mouse
