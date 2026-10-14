@@ -171,8 +171,11 @@ Formato del registro: `boxes: [[x, y, w, h, score, clase]]`, con clase **0 = mal
 | *Equipo trabajando en el laboratorio* | *XIAO ESP32S3 Sense con cámara montado sobre la pantalla* |
 
 ### 8.2 Configuración de parámetros
-<img width="409" height="206" alt="Captura de pantalla 2026-10-13 225046" src="https://github.com/user-attachments/assets/f6d1dc5d-d03b-41fb-9a42-2c1fffc10b24" />  
-*Confianza = 51 · Umbral IoU = 60*
+<p align="center">
+  <img width="500" alt="Captura de pantalla 2026-10-13 225046" src="https://github.com/user-attachments/assets/f6d1dc5d-d03b-41fb-9a42-2c1fffc10b24" />
+  <br>
+  <em>Confianza = 51 · Umbral IoU = 60</em>
+</p>
 
 ### 8.3 Detección de hombres: Juan y Moisés
 <p align="center">
