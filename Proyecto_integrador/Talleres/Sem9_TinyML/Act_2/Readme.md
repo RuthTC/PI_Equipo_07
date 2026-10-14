@@ -58,9 +58,10 @@ Se realizaron pruebas utilizando distintos objetos frente a la cámara para comp
 
 ### Evidencia 3: Reconocimiento de lentes
 
-El modelo identificó la categoría **Lentes** con una confianza del 97 %.
+El modelo identificó la categoría **Lentes** con una confianza del 91 %.
 
-<img width="1152" height="707" alt="Captura de pantalla 2026-10-13 183824" src="https://github.com/user-attachments/assets/2ab4cdf2-72d5-484b-a767-bfb6a4c7f65c" />
+
+
 
 
 ### Evidencia 4: Reconocimiento de mouse
