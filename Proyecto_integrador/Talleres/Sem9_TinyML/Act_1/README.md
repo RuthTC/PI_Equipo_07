@@ -167,32 +167,36 @@ Formato del registro: `boxes: [[x, y, w, h, score, clase]]`, con clase **0 = mal
 ### 8.1 Montaje y trabajo en el laboratorio
 | | |
 |---|---|
-| ![Laboratorio](imagenes/01_laboratorio.png) | ![Montaje XIAO](imagenes/02_montaje_xiao.png) |
-| *Equipo trabajando en el laboratorio* | *XIAO ESP32S3 Sense con cámara montado sobre la pantalla* |
+| <img width="1600" height="1200" alt="zsaf" src="https://github.com/user-attachments/assets/fe5565e8-6a72-42be-be08-21db1095cbc5" /> | <img width="1200" height="1600" alt="WhatsApp Image 2026-10-13 at 6 26 10 PM" src="https://github.com/user-attachments/assets/45d1ab9c-bf86-40e5-bc46-03ecf49c9983" /> |
+| *Equipo trabajando en el laboratorio* | *XIAO ESP32S3 Sense con cámara montado sobre la pantalla*|
 
 ### 8.2 Configuración de parámetros
-![Configuración Confianza 51 e IoU 60](imagenes/configuracion_51_60.png)
+
+<img width="409" height="206" alt="Captura de pantalla 2026-10-13 225046" src="https://github.com/user-attachments/assets/f6d1dc5d-d03b-41fb-9a42-2c1fffc10b24" />
 *Confianza = 51 · Umbral IoU = 60*
 
 ### 8.3 Detección de hombres: Juan y Moisés
-![Juan y Moisés](imagenes/deteccion_juan_moises.png)
+
+<img width="1600" height="872" alt="WhatsApp Image 2026-10-13 at 6 25 12 PM" src="https://github.com/user-attachments/assets/f78b7a25-0420-437a-ab71-584f12f06b45" />
 *Izquierda: **Juan**, `male` 76 % · Derecha: **Moisés**, `male` 59 %*
 
 ### 8.4 Detección de mujeres: Ruth y Leonela
-![Ruth y Leonela](imagenes/deteccion_ruth_leonela.png)
+
+<img width="1600" height="871" alt="WhatsApp Image- 2026-10-13 at 6 25 13 PM" src="https://github.com/user-attachments/assets/4bd59348-1bc6-43f4-8cf3-25f272e5939e" />
 *Izquierda: **Ruth**, `female` 83 % · Derecha: **Leonela**, `female` 83 %*
 
 ### 8.5 Otras pruebas
 | | |
 |---|---|
-| ![Ruth y Leonela 2](imagenes/deteccion_ruth_leonela_2.png) | ![Grupo de 3](imagenes/deteccion_grupo_3.png) |
+| <img width="1600" height="826" alt="WhatsApp Image 2026-10-13 at 6 25 13 PM" src="https://github.com/user-attachments/assets/9d94ce9d-ef2f-499f-9431-5e6ee48af72e" /> | <img width="1504" height="798" alt="WhatsApp Image 2026-10-13 at 6 25 32 PM" src="https://github.com/user-attachments/assets/4ab67d6a-06ef-4fcf-82b4-3e6a08bde626" /> |
 | *Ruth 88 % · Leonela 89 %* | *Grupo mixto de 3 personas* |
 
+
 ### 8.6 Registro del dispositivo
-![Registro del dispositivo](imagenes/registro_dispositivo.png)
+<img width="1600" height="1200" alt="WhatsApp Image 2026-10-13 at 6 24 44 PM" src="https://github.com/user-attachments/assets/62f13f4f-dc14-4776-bbb2-871758e671e3" />
 
 ### 8.7 Configuración de la acción GPIO (LED)
-![GPIO LED](imagenes/gpio_led.png)
+<img width="1600" height="685" alt="WhatsApp Image 2026-10-13 at 6 45 29 PM" src="https://github.com/user-attachments/assets/904ac9b8-74d2-4260-84a9-6e8552b6b0d5" />
 
 ---
 
