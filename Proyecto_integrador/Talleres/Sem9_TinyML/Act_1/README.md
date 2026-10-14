@@ -1,4 +1,4 @@
-# 🤖 Actividad 1: Detección de género (hombre / mujer) con TinyML
+#  Actividad 1: Detección de género (hombre / mujer) con TinyML
 
 **Plataforma:** SenseCraft AI · **Hardware:** Seeed Studio XIAO ESP32S3 Sense (cámara integrada)
 **Taller:** TinyML con XIAO ESP32S3 Sense, Universidad Peruana Cayetano Heredia
