@@ -168,23 +168,18 @@ Formato del registro: `boxes: [[x, y, w, h, score, clase]]`, con clase **0 = mal
 | | |
 |---|---|
 | <img width="1600" height="1200" alt="zsaf" src="https://github.com/user-attachments/assets/fe5565e8-6a72-42be-be08-21db1095cbc5" /> | <img width="1200" height="1600" alt="WhatsApp Image 2026-10-13 at 6 26 10 PM" src="https://github.com/user-attachments/assets/45d1ab9c-bf86-40e5-bc46-03ecf49c9983" /> |
-| *Equipo trabajando en el laboratorio* | *XIAO ESP32S3 Sense con cámara montado sobre la pantalla*|
+| *Equipo trabajando en el laboratorio* | *XIAO ESP32S3 Sense con cámara montado sobre la pantalla* |
 
 ### 8.2 Configuración de parámetros
-
-<img width="409" height="206" alt="Captura de pantalla 2026-10-13 225046" src="https://github.com/user-attachments/assets/f6d1dc5d-d03b-41fb-9a42-2c1fffc10b24" />
+<img width="409" height="206" alt="Captura de pantalla 2026-10-13 225046" src="https://github.com/user-attachments/assets/f6d1dc5d-d03b-41fb-9a42-2c1fffc10b24" />  
 *Confianza = 51 · Umbral IoU = 60*
 
 ### 8.3 Detección de hombres: Juan y Moisés
-| | |
-|---|---|
-<img width="1600" height="872" alt="WhatsApp Image 2026-10-13 at 6 25 12 PM" src="https://github.com/user-attachments/assets/f78b7a25-0420-437a-ab71-584f12f06b45" />
+<img width="1600" height="872" alt="WhatsApp Image 2026-10-13 at 6 25 12 PM" src="https://github.com/user-attachments/assets/f78b7a25-0420-437a-ab71-584f12f06b45" />  
 *Izquierda: **Juan**, `male` 76 % · Derecha: **Moisés**, `male` 59 %*
 
 ### 8.4 Detección de mujeres: Ruth y Leonela
-| | |
-|---|---|
-<img width="1600" height="871" alt="WhatsApp Image- 2026-10-13 at 6 25 13 PM" src="https://github.com/user-attachments/assets/4bd59348-1bc6-43f4-8cf3-25f272e5939e" />
+<img width="1600" height="871" alt="WhatsApp Image 2026-10-13 at 6 25 13 PM" src="https://github.com/user-attachments/assets/4bd59348-1bc6-43f4-8cf3-25f272e5939e" />  
 *Izquierda: **Ruth**, `female` 83 % · Derecha: **Leonela**, `female` 83 %*
 
 ### 8.5 Otras pruebas
