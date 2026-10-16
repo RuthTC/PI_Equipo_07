@@ -25,17 +25,17 @@ En la evidencia de Arduino IDE se identifica la placa **XIAO_ESP32S3** y el puer
 
 Se utilizó el ejemplo de servidor de cámara ESP32 para obtener imágenes a través de la red Wi-Fi. El Monitor Serie muestra conexión exitosa y el mensaje `Camera Ready!`, con la dirección local `http://172.20.10.2`. Esta dirección corresponde a la red usada durante la práctica y puede cambiar en otra sesión.
 
-![Monitor Serie: conexión Wi-Fi y cámara lista](imagenes/01_monitor_serie_wifi_camara.png)
+![Monitor Serie: conexión Wi-Fi y cámara lista](imagen/01_monitor_serie_wifi_camara.png)
 
 *Figura 1. El dispositivo se conecta a Wi-Fi y anuncia la disponibilidad de la cámara.*
 
 Desde el navegador se abrió la interfaz **ESP32 OV3660**, con transmisión de imagen y ajustes de cámara. En las capturas se observa una resolución **QVGA (320 × 240)**.
 
-![Interfaz web de cámara, primera captura](imagenes/02_stream_camara_ruth_y_celular_1.png)
+![Interfaz web de cámara, primera captura](imagen/02_stream_camara_ruth_y_celular_1.png)
 
 *Figura 2. Interfaz web de la cámara y primera vista capturada.*
 
-![Interfaz web de cámara, segunda captura](imagenes/03_stream_camara_ruth_y_celular_2.png)
+![Interfaz web de cámara, segunda captura](imagen/03_stream_camara_ruth_y_celular_2.png)
 
 *Figura 3. Segunda vista de la transmisión de la cámara.*
 
@@ -43,11 +43,11 @@ Desde el navegador se abrió la interfaz **ESP32 OV3660**, con transmisión de i
 
 Se trabajó con dos etiquetas: **`Ruth`**, correspondiente a imágenes de una compañera, y **`celular`**, correspondiente a imágenes de un teléfono. Las siguientes fotografías documentan la toma de imágenes durante la práctica; no sustituyen el dataset completo.
 
-![Evidencia fotográfica de la clase Ruth](imagenes/04_foto_clase_ruth.png)
+![Evidencia fotográfica de la clase Ruth](imagen/04_foto_clase_ruth.png)
 
 *Figura 4. Evidencia de adquisición de imágenes para la clase `Ruth`.*
 
-![Evidencia fotográfica de la clase celular](imagenes/05_foto_clase_celular.png)
+![Evidencia fotográfica de la clase celular](imagen/05_foto_clase_celular.png)
 
 *Figura 5. Evidencia de adquisición de imágenes para la clase `celular`.*
 
@@ -55,13 +55,13 @@ Se trabajó con dos etiquetas: **`Ruth`**, correspondiente a imágenes de una co
 
 Se cargaron imágenes de cada clase con sus etiquetas. La evidencia de carga de la clase `celular` confirma **25 archivos subidos correctamente y 0 fallidos**. Se seleccionó la partición automática entre entrenamiento y prueba.
 
-![Carga de 25 imágenes de la clase celular](imagenes/06_carga_25_imagenes_celular.png)
+![Carga de 25 imágenes de la clase celular](imagen/06_carga_25_imagenes_celular.png)
 
 *Figura 6. Carga satisfactoria de 25 imágenes etiquetadas `celular`.*
 
 El panel **Dataset** registra **50 elementos**, distribuidos en **40 imágenes para entrenamiento (80 %) y 10 para prueba (20 %)**.
 
-![Resumen del dataset con 50 elementos](imagenes/07_dataset_50_imagenes.png)
+![Resumen del dataset con 50 elementos](imagen/07_dataset_50_imagenes.png)
 
 *Figura 7. Resumen del conjunto de datos y partición 80/20.*
 
@@ -79,23 +79,23 @@ El panel **Dataset** registra **50 elementos**, distribuidos en **40 imágenes p
 
 Se creó un *impulse* de clasificación de imágenes con entrada de **96 × 96 píxeles**, bloque de procesamiento **Image** y bloque de aprendizaje **Transfer Learning (Images)**, con dos clases de salida.
 
-![Configuración del impulse](imagenes/08_creacion_impulse_96x96.png)
+![Configuración del impulse](imagen/08_creacion_impulse_96x96.png)
 
 *Figura 8. Diseño del flujo de procesamiento y clasificación de imágenes.*
 
 Posteriormente se inició la generación de características sobre las **40 imágenes de entrenamiento**.
 
-![Pantalla previa a generar características](imagenes/09_generacion_caracteristicas_inicio.png)
+![Pantalla previa a generar características](imagen/09_generacion_caracteristicas_inicio.png)
 
 *Figura 9. Preparación de la generación de características.*
 
-![Registro de generación de características](imagenes/10_generacion_caracteristicas_log.png)
+![Registro de generación de características](imagen/10_generacion_caracteristicas_log.png)
 
 *Figura 10. El registro informa 40 ventanas generadas: 21 de `Ruth` y 19 de `celular`.*
 
 En el explorador de características se observan dos agrupaciones diferenciadas, una por cada clase. Esta separación visual es favorable para el clasificador, aunque por sí sola no demuestra rendimiento sobre imágenes no vistas.
 
-![Explorador de características](imagenes/11_explorador_caracteristicas.png)
+![Explorador de características](imagen/11_explorador_caracteristicas.png)
 
 *Figura 11. Representación de características por clase.*
 
@@ -103,7 +103,7 @@ En el explorador de características se observan dos agrupaciones diferenciadas,
 
 La captura de validación reporta **100 % de exactitud**, **pérdida (*loss*) de 0.04**, matriz de confusión sin errores visibles y puntuación **F1 = 1.00** para ambas clases. Se trata de resultados del conjunto de validación mostrado por la plataforma, no de una garantía de funcionamiento general.
 
-![Resultados de validación y matriz de confusión](imagenes/12_validacion_matriz_confusion.png)
+![Resultados de validación y matriz de confusión](imagen/12_validacion_matriz_confusion.png)
 
 *Figura 12. Exactitud, pérdida, matriz de confusión y métricas de validación.*
 
@@ -113,7 +113,7 @@ La captura de validación reporta **100 % de exactitud**, **pérdida (*loss*) de
 
 En la pantalla de clasificación individual se probó la muestra `Ruth_006`. La etiqueta esperada era `Ruth` y la salida mostrada fue **`Ruth = 1.00`** y **`celular = 0`**.
 
-![Clasificación individual de Ruth_006](imagenes/13_clasificacion_imagen_ruth.png)
+![Clasificación individual de Ruth_006](imagen/13_clasificacion_imagen_ruth.png)
 
 *Figura 13. Resultado de clasificación de la muestra `Ruth_006`.*
 
@@ -121,15 +121,15 @@ En la pantalla de clasificación individual se probó la muestra `Ruth_006`. La 
 
 Se ejecutó **Model testing** con las **10 imágenes de prueba**. La tabla visible contiene **4 muestras `Ruth` y 6 muestras `celular`**, todas clasificadas correctamente en esta ejecución.
 
-![Vista conjunta de pruebas y resultados](imagenes/14_model_testing_resumen.png)
+![Vista conjunta de pruebas y resultados](imagen/14_model_testing_resumen.png)
 
 *Figura 14. Vista general de las muestras de prueba y del panel de resultados.*
 
-![Detalle de las 10 muestras de prueba](imagenes/15_model_testing_10_muestras.png)
+![Detalle de las 10 muestras de prueba](imagen/15_model_testing_10_muestras.png)
 
 *Figura 15. Tabla de las diez muestras y sus etiquetas predichas.*
 
-![Métricas del conjunto de prueba](imagenes/16_model_testing_metricas.png)
+![Métricas del conjunto de prueba](imagen/16_model_testing_metricas.png)
 
 *Figura 16. Resultado del conjunto de prueba: exactitud de 100 %, precisión, exhaustividad y F1 ponderados de 1.00.*
 
@@ -155,13 +155,13 @@ En la sección de despliegue se compararon las versiones **Quantized (int8)** y 
 
 Estas cifras son **estimaciones de Edge Impulse para el objetivo de referencia mostrado**, no mediciones directas en el XIAO ESP32S3.
 
-![Comparación de modelos cuantizado y sin optimizar](imagenes/17_optimizacion_int8_vs_float32.png)
+![Comparación de modelos cuantizado y sin optimizar](imagen/17_optimizacion_int8_vs_float32.png)
 
 *Figura 17. Comparación de rendimiento y memoria; selección de la versión INT8.*
 
 Se generó una **biblioteca de Arduino** desde Edge Impulse. La plataforma indicó la ruta de instalación `Sketch > Include Library > Add .ZIP Library...` y el ejemplo del proyecto.
 
-![Biblioteca de Arduino generada](imagenes/18_biblioteca_arduino_generada.png)
+![Biblioteca de Arduino generada](imagen/18_biblioteca_arduino_generada.png)
 
 *Figura 18. Confirmación de generación de biblioteca para Arduino IDE.*
 
@@ -169,7 +169,7 @@ Se generó una **biblioteca de Arduino** desde Edge Impulse. La plataforma indic
 
 Durante la implementación se intentó compilar el proyecto en **Arduino IDE**, con la placa **XIAO ESP32S3** conectada al puerto **COM6**. El proceso permaneció durante un tiempo prolongado en el estado **«Compilando proyecto...»**, sin completarse dentro del tiempo disponible para la práctica.
 
-![Compilación prolongada en Arduino IDE](imagenes/19_compilacion_arduino_pendiente.png)
+![Compilación prolongada en Arduino IDE](imagen/19_compilacion_arduino_pendiente.png)
 
 *Figura 19. Evidencia de Arduino IDE durante la compilación del proyecto.*
 
