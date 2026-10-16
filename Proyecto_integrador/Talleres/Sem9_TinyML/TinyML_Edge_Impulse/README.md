@@ -25,7 +25,7 @@ En la evidencia de Arduino IDE se identifica la placa **XIAO_ESP32S3** y el puer
 
 Se utilizó el ejemplo de servidor de cámara ESP32 para obtener imágenes a través de la red Wi-Fi. El Monitor Serie muestra conexión exitosa y el mensaje `Camera Ready!`, con la dirección local `http://172.20.10.2`. Esta dirección corresponde a la red usada durante la práctica y puede cambiar en otra sesión.
 
-![Monitor Serie: conexión Wi-Fi y cámara lista](Recursos_Imágenes/01_monitor_serie_wifi_camara.png)
+![Monitor Serie: conexión Wi-Fi y cámara lista](imagenes/01_monitor_serie_wifi_camara.png)
 
 *Figura 1. El dispositivo se conecta a Wi-Fi y anuncia la disponibilidad de la cámara.*
 
