@@ -11,7 +11,7 @@
 
 Desarrollar y evaluar un modelo básico de clasificación de imágenes de dos categorías (`Ruth` y `celular`) usando Edge Impulse y preparar su implementación en una placa XIAO ESP32S3 Sense con cámara.
 
-## 1. Configuración inicial de Arduino IDE y XIAO ESP32S3 Sense (guía, pp. 2–5)
+## 1. Configuración inicial de Arduino IDE y XIAO ESP32S3 Sense 
 
 Siguiendo la guía, la configuración contempla instalar el soporte de placas ESP32 de Espressif, seleccionar la placa **XIAO ESP32S3**, elegir el puerto correspondiente y habilitar **OPI PSRAM** para disponer de memoria adicional durante el procesamiento de imágenes. La URL de tarjetas indicada por la guía es:
 
@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 
 En la evidencia de Arduino IDE se identifica la placa **XIAO_ESP32S3** y el puerto **COM6**. No se adjuntaron capturas individuales de todas las opciones de instalación y configuración, por lo que se documentan como procedimiento de referencia de la guía, no como comprobación visual de cada ajuste.
 
-## 2. Preparación de la cámara y captura de imágenes (guía, pp. 6–12)
+## 2. Preparación de la cámara y captura de imágenes
 
 Se utilizó el ejemplo de servidor de cámara ESP32 para obtener imágenes a través de la red Wi-Fi. El Monitor Serie muestra conexión exitosa y el mensaje `Camera Ready!`, con la dirección local `http://172.20.10.2`. Esta dirección corresponde a la red usada durante la práctica y puede cambiar en otra sesión.
 
@@ -51,7 +51,7 @@ Se trabajó con dos etiquetas: **`Ruth`**, correspondiente a imágenes de una co
 
 *Figura 5. Evidencia de adquisición de imágenes para la clase `celular`.*
 
-## 3. Proyecto y dataset en Edge Impulse (guía, pp. 13–15)
+## 3. Proyecto y dataset en Edge Impulse 
 
 Se cargaron imágenes de cada clase con sus etiquetas. La evidencia de carga de la clase `celular` confirma **25 archivos subidos correctamente y 0 fallidos**. Se seleccionó la partición automática entre entrenamiento y prueba.
 
@@ -75,7 +75,7 @@ El panel **Dataset** registra **50 elementos**, distribuidos en **40 imágenes p
 
 > **Archivo de datos:** la entrega requiere `Data.zip` con las imágenes originales y sus etiquetas o carpetas por clase. **Ese ZIP no se ha incluido**, porque no se proporcionó el conjunto original de 50 imágenes. Las fotografías y capturas del presente README no reemplazan ese archivo.
 
-## 4. Creación del *impulse*, procesamiento y entrenamiento (guía, pp. 16–19)
+## 4. Creación del *impulse*, procesamiento y entrenamiento 
 
 Se creó un *impulse* de clasificación de imágenes con entrada de **96 × 96 píxeles**, bloque de procesamiento **Image** y bloque de aprendizaje **Transfer Learning (Images)**, con dos clases de salida.
 
@@ -107,7 +107,7 @@ La captura de validación reporta **100 % de exactitud**, **pérdida (*loss*) de
 
 *Figura 12. Exactitud, pérdida, matriz de confusión y métricas de validación.*
 
-## 5. Clasificación y pruebas estadísticas en Edge Impulse (guía, pp. 20–21)
+## 5. Clasificación y pruebas estadísticas en Edge Impulse 
 
 ### 5.1. Prueba de clasificación de una imagen
 
@@ -143,7 +143,7 @@ A partir de las evidencias de la plataforma se documentan **tres comprobaciones 
 
 La plataforma también muestra **ROC AUC = 1.00**; sin embargo, el registro de ejecución incluye una advertencia `UndefinedMetricWarning` que indica que el AUC no está definido cuando `y_true` contiene una sola clase en un cálculo. Por tanto, **no se debe usar el AUC como prueba concluyente** sin revisar cómo se generó esa métrica. Asimismo, el conjunto de prueba es reducido y puede no representar cambios de iluminación, distancia o entorno.
 
-## 6. Exportación del modelo e implementación en Arduino IDE (guía, pp. 21–26)
+## 6. Exportación del modelo e implementación en Arduino IDE 
 
 En la sección de despliegue se compararon las versiones **Quantized (int8)** y **Unoptimized (float32)**. La estimación mostrada por Edge Impulse para un objetivo Cortex-M4F a 80 MHz fue:
 
