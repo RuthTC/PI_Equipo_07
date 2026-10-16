@@ -177,11 +177,67 @@ Durante la implementación se intentó compilar el proyecto en **Arduino IDE**, 
 
 > **Aclaración sobre `Modelo.zip`:** el ZIP adjunto contiene un archivo de modelo **TensorFlow Lite INT8** (`.lite`). No es necesariamente el mismo ZIP de la biblioteca de Arduino generado en la Figura 18. Si la entrega requiere la biblioteca Arduino completa, es necesario adjuntar también el ZIP exportado desde la opción *Arduino library* de Edge Impulse.
 
-## 7. Visualización y pruebas en SenseCraft (guía, pp. 27–29)
+## 7. Implementación y pruebas en SenseCraft AI
 
-La guía propone volver al proyecto de Edge Impulse, elegir el modelo **TensorFlow Lite (int8 quantized)** y subirlo desde **SenseCraft > Workspace / Espacio de trabajo > Upload Model / Subir modelo**.
+### 7.1. Carga y ejecución del modelo
 
-**Estado de la práctica:** no se proporcionó captura de una carga o inferencia concluida en SenseCraft. Por ello, esta sección queda **pendiente de evidencia** y no se reporta como una prueba realizada. Se indicó una dificultad para seleccionar el archivo del modelo en el cuadro *Model File*, cuya compatibilidad con el dispositivo debe verificarse antes de continuar.
+Se utilizó la plataforma **SenseCraft AI** para realizar pruebas de clasificación de imágenes con el modelo entrenado previamente en Edge Impulse.
+
+El modelo permite reconocer dos clases:
+
+- **Ruth:** imágenes de una compañera.
+- **celular:** imágenes de un teléfono móvil.
+
+Durante las pruebas se utilizó la cámara conectada al dispositivo para capturar imágenes y realizar inferencias en tiempo real.
+
+### 7.2. Prueba de reconocimiento de la clase Ruth
+
+Se colocó a la compañera frente a la cámara para comprobar si el modelo podía reconocer correctamente la clase **Ruth**.
+
+El sistema mostró los siguientes resultados:
+
+- Clase Ruth: **66 %**
+- Clase celular: **0 %**
+
+La predicción principal correspondió a la clase Ruth, por lo que se considera que el modelo logró reconocer correctamente a la compañera durante esta prueba.
+
+![Prueba de reconocimiento de Ruth en SenseCraft](imagen/20_ruth.jpeg)
+
+*Figura 20. Reconocimiento de la clase Ruth mediante SenseCraft AI.*
+
+### 7.3. Prueba de reconocimiento de la clase celular
+
+Posteriormente, se colocó un teléfono móvil frente a la cámara para comprobar el reconocimiento de la segunda clase.
+
+Los resultados obtenidos fueron:
+
+- Clase Ruth: **0 %**
+- Clase celular: **96 %**
+
+El sistema identificó correctamente el teléfono móvil, mostrando una puntuación de confianza del 96 % para la clase celular.
+
+![Prueba de reconocimiento de celular en SenseCraft](imagen/21_celular.jpeg)
+
+*Figura 21. Reconocimiento de la clase celular mediante SenseCraft AI.*
+
+### 7.4. Resultados y observaciones
+
+Las dos pruebas realizadas en SenseCraft permitieron comprobar el funcionamiento del modelo en la clasificación de imágenes.
+
+| Clase evaluada | Resultado | Predicción |
+|---|---|---|
+| Ruth | 66 % | Correcta |
+| celular | 96 % | Correcta |
+
+Además, en las capturas se observa el registro de ejecución del dispositivo (*Device Logger*), donde aparecen los tiempos de preprocesamiento e inferencia.
+
+Los resultados muestran que el modelo pudo distinguir las dos clases durante las pruebas realizadas. Sin embargo, las puntuaciones obtenidas corresponden a predicciones individuales y no garantizan una exactitud del 100 % en condiciones diferentes.
+
+### 7.5. Conclusión de las pruebas en SenseCraft
+
+Se logró ejecutar el modelo de clasificación de imágenes en SenseCraft AI y obtener predicciones correctas para las dos clases entrenadas.
+
+Esta etapa permitió comprobar experimentalmente el reconocimiento de imágenes mediante inteligencia artificial en un dispositivo compatible, complementando el entrenamiento y la evaluación realizados previamente en Edge Impulse.
 
 ## 8. Resultados y conclusiones
 
