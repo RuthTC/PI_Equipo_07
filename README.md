@@ -1,4 +1,4 @@
-# Equipo 06 - Proyecto Integrador 
+# Equipo 07 - Proyecto Integrador 
 
 **Carrera de Ingeniería Ambiental / Informática / Industrial**  
 **Universidad Peruana Cayetano Heredia**
