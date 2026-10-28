@@ -71,25 +71,47 @@
 ## Referencias Bibliográficas
 
 [1] P. Román, M. M. Martínez y A. Pantoja, *Manual de compostaje del agricultor: experiencias en América Latina*. Santiago de Chile: Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO), 2013. [En línea]. Disponible en: https://www.fao.org/4/i3388s/i3388s.pdf
+
 [2] N. Trautmann, “Compost Physics,” *Cornell Composting*, Cornell University. [En línea]. Disponible en: https://www.css.cornell.edu/cwmi/compost/physics.html
+
 [3] United States Environmental Protection Agency (EPA), “Composting at Home.” [En línea]. Disponible en: https://www.epa.gov/recycle/composting-home
+
 [4] Jabil Inc., *PLA 3100 Filament: Technical Data Sheet*, 2023. [En línea]. Disponible en: https://www.jabil.com/dam/jcr%3A04ffdae5-e80a-4a4d-93df-8b3a920ca64a/Jabil_PLA3100_Filament_TDS_030623.pdf
+
 [5] Zhengzhou Winsen Electronics Technology Co., Ltd., *MQ135 Semiconductor Air Quality Gas Sensor: Product Manual*, ver. 1.6, 2021. [En línea]. Disponible en: https://www.winsen-sensor.com/manual/mq135.html
+
 [6] Analog Devices, “DS18B20: Programmable Resolution 1-Wire Digital Thermometer,” ficha de producto y hoja de datos. [En línea]. Disponible en: https://www.analog.com/en/products/DS18B20.html
+
 [7] Espressif Systems, *ESP32 Series Datasheet*. [En línea]. Disponible en: https://documentation.espressif.com/esp32_datasheet_en.html
+
 [8] Espressif Systems, “Schematic Checklist — ESP32,” *ESP Hardware Design Guidelines*. [En línea]. Disponible en: https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html
+
 [9] Google Firebase, “Federated Identity and Social Sign-In,” *Firebase Authentication for Flutter*. [En línea]. Disponible en: https://firebase.google.com/docs/auth/flutter/federated-auth
+
 [10] Google Firebase, “Use Conditions in Realtime Database Security Rules,” *Firebase Realtime Database*. [En línea]. Disponible en: https://firebase.google.com/docs/database/security/rules-conditions
+
 [11] International Electrotechnical Commission, *IEC 60529:1989+AMD1:1999+AMD2:2013 CSV: Degrees of Protection Provided by Enclosures (IP Code)*, ed. 2.2, 2013. [En línea]. Disponible en: https://webstore.iec.ch/en/publication/2452
+
 [12] International Organization for Standardization, *ISO 7250-1:2017: Basic Human Body Measurements for Technological Design — Part 1: Body Measurement Definitions and Landmarks*, 2017. [En línea]. Disponible en: https://www.iso.org/standard/65246.html
+
 [13] International Organization for Standardization, *ISO 6385:2016: Ergonomics Principles in the Design of Work Systems*, 2016. [En línea]. Disponible en: https://www.iso.org/standard/63785.html
+
 [14] Government of Ontario, “Guideline for the Production of Compost in Ontario,” sección sobre características y tratamiento de lixiviados. [En línea]. Disponible en: https://www.ontario.ca/page/guideline-production-compost-ontario
+
 [15] N. Trautmann y T. Richard, “Moisture Content,” *Cornell Composting*, Cornell University, Ithaca, NY, 1996. [En línea]. Disponible en: https://compost.css.cornell.edu/calc/moisture_content.html
+
 [16] T. Richard y N. Trautmann, “C/N Ratio,” *Cornell Composting*, Cornell University, Ithaca, NY. [En línea]. Disponible en: https://css.cornell.edu/cwmi/compost/calc/cn_ratio.html
+
 [17] Ministerio del Ambiente del Perú (MINAM), “Fuerzas motrices y presiones: generación per cápita de residuos domiciliarios,” *Informe Nacional sobre el Estado del Ambiente 2014–2019*. [En línea]. Disponible en: https://sinia.minam.gob.pe/inea/informe/fuerzas-motrices-y-presiones/
+
 [18] G. Vrettos, G. Kazamias y D. F. Lekkas, “Smart Compost Monitoring System using Open Source Technologies,” en *Proc. 15th Int. Conf. Environmental Science and Technology (CEST2017)*, Rodas, Grecia, 2017, art. CEST2017_01427. [En línea]. Disponible en: https://cest2017.gnest.org/sites/default/files/presentation_file_list/cest2017_01427_oral_paper.pdf
+
 [19] G. Rajamuneeswaran, P. Hridhya, B. Sakthivel y N. Gayathri Bai, “Smart Compost Guardian: An IoT-Based Real-Time Compost Monitoring and Alert System,” *Int. J. Eng. Res. Technol.*, vol. 13, no. 5, jun. 2025, doi: 10.17577/IJERTCONV13IS05027. [En línea]. Disponible en: https://www.ijert.org/smart-compost-guardian-an-iot-based-real-time-compost-monitoring-and-alert-system
+
 [20] A. J. Baxter, “Compost monitoring device and system,” publ. de solicitud internacional WO2021081597A1, 6 may. 2021. [En línea]. Disponible en: https://patents.google.com/patent/WO2021081597A1/en
+
 [21] A. F. DiPaola y M. J. DiPaola, “Low-power composting monitor,” patente estadounidense US12189458B2, 7 ene. 2025. [En línea]. Disponible en: https://patents.google.com/patent/US12189458B2/en
+
 [22] A. A. Stipniece, V. Vladinovskis, P. Daugulis, M. Zemite, L. Vitola y L. Mezule, “Advantages and Challenges of Composting Reactors for Household Use: Smart Reactor Concept,” *Sustainability*, vol. 14, no. 16, art. 10030, 2022, doi: 10.3390/su141610030. [En línea]. Disponible en: https://www.mdpi.com/2071-1050/14/16/10030
+
 [23] L. Brewer, N. Andrews, D. M. Sullivan y W. Gehr, *Agricultural Composting and Water Quality*, EM 9053, Oregon State University Extension Service, may. 2021 (rev. 2024). [En línea]. Disponible en: https://extension.oregonstate.edu/catalog/em-9053-agricultural-composting-water-qu
