@@ -2,9 +2,8 @@
 
 | **PROYECTO** | Monitor de Compostaje Inteligente - "CompostTech" | **FECHA** | 27/10/2026 |
 | :--- | :--- | :--- | :--- |
-| **CLIENTE** | UNIVERSIDAD PERUANA CAYETANO HEREDIA | **EDICIÓN** | Rev. 5 (formato original) |
-| **ELABORADO** | A.A, R.T, A.C, J.A, M.A | **REVISADO** | Pendiente de validación |
-
+| **CLIENTE** | UNIVERSIDAD PERUANA CAYETANO HEREDIA | **EDICIÓN** | 
+| **ELABORADO** | A.A, R.T, A.C, J.A, M.A | **REVISADO** | 
 ---
 
 ## Tabla de Exigencias
