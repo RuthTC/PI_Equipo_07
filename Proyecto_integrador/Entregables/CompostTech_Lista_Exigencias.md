@@ -93,6 +93,4 @@
 [20] A. J. Baxter, “Compost monitoring device and system,” publ. de solicitud internacional WO2021081597A1, 6 may. 2021. [En línea]. Disponible en: https://patents.google.com/patent/WO2021081597A1/en
 [21] A. F. DiPaola y M. J. DiPaola, “Low-power composting monitor,” patente estadounidense US12189458B2, 7 ene. 2025. [En línea]. Disponible en: https://patents.google.com/patent/US12189458B2/en
 [22] A. A. Stipniece, V. Vladinovskis, P. Daugulis, M. Zemite, L. Vitola y L. Mezule, “Advantages and Challenges of Composting Reactors for Household Use: Smart Reactor Concept,” *Sustainability*, vol. 14, no. 16, art. 10030, 2022, doi: 10.3390/su141610030. [En línea]. Disponible en: https://www.mdpi.com/2071-1050/14/16/10030
-[23] L. Brewer, N. Andrews, D. M. Sullivan y W. Gehr, *Agricultural Composting and Water Quality*, EM 9053, Oregon State University Extension Service, may. 2021 (rev. 2024). [En línea]. Disponible en: https://extension.oregonstate.edu/catalog/em-9053-agricultural-composting-water-quality
-
-*Las fuentes respaldan criterios técnicos, especificaciones de componentes y referencias metodológicas; los valores propios del diseño deben verificarse con planos y ensayos.*
+[23] L. Brewer, N. Andrews, D. M. Sullivan y W. Gehr, *Agricultural Composting and Water Quality*, EM 9053, Oregon State University Extension Service, may. 2021 (rev. 2024). [En línea]. Disponible en: https://extension.oregonstate.edu/catalog/em-9053-agricultural-composting-water-qu
