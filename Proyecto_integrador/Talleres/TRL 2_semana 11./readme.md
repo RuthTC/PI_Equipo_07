@@ -140,7 +140,7 @@ El diseño estructural se compone de tres zonas principales:
 2. **Caja electrónica y acoples externos:** En los laterales del chasis se aprecian los soportes atornillables para la caja electrónica estanca (destinada a alojar la PCB con el ESP32 y la etapa de conmutación), las rejillas para el flujo de ventilación forzada y la cámara periférica exterior diseñada para aislar el sensor semiconductor de gases de la condensación directa.
 3. **Falso fondo y recolección de efluentes:** La parte inferior integra la transición hacia la base de drenaje pasivo que conduce los lixiviados hacia la bandeja colectora deslizable, asegurando que el líquido no sature la masa orgánica en degradación.
 
-![Modelo tridimensional de CompostTech](ruta_de_tu_imagen.png)
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/3D_compostech.png">
 
 *Figura 1. Modelo tridimensional del biorreactor CompostTech desarrollado en CAD.*
 
@@ -164,7 +164,7 @@ El esquemático se organiza en cinco bloques funcionales principales: control y 
 * **Interfaz de visualización:** Dispone de un conector hembra de 4 pines enlazado a las líneas de comunicación I2C del microcontrolador (SCL en el pin D22 y SDA en el pin D21), proporcionando alimentación de 3,3 V y referencia de tierra para el funcionamiento de la pantalla OLED local[cite: 5].
 * **Bloque de alimentación:** La placa integra borneras de tornillo independientes para la entrada de batería/fuente lógica de 5 V (BATTERY/VIN), la entrada de alimentación externa de 12 V (12V_IN) para la etapa de extracción y una salida auxiliar regulada de 3,3 V (3V3_OUT), garantizando la separación de líneas de potencia y señal[cite: 5].
 
-![Esquemático electrónico de CompostTech](ruta_de_tu_imagen_esquematico.png)
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Esquematico_compostech.png">
 
 *Figura 2. Esquemático electrónico del sistema de monitoreo CompostTech.*[cite: 5]
 
@@ -182,7 +182,7 @@ La etapa de conmutación de potencia (transistor 2N2222, diodo flyback 1N5819 y 
 
 El diseño fue verificado mediante la herramienta de Verificación de Reglas de Diseño (DRC) en EasyEDA Pro, registrando cero errores y cero advertencias antes de la generación de los archivos Gerber para su fabricación. Esta integración en PCB elimina el cableado suelto tradicional en prototipos de desarrollo, garantizando la estabilidad operativa del hardware y facilitando el mantenimiento modular del sistema.
 
-![Diseño PCB ruteada de CompostTech](ruta_de_tu_imagen_pcb.png)
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Placa_ruteada.png">
 
 *Figura 3. Diseño de la placa de circuito impreso (PCB) personalizada de CompostTech.*[cite: 6, 8]
 
@@ -202,7 +202,7 @@ La aplicación móvil desarrollada en Flutter constituye el entorno de visualiza
 
 * **Módulo de autenticación y acceso:** Implementado mediante `FirebaseAuth`, permite el registro e inicio de sesión seguro de los usuarios a través de credenciales directas (correo electrónico y contraseña) o mediante el proveedor de identidad de Google. Cada cuenta queda vinculada al identificador universal `UID` generado por el servicio de autenticación, asegurando la trazabilidad y la privacidad de los registros.
 
-![Interfaz de autenticación de CompostTech](ruta_imagen_login.png)
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/Taller%20IoT/Moises%20Aliaga%20/imagen/P1.4.jpeg">
 
 *Figura 4. Propuesta de interfaz del módulo de autenticación y acceso de CompostTech.*
 
@@ -211,7 +211,7 @@ La aplicación móvil desarrollada en Flutter constituye el entorno de visualiza
 * **Persistencia local segmentada:** Los perfiles de usuario y parámetros de configuración se almacenan localmente en el dispositivo utilizando `SharedPreferences`, aislando la información de cada cuenta mediante claves indexadas con su respectivo identificador (`compostech_profile_v1_${user.uid}`).
 * **Panel de telemetría y avatar interactivo:** La pantalla principal (*Home*) despliega un panel organizado en cuatro tarjetas interactivas que presentan las lecturas en tiempo real: temperatura del núcleo (en °C), humedad del sustrato (en %), índice de proliferación de gases y estado del nivel de lixiviados en la bandeja inferior. En la sección central se ubica el avatar dinámico de tres estados, cuya expresión gráfica y colorimetría alertan visualmente sobre intervenciones requeridas (riego, incorporación de estructurante seco, mezclado manual con manivela o vaciado de efluentes para maceración).
 
-![Interfaz principal y panel de telemetría de CompostTech](ruta_imagen_home.png)
+<img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/Taller%20IoT/Moises%20Aliaga%20/imagen/P1.4.jpeg">
 
 *Figura 5. Propuesta de interfaz del panel principal (Home) y telemetría de CompostTech.*
 
