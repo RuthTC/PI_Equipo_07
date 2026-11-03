@@ -130,3 +130,134 @@ El indicador principal de CompostTech corresponde al **Índice de Estado del Bio
 - **Control térmico e integridad estructural:** Si la temperatura en el núcleo alcanza o supera los 58 °C, el microcontrolador activa automáticamente el ventilador de 12 V a través del transistor 2N2222 para forzar la extracción de calor. Esta ventilación se mantiene activa hasta que la temperatura desciende por debajo de los 55 °C, protegiendo tanto la microbiota benéfica del sobrecalentamiento como la estructura física del reactor, evitando alcanzar la temperatura de transición vítrea del polímero PLA (alrededor de los 60 °C).
 - **Control de aireación y humedad:** Si los sensores capacitivos registran una humedad inferior al 45 %, el sistema genera una alerta visual de riego por déficit hídrico. Por el contrario, si la humedad sobrepasa el 70 % o el sensor MQ-135 detecta una proliferación elevada de gases volátiles (NH₃ y CO₂), el sistema activa el ventilador de extracción y emite una recomendación prioritaria para que el usuario accione la manivela helicoidal (entre 5 y 10 vueltas) e incorpore material vegetal seco estructurante en proporción 3:1.
 - **Evacuación de lixiviados:** La activación del sensor flotador en la bandeja inferior notifica la saturación del compartimento (alcanzado el 75 % de su volumen útil), indicando la necesidad de escurrir los efluentes para su almacenamiento y posterior maceración externa, garantizando que el líquido no entre en contacto con la biomasa superior.
+
+### 3.4. Representación del modelado tridimensional
+
+Como parte de la formulación conceptual y validación geométrica de CompostTech, se desarrolló el modelo tridimensional del biorreactor mediante software CAD (Onshape) a escala funcional ($180 \times 280 \times 200\text{ mm}$, volumen total de $10,08\text{ L}$). Este diseño permite visualizar la distribución espacial de los componentes mecánicos, el recorrido del sistema de mezclado, los alojamientos de sensores y las cajas de protección electrónica, verificando la ausencia de interferencias antes de la manufactura aditiva en PLA.
+
+El diseño estructural se compone de tres zonas principales:
+1. **Cámara de mezclado y eje helicoidal:** En el interior de la cámara se ubica el eje central accionado por la manivela manual exterior, el cual incorpora paletas curvas distribuidas angularmente para descompactar y voltear la biomasa. La disposición de las paletas delimita una zona central de paso libre que evita impactos mecánicos contra las sondas de monitoreo insertadas en el sustrato.
+2. **Caja electrónica y acoples externos:** En los laterales del chasis se aprecian los soportes atornillables para la caja electrónica estanca (destinada a alojar la PCB con el ESP32 y la etapa de conmutación), las rejillas para el flujo de ventilación forzada y la cámara periférica exterior diseñada para aislar el sensor semiconductor de gases de la condensación directa.
+3. **Falso fondo y recolección de efluentes:** La parte inferior integra la transición hacia la base de drenaje pasivo que conduce los lixiviados hacia la bandeja colectora deslizable, asegurando que el líquido no sature la masa orgánica en degradación.
+
+![Modelo tridimensional de CompostTech](ruta_de_tu_imagen.png)
+
+*Figura 1. Modelo tridimensional del biorreactor CompostTech desarrollado en CAD.*
+
+*Nota.* Elaboración propia en Onshape. Se muestra la configuración volumétrica del biorreactor de 10,08 L a escala funcional, la disposición del eje con paletas de mezclado manual accionado por manivela exterior, los conductos de ventilación y el montaje exterior de los gabinetes electrónicos y de sensado.
+
+### 3.5. Diseño electrónico y acondicionamiento en PCB de CompostTech
+
+Para el sistema de control y adquisición de CompostTech se desarrolló un esquemático electrónico y el diseño de una placa de circuito impreso (PCB) personalizada de dos capas mediante EasyEDA Pro[cite: 5, 8]. Este subsistema tiene como finalidad acondicionar las señales provenientes de los sensores instalados en la biomasa y en la estructura, gestionar el accionamiento electromecánico de la ventilación forzada y distribuir los niveles de tensión requeridos por el microcontrolador y los periféricos.
+
+#### Esquemático electrónico de CompostTech
+
+El esquemático se organiza en cinco bloques funcionales principales: control y procesamiento, adquisición y acondicionamiento de señales, etapa de potencia y ventilación, interfaz de visualización y distribución de alimentación, como se presenta en la Figura 2[cite: 5].
+
+* **Control y procesamiento:** La unidad central corresponde al microcontrolador ESP32 DevKit V1 (30 pines), encargado de digitalizar las lecturas analógicas, procesar la lógica de control con histéresis, gestionar la comunicación I2C y transmitir la información de telemetría[cite: 5].
+* **Adquisición y acondicionamiento de señales:** El diseño contempla conectores tipo 2510 para enlazar los sensores abióticos[cite: 5]:
+  - *Humedad en biomasa:* Dos conectores independientes (2510-3A) asignados a los niveles superior e inferior, enlazados a los canales de conversión analógica-digital D34 y D35 del microcontrolador[cite: 5].
+  - *Gases en cámara periférica:* Conector (2510-4A) para el sensor semiconductor MQ-135, el cual incorpora un divisor resistivo de tensión formado por R1 (10 kΩ) y R3 (10 kΩ) que acopla el nivel de salida al rango seguro del pin ADC D32 (máximo 3,3 V)[cite: 5].
+  - *Temperatura en núcleo:* Conector (2510-3A) para la sonda digital sumergible DS18B20, que implementa el bus OneWire en el pin D4 con su respectiva resistencia de elevación (*pull-up*) R2 (4,7 kΩ) conectada a la línea de 3,3 V[cite: 5].
+  - *Nivel de lixiviados:* Conector (2510-2A) para el flotador magnético en la bandeja inferior, conectado al pin digital D5 a través de una red de filtrado pasivo antirrebote integrada por R4 (10 kΩ), R5 (1 kΩ) y el condensador de desacoplo C1 (100 nF)[cite: 5].
+* **Etapa de potencia y ventilación:** Para accionar el ventilador extractor de 12 V DC se implementó un circuito de conmutación en emisor común basado en el transistor BJT NPN 2N2222 (Q1)[cite: 5]. La conmutación es gobernada desde el pin digital D23 del ESP32 a través de una resistencia de polarización de base R7 (1 kΩ)[cite: 5]. En paralelo con la bornera de conexión del ventilador (FAN_12V), se colocó el diodo Schottky 1N5819 (D4) en polarización inversa (*flyback*), protegiendo al semiconductor contra sobretensiones transitorias producidas por la inductancia del motor[cite: 5].
+* **Interfaz de visualización:** Dispone de un conector hembra de 4 pines enlazado a las líneas de comunicación I2C del microcontrolador (SCL en el pin D22 y SDA en el pin D21), proporcionando alimentación de 3,3 V y referencia de tierra para el funcionamiento de la pantalla OLED local[cite: 5].
+* **Bloque de alimentación:** La placa integra borneras de tornillo independientes para la entrada de batería/fuente lógica de 5 V (BATTERY/VIN), la entrada de alimentación externa de 12 V (12V_IN) para la etapa de extracción y una salida auxiliar regulada de 3,3 V (3V3_OUT), garantizando la separación de líneas de potencia y señal[cite: 5].
+
+![Esquemático electrónico de CompostTech](ruta_de_tu_imagen_esquematico.png)
+
+*Figura 2. Esquemático electrónico del sistema de monitoreo CompostTech.*[cite: 5]
+
+*Nota.* Elaboración propia en EasyEDA Pro[cite: 5]. Se presentan los bloques funcionales de control (ESP32 DevKit V1), acondicionamiento de sensores (DS18B20, humedad dual, MQ-135 y flotador), etapa de conmutación para ventilador de 12 V, interfaz I2C para pantalla OLED y bornes de alimentación[cite: 5].
+
+---
+
+#### Diseño de la placa PCB ruteada de CompostTech
+
+A partir del esquemático electrónico se elaboró el diseño de una placa de circuito impreso (PCB) personalizada de dos capas (Top y Bottom Layer), en la cual se distribuyeron las huellas de los componentes, las áreas de potencia y las pistas de interconexión eléctrica, como se muestra en la Figura 3[cite: 6, 8].
+
+En la sección central de la placa se ubican los zócalos destinados al microcontrolador ESP32 DevKit V1, permitiendo su montaje y desmontaje seguro[cite: 6, 7]. A la izquierda de la placa se agruparon las conexiones de los sensores analógicos de humedad y gases, manteniendo trayectorias de pista cortas hacia los pines ADC del controlador[cite: 6]. En el lateral derecho se colocaron las interfaces digitales para el sensor DS18B20, la pantalla OLED y el circuito del flotador, optimizando el ruteo de señales de baja frecuencia[cite: 6].
+
+La etapa de conmutación de potencia (transistor 2N2222, diodo flyback 1N5819 y borneras de 12 V) se ubicó deliberadamente en la esquina superior derecha, aislada de las líneas de datos sensibles para mitigar interferencias electromagnéticas inducidas por el arranque del ventilador[cite: 6]. Asimismo, la placa cuenta con cuatro perforaciones metalizadas (MH1 a MH4) para tornillos M3 en los vértices, asegurando su fijación mecánica dentro de la caja de control de PLA adosada al biorreactor[cite: 5, 6].
+
+El diseño fue verificado mediante la herramienta de Verificación de Reglas de Diseño (DRC) en EasyEDA Pro, registrando cero errores y cero advertencias antes de la generación de los archivos Gerber para su fabricación. Esta integración en PCB elimina el cableado suelto tradicional en prototipos de desarrollo, garantizando la estabilidad operativa del hardware y facilitando el mantenimiento modular del sistema.
+
+![Diseño PCB ruteada de CompostTech](ruta_de_tu_imagen_pcb.png)
+
+*Figura 3. Diseño de la placa de circuito impreso (PCB) personalizada de CompostTech.*[cite: 6, 8]
+
+*Nota.* Elaboración propia en EasyEDA Pro[cite: 6, 8]. Se muestra la distribución espacial de los conectores perimetrales tipo 2510, el zócalo para el ESP32 DevKit V1, las pistas ruteadas en doble cara, la etapa de conmutación de 12 V y los puntos de montaje para su instalación física[cite: 6, 7, 8].
+
+#### 3.6. Arquitectura del software y propuesta de interfaz de usuario
+La aplicación móvil desarrollada en Flutter constituye el entorno de visualización y gestión remota del sistema:
+
+* **Módulo de autenticación:** Implementado mediante `FirebaseAuth`, permite el registro e inicio de sesión de los usuarios tanto por credenciales directas (correo/contraseña) como a través del proveedor de identidad de Google. Cada cuenta queda unívocamente vinculada al identificador universal `UID` generado por el servicio de autenticación.
+* **Persistencia local segmentada:** Los perfiles de usuario y parámetros de configuración se almacenan localmente en el dispositivo utilizando `SharedPreferences`, aislando la información de cada usuario mediante claves indexadas con su respectivo identificador (`compostech_profile_v1_${user.uid}`).
+* **Panel de telemetría y avatar interactivo:** La pantalla principal presenta un panel con cuatro tarjetas de monitoreo en tiempo real (temperatura en °C, porcentaje de humedad del sustrato, estado de proliferación de gases y nivel de lixiviados en bandeja). La parte central exhibe el avatar ilustrado, cuya expresión gráfica y colorimetría alertan visualmente sobre intervenciones requeridas (riego, incorporación de estructurante seco, mezclado con manivela o vaciado de efluentes).
+
+---
+#### 3.6. Arquitectura del software y propuesta de interfaz de usuario
+
+La aplicación móvil desarrollada en Flutter constituye el entorno de visualización, asistencia operativa y gestión remota del biorreactor CompostTech:
+
+* **Módulo de autenticación y acceso:** Implementado mediante `FirebaseAuth`, permite el registro e inicio de sesión seguro de los usuarios a través de credenciales directas (correo electrónico y contraseña) o mediante el proveedor de identidad de Google. Cada cuenta queda vinculada al identificador universal `UID` generado por el servicio de autenticación, asegurando la trazabilidad y la privacidad de los registros.
+
+![Interfaz de autenticación de CompostTech](ruta_imagen_login.png)
+
+*Figura 4. Propuesta de interfaz del módulo de autenticación y acceso de CompostTech.*
+
+*Nota.* Elaboración propia en Flutter. Representación de las pantallas de registro e inicio de sesión con soporte para correo/contraseña y autenticación mediante Google, gestionadas a través de `FirebaseAuth`.
+
+* **Persistencia local segmentada:** Los perfiles de usuario y parámetros de configuración se almacenan localmente en el dispositivo utilizando `SharedPreferences`, aislando la información de cada cuenta mediante claves indexadas con su respectivo identificador (`compostech_profile_v1_${user.uid}`).
+* **Panel de telemetría y avatar interactivo:** La pantalla principal (*Home*) despliega un panel organizado en cuatro tarjetas interactivas que presentan las lecturas en tiempo real: temperatura del núcleo (en °C), humedad del sustrato (en %), índice de proliferación de gases y estado del nivel de lixiviados en la bandeja inferior. En la sección central se ubica el avatar dinámico de tres estados, cuya expresión gráfica y colorimetría alertan visualmente sobre intervenciones requeridas (riego, incorporación de estructurante seco, mezclado manual con manivela o vaciado de efluentes para maceración).
+
+![Interfaz principal y panel de telemetría de CompostTech](ruta_imagen_home.png)
+
+*Figura 5. Propuesta de interfaz del panel principal (Home) y telemetría de CompostTech.*
+
+*Nota.* Elaboración propia en Flutter. Representación del panel de monitoreo con las tarjetas de variables abióticas (temperatura, humedad, gases y lixiviados) y la visualización central del avatar interactivo para la asistencia al usuario.
+
+---
+### Referencias bibliográficas 
+
+[1] Consejo Nacional de Ciencia, Tecnología e Innovación Tecnológica (CONCYTEC), *Directiva N.º 001-2022-CONCYTEC-P: Uso de la metodología Nivel de Madurez Tecnológica (TRL)*, Resolución de Presidencia N.º 020-2022-CONCYTEC-P, Lima, Perú, 2022.
+
+[2] P. Román, M. M. Martínez y A. Pantoja, *Manual de compostaje del agricultor: Experiencias en América Latina*, Santiago de Chile: Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO), 2013, pp. 21–35, 65.
+
+[3] T. L. Richard y N. M. Trautmann, "Moisture content and C:N ratio calculations in composting," Cornell Waste Management Institute, Cornell University, Ithaca, NY, Tech. Rep., 1996.
+
+[4] G. Vrettos, G. Kazamias y D. F. Lekkas, "Smart compost monitoring system using open source technologies," en *Proc. 15th Int. Conf. Environ. Sci. Technol. (CEST2017)*, Rhodes, Greece, 2017, art. CEST2017_01427.
+
+[5] A. G. Naser, N. M. Nawi, M. R. Zakaria, M. S. M. Kassim, A. A. Mutalovich y K. K. Katibi, "Design and implementation of an integrated sensor network for monitoring abiotic parameters during composting," *Sustainability*, vol. 17, n.º 21, art. 9780, nov. 2025, doi: 10.3390/su17219780.
+
+[6] G. Rajamuneeswaran, P. Hridhya, B. Sakthivel y N. Gayathri Bai, "Smart Compost Guardian: An IoT-based real-time compost monitoring and alert system," *Int. J. Eng. Res. Technol.*, vol. 13, n.º 5, pp. 1–5, jun. 2025, doi: 10.17577/IJERTCONV13IS05027.
+
+[7] B. Liu, K. Zhang, Y. Wei, G. Ding, T. Xu, L. Zhang y J. Li, "Towards data-driven smart composting techniques and control systems," *Bioresour. Technol.*, vol. 440, art. 133514, feb. 2026, doi: 10.1016/j.biortech.2025.133514.
+
+[8] A. Al-Fuqaha et al., "Compost monitoring system for kitchen waste management: Development, deployment and analysis," *IoT*, vol. 6, n.º 4, art. 64, oct. 2025, doi: 10.3390/iot6040064.
+
+[9] Comisión de la Comunidad Andina, *Decisión 486: Régimen Común sobre Propiedad Industrial*, Lima, Perú, 2000.
+
+[10] A. J. Baxter, "Compost monitoring device and system," Solicitud de Patente Internacional WO 2021/081597 A1, 6 de mayo de 2021.
+
+[11] A. F. DiPaola y M. J. DiPaola, "Low-power composting monitor," Patente EE. UU. US 12 189 458 B2, 7 de enero de 2025.
+
+[12] J. S. T. Adams, "Automated food waste composter and method," Solicitud de Patente EE. UU. US 2021/0371348 A1, 2 de diciembre de 2021.
+
+[13] L. Zhang, "Household aerobic composting device with leachate separation," Patente de Modelo de Utilidad China CN 212832860 U, 30 de marzo de 2021.
+
+[14] Ministerio del Ambiente (MINAM), *Reporte de Generación y Composición de Residuos Sólidos Municipales – SIGERSOL*, Lima, Perú, 2023.
+
+[15] Espressif Systems, *ESP32-WROOM-32D / ESP32-WROOM-32U Datasheet*, Versión 3.5, Shanghái, China, 2024.
+
+[16] Analog Devices, *DS18B20: Programmable Resolution 1-Wire Digital Thermometer*, Datasheet 19-7487, Norwood, MA, EE. UU., 2019.
+
+[17] Zhengzhou Winsen Electronics Technology Co., Ltd., *MQ135 Semiconductor Sensor for Air Quality Control*, Manual Ver. 1.4, Zhengzhou, China, 2015.
+
+[18] ON Semiconductor, *2N2222A General Purpose Transistor NPN*, Semiconductor Component Industries, Phoenix, AZ, EE. UU., Datasheet 2N2222A/D, 2019.
+
+[19] Solomon Systech Limited, *SSD1306: 128 x 64 Dot Matrix OLED/PLED Segment/Common Driver with Controller*, Rev. 1.1, Hong Kong, 2018.
+
+[20] M. P. Ho, H. Wang, J. H. Lee, C. K. Ho, K. T. Lau, J. Leng y D. Hui, "Critical factors on manufacturing processes of natural fibre composites," *Composites Part B: Eng.*, vol. 43, n.º 8, pp. 3549–3562, dic. 2012, doi: 10.1016/j.compositesb.2011.10.001.
+
+[21] M. Lazrak, G. Ait Baddi, F. Achemchem, J. Ayour, S. Zaidouni y B. Chebli, "AI-driven and sensor-based composting in a connected bioreactor: A novel framework for predicting maturity and quality dynamics," Waste Manage. Bull., vol. 3, n.º 4, art. 100254, dic. 2025.
