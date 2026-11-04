@@ -593,7 +593,8 @@ El esquemático se organiza en cinco bloques funcionales principales: control y 
 <p align="center">
   <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Esquematico_compostech.png">
 </p>
-*Figura 2. Esquemático electrónico del sistema de monitoreo CompostTech.*[cite: 5]
+
+*Figura 31. Esquemático electrónico del sistema de monitoreo CompostTech.*[cite: 5]
 
 *Nota.* Elaboración propia en EasyEDA Pro[cite: 5]. Se presentan los bloques funcionales de control (ESP32 DevKit V1), acondicionamiento de sensores (DS18B20, humedad dual, MQ-135 y flotador), etapa de conmutación para ventilador de 12 V, interfaz I2C para pantalla OLED y bornes de alimentación[cite: 5].
 
@@ -612,7 +613,8 @@ El diseño fue verificado mediante la herramienta de Verificación de Reglas de 
 <p align="center">
   <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Placa_ruteada.png">
 </p>
-*Figura 3. Diseño de la placa de circuito impreso (PCB) personalizada de CompostTech.*[cite: 6, 8]
+
+*Figura 32. Diseño de la placa de circuito impreso (PCB) personalizada de CompostTech.*[cite: 6, 8]
 
 *Nota.* Elaboración propia en EasyEDA Pro[cite: 6, 8]. Se muestra la distribución espacial de los conectores perimetrales tipo 2510, el zócalo para el ESP32 DevKit V1, las pistas ruteadas en doble cara, la etapa de conmutación de 12 V y los puntos de montaje para su instalación física[cite: 6, 7, 8].
 
@@ -624,7 +626,7 @@ La aplicación móvil desarrollada en Flutter constituye el entorno de visualiza
 * **Panel de telemetría y avatar interactivo:** La pantalla principal presenta un panel con cuatro tarjetas de monitoreo en tiempo real (temperatura en °C, porcentaje de humedad del sustrato, estado de proliferación de gases y nivel de lixiviados en bandeja). La parte central exhibe el avatar ilustrado, cuya expresión gráfica y colorimetría alertan visualmente sobre intervenciones requeridas (riego, incorporación de estructurante seco, mezclado con manivela o vaciado de efluentes).
 
 ---
-#### 3.6. Arquitectura del software y propuesta de interfaz de usuario
+#### 3.7. Arquitectura del software y propuesta de interfaz de usuario
 
 La aplicación móvil desarrollada en Flutter constituye el entorno de visualización, asistencia operativa y gestión remota del biorreactor CompostTech:
 
@@ -633,7 +635,8 @@ La aplicación móvil desarrollada en Flutter constituye el entorno de visualiza
 <p align="center">
   <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Login_aplicativo.png">
 </p>
-*Figura 4. Propuesta de interfaz del módulo de autenticación y acceso de CompostTech.*
+
+*Figura 33. Propuesta de interfaz del módulo de autenticación y acceso de CompostTech.*
 
 *Nota.* Elaboración propia en Flutter. Representación de las pantallas de registro e inicio de sesión con soporte para correo/contraseña y autenticación mediante Google, gestionadas a través de `FirebaseAuth`.
 
@@ -643,10 +646,32 @@ La aplicación móvil desarrollada en Flutter constituye el entorno de visualiza
 <p align="center">
   <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Home_aplicativo.png">
 </p>
-*Figura 5. Propuesta de interfaz del panel principal (Home) y telemetría de CompostTech.*
+
+*Figura 34. Propuesta de interfaz del panel principal (Home) y telemetría de CompostTech.*
 
 *Nota.* Elaboración propia en Flutter. Representación del panel de monitoreo con las tarjetas de variables abióticas (temperatura, humedad, gases y lixiviados) y la visualización central del avatar interactivo para la asistencia al usuario.
 
+#### 3.7.1. Recorrido preliminar del usuario en el aplicativo CompostTech
+
+Como complemento del diseño preliminar de la interfaz, se propone el recorrido del usuario dentro del aplicativo **CompostTech**, con la finalidad de representar las principales acciones que permitirían supervisar el proceso de compostaje doméstico. Este recorrido muestra cómo el usuario accedería a las mediciones obtenidas mediante sensores IoT y utilizaría la información disponible para tomar decisiones sobre el mantenimiento de la compostera.
+
+El recorrido inicia con el ingreso al aplicativo, desarrollado en Flutter, y el acceso al panel principal, donde se presentaría el estado general del compost mediante una mascota virtual interactiva. Asimismo, se visualizarían las mediciones de **temperatura, humedad, gases y nivel de lixiviados**, obtenidas por los sensores conectados al ESP32 y almacenadas en Firebase.
+
+Posteriormente, el usuario podría consultar la fase estimada del compostaje, considerando las etapas mesófila, termófila, enfriamiento y maduración. De manera complementaria, se contempla incorporar un módulo de **Machine Learning** que permita interpretar las mediciones históricas, identificar comportamientos anómalos y generar recomendaciones según las condiciones del proceso. Esta funcionalidad estaría sujeta al entrenamiento y validación del modelo con datos experimentales.
+
+Asimismo, el aplicativo permitiría visualizar alertas y recomendaciones relacionadas con el riego, la incorporación de material seco, el volteo manual y el retiro de lixiviados. También se podrían consultar gráficas históricas, comparar mediciones anteriores y revisar reportes resumidos sobre la evolución del compostaje.
+
+Finalmente, el usuario podría decidir si requiere realizar alguna intervención o continuar con el monitoreo, regresando posteriormente al panel principal o finalizando su sesión.
+
+La **Figura 35** presenta el recorrido preliminar del usuario en CompostTech, desde el ingreso al aplicativo hasta la interpretación de los parámetros y el apoyo a la toma de decisiones durante el proceso de compostaje.
+
+<p align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/Recorrido%20del%20usuario%20en%20CompostTech.png">
+</p>
+
+*Figura 35.** *Recorrido preliminar del usuario en el aplicativo CompostTech.*
+
+**Nota.** Elaboración propia. Se representa el recorrido conceptual del usuario en CompostTech, incluyendo monitoreo de sensores, identificación de fases, alertas, recomendaciones e historial. Las funcionalidades basadas en Machine Learning se encuentran sujetas a desarrollo y validación experimental.
 ---
 ### Referencias bibliográficas 
 
