@@ -131,6 +131,123 @@ El indicador principal de CompostTech corresponde al **Índice de Estado del Bio
 - **Control de aireación y humedad:** Si los sensores capacitivos registran una humedad inferior al 45 %, el sistema genera una alerta visual de riego por déficit hídrico. Por el contrario, si la humedad sobrepasa el 70 % o el sensor MQ-135 detecta una proliferación elevada de gases volátiles (NH₃ y CO₂), el sistema activa el ventilador de extracción y emite una recomendación prioritaria para que el usuario accione la manivela helicoidal (entre 5 y 10 vueltas) e incorpore material vegetal seco estructurante en proporción 3:1.
 - **Evacuación de lixiviados:** La activación del sensor flotador en la bandeja inferior notifica la saturación del compartimento (alcanzado el 75 % de su volumen útil), indicando la necesidad de escurrir los efluentes para su almacenamiento y posterior maceración externa, garantizando que el líquido no entre en contacto con la biomasa superior.
 
+### Análisis funcional y generación de alternativas de diseño
+
+Como parte del diseño conceptual de CompostTech, se realiza el análisis funcional del sistema mediante la caja negra, el esquema de funciones, la matriz morfológica y tres bocetos de alternativas de diseño. Estas herramientas permiten identificar las funciones necesarias para la degradación controlada de la materia orgánica, la regulación ambiental y la asistencia operativa, sustentando las soluciones consideradas antes del modelado tridimensional.
+
+#### Caja negra del sistema CompostTech
+
+La caja negra permite identificar las principales entradas y salidas del sistema CompostTech, clasificadas en flujos de energía, materia, información y señales, sin describir todavía el funcionamiento interno de sus componentes.
+
+Entre las entradas se consideran la materia orgánica y el agua como medio de hidratación inicial del sustrato, el suministro de energía eléctrica o radiación solar auxiliar, y las señales de interacción del usuario correspondientes al encendido y apagado del dispositivo. Como salidas se obtienen el compost saludable, los lixiviados extraídos hacia la bandeja inferior, los gases de salida del bioproceso (CO y NH_3), el calor disipado derivado de la actividad metabólica de la microbiota y la información telemétrica junto con las alertas transmitidas tanto a la aplicación móvil como a la pantalla OLED local.
+
+Asimismo, CompostTech contempla el monitoreo de variables abióticas para estimar el avance de la descomposición y anticipar condiciones anaeróbicas. La clasificación de los estados del compostaje se realizará mediante un algoritmo propio de aprendizaje automático (*machine learning*), cuyo entrenamiento y validación forman parte de las etapas posteriores del proyecto. Los resultados permitirán apoyar las decisiones de mantenimiento preventivo, tales como la incorporación de estructurante seco, riego o volteo manual asistido.
+
+Asimismo, la caja negra contempla señales de interacción con el usuario, avisos de intervención e indicación del estado de funcionamiento del sistema. Estas funciones se consideran dentro de la propuesta conceptual y deberán definirse y validarse durante las siguientes etapas de desarrollo.
+
+La Figura 1 presenta las entradas y salidas consideradas en el diseño conceptual de CompostTech.
+
+<p align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Caja%20Negra.png">
+</p>
+
+*Figura 1. Caja negra del sistema CompostTech.*
+
+*Nota.* Elaboración propia. Se representan los flujos de energía, materia y señales del sistema CompostTech, considerando la valorización de materia orgánica, el control térmico de la biomasa y la asistencia operativa al usuario.
+
+---
+
+#### Esquema de funciones del sistema CompostTech
+
+El esquema de funciones de CompostTech representa la organización de las funciones necesarias para el monitoreo continuo, regulación ambiental y asistencia operativa en la transformación de residuos orgánicos domiciliarios. A diferencia de la caja negra, este esquema permite identificar las funciones internas del sistema y las relaciones entre ellas mediante flujos de energía, materia, información y señales.
+
+Como se muestra en la Figura 2, la propuesta se organiza en seis bloques funcionales: sensores, actuadores, control, energía, sistema mecánico y transmisión de datos.
+
+El bloque de sensores comprende la adquisición de señales fisicoquímicas mediante la medición de temperatura en el núcleo de la masa, el registro de humedad estratificada del sustrato, la concentración de gases metabólicos en cámara periférica y la detección de nivel de líquidos en el depósito inferior. Asimismo, contempla la digitalización y acondicionamiento de las señales obtenidas y el envío de la información hacia la etapa de control. Estas funciones permiten disponer de registros cuantitativos sobre el estado biológico del compost y el nivel de acumulación en la bandeja de efluentes.
+
+El bloque de actuadores considera la activación de ventiladores para proporcionar ventilación forzada orientada a la disipación térmica y la evacuación de gases viciados. Como salidas se representan el flujo de aire inducido, los subproductos gaseosos evacuados y el calor disipado hacia el exterior. Estas funciones corresponden a los mecanismos de extracción y alivio ambiental previstos para CompostTech.
+
+El bloque de control contempla las funciones de recibir la información acondicionada de los sensores, evaluar los umbrales de control con histéresis, gestionar la interfaz con el usuario, detectar fallas en sensores o actuadores activando el modo de funcionamiento seguro, generar la señal de accionamiento para la etapa de potencia de los ventiladores y emitir la señal visual de estado en la pantalla OLED local mediante la iconografía del avatar dinámico. Asimismo, incorpora la función de coordinar la transmisión de datos hacia la red inalámbrica Wi-Fi.
+
+El módulo de energía contempla las funciones de captar y transformar energía eléctrica externa o solar, regular la carga, almacenar energía y acondicionar las líneas de alimentación necesarias para el control, los sensores y los actuadores de ventilación. Estas funciones tienen como finalidad proporcionar el suministro eléctrico continuo indispensable para la operación ininterrumpida de los componentes del sistema.
+
+El módulo mecánico comprende las funciones de proporcionar la carcasa exterior de protección, sostener rígidamente los componentes, contener la masa de biomasa orgánica en degradación y albergar el contenedor inferior para los efluentes decantados. También incorpora la función de voltear el compost mediante una manivela helicoidal con zona central libre de paletas, con el propósito de descompactar y airear el sustrato sin impactar las sondas insertadas en el núcleo. En este bloque, los residuos orgánicos y el agua se representan como entradas de materia, mientras que el compost y los lixiviados constituyen las salidas del reactor.
+
+Finalmente, el bloque de transmisión de datos comprende las funciones de recibir la información de procesamiento desde el microcontrolador, decodificar los paquetes de datos, ejecutar el análisis mediante inteligencia artificial (algoritmo Random Forest) para clasificar las fases biológicas, enviar los datos estructurados a la aplicación móvil y notificar al usuario de forma remota. Como salidas se contemplan los registros telemétricos, los avisos de intervención manual y las alertas preventivas. Estas funciones se consideran conceptuales y deberán implementarse y validarse durante las siguientes etapas de desarrollo.
+
+La Figura 2 presenta el esquema de funciones de CompostTech, mostrando las relaciones entre los seis bloques funcionales y los flujos necesarios para su operación. Esta representación permite establecer una base para la elaboración de la matriz morfológica y la generación de alternativas de diseño.
+
+<p align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Esquema%20de%20funcionesfinal.png">
+</p>
+
+*Figura 2. Esquema de funciones del sistema CompostTech.*
+
+*Nota.* Elaboración propia. Se representan los bloques de sensores, actuadores, control, energía, sistema mecánico y transmisión de datos, así como sus relaciones mediante flujos de energía, materia, información y señales. El esquema incluye la adquisición sensorial multivariable, el control térmico por ventilación forzada, la mezcla helicoidal manual, la interfaz visual local en OLED y el procesamiento analítico en la nube.
+
+---
+
+#### Matriz morfológica del sistema CompostTech
+
+La matriz morfológica de CompostTech se elaboró a partir del análisis funcional del sistema, con la finalidad de identificar y comparar alternativas tecnológicas para el monitoreo, control ambiental y asistencia operativa del compostaje doméstico. Esta herramienta permite organizar las posibles soluciones para cada función técnica y establecer combinaciones que orientan el diseño conceptual del dispositivo.
+
+La matriz presenta 11 funciones técnicas distribuidas en seis ámbitos funcionales: energía, sensórica abiótica, procesamiento y control, analítica de datos, acondicionamiento electromecánico y almacenamiento. Para cada función se plantearon tres alternativas, denominadas Concepto de Solución 1 (CS.1), Concepto de Solución 2 (CS.2) y Concepto de Solución 3 (CS.3), identificadas y enlazadas mediante trayectorias representadas por líneas de color rosa, rojo y azul, respectivamente.
+
+En el módulo de suministro energético, se presentan alternativas para energizar el sistema. La Solución 1 contempla un kit solar de 10 W con controlador de carga Li-ion y pack 3×18650 con BMS, la Solución 2 un Power Bank de 20 000 mAh (20 W–22,5 W) con salida USB-C de 5 V, y la Solución 3 una fuente de alimentación conmutada de red.
+
+En la instrumentación sensorial, se comparan alternativas para registrar temperatura, humedad, gases y nivel de lixiviados. Para la temperatura, la Solución 1 considera la sonda impermeable DS18B20 con bus OneWire, la Solución 2 un sensor PT100 con amplificador MAX31865, y la Solución 3 una termocupla tipo K con integrado MAX6675. En cuanto a la humedad, la Solución 1 contempla dos sensores capacitivos analógicos v1.2, la Solución 2 sensores industriales RS485 IP68 (SEN0600), y la Solución 3 un sensor multiparamétrico RS485 (SEN0601). Para el monitoreo de gases, la Solución 1 evalúa el sensor semiconductor MQ-135, la Solución 2 combina un sensor fotoacústico NDIR SCD41 junto con el MQ-135, y la Solución 3 un arreglo triple con SCD41, sensor electroquímico ME2-$\text{O}_2$ y MQ-135. En la detección del nivel de lixiviados, se comparan un sensor capacitivo exterior sin contacto XKC-Y25-T12V (Solución 1), un sensor de flotador vertical magnético tipo P45 (Solución 2) y un sensor fotoeléctrico sumergible DFRobot (Solución 3).
+
+En el módulo de control y procesamiento, se presentan alternativas para gobernar el hardware y coordinar las comunicaciones. La Solución 1 contempla la placa NodeMCU ESP8266, la Solución 2 el microcontrolador ESP32 DevKit V1, y la Solución 3 una placa Arduino Uno R4 WiFi. Asimismo, para el análisis del estado del compost se evalúan reglas deterministas por umbrales fijos (Solución 1), un modelo predictivo basado en Random Forest (Solución 2) y un ensamble de árboles por gradiente XGBoost (Solución 3).
+
+En el módulo electromecánico, se comparan opciones para airear y voltear la masa orgánica. La aireación contempla perforaciones pasivas laterales (Solución 1), extracción forzada mediante dos ventiladores USB 8025 de 5 V o ventilador axial de 12 V (Solución 2) y un ventilador radial centrífugo (*blower*) de 12 V (Solución 3). Para el volteo del compost, la Solución 1 evalúa un servomotor de alto torque MG996R de 13 kg·cm, la Solución 2 un mecanismo manual asistido por manivela helicoidal, y la Solución 3 un motorreductor DC acoplado a caja reductora.
+
+Finalmente, en los módulos de visualización, notificación y almacenamiento se contrastan alternativas locales y remotas. La visualización abarca desde pantallas OLED monocromáticas de 1,3" locales hasta aplicaciones móviles en Flutter con notificaciones Push y dashboards web en React con sistemas de alertas. Para el almacenamiento de registros se comparan Google Firebase, bases de datos relacionales PostgreSQL / Supabase y servidores en MySQL.
+
+Las tres soluciones se representan mediante rutas gráficas que identifican las opciones correspondientes a cada función técnica.
+
+De las alternativas planteadas, el equipo adoptó la configuración trazada por la línea rosa (Solución preliminar 1) como base del diseño conceptual de CompostTech, considerando la compatibilidad de sus componentes con la placa PCB personalizada de dos capas, el bajo consumo energético, la protección mecánica de las sondas y la viabilidad económica del proyecto. Esta selección orienta los modelos tridimensionales, los diseños electrónicos y la arquitectura de software presentados en los siguientes apartados.
+
+La Figura 3 presenta la matriz morfológica de CompostTech, mostrando las funciones consideradas, las alternativas tecnológicas propuestas y las tres rutas de solución.
+
+<p align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/Matriz%20morfol%C3%B3gica.png">
+</p>
+
+*Figura 3. Matriz morfológica del sistema CompostTech.*
+
+*Nota.* Elaboración propia. La matriz presenta 11 funciones técnicas organizadas en ámbitos de sensórica, control, potencia, mecánica, analítica y comunicación. La trayectoria en color rosa corresponde a la configuración adoptada por el equipo como referencia para el desarrollo del proyecto. Las soluciones 2 y 3 representan configuraciones alternativas orientadas a la comparación técnica.
+
+---
+
+#### Boceto 1 — Solución preliminar 1
+
+*(Espacio reservado para la incorporación del boceto conceptual correspondiente a la Solución 1 de la matriz morfológica, describiendo la disposición del biorreactor con manivela helicoidal, cámara periférica para el sensor MQ-135, caja electrónica lateral, bandeja deslizable inferior de lixiviados y la doble interfaz de usuario OLED/Flutter).*
+
+*Figura 4. Boceto de la Solución preliminar 1 del sistema CompostTech.*
+
+*Nota.* Elaboración propia. Representación conceptual de la Solución preliminar 1 adoptada por el equipo.
+
+---
+
+#### Boceto 2 — Solución preliminar 2
+
+*(Espacio reservado para la incorporación del boceto conceptual correspondiente a la Solución 2 de la matriz morfológica, considerando volteo automatizado mediante servomotor MG996R, sensores industriales RS485, módulo fotoacústico SCD41 y base de datos en Supabase).*
+
+*Figura 5. Boceto de la Solución preliminar 2 del sistema CompostTech.*
+
+*Nota.* Elaboración propia. Representación conceptual de la Solución preliminar 2.
+
+---
+
+#### Boceto 3 — Solución preliminar 3
+
+*(Espacio reservado para la incorporación del boceto conceptual correspondiente a la Solución 3 de la matriz morfológica, considerando termocupla tipo K, sensor multiparamétrico SEN0601, arreglo triple de gases, ventilador radial centrífugo, control con Arduino Uno R4 WiFi y dashboard web en React).*
+
+*Figura 6. Boceto de la Solución preliminar 3 del sistema CompostTech.*
+
+*Nota.* Elaboración propia. Representación conceptual de la Solución preliminar 3.
+
+
 ### 3.4. Representación del modelado tridimensional
 
 Como parte de la formulación conceptual y validación geométrica de CompostTech, se desarrolló el modelo tridimensional del biorreactor mediante software CAD (Onshape) a escala funcional ($180 \times 280 \times 200\text{ mm}$, volumen total de $10,08\text{ L}$). Este diseño permite visualizar la distribución espacial de los componentes mecánicos, el recorrido del sistema de mezclado, los alojamientos de sensores y las cajas de protección electrónica, verificando la ausencia de interferencias antes de la manufactura aditiva en PLA.
@@ -146,6 +263,314 @@ El diseño estructural se compone de tres zonas principales:
 *Figura 1. Modelo tridimensional del biorreactor CompostTech desarrollado en CAD.*
 
 *Nota.* Elaboración propia en Onshape. Se muestra la configuración volumétrica del biorreactor de 10,08 L a escala funcional, la disposición del eje con paletas de mezclado manual accionado por manivela exterior, los conductos de ventilación y el montaje exterior de los gabinetes electrónicos y de sensado.
+
+### 3.4.4. Planos dimensionales de los componentes estructurales de CompostTech
+
+Como complemento del modelado tridimensional, se presentan los planos dimensionales de los componentes estructurales, mecánicos y de instrumentación de CompostTech. Estos documentos técnicos permiten identificar la geometría de las piezas, sus dimensiones principales, espesores de pared, tolerancias de ensamble y elementos de fijación, orientando su fabricación mediante manufactura aditiva y su posterior integración física.
+
+Los planos incluyen vistas ortogonales (alzado, planta y perfil), representaciones isométricas, cotas expresadas en milímetros y especificaciones técnicas de material y cantidad requerida. Esta documentación técnica formaliza las características constructivas de las piezas desarrolladas en software CAD (Onshape) y exportadas para manufactura aditiva en PLA.
+
+---
+
+#### 3.4.4.1. Planos dimensionales de la cámara de compostaje y sistema mecánico
+
+Los siguientes planos describen los componentes estructurales de la cámara de descomposición aerobia, los mecanismos de volteo manual, guiado axial y arriostramiento. Se presentan de manera individual las piezas `parte1_caja_compostera`, `parte2_caja_compostera`, `tapa_compos`, `recipiente_lixiviados`, `manivela`, `abrasadera_superior`, `abracadera_inferior`, `collarin`, `retenedor`, `soporte_rodaje`, `tapa_rodaje`, `varilla1`, `varilla2` y `varilla3`.
+
+##### 3.4.4.1.1. Plano dimensional de la pieza Parte 1 de la caja compostera
+La pieza `parte1_caja_compostera` constituye la semicaja frontal del biorreactor. Su geometría prismática abierta conforma la mitad anterior de la cámara de degradación de 10,08 L brutos. Dispone de pestañas perimetrales con perforaciones para pernos pasantes M3 de unión con la sección posterior, nervaduras verticales de rigidización mecánica, ranuras inferiores horizontales que actúan como corredera para el falso fondo ranurado y un alojamiento semicilíndrico superior destinado al descanso del eje mezclador.
+
+El plano muestra vistas ortogonales e isométrica con dimensiones generales de 280 mm de longitud, 140 mm de fondo y 200 mm de altura exterior. Se especifican barrenos de 3,4 mm de diámetro en las pestañas de unión, espesor uniforme de pared de 4 mm y radios de refuerzo en los vértices inferiores para evitar concentraciones de esfuerzo.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/parte%201%20caja%20compostera.png" alt="Plano dimensional de la Parte 1 de la caja compostera" width="85%"/>
+  <p><em>Figura 10. Plano dimensional de la pieza Parte 1 de la caja compostera de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Se detallan vistas ortogonales e isométrica, cotas de ensamble perimetral, correderas para falso fondo y rebajes de apoyo para el eje mezclador. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.2. Plano dimensional de la pieza Parte 2 de la caja compostera
+La pieza `parte2_caja_compostera` conforma la semicaja posterior del biorreactor, completando el volumen cerrado de reacción. Su diseño comparte la línea de partición simétrica con la Parte 1 y añade en sus caras exteriores elementos de integración funcional: cuatro salientes cilíndricas roscadas para el anclaje de la caja electrónica exterior, perforaciones pasamuros para cableado de sensores, aberturas para la difusión hacia la cámara del sensor de gases y la brida de montaje para el ventilador extractor.
+
+El plano detalla vistas ortogonales e isométrica con dimensiones de 280 mm de longitud, 140 mm de fondo y 200 mm de altura exterior. Se indican orificios de fijación de 3,4 mm de diámetro, pasacables con reborde protector y un conducto circular de ventilación de 40 mm de diámetro.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/parte2%20caja%20compostera.png" alt="Plano dimensional de la Parte 2 de la caja compostera" width="85%"/>
+  <p><em>Figura 11. Plano dimensional de la pieza Parte 2 de la caja compostera de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Se presentan vistas ortogonales e isométrica, bridas de acople perimetral, salientes de fijación para gabinetes exteriores y ducto de extracción de aire. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.3. Plano dimensional de la pieza Tapa de la compostera 
+La pieza `tapa compos` corresponde al elemento de cerramiento superior de la cámara de compostaje. Su configuración presenta una placa rectangular de perfil reforzado con un reborde perimetral escalonado machihembrado que calza a presión sobre el borde de las semicajas, conteniendo las emanaciones gaseosas. La cara superior integra tiradores ergonómicos y ranuras de ventilación pasiva con deflector interno para mitigar la condensación sobre la superficie interior.
+
+El plano establece dimensiones principales de 286 mm de largo, 186 mm de ancho y un espesor de placa de 4 mm, con un borde perimetral descendente de 12 mm de profundidad. Se detallan las cotas de las ranuras de aireación pasiva protegidas y las tolerancias dimensionales del canal de ajuste.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/tapa%20compost.png" alt="Plano dimensional de la tapa de la compostera" width="85%"/>
+  <p><em>Figura 12. Plano dimensional de la pieza Tapa de la compostera de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales e isométrica, labio perimetral de estanqueidad, tiradores integrados y ranuras de ventilación pasiva. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.4. Plano dimensional del recipiente recolector de lixiviados 
+La pieza `recipiente lixiviados` presenta un compartimento prismático rectangular abierto en su parte superior, diseñado para deslizarse bajo el falso fondo de la compostera. Su geometría retiene hasta 1,85 L de efluentes decantados sin contacto con la biomasa sólida. Incorpora paredes con ángulo de desmolde ligero, un soporte vertical cilíndrico en una de sus esquinas para fijar el sensor de flotador magnético P45 y un labio frontal que facilita su extracción manual para labores de maceración externa.
+
+El plano describe vistas ortogonales e isométrica con dimensiones exteriores principales de 220 mm de longitud, 120 mm de ancho y 70 mm de profundidad. Se especifican espesores de pared de 3 mm para garantizar impermeabilidad total frente a lixiviados ácidos, radios de curvatura en la base para facilitar el lavado y la cota de montaje del soporte del sensor de nivel.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/recipiente%20lixiviados.png" alt="Plano dimensional del recipiente de lixiviados" width="85%"/>
+  <p><em>Figura 13. Plano dimensional de la pieza Recipiente recolector de lixiviados de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales e isométrica, cotas de volumen de retención (1,85 L), espesores de pared impermeable y soporte para flotador magnético. Material: PLA/PETG. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.5. Plano dimensional de la pieza Manivela 
+La pieza `manivela` constituye el mecanismo de accionamiento manual del eje helicoidal de volteo. Presenta una configuración compuesta por un cubo de acople cilíndrico con orificio central chavetado para encaje rígido sobre el eje de 16 mm, un brazo radial de sección rectangular con nervadura lateral para resistir momentos torsores de hasta $15\text{ N}\cdot\text{m}$, y un eje secundario perpendicular en el extremo exterior que alberga una empuñadura cilíndrica giratoria.
+
+El plano muestra vistas ortogonales e isométrica con una longitud entre centros de 95 mm, longitud total de 125 mm y un diámetro exterior del cubo de acople de 28 mm. Se indican cotas para un prisionero roscado radial M4, chavetero de 4 mm de ancho y detalles dimensionales del pasador del mango.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/Manivela.png" width="85%"/>
+  <p><em>Figura 14. Plano dimensional de la pieza Manivela de mezclado de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales e isométrica, radio de giro, cubo de acople chavetado, nervadura de refuerzo y mango de accionamiento manual. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.6. Plano dimensional de la abrazadera superior 
+La pieza `abrasadera superior` presenta una geometría de medio anillo rígido con dos orejetas laterales planas de sujeción. Su función consiste en aprisionar los bujes de fricción o rodamientos del eje central contra la pared de la caja compostera, manteniendo la alineación horizontal durante el giro y absorbiendo las cargas radiales originadas por el volteo de los residuos.
+
+El plano incluye vistas ortogonales e isométrica con una longitud entre extremos de 46 mm, ancho de 18 mm y una cavidad semicilíndrica central con radio de 10 mm. Cada orejeta lateral dispone de un barreno pasante de 3,4 mm de diámetro avellanado para tornillos M3, con cotas de separación entre centros de 34 mm.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/Abrazadera%20superior.png" alt="Plano dimensional de la abrazadera superior" width="85%"/>
+  <p><em>Figura 15. Plano dimensional de la pieza Abrazadera superior de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales e isométrica, cavidad de fijación para bujes de rodadura, orejetas de montaje y barrenos para tornillos M3. Material: PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.7. Plano dimensional de la abrazadera inferior 
+La pieza `abracadera inferior` constituye la mitad inferior complementaria del soporte de cojinete. Se acopla de manera invertida con la abrazadera superior, conformando un anillo completo que abraza el asiento del eje mezclador. Su cara inferior es plana para posarse de forma firme sobre el nervio correspondiente de la carcasa.
+
+El plano muestra vistas ortogonales e isométrica con dimensiones de 46 mm de longitud total, 18 mm de ancho y una cavidad semicilíndrica central de radio de 10 mm. Incorpora dos perforaciones cilíndricas pasantes de 3,4 mm de diámetro alineadas de manera precisa con la pieza superior, especificando espesores de pared de 4 mm para evitar deformaciones por flexión bajo torque continuado.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/Abrazadera%20inferior.png" alt="Plano dimensional de la abrazadera inferior" width="85%"/>
+  <p><em>Figura 16. Plano dimensional de la pieza Abrazadera inferior de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Representación de vistas de alzado, planta y perfil, radio semicilíndrico de apoyo y barrenos de sujeción. Material: PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.8. Plano dimensional de la pieza Collarín 
+La pieza `collarin` presenta una estructura anular cilíndrica compacta destinada a fijarse sobre el cuerpo del eje central en las caras interiores de las paredes de la cámara. Su función técnica consiste en actuar como tope mecánico de retención axial, impidiendo cualquier desplazamiento longitudinal del eje o juego lateral durante las maniobras de giro con la manivela.
+
+El plano describe vistas ortogonales e isométrica con un diámetro exterior de 26 mm, un diámetro interior calibrado de 16,2 mm para ajuste deslizante justo sobre el eje, y un espesor longitudinal de 10 mm. En una de sus caras cilíndricas se detalla una perforación roscada M4 perpendicular para la colocación de un prisionero de fijación con cabeza embutida.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/collarin.png" alt="Plano dimensional del collarín" width="85%"/>
+  <p><em>Figura 17. Plano dimensional de la pieza Collarín de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas de sección y proyección isométrica, diámetros exterior e interior calibrados y detalle de rosca para prisionero axial. Material: PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.9. Plano dimensional de la pieza Retenedor 
+La pieza `retenedor` es un componente de geometría anular provisto de una brida circular delgada con orificios perimetrales de sujeción. Se monta adosada a la pared interna de paso del eje para retener un empaque elástico de nitrilo, evitando que partículas finas de biomasa o vapores condensados alcancen las pistas de los rodamientos y bujes exteriores.
+
+El plano contiene vistas ortogonales e isométrica indicando un diámetro exterior de brida de 38 mm, diámetro del canal interior de retención de 20 mm, barreno central de 16,5 mm y un espesor general de 3,5 mm. Se detallan tres perforaciones avellanadas de 2,8 mm de diámetro distribuidas equiespaciadas a 120 grados para su fijación mediante tornillos autorroscantes.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/retenedor.png" alt="Plano dimensional del retenedor" width="85%"/>
+  <p><em>Figura 18. Plano dimensional de la pieza Retenedor de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales, sección con escalón para junta de estanqueidad y distribución angular de perforaciones de montaje. Material: PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.10. Plano dimensional del soporte de rodaje 
+La pieza `soporte rodaje` presenta un cuerpo cilíndrico robusto provisto de una pestaña base cuadrangular con cuatro orificios de sujeción. Su interior contiene un alojamiento cilíndrico rectificado para albergar rodamientos radiales sellados estándar 6003-2RS (diámetro exterior de 35 mm, diámetro interior de 17 mm) que guían el eje de la compostera reduciendo la fricción manual de mezclado.
+
+El plano muestra vistas ortogonales e isométrica con una base de 52 mm por 52 mm, espesor de base de 5 mm y una copa cilíndrica sobresaliente de 40 mm de diámetro exterior con profundidad de alojamiento de 11 mm. Se indican cuatro perforaciones pasantes de 4,2 mm de diámetro para pernos de ensamble al chasis y un orificio central de paso para el extremo del eje.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/soporte%20rodaje.png" alt="Plano dimensional del soporte de rodaje" width="85%"/>
+  <p><em>Figura 19. Plano dimensional de la pieza Soporte de rodaje de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas de corte, cavidad de ajuste para rodamiento 6003-2RS, base cuadrangular y barrenos de fijación al chasis. Material: PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.11. Plano dimensional de la tapa de rodaje 
+La pieza `tapa rodaje` corresponde a un disco circular de perfil delgado con una pestaña perimetral que sella el extremo exterior del soporte de rodaje, protegiendo las pistas metálicas del rodamiento frente al ingreso de partículas de polvo ambiental o salpicaduras de líquidos.
+
+El plano incluye vistas ortogonales e isométrica estableciendo un diámetro exterior de 42 mm, espesor de pared de 2,5 mm y un resalte anular interior de 34,6 mm de diámetro diseñado para encajar a presión en el alojamiento del soporte. En el plano de la tapa del lado ciego se presenta superficie continua, mientras que la del lado de tracción contempla un barreno central de paso de 16,5 mm para el acople de la manivela.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/tapa%20rodaje.png" alt="Plano dimensional de la tapa de rodaje" width="85%"/>
+  <p><em>Figura 20. Plano dimensional de la pieza Tapa de rodaje de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas de alzado y corte, labio de encaje a presión y opciones de cierre ciego y pasante para manivela. Material: PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.12. Plano dimensional de la varilla estructural 1 
+La pieza `varilla1` corresponde a una barra cilíndrica maciza de acero laminado calibrado (o PLA reforzado en prototipado preliminar) dispuesta longitudinalmente en la base del biorreactor para rigidizar la unión entre las dos semicajas y resistir la deflexión provocada por la masa húmeda en reposo.
+
+El plano muestra la representación longitudinal y de sección, especificando una longitud total de 280 mm, un diámetro nominal de 8 mm y extremos dotados de roscas macho M8 en una longitud de 15 mm en cada extremo para su apriete con tuercas hexagonales exteriores.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/varilla1.png" alt="Plano dimensional de la varilla estructural 1" width="85%"/>
+  <p><em>Figura 21. Plano dimensional de la pieza Varilla estructural 1 de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas longitudinales, diámetro nominal de 8 mm, cotas de longitud de 280 mm y mecanizado de roscas en extremos. Material: Acero / PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.13. Plano dimensional de la varilla estructural 2 
+La pieza `varilla2` cumple la función de tirante transversal medio, atravesando la cámara en una posición calculada para mantener paralelas las caras laterales ante las tensiones dinámicas inducidas durante el volteo manual del compost.
+
+El plano detalla una geometría cilíndrica maciza con una longitud total de 200 mm, diámetro de 8 mm y extremos mecanizados con filetes de rosca M8 de 12 mm de extensión, junto con chaflanes de entrada de 1 mm a 45 grados para facilitar su inserción en los orificios del chasis.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/varilla2.png" alt="Plano dimensional de la varilla estructural 2" width="85%"/>
+  <p><em>Figura 22. Plano dimensional de la pieza Varilla estructural 2 de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Dimensiones generales, longitud de 200 mm, diámetro de 8 mm y detalles de extremos roscados de arriostramiento. Material: Acero / PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.1.14. Plano dimensional de la varilla estructural 3 
+La pieza `varilla3` actúa como elemento de amarre superior, ubicada cerca del borde de apoyo de la tapa para evitar deformaciones en la embocadura del biorreactor producidas por ciclos térmicos termófilos.
+
+El plano contiene las vistas de la varilla con una longitud total acotada de 180 mm, diámetro uniforme de 8 mm y extremos roscados M8 de 12 mm, acompañada de tolerancias dimensionales de rectitud para evitar desalineamientos en los ensambles laterales.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/varilla3.png" alt="Plano dimensional de la varilla estructural 3" width="85%"/>
+  <p><em>Figura 23. Plano dimensional de la pieza Varilla estructural 3 de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas acotadas, longitud de 180 mm, diámetro de 8 mm y especificaciones de acabado superficial. Material: Acero / PLA. Cantidad requerida: 2 unidades. Cotas expresadas en milímetros.
+
+---
+
+#### 3.4.4.2. Planos dimensionales de los gabinetes electrónicos y montajes de sensórica
+
+Los siguientes planos describen los gabinetes protectores, soportes en escuadra, marcos de visualización y ductos de ventilación encargados de albergar la PCB personalizada, los sensores abióticos y el actuador electromecánico de CompostTech. Se detallan individualmente las piezas `caja electronica`, `tapa electronico`, `carcasa mq135`, `tapa mq135`, `soporte mq135`, `soporte pantalla led` y `soporte ventilador`.
+
+##### 3.4.4.2.1. Plano dimensional de la caja electrónica 
+La pieza `caja electronica` presenta un compartimento prismático rectangular abierto por su cara frontal, diseñado para adosarse exteriormente a la semicaja posterior del reactor. Su volumen interno aloja de forma protegida la placa PCB de dos capas y el microcontrolador ESP32 DevKit V1. Su base interna incorpora cuatro postes cilíndricos con orificios ciegos para tornillos autorroscantes M3 que soportan la tarjeta electrónica, mientras que sus paredes laterales disponen de aberturas circulares escalonadas para la colocación de prensaestopas pasacables impermeables.
+
+El plano establece dimensiones exteriores de 150 mm de longitud, 130 mm de ancho y 50 mm de profundidad total. Se especifican espesores de pared de 3 mm, un canal perimetral en el borde superior para alojar un cordón de caucho elastomérico de estanqueidad IP65 y cotas de espaciamiento entre los postes de la PCB de 100 mm por 70 mm.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/caja%20electronica.png" alt="Plano dimensional de la caja electrónica" width="85%"/>
+  <p><em>Figura 24. Plano dimensional de la pieza Caja electrónica de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales e isométrica, cavidad interior de 150 × 130 × 50 mm, postes de montaje para PCB, canal de sello IP65 y pasamuros de cableado. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.2.2. Plano dimensional de la tapa de la caja electrónica
+La pieza `tapa electronico` corresponde a la cubierta de cierre estanco del gabinete de control. Presenta una placa plana rectangular con esquinas redondeadas y cuatro barrenos avellanados situados en sus vértices, alineados con los insertos roscados de la caja principal. En su superficie exterior exhibe un relieve bajo con la identificación del proyecto.
+
+El plano muestra vistas ortogonales e isométrica con dimensiones de 150 mm de largo, 130 mm de ancho y 4 mm de espesor uniforme. Se detallan las cotas de los cuatro orificios avellanados de 3,4 mm de diámetro para tornillos M3 con separación de centros de 138 mm por 118 mm, así como un reborde interior sobresaliente de 1,5 mm que comprime la junta de estanqueidad.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/tapa%20electronico.png" alt="Plano dimensional de la tapa de la caja electrónica" width="85%"/>
+  <p><em>Figura 25. Plano dimensional de la pieza Tapa de la caja electrónica de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas de alzado, perfil y detalle de avellanado para tornillos M3, reborde de compresión y dimensiones generales de 150 × 130 × 4 mm. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.2.3. Plano dimensional de la carcasa periférica para sensor de gas 
+La pieza `carcasa mq135` es un compartimento exterior específico concebido para aislar el sensor semiconductor MQ-135 de la condensación líquida directa proveniente del compost caliente. Presenta un volumen rectangular hueco con conductos ranurados orientados en ángulo hacia abajo que permiten la difusión gaseosa natural hacia el elemento calefactor de óxido de estaño ($SnO_2$) sin que las gotas de condensado ingresen a la cámara del sensor.
+
+El plano describe vistas ortogonales e isométrica indicando dimensiones exteriores de 65 mm de largo, 55 mm de ancho y 40 mm de saliente. Se detallan las ranuras de aireación de 2,5 mm de espesor con inclinación de 45 grados, nervios internos de apoyo para el soporte del sensor y dos orejetas laterales con orificios de 3,4 mm para su atornillado directo sobre la pared del biorreactor.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/carcasa%20mq135.png" alt="Plano dimensional de la carcasa del sensor MQ-135" width="85%"/>
+  <p><em>Figura 26. Plano dimensional de la pieza Carcasa para sensor MQ-135 de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales e isométrica, conductos ranurados en ángulo para difusión pasiva de gases y puntos de anclaje exterior. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.2.4. Plano dimensional de la tapa de la carcasa MQ-135 
+La pieza `tapa mq135` actúa como elemento desmontable de inspección y calibración para la cámara periférica de gases. Permite acceder directamente al potenciómetro de ajuste de resistencia de carga del sensor MQ-135 sin desmontar la estructura principal de la compostera.
+
+El plano contiene vistas ortogonales e isométrica con dimensiones de 65 mm de largo, 55 mm de ancho y 3 mm de espesor. Incorpora dos perforaciones avellanadas de 3,2 mm de diámetro en los extremos y un resalte guía que encaja dentro del cuerpo de la carcasa para evitar desalineamientos.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/tapa%20mq135.png" alt="Plano dimensional de la tapa de la carcasa MQ-135" width="85%"/>
+  <p><em>Figura 27. Plano dimensional de la pieza Tapa de la carcasa MQ-135 de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales, espesores, pestaña guía de ajuste y perforaciones de sujeción para mantenimiento. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.2.5. Plano dimensional del soporte interno para sensor MQ-135 
+La pieza `soporte mq135` es una estructura en escuadra con ranuras calibradas de encaje que se introduce dentro de la carcasa periférica. Su función es inmovilizar la pequeña placa PCB comercial del sensor MQ-135, manteniendo la malla metálica del elemento calefactor orientada hacia el flujo de gases y alejando sus terminales de soldadura de las paredes plásticas.
+
+El plano incluye vistas ortogonales e isométrica con dimensiones generales de 40 mm de longitud, 35 mm de ancho y 12 mm de altura. Se especifican pestañas de retención elástica tipo *snap-fit*, una ventana central libre para la disipación del calefactor del sensor y dos taladros de fijación de 2,5 mm de diámetro.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/soporte%20mq135.png" alt="Plano dimensional del soporte para sensor MQ-135" width="85%"/>
+  <p><em>Figura 28. Plano dimensional de la pieza Soporte para sensor MQ-135 de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas acotadas, ranuras de encaje para placa de sensor, ventana de disipación y pestañas de fijación. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.2.6. Plano dimensional del soporte para pantalla OLED 
+La pieza `soporte pantalla led` (destinada a la pantalla OLED monocromática) corresponde a un bisel frontal empotrado diseñado para ubicarse en la cara superior o lateral del biorreactor. Dispone de un marco exterior con ventana rectangular abierta que deja visible el área activa del display OLED SSD1306, mientras que por la parte posterior incorpora cuatro postes pequeños con rebajes para encajar la placa electrónica y proteger los pines de conexión I2C.
+
+El plano muestra vistas ortogonales e isométrica con dimensiones de placa de 48 mm de largo por 38 mm de alto y un espesor de marco de 6 mm. Se detalla la ventana de visualización central acotada en 32 mm por 18 mm, así como cuatro perforaciones ciegas de 2 mm de diámetro espaciadas a 24 mm y 30 mm para microtornillos M2.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/soporte%20pantalla%20oled.png" alt="Plano dimensional del soporte para pantalla OLED" width="85%"/>
+  <p><em>Figura 29. Plano dimensional de la pieza Soporte para pantalla OLED de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas de alzado, corte y perspectiva, ventana gráfica de visualización del avatar y postes de fijación para display OLED I2C. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
+
+---
+
+##### 3.4.4.2.7. Plano dimensional del soporte para ventilador extractor
+La pieza `soporte ventilador` es un ducto de transición aerodinámica cuadrangular diseñado para montar el ventilador axial de 12 V DC (formato estándar de 80 mm por 80 mm o 40 mm por 40 mm) sobre la pared lateral del biorreactor. Incorpora una rejilla de protección frontal con orificios hexagonales tipo panal que permite la salida libre del caudal de aire caliente impidiendo que fragmentos de biomasa alcancen las aspas rotatorias del motor.
+
+El plano establece vistas ortogonales e isométrica con dimensiones exteriores de 85 mm por 85 mm y una profundidad de tobera de 18 mm. Se detallan cuatro orificios pasantes de 4,2 mm de diámetro con separación entre centros estándar de 71,5 mm para pernos M4 con tuerca autofrenante, así como el espesor de 1,8 mm de las celdas hexagonales de la rejilla de seguridad.
+
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/soporte%20ventilador.png" alt="Plano dimensional del soporte para ventilador extractor" width="85%"/>
+  <p><em>Figura 30. Plano dimensional de la pieza Soporte para ventilador extractor de CompostTech.</em></p>
+</div>
+
+> **Nota.** Elaboración propia en Onshape. Vistas ortogonales e isométrica, marco cuadrangular de montaje para ventilador axial, rejilla hexagonal de protección y barrenos para pernos M4. Material: PLA. Cantidad requerida: 1 unidad. Cotas expresadas en milímetros.
 
 ### 3.5. Diseño electrónico y acondicionamiento en PCB de CompostTech
 
