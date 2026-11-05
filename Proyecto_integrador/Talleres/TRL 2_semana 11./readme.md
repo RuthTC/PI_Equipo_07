@@ -219,34 +219,60 @@ La Figura 3 presenta la matriz morfológica de CompostTech, mostrando las funcio
 
 ---
 
-#### Boceto 1 — Solución preliminar 1
+#### Boceto 1 — Solución preliminar 1 (Alternativa Seleccionada)
 
-*(Espacio reservado para la incorporación del boceto conceptual correspondiente a la Solución 1 de la matriz morfológica, describiendo la disposición del biorreactor con manivela helicoidal, cámara periférica para el sensor MQ-135, caja electrónica lateral, bandeja deslizable inferior de lixiviados y la doble interfaz de usuario OLED/Flutter).*
+El primer boceto representa la configuración conceptual de CompostTech adoptada como base de diseño por el equipo. Plantea un biorreactor de sobremesa de disposición horizontal compacta, optimizado para espacios domésticos reducidos y terrazas urbanas.
 
-*Figura 4. Boceto de la Solución preliminar 1 del sistema CompostTech.*
+* **Descripción técnica y funcional:**
+  * **Estructura y cerramiento:** Chasis prismático rectangular fabricado mediante manufactura aditiva en PLA (10,08 L brutos), con tapa superior basculante de acceso rápido provista de manija ergonómica y cierres de presión para evitar la dispersión de olores.
+  * **Suministro energético y potencia:** Techo inclinado superior que alberga un panel solar fotovoltaico de 10 W, conectado mediante cableado exterior protegido hacia una caja estanca lateral que aloja el banco de energía (Power Bank / batería Li-ion con BMS) y la placa de control.
+  * **Aireación y disipación térmica:** Frontal con montaje empotrado para un ventilador axial DC gobernado automáticamente por el microcontrolador mediante histéresis térmica, asistido por una matriz de perforaciones pasivas en las paredes laterales para inducir flujo cruzado.
+  * **Mezclado manual y decantación:** Eje central accionado por una manivela manual compacta exterior, con paletas curvas que conservan una zona de paso libre en el centro para salvaguardar las sondas de biomasa. La base inferior integra una bandeja colectora deslizable e independiente para retener los lixiviados decantados por gravedad.
 
-*Nota.* Elaboración propia. Representación conceptual de la Solución preliminar 1 adoptada por el equipo.
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/soluci%C3%B3n1.png" alt="Boceto 1: Diseño horizontal manual compacto con panel solar" width="55%"/>
+  <p><em>Figura 4. Boceto de la Solución preliminar 1 del sistema CompostTech (Diseño horizontal compacto con panel solar).</em></p>
+</div>
+
+> **Nota.** Elaboración propia. Se ilustra la configuración de sobremesa seleccionada: reactor horizontal con panel solar superior inclinado, gabinete lateral de energía, ventilador axial frontal, manivela manual de volteo y bandeja deslizable de lixiviados.
 
 ---
 
-#### Boceto 2 — Solución preliminar 2
+#### Boceto 2 — Solución preliminar 2 (Alternativa de Doble Cámara Rotatoria)
 
-*(Espacio reservado para la incorporación del boceto conceptual correspondiente a la Solución 2 de la matriz morfológica, considerando volteo automatizado mediante servomotor MG996R, sensores industriales RS485, módulo fotoacústico SCD41 y base de datos en Supabase).*
+El segundo boceto representa una alternativa de compostaje continuo basada en una compostera horizontal de tambor rotatorio dividida en dos compartimentos cilíndricos octagonales independientes.
 
-*Figura 5. Boceto de la Solución preliminar 2 del sistema CompostTech.*
+* **Descripción técnica y funcional:**
+  * **Operación por etapas paralelas:** Dispone de dos cámaras contiguas con tapas abisagradas independientes y ventanas transparentes de policarbonato para inspección visual directa del sustrato. Permite mantener una cámara en etapa activa de carga mientras la segunda se encuentra en fase de maduración biológica.
+  * **Mecanismo de volteo rotatorio:** El tambor completo gira sobre un soporte estructural en caballete rígido (perfiles en A), accionado manualmente por una manivela lateral conectada a una brida central de transmisión.
+  * **Ventilación pasiva distribuida:** Ambas tapas laterales integran un arreglo concéntrico de múltiples perforaciones circulares para la oxigenación pasiva continua durante el giro.
+  * **Limitaciones técnicas de integración:** Aunque favorece el mezclado mecánico por volteo total, dificulta el enrutamiento fijo del cableado para sensores sumergidos (temperatura y humedad) y la recolección hermética de efluentes, requiriendo colectores móviles más complejos.
 
-*Nota.* Elaboración propia. Representación conceptual de la Solución preliminar 2.
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/Soluci%C3%B3n2.png" alt="Boceto 2: Compostera de Doble Cámara" width="60%"/>
+  <p><em>Figura 5. Boceto de la Solución preliminar 2 del sistema CompostTech (Compostera de doble cámara rotatoria).</em></p>
+</div>
+
+> **Nota.** Elaboración propia. Alternativa basada en tambor rotatorio de doble compartimento con ventanas de supervisión y volteo manual perimétrico sobre caballete estructural.
 
 ---
 
-#### Boceto 3 — Solución preliminar 3
+#### Boceto 3 — Solución preliminar 3 (Alternativa de Torre Vertical con Tolva Cónica)
 
-*(Espacio reservado para la incorporación del boceto conceptual correspondiente a la Solución 3 de la matriz morfológica, considerando termocupla tipo K, sensor multiparamétrico SEN0601, arreglo triple de gases, ventilador radial centrífugo, control con Arduino Uno R4 WiFi y dashboard web en React).*
+El tercer boceto propone una configuración en torre vertical octagonal inspirada en silos domésticos de alimentación por gravedad continua.
 
-*Figura 6. Boceto de la Solución preliminar 3 del sistema CompostTech.*
+* **Descripción técnica y funcional:**
+  * **Disposición volumétrica y flujo gravitatorio:** Cámara vertical octagonal sustentada sobre una base elevada de cuatro patas con travesaños de refuerzo. Los residuos frescos se introducen por la tapa superior con manija, mientras que el compost maduro se descarga mediante una compuerta inferior abisagrada con picaporte de seguridad.
+  * **Ventilación pasiva multizona:** Toda la periferia del manto cilíndrico presenta perforaciones en patrón alternado para favorecer la convección térmica ascendente natural del aire caliente generado por la microbiota.
+  * **Drenaje inferior por válvula:** La base inferior presenta una transición cónica que concentra los efluentes líquidos hacia una tubería de purga con válvula de bola inferior, facilitando la extracción directa de lixiviados hacia recipientes de almacenamiento externo.
+  * **Evaluación de viabilidad:** Presenta facilidad para el drenaje líquido; sin embargo, carece de un sistema eficiente de volteo interno manual, dependiendo exclusivamente de aireación convectiva que incrementa el riesgo de compactación en estratos medios y bajos.
 
-*Nota.* Elaboración propia. Representación conceptual de la Solución preliminar 3.
+<div align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagen/Soluci%C3%B3n3.png" alt="Boceto 3: Diseño vertical con aireación y tolva cónica" width="45%"/>
+  <p><em>Figura 6. Boceto de la Solución preliminar 3 del sistema CompostTech (Diseño vertical con aireación).</em></p>
+</div>
 
+> **Nota.** Elaboración propia. Alternativa en torre vertical con ventilación perimetral, descarga inferior por compuerta y purga cónica de lixiviados mediante válvula.
 
 ### 3.4. Representación del modelado tridimensional
 
