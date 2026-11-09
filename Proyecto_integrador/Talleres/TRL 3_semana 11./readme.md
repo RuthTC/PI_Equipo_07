@@ -17,7 +17,7 @@
 ## 1. Descripción de la Prueba de Concepto (TRL 3)
 En este nivel se ejecuta la **Prueba de Concepto Tecnológico** para el sistema de monitoreo y control automatizado de compostaje (**CompostTech**). El objetivo principal es demostrar mediante ensayos experimentales a nivel de laboratorio la viabilidad de la adquisición de datos fisicoquímicos (temperatura, humedad del sustrato, niveles de lixiviados y gases metabólicos CO₂/NH₃) y la respuesta del sistema de ventilación forzada para optimizar el bioproceso de descomposición orgánica aerobia.
 
-2. Ensayos analíticos: simulación estructural en SimScale
+## 2. Ensayos analíticos: simulación estructural en SimScale
 
 2.1 Objetivo y criterio de aceptación
 Objetivo. Verifique, antes de fabricarlas, que las piezas estructurales del prototipo soportan las cargas de operación. El modelo está en Onshape (modelo CAD) y las piezas impresas se prevén en PLA, cuya resistencia depende de parámetros de impresión como la densidad de relleno, la orientación y la altura de capa [9].
