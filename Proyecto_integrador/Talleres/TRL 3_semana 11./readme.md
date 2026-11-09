@@ -19,13 +19,13 @@ En este nivel se ejecuta la Prueba de Concepto Tecnológico para el sistema de m
 
 ## 1. Descripción del Sistema y Ciclo Operativo
 
-El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (restos vegetales domésticos y de poda) en el contenedor de compostaje y monitorea continuamente los parámetros fisicoquímicos clave del bioproceso: temperatura, humedad del sustrato, concentración de gases y nivel de lixiviados[cite: 1, 2]. Un microcontrolador **ESP32 DevKit V1** procesa estas señales mediante un algoritmo de decisión por umbrales para coordinar la aireación forzada y notificar alertas al usuario[cite: 3, 4]. En el **TRL 3** se evalúan y prueban individualmente los elementos que miden y accionan este ciclo:
-- **Sensor de temperatura (DS18B20 impermeable):** Entrada principal para identificar las fases mesófila (20–35 °C) y termófila (35–65 °C), y activar la ventilación si supera los 65 °C[cite: 2].
-- **Sensor de humedad capacitivo (v1.2):** Mide el porcentaje de humedad del sustrato para mantener el rango óptimo (50–70 %)[cite: 3].
-- **Sensores de gases (SCD41 / MQ-135):** Monitorean la concentración de $\text{CO}_2$ y gases metabólicos u olores ($\text{NH}_3$)[cite: 4].
-- **Sensor de nivel de lixiviados (XKC-Y25-T12V sin contacto):** Detecta la acumulación del efluente líquido en la base del contenedor de forma no intrusiva[cite: 5].
-- **Ventilador USB (8025 5V - $80 \times 80 \times 25\text{ mm}$):** Actuador encargado del flujo de aire forzado ante sobrecalentamiento o exceso de gases[cite: 1].
-- **ESP32 DevKit V1 y Alimentación (Power Bank de 20 000 mAh):** Núcleo de procesamiento, conectividad y fuente de energía segura a 5 V DC[cite: 3].
+El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (restos vegetales domésticos y de poda) en el contenedor de compostaje y monitorea continuamente los parámetros fisicoquímicos clave del bioproceso: temperatura, humedad del sustrato, concentración de gases y nivel de lixiviados[1,2]. Un microcontrolador **ESP32 DevKit V1** procesa estas señales mediante un algoritmo de decisión por umbrales para coordinar la aireación forzada y notificar alertas al usuario[3,4]. En el **TRL 3** se evalúan y prueban individualmente los elementos que miden y accionan este ciclo:
+- **Sensor de temperatura (DS18B20 impermeable):** Entrada principal para identificar las fases mesófila (20–35 °C) y termófila (35–65 °C), y activar la ventilación si supera los 65 °C[2].
+- **Sensor de humedad capacitivo (v1.2):** Mide el porcentaje de humedad del sustrato para mantener el rango óptimo (50–70 %)[3].
+- **Sensores de gases (SCD41 / MQ-135):** Monitorean la concentración de $\text{CO}_2$ y gases metabólicos u olores ($\text{NH}_3$)[4].
+- **Sensor de nivel de lixiviados (XKC-Y25-T12V sin contacto):** Detecta la acumulación del efluente líquido en la base del contenedor de forma no intrusiva[5].
+- **Ventilador USB (8025 5V - $80 \times 80 \times 25\text{ mm}$):** Actuador encargado del flujo de aire forzado ante sobrecalentamiento o exceso de gases[1].
+- **ESP32 DevKit V1 y Alimentación (Power Bank de 20 000 mAh):** Núcleo de procesamiento, conectividad y fuente de energía segura a 5 V DC[3].
 
 ## 2. Ensayos analíticos y simulación estructural en SimScale
 
@@ -45,7 +45,6 @@ La primera etapa del análisis evalúa la distribución del esfuerzo equivalente
 
 <p align="center">
   <img width="1017" height="726" alt="Distribución general de esfuerzos de Von Mises" src="https://github.com/user-attachments/assets/9d77239a-50fd-47f7-a1e9-055d7534d0f5">
-</p>
 > **Cita de Imagen 2.1:** `simscale_von_mises.png`. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), con un esfuerzo máximo localizado significativamente por debajo del límite de fluencia del HDPE y del acero.
 
 ---
@@ -56,7 +55,6 @@ Para asegurar la durabilidad del sistema, se analizaron las zonas donde los esfu
 
 <p align="center">
   <img width="765" height="456" alt="Detalle de concentraciones de esfuerzo" src="https://github.com/user-attachments/assets/f6e71a71-86b6-4a2e-8b41-740af1d30d4b">
-</p>
 > **Cita de Imagen 2.2:** `simscale_stress_concentrations.png`. Vista detallada (zoom) que resalta las zonas de máximo esfuerzo ($\sigma_{max}$). Identificar estas áreas permite validar el diseño de componentes críticos como el eje de transmisión y sus soportes de rodamiento, asegurando un Factor de Seguridad ($FS$) adecuado.
 
 ---
@@ -67,7 +65,6 @@ Además de la resistencia a la fluencia, la estructura no debe deformarse excesi
 
 <p align="center">
   <img width="792" height="575" alt="Mapa de desplazamiento total" src="https://github.com/user-attachments/assets/449b0d67-0ed5-4791-8271-76f4166b902f">
-</p>
 > **Cita de Imagen 2.3:** `simscale_displacement.png`. Mapa de desplazamiento total de la estructura. Se observa un desplazamiento máximo calculado de **$0.1204\text{ mm}$** localizado en la cara inferior del recipiente por efecto de la carga estática. Esta deformación es insignificante respecto a las dimensiones del contenedor y se mantiene dentro de los límites operativos ($<2\text{ mm}$).
 
 ---
@@ -78,7 +75,6 @@ Para garantizar la precisión numérica en SimScale, se realizó un estudio de d
 
 <p align="center">
   <img width="742" height="317" alt="Visualización de la malla y convergencia" src="https://github.com/user-attachments/assets/58d67385-0424-4c2e-a222-c2ca44169df6">
-</p>
 > **Cita de Imagen 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla refinada empleada en zonas de alta concentración de esfuerzo. A la derecha, la gráfica de convergencia que confirma la estabilidad del valor numérico de $\sigma_{max}$ al incrementar la densidad de la malla.
 
 ---
