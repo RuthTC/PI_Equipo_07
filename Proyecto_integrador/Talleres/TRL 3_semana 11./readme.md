@@ -57,8 +57,9 @@ Para asegurar la durabilidad del sistema, se analizaron las zonas donde los esfu
 
 <p align="center">
   <img width="765" height="456" alt="Detalle de concentraciones de esfuerzo" src="https://github.com/user-attachments/assets/f6e71a71-86b6-4a2e-8b41-740af1d30d4b">
-> **Cita de Imagen 2.2:** `simscale_stress_concentrations.png`. Vista detallada (zoom) que resalta las zonas de máximo esfuerzo ($\sigma_{max}$). Identificar estas áreas permite validar el diseño de componentes críticos como el eje de transmisión y sus soportes de rodamiento, asegurando un Factor de Seguridad ($FS$) adecuado.
+</p>
 
+> **Figura 2.2:** `simscale_stress_concentrations.png`. Vista detallada (*zoom*) que resalta las zonas de máximo esfuerzo ($\sigma_{max}$). Identificar estas áreas permite validar el diseño de componentes críticos como el eje de transmisión y sus soportes de rodamiento, asegurando un Factor de Seguridad ($FS$) adecuado.
 ---
 
 ### 2.3. Análisis de Desplazamiento y Deformación Estructural
@@ -67,8 +68,9 @@ Además de la resistencia a la fluencia, la estructura no debe deformarse excesi
 
 <p align="center">
   <img width="792" height="575" alt="Mapa de desplazamiento total" src="https://github.com/user-attachments/assets/449b0d67-0ed5-4791-8271-76f4166b902f">
-> **Cita de Imagen 2.3:** `simscale_displacement.png`. Mapa de desplazamiento total de la estructura. Se observa un desplazamiento máximo calculado de **$0.1204\text{ mm}$** localizado en la cara inferior del recipiente por efecto de la carga estática. Esta deformación es insignificante respecto a las dimensiones del contenedor y se mantiene dentro de los límites operativos ($<2\text{ mm}$).
+</p>
 
+> **Figura 2.3:** `simscale_displacement.png`. Mapa de desplazamiento total de la estructura. Se observa un desplazamiento máximo calculado de **$0.1204\text{ mm}$** localizado en la cara inferior del recipiente por efecto de la carga estática. Esta deformación es insignificante respecto a las dimensiones del contenedor y se mantiene dentro de los límites operativos ($<2\text{ mm}$).
 ---
 
 ### 2.4. Calidad de la Malla y Convergencia
@@ -77,8 +79,9 @@ Para garantizar la precisión numérica en SimScale, se realizó un estudio de d
 
 <p align="center">
   <img width="742" height="317" alt="Visualización de la malla y convergencia" src="https://github.com/user-attachments/assets/58d67385-0424-4c2e-a222-c2ca44169df6">
-> **Cita de Imagen 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla refinada empleada en zonas de alta concentración de esfuerzo. A la derecha, la gráfica de convergencia que confirma la estabilidad del valor numérico de $\sigma_{max}$ al incrementar la densidad de la malla.
+</p>
 
+> **Figura 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla refinada empleada en zonas de alta concentración de esfuerzo. A la derecha, la gráfica de convergencia que confirma la estabilidad del valor numérico de $\sigma_{max}$ al incrementar la densidad de la malla.
 ---
 
 ### 2.5. Resumen de Esfuerzos y Evaluación del Factor de Seguridad
@@ -104,8 +107,8 @@ Como parte de la planificación de la fabricación (Indicador TRL 3), se present
 <p align="center">
   <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/3D_compostech.png" alt="Vista explosionada (Exploded View) del diseño CAD 3D de la compostera inteligente.">
 </p>
-> **Cita de Imagen 2.5:** `cad_assembly_exploded.png`. Esta vista permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el recipiente HDPE, el eje central, los soportes de rodamiento, el motorreductor, la manivela de accionamiento y el módulo de sensores inteligentes.
 
+> **Figura 2.5:** `cad_assembly_exploded.png`. Vista explosionada (*Exploded View*) del diseño CAD 3D de la compostera inteligente. Permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el recipiente HDPE, el eje central, los soportes de rodamiento, el motorreductor, la manivela de accionamiento y el módulo de sensores inteligentes.
 ---
 
 ### 2.7. Conclusión de Viabilidad (TRL 3) y Alcance del Resultado
