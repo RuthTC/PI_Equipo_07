@@ -14,7 +14,8 @@
 | **Tema** | TRL 3 de Monitor de Compostaje Doméstico Inteligente |
 
 ## Contenido
-## Descripción de la Prueba de Concepto (TRL 3)
+---
+Descripción de la Prueba de Concepto (TRL 3)
 En este nivel se ejecuta la **Prueba de Concepto Tecnológico** para el sistema de monitoreo y control automatizado de compostaje (**CompostTech**). El objetivo principal es demostrar mediante ensayos experimentales a nivel de laboratorio la viabilidad de la adquisición de datos fisicoquímicos (temperatura, humedad del sustrato, niveles de lixiviados y gases metabólicos CO₂/NH₃) y la respuesta del sistema de ventilación forzada para optimizar el bioproceso de descomposición orgánica aerobia.
 ---
 ## 1. Descripción del Sistema y Ciclo Operativo
