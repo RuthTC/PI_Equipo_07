@@ -11,7 +11,7 @@
   * Aldana Porras, Leonela Angela
   * Ccoyllo, Alex 
   * Ancco, Juan
-  * Turpo Cayo, Ruth turpo 
+  * Turpo Cayo, Ruth Carina
 
 ---
 
