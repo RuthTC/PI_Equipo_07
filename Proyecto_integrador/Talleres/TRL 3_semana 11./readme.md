@@ -1,3 +1,4 @@
+<img width="1017" height="726" alt="Captura de pantalla 2026-11-09 153124" src="https://github.com/user-attachments/assets/578742af-4a6a-41ef-94da-de2fa2c5b6c6" />
 # PRUEBA Y CALIBRACIÓN SE SENSORES — TRL 3
 
 ## Desarrollo experimental o prueba del concepto tecnológico.
@@ -42,7 +43,8 @@ El análisis estructural se centró en evaluar la integridad del conjunto tambor
 
 La primera etapa del análisis evalúa la distribución de esfuerzos de Von Mises en todo el ensamblaje para identificar si algún componente supera el límite elástico del material.
 
-![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.](simscale_von_mises.png)
+![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.]<img width="1017" height="726" alt="Captura de pantalla 2026-11-09 153124" src="https://github.com/user-attachments/assets/9d77239a-50fd-47f7-a1e9-055d7534d0f5" />
+
 > **Cita de Imagen 2.1:** `simscale_von_mises.png`. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), muy por debajo del límite de fluencia del HDPE y del acero.
 
 ### 2.2. Identificación de Puntos Críticos y Concentraciones de Esfuerzo
