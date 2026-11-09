@@ -73,7 +73,6 @@ Como parte de la planificación de la fabricación (Indicador TRL 3), se present
 
 ![Vista explosionada (Exploded View) del diseño CAD 3D de la compostera inteligente.]<p align="center">
   <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/3D_compostech.png">
-</p>
 > **Cita de Imagen 2.5:** `cad_assembly_exploded.png`. Esta vista permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el tambor HDPE, el eje central, los rodamientos, el motorreductor, el chasis de soporte y el módulo de sensores inteligentes.
 
 ## 2.6. Conclusión de Viabilidad (TRL 3)
