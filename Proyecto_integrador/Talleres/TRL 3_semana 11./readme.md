@@ -1,3 +1,4 @@
+<img width="742" height="317" alt="Captura de pantalla 2026-11-09 165925" src="https://github.com/user-attachments/assets/58d67385-0424-4c2e-a222-c2ca44169df6" />
 # PRUEBA Y CALIBRACIÓN SE SENSORES — TRL 3
 
 ## Desarrollo experimental o prueba del concepto tecnológico.
@@ -64,7 +65,11 @@ Además de resistir los esfuerzos, la estructura no debe deformarse excesivament
 
 Para garantizar la precisión de los resultados de SimScale, se realizó un estudio de la calidad de la malla (discretización), asegurando que los resultados numéricos sean independientes del tamaño de los elementos.
 
-![Visualización de la malla de elementos finitos y gráfico de estudio de convergencia.](mesh_convergence_analysis.png)
+![Visualización de la malla de elementos finitos y gráfico de estudio de convergencia.]
+
+
+<img width="742" height="317" alt="Captura de pantalla 2026-11-09 165925" src="https://github.com/user-attachments/assets/69a4a30e-2d32-4488-9225-ca5883f2d8cc" />
+
 > **Cita de Imagen 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla final utilizada, mostrando mayor refinamiento en zonas críticas. A la derecha, la gráfica de convergencia que demuestra que aumentar la densidad de elementos no cambia significativamente el valor de esfuerzo máximo, validando la precisión de la simulación.
 
 ## 2.5. Despiece y Arquitectura del Sistema CAD
