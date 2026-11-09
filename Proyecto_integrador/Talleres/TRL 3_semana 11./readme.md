@@ -31,16 +31,6 @@ El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (
 ---
 ## 2. Ensayos analíticos y simulación estructural en SimScale
 ---
-# Sección 2: RT3 - Ensayos Analíticos y Simulación Estructural (TRL 3)
-
-## 2.1. Introducción al TRL 3: Prueba de Concepto Analítica
-
-El nivel de Madurez Tecnológica 3 (TRL 3) marca la transición de los principios básicos a la demostración de la viabilidad tecnológica. En esta fase, se realizan estudios analíticos y de laboratorio para validar que los componentes principales de la Compostera Inteligente funcionarán según lo previsto en un entorno controlado.
-
-Para este proyecto, la viabilidad se demuestra mediante la validación del diseño mecánico utilizando **Análisis de Elementos Finitos (FEA)** en la plataforma **SimScale**. Estos ensayos analíticos permiten predecir el comportamiento estructural bajo carga operativa máxima sin necesidad de construir un prototipo físico inicial, cumpliendo así con los indicadores de TRL 3.
-
-## 2.2. Metodología de Simulación Estructural (FEA) en SimScale
-
 El análisis estructural se centró en evaluar la integridad del conjunto tambor-eje-chasis bajo la carga máxima de residuos orgánicos en proceso de compostaje.
 
 **Parámetros de Entrada:**
@@ -48,42 +38,42 @@ El análisis estructural se centró en evaluar la integridad del conjunto tambor
 *   **Materiales:** Tambor de HDPE (Polietileno de Alta Densidad) y eje/chasis de Acero AISI 304.
 *   **Condiciones de Contorno:** Soportes fijos en la base del chasis; restricciones de rodadura en los soportes del eje.
 
-### 2.2.1. Visualización General de Esfuerzos (Von Mises)
+### 2.1. Visualización General de Esfuerzos (Von Mises)
 
 La primera etapa del análisis evalúa la distribución de esfuerzos de Von Mises en todo el ensamblaje para identificar si algún componente supera el límite elástico del material.
 
 ![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.](simscale_von_mises.png)
 > **Cita de Imagen 2.1:** `simscale_von_mises.png`. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), muy por debajo del límite de fluencia del HDPE y del acero.
 
-### 2.2.2. Identificación de Puntos Críticos y Concentraciones de Esfuerzo
+### 2.2. Identificación de Puntos Críticos y Concentraciones de Esfuerzo
 
 Para asegurar la durabilidad, es crucial analizar las zonas donde los esfuerzos se concentran, como uniones, esquinas y soportes de rodamientos.
 
 ![Detalle de las concentraciones de esfuerzo en la unión del eje principal y el soporte del rodamiento.](simscale_stress_concentrations.png)
 > **Cita de Imagen 2.2:** `simscale_stress_concentrations.png`. Vista detallada (zoom) que resalta las zonas de máximo esfuerzo (hotspots). Identificar estas áreas ($\sigma_{max}$) permite validar el diseño de los componentes críticos como el eje de transmisión y sus soportes, asegurando un Factor de Seguridad adecuado.
 
-### 2.2.3. Análisis de Desplazamiento y Deformación Estructural
+### 2.3. Análisis de Desplazamiento y Deformación Estructural
 
 Además de resistir los esfuerzos, la estructura no debe deformarse excesivamente para garantizar el correcto funcionamiento de los mecanismos de rotación y sellado.
 
 ![Mapa de desplazamiento total (deformación) de la estructura de la compostera.](simscale_displacement.png)
 > **Cita de Imagen 2.3:** `simscale_displacement.png`. Esta imagen ilustra la deformación elástica de la estructura en mm. El desplazamiento máximo se localiza en el centro del tambor debido a la carga de los residuos, pero se mantiene dentro de límites aceptables ($<2$ mm) que no comprometen la operación mecánica.
 
-### 2.2.4. Calidad de la Malla y Convergencia
+### 2.4. Calidad de la Malla y Convergencia
 
 Para garantizar la precisión de los resultados de SimScale, se realizó un estudio de la calidad de la malla (discretización), asegurando que los resultados numéricos sean independientes del tamaño de los elementos.
 
 ![Visualización de la malla de elementos finitos y gráfico de estudio de convergencia.](mesh_convergence_analysis.png)
 > **Cita de Imagen 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla final utilizada, mostrando mayor refinamiento en zonas críticas. A la derecha, la gráfica de convergencia que demuestra que aumentar la densidad de elementos no cambia significativamente el valor de esfuerzo máximo, validando la precisión de la simulación.
 
-## 2.3. Despiece y Arquitectura del Sistema CAD
+## 2.5. Despiece y Arquitectura del Sistema CAD
 
 Como parte de la planificación de la fabricación (Indicador TRL 3), se presenta la arquitectura detallada del sistema en una vista explosionada.
 
 ![Vista explosionada (Exploded View) del diseño CAD 3D de la compostera inteligente.](cad_assembly_exploded.png)
 > **Cita de Imagen 2.5:** `cad_assembly_exploded.png`. Esta vista permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el tambor HDPE, el eje central, los rodamientos, el motorreductor, el chasis de soporte y el módulo de sensores inteligentes.
 
-## 2.4. Conclusión de Viabilidad (TRL 3)
+## 2.6. Conclusión de Viabilidad (TRL 3)
 
 Los ensayos analíticos realizados en SimScale confirman que el diseño estructural de la compostera inteligente es viable. Los esfuerzos máximos calculados están significativamente por debajo del límite elástico de los materiales propuestos, y las deformaciones son mínimas. Este análisis proporciona la base necesaria para proceder con confianza a la fase de prototipado físico (TRL 4).
 
