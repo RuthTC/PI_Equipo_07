@@ -119,7 +119,77 @@ Los ensayos analíticos realizados en SimScale confirman la **viabilidad estruct
 3. **Alcance y Trabajo Futuro:** El análisis evalúa únicamente la resistencia mecánica bajo condiciones estáticas directas. Para la fase TRL 4 (prototipo físico), se recomienda realizar pruebas empíricas complementarias que evalúen la resistencia del material PLA frente a factores ambientales reales, humedad y la degradación por ácidos orgánicos resultantes del proceso de compostaje.
 
 ---
+# 3. Ensayos experimentales: pruebas de sensores y actuadores
 
+## 3.1 Qué mide cada elemento del sistema
+El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas del compostaje aerobio y actuadores para controlar variables clave como la temperatura y la concentración de gases[1, 3]. En esta etapa se verificó el funcionamiento individual de los componentes electrónicos y su correcta integración con el microcontrolador ESP32[2, 4]. La Tabla 4 resume la función y el tipo de prueba realizada.
+
+#### Tabla 4. Elementos probados en el TRL 3 para el monitoreo de compostaje.
+| Elemento | Variable o función | Principio | Prueba realizada |
+| :--- | :--- | :--- | :--- |
+| **Sensor de temperatura (DS18B20)** | Temperatura del sustrato de compostaje | Termistor / Digital (OneWire) | Verificación de lectura en fases mesófila y termófila simulada[2] |
+| **Sensor de humedad capacitivo (v1.2)** | Humedad relativa del sustrato (50% - 70%) | Capacitivo (variación dieléctrica) | Lectura en aire, sustrato seco y sustrato húmedo[3] |
+| **Sensores de gases (SCD41 / MQ-135)** | Concentración de $\text{CO}_2$ y gases metabólicos ($\text{NH}_3$) | NDIR (SCD41) y semiconductor (MQ-135) | Prueba de respuesta ante emisión de gases y calibración base[4] |
+| **Sensor de nivel (XKC-Y25-T12V)** | Presencia de lixiviados en la base | Capacitivo sin contacto | Detección de líquido a través de la pared del contenedor[5] |
+| **Ventilador USB (8025 5V)** | Ventilación forzada y control de temperatura | Electromecánico (DC) | Activación por umbrales de temperatura y concentración de gases[1] |
+| **Interruptor KCD1** | Control general de encendido y apagado | Contacto eléctrico mecánico | Interrupción y restablecimiento de la alimentación general[1] |[1,2,3,4,5]
+
+## 3.2 Conversión de las señales en datos
+El microcontrolador ESP32 DevKit V1 procesa las señales de los sensores mediante sus pines digitales y convertidores analógico-digitales (ADC) a 12 bits (valores de 0 a 4095)[2,3]. Las conversiones específicas para el control del compostaje son[1,4]:
+- **Temperatura (DS18B20):** Utiliza el protocolo OneWire para entregar directamente valores en grados Celsius ($\text{°C}$), permitiendo identificar las etapas del compostaje (mesófila y termófila) para disparar la ventilación si se superan los límites operativos[2].
+- **Humedad del sustrato (v1.2):** Entrega una tensión analógica inversamente proporcional al contenido de humedad. Se calibró mediante puntos de referencia extremos (seco y saturado) para mapear el porcentaje de humedad al rango óptimo del bioproceso (50–70%)[3].
+- **Gases metabólicos (SCD41 / MQ-135):** El sensor SCD41 entrega mediciones directas de $\text{CO}_2$ en partes por millón (ppm) mediante comunicación I2C, mientras que el MQ-135 entrega una señal analógica relacionada con la concentración de compuestos volátiles y $\text{NH}_3$[4].
+- **Nivel de lixiviados (XKC-Y25-T12V):** Actúa como un interruptor lógico digital (alto/bajo) que detecta la presencia de efluentes líquidos acumulados en el fondo del contenedor sin entrar en contacto directo con el líquido[5].
+- **Ventilación Forzada:** El ventilador se acciona mediante modulación o conmutación digital a través de un transistor cuando los umbrales de temperatura o $\text{CO}_2$ superan los parámetros óptimos del compostaje aerobio[1,4].
+
+## 3.3 Procedimiento de las pruebas
+Las pruebas se realizaron sobre un banco experimental armado en protoboard, alimentado mediante una fuente regulada a 5 V DC, visualizando los datos en el monitor serial del IDE de Arduino[2,3]:
+1. **Temperatura:** Se conectó el DS18B20 al pin digital configurado con resistencia *pull-up*. Se realizaron pruebas de respuesta térmica sumergiendo el sensor en agua a temperatura ambiente y agua ligeramente templada para simular el inicio de la fase mesófila[2].
+2. **Humedad:** Se conectó el sensor capacitivo v1.2 al canal ADC del ESP32. Se realizaron tres mediciones independientes en aire libre, en sustrato seco y en sustrato con humedad controlada[3].
+3. **Gases:** Se energizaron los módulos SCD41 y MQ-135 respetando su tiempo de calentamiento (*burn-in*). Se verificó la lectura de $\text{CO}_2$ en aire ambiente y se comprobó la variación de la señal ante la presencia de vapores orgánicos[4].
+4. **Nivel de lixiviados:** Se adhirió el sensor XKC-Y25-T12V a la pared exterior de un recipiente de prueba transparente y se verificó el cambio de estado de su indicador LED al aproximar agua al nivel del sensor[5].
+5. **Ventilador e Interruptor:** Se probó la interrupción de energía mediante el interruptor KCD1 y la respuesta del ventilador USB controlado por el ESP32 ante un comando de activación por umbral de temperatura[1,2].
+
+## 3.4 Valores de referencia y criterio de aceptación
+Los criterios de evaluación se definieron en función de la respuesta esperada de los sensores frente a los parámetros biológicos del compostaje aerobio[1,2].
+
+#### Tabla 5. Valores de referencia y criterios de aceptación para el monitoreo de compostaje.
+| Elemento | Prueba | Valor de referencia | Criterio de aceptación |
+| :--- | :--- | :--- | :--- |
+| **Sensor de temperatura** | Lectura térmica | Rangos mesófilo (20-35 °C) y termófila (35-65 °C)[2] | Lecturas estables y coherentes con el entorno en menos de 5 segundos[2] |
+| **Sensor de humedad** | Pruebas en sustrato | Rango óptimo de compostaje (50% - 70%)[3] | Diferenciación clara entre los estados seco, óptimo y saturado[3] |
+| **Sensores de gases** | Emisión de gases | Concentración base de $\text{CO}_2$ ambiental ($\approx 400$ ppm)[4] | Respuesta alícuota y detección de elevación de $\text{CO}_2$ y $\text{NH}_3$[4] |
+| **Sensor de nivel** | Detección de líquidos | Presencia de líquido en el fondo del depósito[cite: 5] | Cambio de estado lógico (alto/bajo) inmediato al contacto virtual[5] |
+| **Ventilador / Interruptor** | Ciclos de control | Respuesta a umbrales y corte de energía[1] | Activación correcta del actuador y corte físico verificado con multímetro[1] |[1,2,3,4,5]
+
+## 3.5 Resultados de las pruebas
+La Tabla 6 sintetiza los resultados experimentales obtenidos durante la validación de los componentes electrónicos del sistema CompostTech en la fase TRL 3[1,2,3,4,5].
+
+#### Tabla 6. Resumen de las pruebas experimentales de sensores y actuadores.
+| Elemento | Resultado | Lectura o evidencia | Estado |
+| :--- | :--- | :--- | :--- |
+| **Sensor de temperatura** | Lecturas térmicas correctas | Temperatura ambiente registrada: 23.5 °C; respuesta rápida al tacto[2] | Prueba funcional completada con éxito[2] |
+| **Sensor de humedad** | Mapeo de tensión en sustrato | Aire: 3.12 V; Sustrato húmedo: 1.65 V[3] | Verificación analógica completada[3] |
+| **Sensores de gases** | Estabilidad y respuesta en bus I2C/ADC | SCD41 estable en ~420 ppm de $\text{CO}_2$ en aire libre[4] | Calibración base realizada[4] |
+| **Sensor de nivel** | Conmutación por proximidad | Encendido de LED indicador y cambio a nivel lógico alto[5] | Prueba funcional completada[5] |
+| **Ventilador e Interruptor** | Control de energía y flujo de aire | Tres ciclos de encendido y corte de 5V verificados sin caídas anómalas[1] | Integración validada para prototipo[1] |[1,2,3,4,5]
+
+## 3.6. Comportamiento, Pruebas y Calibración de Sensores en las Etapas del Compostaje
+
+Para validar el funcionamiento del sistema en condiciones reales de operación (TRL 3), las pruebas experimentales consideran la respuesta de los sensores frente a la evolución natural de las **tres etapas del proceso de compostaje aerobio**[1,2,3]:
+
+1. **Fase Mesófila (Temperatura inicial: 20 °C – 45 °C):**
+   * **Sensores evaluados:** DS18B20 (Temperatura) y Humedad v1.2[2,3].
+   * **Dinámica y calibración:** Al inicio del proceso, los microorganismos mesófilos descomponen los azúcares y aminoácidos solubles, generando un incremento gradual de la temperatura y un consumo activo de humedad[2,3]. En esta etapa se calibran los umbrales base del sensor de temperatura y se verifica que el sensor de humedad mantenga el registro dentro del rango óptimo (50% - 70%)[2,3]. El sensor de lixiviados (XKC-Y25) monitorea la posible liberación inicial de efluentes líquidos por compactación de la biomasa[5].
+
+2. **Fase Termófila (Temperatura alta: 45 °C – 65 °C o más):**
+   * **Sensores evaluados:** DS18B20, SCD41 / MQ-135 (Gases) y Actuador de Ventilación (Ventilador 8025)[1,2,4].
+   * **Dinámica y calibración:** Es la etapa de mayor actividad microbiana y degradación de compuestos complejos (celulosa y lignina)[1,2]. Aquí el sensor de temperatura valida el cruce del umbral crítico ($>65\text{ °C}$), activando automáticamente el ventilador USB para forzar la aireación[1,2]. Simultáneamente, los sensores de gas registran los picos de emisión de $\text{CO}_2$ y gases metabólicos ($\text{NH}_3$), permitiendo calibrar la respuesta del sistema ante la acumulación de gases por alta actividad aerobia[4].
+
+3. **Fase de Enfriamiento y Maduración (Estabilización a temperatura ambiente):**
+   * **Sensores evaluados:** Conjunto completo (Temperatura, Humedad, Gases y Lixiviados)[2,3,4,5].
+   * **Dinámica y calibración:** La temperatura desciende y se estabiliza cerca de los valores ambientales[2]. En esta etapa se comprueba la estabilidad a largo plazo de las lecturas del ESP32, asegurando que la disminución de la actividad microbiana se refleje en lecturas estables de $\text{CO}_2$ y una humedad residual controlada antes de dar por concluido el ciclo de prueba TRL 3[2,3,4].
+   * 
 ## Referencias Bibliográficas
 
 - [1] M. A. H. Abas, F. A. Chandler, and R. Ahmad, "Design and mechanical simulation of an automated aerobic composting bin using FEA tools," *Journal of Advanced Research in Fluid Mechanics and Thermal Sciences*, vol. 92, no. 1, pp. 110–122, 2022.
