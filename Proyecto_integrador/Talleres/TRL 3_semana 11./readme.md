@@ -58,7 +58,6 @@ Para asegurar la durabilidad, es crucial analizar las zonas donde los esfuerzos 
 Además de resistir los esfuerzos, la estructura no debe deformarse excesivamente para garantizar el correcto funcionamiento de los mecanismos de rotación y sellado.
 
 ![Mapa de desplazamiento total (deformación) de la estructura de la compostera.].<img width="792" height="575" alt="image" src="https://github.com/user-attachments/assets/449b0d67-0ed5-4791-8271-76f4166b902f" />
-
 > **Cita de Imagen 2.3:** `simscale_displacement.png`. Esta imagen ilustra la deformación elástica de la estructura en mm. El desplazamiento máximo se localiza en el centro del tambor debido a la carga de los residuos, pero se mantiene dentro de límites aceptables ($<2$ mm) que no comprometen la operación mecánica.
 
 ### 2.4. Calidad de la Malla y Convergencia
