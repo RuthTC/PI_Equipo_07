@@ -43,7 +43,6 @@ El análisis estructural se centró en evaluar la integridad del prototipo **Com
 
 La primera etapa del análisis evalúa la distribución del esfuerzo equivalente de Von Mises en todo el ensamblaje bajo el escenario estático reportado, verificando que la respuesta mecánica trabaje en rangos seguros.
 
-<p align="center">
   <img width="1017" height="726" alt="Distribución general de esfuerzos de Von Mises" src="https://github.com/user-attachments/assets/9d77239a-50fd-47f7-a1e9-055d7534d0f5">
 > **Cita de Imagen 2.1:** `simscale_von_mises.png`. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), con un esfuerzo máximo localizado significativamente por debajo del límite de fluencia del HDPE y del acero.
 
