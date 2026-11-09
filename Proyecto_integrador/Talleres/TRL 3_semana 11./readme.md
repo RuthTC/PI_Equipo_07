@@ -28,7 +28,7 @@ El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (
 * **ESP32 DevKit V1 y Alimentación (Power Bank de 20 000 mAh):** Núcleo de procesamiento, conectividad y fuente de energía segura a 5 V DC [3].
 
 ---
-## Ensayos analíticos y simulación estructural en SimScale
+## 2. Ensayos analíticos y simulación estructural en SimScale
 ---
 
 ## 2.1 Justificación del Nivel de Madurez Tecnológica (TRL 3)
