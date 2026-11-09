@@ -50,7 +50,7 @@ La primera etapa del análisis evalúa la distribución de esfuerzos de Von Mise
 
 Para asegurar la durabilidad, es crucial analizar las zonas donde los esfuerzos se concentran, como uniones, esquinas y soportes de rodamientos.
 
-![Detalle de las concentraciones de esfuerzo en la unión del eje principal y el soporte del rodamiento.](simscale_stress_concentrations.png)
+![Detalle de las concentraciones de esfuerzo en la unión del eje principal y el soporte del rodamiento.]<img width="765" height="456" alt="Captura de pantalla 2026-11-09 165706" src="https://github.com/user-attachments/assets/f6e71a71-86b6-4a2e-8b41-740af1d30d4b" />
 > **Cita de Imagen 2.2:** `simscale_stress_concentrations.png`. Vista detallada (zoom) que resalta las zonas de máximo esfuerzo (hotspots). Identificar estas áreas ($\sigma_{max}$) permite validar el diseño de los componentes críticos como el eje de transmisión y sus soportes, asegurando un Factor de Seguridad adecuado.
 
 ### 2.3. Análisis de Desplazamiento y Deformación Estructural
