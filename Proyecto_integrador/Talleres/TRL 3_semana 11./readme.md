@@ -31,54 +31,86 @@ El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (
 ---
 ## 2. Ensayos analíticos y simulación estructural en SimScale
 ---
-El análisis estructural se centró en evaluar la integridad del conjunto tambor-eje-chasis bajo la carga máxima de residuos orgánicos en proceso de compostaje.
+El análisis estructural se centró en evaluar la integridad del prototipo **Compostech** (conjunto recipiente-eje-chasis) bajo la carga estática asociada al peso estimado de la materia orgánica en proceso de compostaje.
 
-**Parámetros de Entrada:**
-*   **Carga:** Peso máximo estimado de residuos ($\approx$ 50 kg) + peso propio de la estructura, aplicado como gravedad y carga superficial interna en el tambor.
-*   **Materiales:** Tambor de HDPE (Polietileno de Alta Densidad) y eje/chasis de Acero AISI 304.
-*   **Condiciones de Contorno:** Soportes fijos en la base del chasis; restricciones de rodadura en los soportes del eje.
+**Parámetros de Entrada y Configuración del Escenario Simulado:**
+*   **Plataforma de Simulación:** SimScale (Análisis estructural estático).
+*   **Carga Aplicada:** Fuerza vertical de $91.8\text{ N}$ aplicada sobre la cara interna inferior del recipiente. Esto equivale a una masa aproximada de $9.36\text{ kg}$ ($\approx 91.8\text{ N} / 9.81\text{ m/s}^2$).
+*   **Materiales Asignados:** Recipiente principal en HDPE (Polietileno de Alta Densidad), eje central/chasis en Acero AISI 304 y componentes impresos en PLA.
+*   **Condiciones de Contorno (Apoyos):** *Fixed Support* (apoyos fijos) en las cuatro patas del recipiente estructural y restricciones de rodadura en los soportes del eje.
+
+---
 
 ### 2.1. Visualización General de Esfuerzos (Von Mises)
 
-La primera etapa del análisis evalúa la distribución de esfuerzos de Von Mises en todo el ensamblaje para identificar si algún componente supera el límite elástico del material.
+La primera etapa del análisis evalúa la distribución del esfuerzo equivalente de Von Mises en todo el ensamblaje bajo el escenario estático reportado, verificando que la respuesta mecánica trabaje en rangos seguros.
 
-![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.] <img width="1017" height="726" alt="Captura de pantalla 2026-11-09 153124" src="https://github.com/user-attachments/assets/9d77239a-50fd-47f7-a1e9-055d7534d0f5" />
-> **Cita de Imagen 2.1:** `
-`. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), muy por debajo del límite de fluencia del HDPE y del acero.
+![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.](https://github.com/user-attachments/assets/9d77239a-50fd-47f7-a1e9-055d7534d0f5)
+> **Cita de Imagen 2.1:** `simscale_von_mises.png`. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), con un esfuerzo máximo localizado significativamente por debajo del límite de fluencia del HDPE y del acero.
+
+---
 
 ### 2.2. Identificación de Puntos Críticos y Concentraciones de Esfuerzo
 
-Para asegurar la durabilidad, es crucial analizar las zonas donde los esfuerzos se concentran, como uniones, esquinas y soportes de rodamientos.
+Para asegurar la durabilidad del sistema, se analizaron las zonas donde los esfuerzos se concentran (*hotspots*), tales como uniones, filamentos de esquina, soportes de rodamientos y bordes inferiores del recipiente.
 
-![Detalle de las concentraciones de esfuerzo en la unión del eje principal y el soporte del rodamiento.]<img width="765" height="456" alt="Captura de pantalla 2026-11-09 165706" src="https://github.com/user-attachments/assets/f6e71a71-86b6-4a2e-8b41-740af1d30d4b" />
-> **Cita de Imagen 2.2:** `simscale_stress_concentrations.png`. Vista detallada (zoom) que resalta las zonas de máximo esfuerzo (hotspots). Identificar estas áreas ($\sigma_{max}$) permite validar el diseño de los componentes críticos como el eje de transmisión y sus soportes, asegurando un Factor de Seguridad adecuado.
+![Detalle de las concentraciones de esfuerzo en la unión del eje principal y el soporte del rodamiento.](https://github.com/user-attachments/assets/f6e71a71-86b6-4a2e-8b41-740af1d30d4b)
+> **Cita de Imagen 2.2:** `simscale_stress_concentrations.png`. Vista detallada (zoom) que resalta las zonas de máximo esfuerzo ($\sigma_{max}$). Identificar estas áreas permite validar el diseño de componentes críticos como el eje de transmisión y sus soportes de rodamiento, asegurando un Factor de Seguridad ($FS$) adecuado.
+
+---
 
 ### 2.3. Análisis de Desplazamiento y Deformación Estructural
 
-Además de resistir los esfuerzos, la estructura no debe deformarse excesivamente para garantizar el correcto funcionamiento de los mecanismos de rotación y sellado.
+Además de la resistencia a la fluencia, la estructura no debe deformarse excesivamente para garantizar la correcta alineación del eje de rotación y el sellado del recipiente.
 
-![Mapa de desplazamiento total (deformación) de la estructura de la compostera.].<img width="792" height="575" alt="image" src="https://github.com/user-attachments/assets/449b0d67-0ed5-4791-8271-76f4166b902f" />
-> **Cita de Imagen 2.3:** `simscale_displacement.png`. Esta imagen ilustra la deformación elástica de la estructura en mm. El desplazamiento máximo se localiza en el centro del tambor debido a la carga de los residuos, pero se mantiene dentro de límites aceptables ($<2$ mm) que no comprometen la operación mecánica.
+![Mapa de desplazamiento total (deformación) de la estructura de la compostera.](https://github.com/user-attachments/assets/449b0d67-0ed5-4791-8271-76f4166b902f)
+> **Cita de Imagen 2.3:** `simscale_displacement.png`. Mapa de desplazamiento total de la estructura. Se observa un desplazamiento máximo calculado de **$0.1204\text{ mm}$** localizado en la cara inferior del recipiente por efecto de la carga estática. Esta deformación es insignificante respecto a las dimensiones del contenedor y se mantiene dentro de los límites operativos ($<2\text{ mm}$).
+
+---
 
 ### 2.4. Calidad de la Malla y Convergencia
 
-Para garantizar la precisión de los resultados de SimScale, se realizó un estudio de la calidad de la malla (discretización), asegurando que los resultados numéricos sean independientes del tamaño de los elementos.
+Para garantizar la precisión numérica en SimScale, se realizó un estudio de discretización y convergencia de malla, validando que el esfuerzo calculado sea independiente de la densidad de elementos.
 
-![Visualización de la malla de elementos finitos y gráfico de estudio de convergencia.]
-<img width="742" height="317" alt="Captura de pantalla 2026-11-09 165925" src="https://github.com/user-attachments/assets/58d67385-0424-4c2e-a222-c2ca44169df6" />
-> **Cita de Imagen 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla final utilizada, mostrando mayor refinamiento en zonas críticas. A la derecha, la gráfica de convergencia que demuestra que aumentar la densidad de elementos no cambia significativamente el valor de esfuerzo máximo, validando la precisión de la simulación.
+![Visualización de la malla de elementos finitos y gráfico de estudio de convergencia.](https://github.com/user-attachments/assets/58d67385-0424-4c2e-a222-c2ca44169df6)
+> **Cita de Imagen 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla refinada empleada en zonas de alta concentración de esfuerzo. A la derecha, la gráfica de convergencia que confirma la estabilidad del valor numérico de $\sigma_{max}$ al incrementar la densidad de la malla.
 
-## 2.5. Despiece y Arquitectura del Sistema CAD
+---
+
+### 2.5. Resumen de Esfuerzos y Evaluación del Factor de Seguridad
+
+La **Tabla 3** resume los esfuerzos máximos de Von Mises arrojados por la simulación estática para cada componente evaluado en el prototipo Compostech, comparándolos con su respectivo límite de fluencia para determinar la viabilidad estructural.
+
+#### Tabla 3. Esfuerzo máximo de Von Mises y Factor de Seguridad (FS) por componente
+
+| Componente / Pieza | Material Asignado | Esfuerzo Máximo ($\sigma_{max}$) | Equivalencia en MPa | Esfuerzo de Fluencia ($\sigma_{fluencia}$) | Factor de Seguridad ($FS = \frac{\sigma_{fluencia}}{\sigma_{max}}$) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Recipiente Base (Contenedor)** | HDPE | $1,467,000\text{ Pa}$ | $1.467\text{ MPa}$ | $25.0\text{ MPa}$ | **$17.04$** |
+| **Eje Principal y Soportes** | Acero AISI 304 | $2,144,000\text{ Pa}$ | $2.144\text{ MPa}$ | $205.0\text{ MPa}$ | **$95.61$** |
+| **Abrazadera / Soporte de Rodamiento** | PLA (Impresión 3D) | $909,900\text{ Pa}$ | $0.9099\text{ MPa}$ | $49.5\text{ MPa}$ | **$54.40$** |
+| **Pala / Agitador Interno** | PLA (Impresión 3D) | $33,150\text{ Pa}$ | $0.03315\text{ MPa}$ | $49.5\text{ MPa}$ | **$1493.21$** |
+| **Placa de Anclaje de Sensores** | PLA (Impresión 3D) | $5,652\text{ Pa}$ | $0.005652\text{ MPa}$ | $49.5\text{ MPa}$ | **$8757.96$** |
+
+---
+
+### 2.6. Despiece y Arquitectura del Sistema CAD
 
 Como parte de la planificación de la fabricación (Indicador TRL 3), se presenta la arquitectura detallada del sistema en una vista explosionada.
 
-![Vista explosionada (Exploded View) del diseño CAD 3D de la compostera inteligente.]<p align="center">
-  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/3D_compostech.png">
-> **Cita de Imagen 2.5:** `cad_assembly_exploded.png`. Esta vista permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el tambor HDPE, el eje central, los rodamientos, el motorreductor, el chasis de soporte y el módulo de sensores inteligentes.
+<p align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/3D_compostech.png" alt="Vista explosionada (Exploded View) del diseño CAD 3D de la compostera inteligente.">
+</p>
+> **Cita de Imagen 2.5:** `cad_assembly_exploded.png`. Esta vista permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el recipiente HDPE, el eje central, los soportes de rodamiento, el motorreductor, la manivela de accionamiento y el módulo de sensores inteligentes.
 
-## 2.6. Conclusión de Viabilidad 
+---
 
-Los ensayos analíticos realizados en SimScale confirman que el diseño estructural de la compostera inteligente es viable. Los esfuerzos máximos calculados están significativamente por debajo del límite elástico de los materiales propuestos, y las deformaciones son mínimas. Este análisis proporciona la base necesaria para proceder con confianza a la fase de prototipado físico (TRL 4).
+### 2.7. Conclusión de Viabilidad (TRL 3) y Alcance del Resultado
+
+Los ensayos analíticos realizados en SimScale confirman la **viabilidad estructural (TRL 3)** del prototipo Compostech:
+
+1. **Margen de Seguridad:** El esfuerzo equivalente máximo registrado ($1.467\text{ MPa}$ en el recipiente y $0.9099\text{ MPa}$ en componentes auxiliares) se encuentra muy por debajo de los límites de fluencia del HDPE ($25\text{ MPa}$), Acero AISI 304 ($205\text{ MPa}$) y PLA ($49.5\text{ MPa}$), garantizando factores de seguridad holgados ($FS > 15$).
+2. **Deformaciones Controladas:** El desplazamiento máximo calculado es de apenas **$0.1204\text{ mm}$**, lo que confirma que el contenedor no sufrirá deformaciones plásticas ni desalineaciones en sus acoples mecánicos bajo la carga estática evaluada ($91.8\text{ N} \approx 9.36\text{ kg}$).
+3. **Alcance y Trabajo Futuro:** El análisis evalúa únicamente la resistencia mecánica bajo condiciones estáticas directas. Para la fase TRL 4 (prototipo físico), se recomienda realizar pruebas empíricas complementarias que evalúen la resistencia del material PLA frente a factores ambientales reales, humedad y la degradación por ácidos orgánicos resultantes del proceso de compostaje.
 
  ##  Referencias bibliograficas 
 * [1] M. A. H. Abas, F. A. Chandler, and R. Ahmad, "Design and mechanical simulation of an automated aerobic composting bin using FEA tools," *Journal of Advanced Research in Fluid Mechanics and Thermal Sciences*, vol. 92, no. 1, pp. 110–122, 2022.
