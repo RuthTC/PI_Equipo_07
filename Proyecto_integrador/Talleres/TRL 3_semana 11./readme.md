@@ -1,4 +1,4 @@
-# CLARIFICACIÓN DE AGUA CON QUITOSANO — TRL 3
+# PRUEBA Y CALIBRACIÓN SE SENSORES — TRL 3
 
 ## Desarrollo experimental o prueba del concepto tecnológico.
 
