@@ -16,7 +16,9 @@
 ## Contenido
 ## Descripción de la Prueba de Concepto (TRL 3)
 En este nivel se ejecuta la **Prueba de Concepto Tecnológico** para el sistema de monitoreo y control automatizado de compostaje (**CompostTech**). El objetivo principal es demostrar mediante ensayos experimentales a nivel de laboratorio la viabilidad de la adquisición de datos fisicoquímicos (temperatura, humedad del sustrato, niveles de lixiviados y gases metabólicos CO₂/NH₃) y la respuesta del sistema de ventilación forzada para optimizar el bioproceso de descomposición orgánica aerobia.
+---
 ## 1. Descripción del Sistema y Ciclo Operativo
+---
 El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (restos vegetales domésticos y de poda) en el contenedor de compostaje y monitorea continuamente los parámetros fisicoquímicos clave del bioproceso: temperatura, humedad del sustrato, concentración de gases y nivel de lixiviados [1], [2]. Un microcontrolador **ESP32 DevKit V1** procesa estas señales mediante un algoritmo de decisión por umbrales para coordinar la aireación forzada y notificar alertas al usuario [3], [4]. En el **TRL 3** se evalúan y prueban individualmente los elementos que miden y accionan este ciclo:
 * **Sensor de temperatura (DS18B20 impermeable):** Entrada principal para identificar las fases mesófila (20–35 °C) y termófila (35–65 °C), y activar la ventilación si supera los 65 °C [2].
 * **Sensor de humedad capacitivo (v1.2):** Mide el porcentaje de humedad del sustrato para mantener el rango óptimo (50–70 %) [3].
@@ -26,8 +28,7 @@ El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (
 * **ESP32 DevKit V1 y Alimentación (Power Bank de 20 000 mAh):** Núcleo de procesamiento, conectividad y fuente de energía segura a 5 V DC [3].
 
 ---
-# SECCIÓN 2: ENSAYOS ANALÍTICOS Y SIMULACIÓN ESTRUCTURAL EN SIMSCALE (TRL 3)
-
+## Ensayos analíticos y simulación estructural en SimScale
 ---
 
 ## 2.1 Justificación del Nivel de Madurez Tecnológica (TRL 3)
