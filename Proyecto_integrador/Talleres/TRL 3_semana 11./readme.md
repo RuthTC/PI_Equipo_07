@@ -129,10 +129,10 @@ El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas de
 | Elemento | Variable o función | Principio | Prueba realizada |
 | :--- | :--- | :--- | :--- |
 | **Sensor de temperatura (DS18B20)** | Temperatura del sustrato de compostaje | Termistor / Digital (OneWire) | Verificación de lectura en fases mesófila y termófila simulada[2] |
-| **Sensor de humedad capacitivo (v1.2)** | Humedad relativa del sustrato (50% - 70%) | Capacitivo (variación dieléctrica) | Lectura en aire, sustrato seco y sustrato húmedo[3] |
+| **Sensores de humedad capacitivos (2x v1.2)** | Humedad relativa del sustrato en diferentes puntos (50% - 70%) | Capacitivo (variación dieléctrica) | Lectura dual en aire, sustrato seco y sustrato húmedo[3] |
 | **Sensores de gases (SCD41 / MQ-135)** | Concentración de $\text{CO}_2$ y gases metabólicos ($\text{NH}_3$) | NDIR (SCD41) y semiconductor (MQ-135) | Prueba de respuesta ante emisión de gases y calibración base[4] |
 | **Sensor de nivel (XKC-Y25-T12V)** | Presencia de lixiviados en la base | Capacitivo sin contacto | Detección de líquido a través de la pared del contenedor[5] |
-| **Ventilador USB (8025 5V)** | Ventilación forzada y control de temperatura | Electromecánico (DC) | Activación por umbrales de temperatura y concentración de gases[1] |
+| **Ventiladores USB (2x 8025 5V)** | Ventilación forzada bilateral y control térmico/gases | Electromecánico (DC) | Activación simultánea/independiente por umbrales del bioproceso[1] |
 | **Interruptor KCD1** | Control general de encendido y apagado | Contacto eléctrico mecánico | Interrupción y restablecimiento de la alimentación general[1] |[1,2,3,4,5]
 
 ## 3.2 Conversión de las señales en datos
