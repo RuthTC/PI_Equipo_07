@@ -1,4 +1,3 @@
-<img width="1017" height="726" alt="Captura de pantalla 2026-11-09 153124" src="https://github.com/user-attachments/assets/578742af-4a6a-41ef-94da-de2fa2c5b6c6" />
 # PRUEBA Y CALIBRACIÓN SE SENSORES — TRL 3
 
 ## Desarrollo experimental o prueba del concepto tecnológico.
