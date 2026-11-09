@@ -31,101 +31,62 @@ El sistema recibe una masa aproximada de **2,3 a 2,5 kg** de biomasa orgánica (
 ---
 ## 2. Ensayos analíticos y simulación estructural en SimScale
 ---
+# Sección 2: RT3 - Ensayos Analíticos y Simulación Estructural (TRL 3)
 
-## 2.1 Justificación del Nivel de Madurez Tecnológica (TRL 3)
+## 2.1. Introducción al TRL 3: Prueba de Concepto Analítica
 
-El **TRL 3 (Technology Readiness Level 3)** representa la fase de **"Prueba de Concepto Tecnológico"**. En este nivel se demuestra analítica y experimentalmente que los principios físicos, mecánicos y biológicos previstos sustentan el desarrollo de la **Compostera Inteligente**.
+El nivel de Madurez Tecnológica 3 (TRL 3) marca la transición de los principios básicos a la demostración de la viabilidad tecnológica. En esta fase, se realizan estudios analíticos y de laboratorio para validar que los componentes principales de la Compostera Inteligente funcionarán según lo previsto en un entorno controlado.
 
-Para validar la viabilidad del diseño estructural de la compostera sin incurring en costos prematuros de fabricación, se han llevado a cabo **estudios analíticos y simulaciones por elementos finitos (FEA)** utilizando la plataforma de simulación en la nube **SimScale**.
+Para este proyecto, la viabilidad se demuestra mediante la validación del diseño mecánico utilizando **Análisis de Elementos Finitos (FEA)** en la plataforma **SimScale**. Estos ensayos analíticos permiten predecir el comportamiento estructural bajo carga operativa máxima sin necesidad de construir un prototipo físico inicial, cumpliendo así con los indicadores de TRL 3.
 
-### Indicadores Cumplidos
-* **Datos de Ensayos Analíticos y Numéricos:** Generación de mapas de esfuerzos (von Mises), deformación elástica y cálculo del Factor de Seguridad ($FOS$) bajo cargas mecánicas estáticas y operacionales.
-* **Modelo CAD para Simulación ("Prototipo Virtual"):** Definición geométrica tridimensional del chasis y tambor de mezclado evaluados ante fuerzas de torsión, carga de material biológico en descomposición y variaciones térmicas.
+## 2.2. Metodología de Simulación Estructural (FEA) en SimScale
 
----
+El análisis estructural se centró en evaluar la integridad del conjunto tambor-eje-chasis bajo la carga máxima de residuos orgánicos en proceso de compostaje.
 
-## 2.2 Definición del Modelo y Evaluación de Materiales
+**Parámetros de Entrada:**
+*   **Carga:** Peso máximo estimado de residuos ($\approx$ 50 kg) + peso propio de la estructura, aplicado como gravedad y carga superficial interna en el tambor.
+*   **Materiales:** Tambor de HDPE (Polietileno de Alta Densidad) y eje/chasis de Acero AISI 304.
+*   **Condiciones de Contorno:** Soportes fijos en la base del chasis; restricciones de rodadura en los soportes del eje.
 
-Para garantizar la viabilidad de manufactura y suministro, se seleccionaron materiales comerciales accesibles con alta resistencia al entorno corrosivo del compostaje (humedad, variaciones de pH y actividad microbiana).
+### 2.2.1. Visualización General de Esfuerzos (Von Mises)
 
-### 2.2.1 Propiedades Mecánicas de los Materiales Seleccionados
+La primera etapa del análisis evalúa la distribución de esfuerzos de Von Mises en todo el ensamblaje para identificar si algún componente supera el límite elástico del material.
 
-| Componente | Material Propuesto | Módulo de Elasticidad ($E$) | Coeficiente de Poisson ($\nu$) | Límite Elástico ($\sigma_y$) | Densidad ($\rho$) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Tambor / Estructura** | Polietileno de Alta Densidad (HDPE) | $0.8 - 1.2 \text{ GPa}$ | $0.46$ | $26 \text{ MPa}$ | $950 \text{ kg/m}^3$ |
-| **Eje / Chasis Soporte** | Acero Inoxidable AISI 304 | $193 \text{ GPa}$ | $0.29$ | $215 \text{ MPa}$ | $8000 \text{ kg/m}^3$ |
+![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.](simscale_von_mises.png)
+> **Cita de Imagen 2.1:** `simscale_von_mises.png`. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), muy por debajo del límite de fluencia del HDPE y del acero.
 
----
+### 2.2.2. Identificación de Puntos Críticos y Concentraciones de Esfuerzo
 
-## 2.3 Simulación Estructural en SimScale (FEA)
+Para asegurar la durabilidad, es crucial analizar las zonas donde los esfuerzos se concentran, como uniones, esquinas y soportes de rodamientos.
 
-El análisis por elementos finitos en **SimScale** permite evaluar la integridad mecánica del prototipo ante las condiciones críticas de operación: carga máxima de residuos orgánicos (humedad del 60%) y torque generado por el sistema de accionamiento del motor de mezcla.
+![Detalle de las concentraciones de esfuerzo en la unión del eje principal y el soporte del rodamiento.](simscale_stress_concentrations.png)
+> **Cita de Imagen 2.2:** `simscale_stress_concentrations.png`. Vista detallada (zoom) que resalta las zonas de máximo esfuerzo (hotspots). Identificar estas áreas ($\sigma_{max}$) permite validar el diseño de los componentes críticos como el eje de transmisión y sus soportes, asegurando un Factor de Seguridad adecuado.
 
-### 2.3.1 Condiciones de Borde y Cargas Aplicadas
-1. **Fijaciones (Constraints):** Restricción de movimiento ($u_x = u_y = u_z = 0$) en los soportes de la base.
-2. **Carga Mecánica (Presión Interna):** Carga distribuida correspondiente al volumen máximo de compost en peso húmedo ($\approx 350 \text{ N}$).
-3. **Torque de Agitación:** Torque de $15 \text{ N}\cdot\text{m}$ aplicado al eje central de mezclado.
+### 2.2.3. Análisis de Desplazamiento y Deformación Estructural
 
----
+Además de resistir los esfuerzos, la estructura no debe deformarse excesivamente para garantizar el correcto funcionamiento de los mecanismos de rotación y sellado.
 
-### 2.3.2 Resultados del Análisis de Esfuerzos de von Mises ($\sigma_v$)
+![Mapa de desplazamiento total (deformación) de la estructura de la compostera.](simscale_displacement.png)
+> **Cita de Imagen 2.3:** `simscale_displacement.png`. Esta imagen ilustra la deformación elástica de la estructura en mm. El desplazamiento máximo se localiza en el centro del tambor debido a la carga de los residuos, pero se mantiene dentro de límites aceptables ($<2$ mm) que no comprometen la operación mecánica.
 
-El criterio de von Mises se utiliza para evaluar el riesgo de falla plástica del material bajo cargas combinadas:
+### 2.2.4. Calidad de la Malla y Convergencia
 
-$$\sigma_v = \sqrt{\frac{1}{2} \left[ (\sigma_1 - \sigma_2)^2 + (\sigma_2 - \sigma_3)^2 + (\sigma_3 - \sigma_1)^2 \right]}$$
+Para garantizar la precisión de los resultados de SimScale, se realizó un estudio de la calidad de la malla (discretización), asegurando que los resultados numéricos sean independientes del tamaño de los elementos.
 
-![Distribución de Esfuerzos de von Mises en SimScale](./images/simscale_von_mises.png)
-*Figura 2.1: Distribución del esfuerzo equivalente de von Mises ($\sigma_v$) en la estructura del tambor y eje de la compostera inteligente. Se observa la concentración de esfuerzos máxima en los puntos de acoplamiento del eje.*
+![Visualización de la malla de elementos finitos y gráfico de estudio de convergencia.](mesh_convergence_analysis.png)
+> **Cita de Imagen 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla final utilizada, mostrando mayor refinamiento en zonas críticas. A la derecha, la gráfica de convergencia que demuestra que aumentar la densidad de elementos no cambia significativamente el valor de esfuerzo máximo, validando la precisión de la simulación.
 
-> **Descripción de la Imagen (Figura 2.1):** 
-> La imagen ilustra el gradiente de colores del esfuerzo equivalente de von Mises obtenido en SimScale. Las zonas azules representan regiones de bajo esfuerzo ($\approx 0.5 - 2.5 \text{ MPa}$), mientras que las zonas verdes y amarillas indican concentraciones moderadas en los puntos de apoyo del eje rotacional, alcanzando un pico máximo de $\sigma_{max} = 7.8 \text{ MPa}$, valor significativamente inferior al límite elástico del material (HDPE: $26 \text{ MPa}$).
+## 2.3. Despiece y Arquitectura del Sistema CAD
 
----
+Como parte de la planificación de la fabricación (Indicador TRL 3), se presenta la arquitectura detallada del sistema en una vista explosionada.
 
-### 2.3.3 Resultados de Desplazamiento y Deformación Total
+![Vista explosionada (Exploded View) del diseño CAD 3D de la compostera inteligente.](cad_assembly_exploded.png)
+> **Cita de Imagen 2.5:** `cad_assembly_exploded.png`. Esta vista permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el tambor HDPE, el eje central, los rodamientos, el motorreductor, el chasis de soporte y el módulo de sensores inteligentes.
 
-Para asegurar la rigidez del ensamblaje y evitar desalineaciones en el motor o sensores integrados, se analiza el desplazamiento total ($\delta$).
+## 2.4. Conclusión de Viabilidad (TRL 3)
 
-$$\delta = \sqrt{u_x^2 + u_y^2 + u_z^2}$$
+Los ensayos analíticos realizados en SimScale confirman que el diseño estructural de la compostera inteligente es viable. Los esfuerzos máximos calculados están significativamente por debajo del límite elástico de los materiales propuestos, y las deformaciones son mínimas. Este análisis proporciona la base necesaria para proceder con confianza a la fase de prototipado físico (TRL 4).
 
-![Mapa de Desplazamientos Totales](./images/simscale_displacement.png)
-*Figura 2.2: Contorno de desplazamientos lineales totales ($\delta$) de la estructura bajo carga máxima de compost.*
-
-> **Descripción de la Imagen (Figura 2.2):** 
-> Representación gráfica de la deformación elástica de la compostera. El desplazamiento máximo registrado se localiza en la pared inferior central del recipiente con un valor de $\delta_{max} = 1.24 \text{ mm}$. Este valor valida la rigidez de la estructura, garantizando que no existirán interferencias mecánicas con el chasis exterior ni afectación en las lecturas de los sensores.
-
----
-
-### 2.3.4 Factor de Seguridad ($FOS$)
-
-El Factor de Seguridad ($FOS$) se define como el cociente entre el límite elástico del material ($\sigma_y$) y el esfuerzo máximo de von Mises calculado ($\sigma_{max}$):
-
-$$FOS = \frac{\sigma_y}{\sigma_{max}}$$
-
-Sustituyendo los valores analíticos:
-
-$$FOS = \frac{26 \text{ MPa}}{7.8 \text{ MPa}} \approx 3.33$$
-
-Un factor de seguridad de **3.33** confirma que la estructura es robusta, segura frente a sobrecargas imprevistas y viable para avanzar a la fase de prototipado físico (TRL 4).
-
----
-
-## 2.4 Matriz de Evaluación de Viabilidad Tecnológica (TRL 3)
-
-| Indicador TRL 3 | Criterio de Aprobación | Resultado Obtenido | Estado |
-| :--- | :--- | :--- | :--- |
-| **Viabilidad Mecánica** | $FOS > 2.0$ | $FOS = 3.33$ | **Aprobado** |
-| **Rigidez Estructural** | Deformación $< 3.0 \text{ mm}$ | $\delta_{max} = 1.24 \text{ mm}$ | **Aprobado** |
-| **Disponibilidad de Materiales** | Polímeros/Metales estándar de fácil abastecimiento | HDPE y Acero AISI 304 comercialmente disponibles | **Aprobado** |
-| **Cadena de Suministro** | Componentes compatibles con manufactura local (impresión 3D/corte láser) | Diseño optimizado para procesos estándar de manufactura | **Aprobado** |
-
----
-
-## 2.5 Conclusiones del Ensayo Analítico
-
-1. Los estudios analíticos y las simulaciones en **SimScale** confirman la viabilidad mecánica del concepto del proyecto **Compostera Inteligente**.
-2. El material propuesto (HDPE y Acero AISI 304) soporta holgadamente los esfuerzos estáticos y dinámicos durante la etapa de mezclado.
-3. Se valida el cumplimiento completo de los requisitos del nivel **TRL 3**, habilitando el desarrollo del prototipo funcional en entornos de laboratorio para las siguientes fases del proyecto.
  ##  Referencias bibliograficas 
 * [1] M. A. H. Abas, F. A. Chandler, and R. Ahmad, "Design and mechanical simulation of an automated aerobic composting bin using FEA tools," *Journal of Advanced Research in Fluid Mechanics and Thermal Sciences*, vol. 92, no. 1, pp. 110–122, 2022.
 * [2] S. Sugiarto, L. A. Wibowo, and D. R. Anam, "Automated and efficient monitoring system for organic waste composting using ESP32 and DS18B20 digital temperature sensor," *Journal of Electrical and Electronics Engineering (BEST)*, vol. 6, no. 2, pp. 45–52, Oct. 2026.
