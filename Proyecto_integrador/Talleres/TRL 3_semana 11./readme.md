@@ -126,8 +126,7 @@ Un factor de seguridad de **3.33** confirma que la estructura es robusta, segura
 1. Los estudios analíticos y las simulaciones en **SimScale** confirman la viabilidad mecánica del concepto del proyecto **Compostera Inteligente**.
 2. El material propuesto (HDPE y Acero AISI 304) soporta holgadamente los esfuerzos estáticos y dinámicos durante la etapa de mezclado.
 3. Se valida el cumplimiento completo de los requisitos del nivel **TRL 3**, habilitando el desarrollo del prototipo funcional en entornos de laboratorio para las siguientes fases del proyecto.
-## 2.5. Referencias Bibliográficas (Formato IEEE)
-
+ ##  Referencias bibliograficas 
 * [1] M. A. H. Abas, F. A. Chandler, and R. Ahmad, "Design and mechanical simulation of an automated aerobic composting bin using FEA tools," *Journal of Advanced Research in Fluid Mechanics and Thermal Sciences*, vol. 92, no. 1, pp. 110–122, 2022.
 * [2] S. Sugiarto, L. A. Wibowo, and D. R. Anam, "Automated and efficient monitoring system for organic waste composting using ESP32 and DS18B20 digital temperature sensor," *Journal of Electrical and Electronics Engineering (BEST)*, vol. 6, no. 2, pp. 45–52, Oct. 2026.
 * [3] S. Fouguira, A. Benzaouia, and M. Hajji, "Internet of Things and predictive artificial intelligence for monitoring and optimization of organic waste composting process," *MDPI Internet of Things*, vol. 97, no. 1, art. no. 16, Jun. 2025.
