@@ -42,8 +42,8 @@ El análisis estructural se centró en evaluar la integridad del conjunto tambor
 
 La primera etapa del análisis evalúa la distribución de esfuerzos de Von Mises en todo el ensamblaje para identificar si algún componente supera el límite elástico del material.
 
-![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.]
-> **Cita de Imagen 2.1:** `<img width="1017" height="726" alt="Captura de pantalla 2026-11-09 153124" src="https://github.com/user-attachments/assets/9d77239a-50fd-47f7-a1e9-055d7534d0f5" />
+![Distribución general de esfuerzos de Von Mises en la compostera bajo carga máxima operativa.] <img width="1017" height="726" alt="Captura de pantalla 2026-11-09 153124" src="https://github.com/user-attachments/assets/9d77239a-50fd-47f7-a1e9-055d7534d0f5" />
+> **Cita de Imagen 2.1:** `
 `. Esta figura muestra el mapa de calor de esfuerzos de Von Mises. El rango de colores indica la intensidad del esfuerzo en MPa. Se observa que la mayor parte de la estructura trabaja en rangos seguros (azul/verde), muy por debajo del límite de fluencia del HDPE y del acero.
 
 ### 2.2. Identificación de Puntos Críticos y Concentraciones de Esfuerzo
