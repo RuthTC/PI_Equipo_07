@@ -75,7 +75,7 @@ Como parte de la planificación de la fabricación (Indicador TRL 3), se present
   <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/3D_compostech.png">
 > **Cita de Imagen 2.5:** `cad_assembly_exploded.png`. Esta vista permite visualizar la interacción y el orden de montaje de todos los subcomponentes principales: el tambor HDPE, el eje central, los rodamientos, el motorreductor, el chasis de soporte y el módulo de sensores inteligentes.
 
-## 2.6. Conclusión de Viabilidad (TRL 3)
+## 2.6. Conclusión de Viabilidad 
 
 Los ensayos analíticos realizados en SimScale confirman que el diseño estructural de la compostera inteligente es viable. Los esfuerzos máximos calculados están significativamente por debajo del límite elástico de los materiales propuestos, y las deformaciones son mínimas. Este análisis proporciona la base necesaria para proceder con confianza a la fase de prototipado físico (TRL 4).
 
