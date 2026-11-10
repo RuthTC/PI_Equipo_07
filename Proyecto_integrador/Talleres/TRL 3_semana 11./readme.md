@@ -139,7 +139,11 @@ El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas de
 <table>
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="URL_FIGURA_1.png" alt="Figura 1" width="100%"><br>
+      <img src="<img width="899" height="1599" alt="sensor de temperatura" src="https://github.com/user-attachments/assets/2e82b16e-5d77-47cc-a7b1-cf6992d31c3c" />
+<img width="899" height="1599" alt="sensor de temperatura" src="https://github.com/user-attachments/assets/2dea4fea-4775-4fbf-ba39-0d7e22133057" />
+<img width="899" height="1599" alt="sensor de temperatura" src="https://github.com/user-attachments/assets/822f5482-b5a2-417d-aa56-2d4423ec3610" />
+<img width="899" height="1599" alt="sensor de temperatura" src="https://github.com/user-attachments/assets/927636a7-bbfd-4351-8204-1856d991eb05" />
+" alt="Figura 1" width="100%"><br>
       <p><b>Figura 1.</b> <em>Sensor de temperatura (DS18B20).</em></p>
       <p align="left"><b>Descripción:</b> Medición digital de temperatura en el sustrato mediante protocolo OneWire. Probado en fases mesófila y termófila simuladas.</p>
     </td>
