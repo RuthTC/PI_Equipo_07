@@ -134,6 +134,56 @@ El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas de
 | **Sensor de nivel (XKC-Y25-T12V)** | Presencia de lixiviados en la base | Capacitivo sin contacto | Detección de líquido a través de la pared del contenedor[5] | **Figura 4** |
 | **Ventiladores USB (2x 8025 5V)** | Ventilación forzada bilateral y control térmico/gases | Electromecánico (DC) | Activación simultánea/independiente por umbrales del bioproceso[1] | **Figura 5** |
 | **Interruptor KCD1** | Control general de encendido y apagado | Contacto eléctrico mecánico | Interrupción y restablecimiento de la alimentación general[1] | **Figura 6** |
+
+<!-- Fila 1: Sensores 1 y 2 -->
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="URL_FIGURA_1.png" alt="Figura 1" width="100%"><br>
+      <p><b>Figura 1.</b> <em>Sensor de temperatura (DS18B20).</em></p>
+      <p align="left"><b>Descripción:</b> Medición digital de temperatura en el sustrato mediante protocolo OneWire. Probado en fases mesófila y termófila simuladas.</p>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="URL_FIGURA_2.png" alt="Figura 2" width="100%"><br>
+      <p><b>Figura 2.</b> <em>Sensores de humedad capacitivos (2x v1.2).</em></p>
+      <p align="left"><b>Descripción:</b> Medición capacitiva por variación dieléctrica para humedad relativa del sustrato (50% - 70%). Lectura dual en aire, sustrato seco y húmedo.</p>
+    </td>
+  </tr>
+</table>
+
+<!-- Fila 2: Sensores 3 y 4 -->
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="URL_FIGURA_3.png" alt="Figura 3" width="100%"><br>
+      <p><b>Figura 3.</b> <em>Sensores de gases (SCD41 / MQ-135).</em></p>
+      <p align="left"><b>Descripción:</b> Monitoreo de CO₂ (NDIR SCD41) y gases metabólicos como NH₃ (Semiconductor MQ-135). Calibración base y prueba ante emisión de gases.</p>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="URL_FIGURA_4.png" alt="Figura 4" width="100%"><br>
+      <p><b>Figura 4.</b> <em>Sensor de nivel flotador conectado a ESP32.</em></p>
+      <p align="left"><b>Descripción:</b> Detección de nivel de lixiviados mediante interruptor flotador con circuito de acondicionamiento de señal conectado al microcontrolador ESP32.</p>
+    </td>
+  </tr>
+</table>
+
+<!-- Fila 3: Sensores 5 y 6 -->
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="URL_FIGURA_5.png" alt="Figura 5" width="100%"><br>
+      <p><b>Figura 5.</b> <em>Ventiladores USB (2x 8025 5V).</em></p>
+      <p align="left"><b>Descripción:</b> Ventilación forzada bilateral electromecánica (DC) para control térmico y de gases. Activación por umbrales del bioproceso.</p>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="URL_FIGURA_6.png" alt="Figura 6" width="100%"><br>
+      <p><b>Figura 6.</b> <em>Interruptor KCD1.</em></p>
+      <p align="left"><b>Descripción:</b> Control mecánico de contacto eléctrico para la interrupción y restablecimiento general de la alimentación del sistema.</p>
+    </td>
+  </tr>
+</table>
+
+
 ## 3.2 Conversión de las señales en datos
 El microcontrolador ESP32 DevKit V1 procesa las señales de los sensores mediante sus pines digitales y convertidores analógico-digitales (ADC) a 12 bits (valores de 0 a 4095)[2,3]. Las conversiones específicas para el control del compostaje son[1,4]:
 - **Temperatura (DS18B20):** Utiliza el protocolo OneWire para entregar directamente valores en grados Celsius ($\text{°C}$), permitiendo identificar las etapas del compostaje (mesófila y termófila) para disparar la ventilación si se superan los límites operativos[2].
