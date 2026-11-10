@@ -124,17 +124,16 @@ Los ensayos analíticos realizados en SimScale confirman la **viabilidad estruct
 
 ## 3.1 Qué mide cada elemento del sistema
 El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas del compostaje aerobio y actuadores para controlar variables clave como la temperatura y la concentración de gases[1, 3]. En esta etapa se verificó el funcionamiento individual de los componentes electrónicos y su correcta integración con el microcontrolador ESP32[2, 4]. La Tabla 4 resume la función y el tipo de prueba realizada.
-
 #### Tabla 4. Elementos probados en el TRL 3 para el monitoreo de compostaje.
-| Elemento | Variable o función | Principio | Prueba realizada |
-| :--- | :--- | :--- | :--- |
-| **Sensor de temperatura (DS18B20)** | Temperatura del sustrato de compostaje | Termistor / Digital (OneWire) | Verificación de lectura en fases mesófila y termófila simulada[2] |
-| **Sensores de humedad capacitivos (2x v1.2)** | Humedad relativa del sustrato en diferentes puntos (50% - 70%) | Capacitivo (variación dieléctrica) | Lectura dual en aire, sustrato seco y sustrato húmedo[3] |
-| **Sensores de gases (SCD41 / MQ-135)** | Concentración de $\text{CO}_2$ y gases metabólicos ($\text{NH}_3$) | NDIR (SCD41) y semiconductor (MQ-135) | Prueba de respuesta ante emisión de gases y calibración base[4] |
-| **Sensor de nivel (XKC-Y25-T12V)** | Presencia de lixiviados en la base | Capacitivo sin contacto | Detección de líquido a través de la pared del contenedor[5] |
-| **Ventiladores USB (2x 8025 5V)** | Ventilación forzada bilateral y control térmico/gases | Electromecánico (DC) | Activación simultánea/independiente por umbrales del bioproceso[1] |
-| **Interruptor KCD1** | Control general de encendido y apagado | Contacto eléctrico mecánico | Interrupción y restablecimiento de la alimentación general[1] |[1,2,3,4,5]
 
+| Elemento | Variable o función | Principio | Prueba realizada | Imagen |
+| :--- | :--- | :--- | :--- | :--- |
+| **Sensor de temperatura (DS18B20)** | Temperatura del sustrato de compostaje | Termistor / Digital (OneWire) | Verificación de lectura en fases mesófila y termófila simulada[2] | **Figura 1** |
+| **Sensores de humedad capacitivos (2x v1.2)** | Humedad relativa del sustrato en diferentes puntos (50% - 70%) | Capacitivo (variación dieléctrica) | Lectura dual en aire, sustrato seco y sustrato húmedo[3] | **Figura 2** |
+| **Sensores de gases (SCD41 / MQ-135)** | Concentración de $\text{CO}_2$ y gases metabólicos ($\text{NH}_3$) | NDIR (SCD41) y semiconductor (MQ-135) | Prueba de respuesta ante emisión de gases y calibración base[4] | **Figura 3** |
+| **Sensor de nivel (XKC-Y25-T12V)** | Presencia de lixiviados en la base | Capacitivo sin contacto | Detección de líquido a través de la pared del contenedor[5] | **Figura 4** |
+| **Ventiladores USB (2x 8025 5V)** | Ventilación forzada bilateral y control térmico/gases | Electromecánico (DC) | Activación simultánea/independiente por umbrales del bioproceso[1] | **Figura 5** |
+| **Interruptor KCD1** | Control general de encendido y apagado | Contacto eléctrico mecánico | Interrupción y restablecimiento de la alimentación general[1] | **Figura 6** |
 ## 3.2 Conversión de las señales en datos
 El microcontrolador ESP32 DevKit V1 procesa las señales de los sensores mediante sus pines digitales y convertidores analógico-digitales (ADC) a 12 bits (valores de 0 a 4095)[2,3]. Las conversiones específicas para el control del compostaje son[1,4]:
 - **Temperatura (DS18B20):** Utiliza el protocolo OneWire para entregar directamente valores en grados Celsius ($\text{°C}$), permitiendo identificar las etapas del compostaje (mesófila y termófila) para disparar la ventilación si se superan los límites operativos[2].
