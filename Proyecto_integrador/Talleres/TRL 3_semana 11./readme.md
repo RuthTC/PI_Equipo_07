@@ -56,7 +56,7 @@ La primera etapa del análisis evalúa la distribución del esfuerzo equivalente
 Para asegurar la durabilidad del sistema, se analizaron las zonas donde los esfuerzos se concentran (*hotspots*), tales como uniones, filamentos de esquina, soportes de rodamientos y bordes inferiores del recipiente.
 
 <p align="center">
-  <img width="765" height="456" alt="Detalle de concentraciones de esfuerzo" src="https://github.com/user-attachments/assets/f6e71a71-86b6-4a2e-8b41-740af1d30d4b">
+  <img width="765" height="456" alt="Detalle de concentraciones de esfuerzo" src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./puntos%20criticos.jpeg">
 </p>
 
 > **Figura 2.2:** `simscale_stress_concentrations.png`. Vista detallada (*zoom*) que resalta las zonas de máximo esfuerzo ($\sigma_{max}$). Identificar estas áreas permite validar el diseño de componentes críticos como el eje de transmisión y sus soportes de rodamiento, asegurando un Factor de Seguridad ($FS$) adecuado.
@@ -90,15 +90,13 @@ La **Tabla 3** resume los esfuerzos máximos de Von Mises arrojados por la simul
 
 #### Tabla 3. Esfuerzo máximo de Von Mises y Factor de Seguridad (FS) por componente
 
-| Componente / Pieza | Material Asignado | Esfuerzo Máximo ($\sigma_{max}$) | Equivalencia en MPa | Esfuerzo de Fluencia ($\sigma_{fluencia}$) | Factor de Seguridad ($FS = \frac{\sigma_{fluencia}}{\sigma_{max}}$) |
+| Componente / Pieza | Material Asignado | Esfuerzo Máximo (Pa) | Esfuerzo Máximo (MPa) | Esfuerzo de Fluencia (MPa) | Factor de Seguridad (FS = σ<sub>fluencia</sub> / σ<sub>max</sub>) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Recipiente Base (Contenedor)** | HDPE | $1,467,000\text{ Pa}$ | $1.467\text{ MPa}$ | $25.0\text{ MPa}$ | **$17.04$** |
-| **Eje Principal y Soportes** | Acero AISI 304 | $2,144,000\text{ Pa}$ | $2.144\text{ MPa}$ | $205.0\text{ MPa}$ | **$95.61$** |
-| **Abrazadera / Soporte de Rodamiento** | PLA (Impresión 3D) | $909,900\text{ Pa}$ | $0.9099\text{ MPa}$ | $49.5\text{ MPa}$ | **$54.40$** |
-| **Pala / Agitador Interno** | PLA (Impresión 3D) | $33,150\text{ Pa}$ | $0.03315\text{ MPa}$ | $49.5\text{ MPa}$ | **$1493.21$** |
-| **Placa de Anclaje de Sensores** | PLA (Impresión 3D) | $5,652\text{ Pa}$ | $0.005652\text{ MPa}$ | $49.5\text{ MPa}$ | **$8757.96$** |
-
----
+| **Recipiente Base (Contenedor)** | HDPE | 1,467,000 | 1.467 | 25.0 | **17.04** |
+| **Eje Principal y Soportes** | Acero AISI 304 | 2,144,000 | 2.144 | 205.0 | **95.61** |
+| **Abrazadera / Soporte de Rodamiento** | PLA (Impresión 3D) | 909,900 | 0.9099 | 49.5 | **54.40** |
+| **Pala / Agitador Interno** | PLA (Impresión 3D) | 33,150 | 0.03315 | 49.5 | **1493.21** |
+| **Placa de Anclaje de Sensores** | PLA (Impresión 3D) | 5,652 | 0.005652 | 49.5 | **8757.96** |
 
 ### 2.6. Despiece y Arquitectura del Sistema CAD
 
@@ -139,12 +137,12 @@ El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas de
 <table>
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./sensor%20de%20temperatura.jpeg?raw=true" alt="Figura 1" width="100%"><br>
+      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./sensor%20de%20temperatura.jpeg?raw=true" alt="Figura 1" height="220" style="object-fit: cover; width: 100%;"><br>
       <p><b>Figura 1.</b> <em>Sensor de temperatura (DS18B20).</em></p>
       <p align="left"><b>Descripción:</b> Medición digital de temperatura en el sustrato mediante protocolo OneWire. Probado en fases mesófila y termófila simuladas.</p>
     </td>
     <td width="50%" align="center" valign="top">
-      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./sensor%20de%20humedad.jpeg?raw=true" alt="Figura 2" width="100%"><br>
+      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./sensor%20de%20humedad.jpeg?raw=true" alt="Figura 2" height="220" style="object-fit: cover; width: 100%;"><br>
       <p><b>Figura 2.</b> <em>Sensores de humedad capacitivos (2x v1.2).</em></p>
       <p align="left"><b>Descripción:</b> Medición capacitiva por variación dieléctrica para humedad relativa del sustrato (50% - 70%). Lectura dual en aire, sustrato seco y húmedo.</p>
     </td>
@@ -155,12 +153,12 @@ El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas de
 <table>
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./sensor%20de%20fas%20MQ.jpeg?raw=true" alt="Figura 3" width="100%"><br>
+      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./sensor%20de%20fas%20MQ.jpeg?raw=true" alt="Figura 3" height="220" style="object-fit: cover; width: 100%;"><br>
       <p><b>Figura 3.</b> <em>Sensores de gases (SCD41 / MQ-135).</em></p>
       <p align="left"><b>Descripción:</b> Monitoreo de CO₂ (NDIR SCD41) y gases metabólicos como NH₃ (Semiconductor MQ-135). Calibración base y prueba ante emisión de gases.</p>
     </td>
     <td width="50%" align="center" valign="top">
-      <img src="URL_FIGURA_LIXIVIADOS.png" alt="Figura 4" width="100%"><br>
+      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./Captura%20de%20pantalla%202026-11-10%20183106.png?raw=true" alt="Figura 4" height="220" style="object-fit: cover; width: 100%;"><br>
       <p><b>Figura 4.</b> <em>Sensor de nivel flotador conectado a ESP32.</em></p>
       <p align="left"><b>Descripción:</b> Detección de nivel de lixiviados mediante interruptor flotador con circuito de acondicionamiento de señal conectado al microcontrolador ESP32.</p>
     </td>
@@ -171,12 +169,12 @@ El sistema utiliza sensores para caracterizar las condiciones fisicoquímicas de
 <table>
   <tr>
     <td width="50%" align="center" valign="top">
-      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./ventiladores.jpeg?raw=true" alt="Figura 5" width="100%"><br>
+      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./ventiladores.jpeg?raw=true" alt="Figura 5" height="220" style="object-fit: cover; width: 100%;"><br>
       <p><b>Figura 5.</b> <em>Ventiladores USB (2x 8025 5V).</em></p>
       <p align="left"><b>Descripción:</b> Ventilación forzada bilateral electromecánica (DC) para control térmico y de gases. Activación por umbrales del bioproceso.</p>
     </td>
     <td width="50%" align="center" valign="top">
-      <!-- Espacio reservado para mantener el formato de dos columnas -->
+      <!-- Espacio libre para mantener la estructura de la cuadrícula -->
     </td>
   </tr>
 </table>
@@ -236,7 +234,141 @@ Para validar el funcionamiento del sistema en condiciones reales de operación (
 3. **Fase de Enfriamiento y Maduración (Estabilización a temperatura ambiente):**
    * **Sensores evaluados:** Conjunto completo (Temperatura, Humedad, Gases y Lixiviados)[2,3,4,5].
    * **Dinámica y calibración:** La temperatura desciende y se estabiliza cerca de los valores ambientales[2]. En esta etapa se comprueba la estabilidad a largo plazo de las lecturas del ESP32, asegurando que la disminución de la actividad microbiana se refleje en lecturas estables de $\text{CO}_2$ y una humedad residual controlada antes de dar por concluido el ciclo de prueba TRL 3[2,3,4].
-   * 
+
+# 4. Prueba de concepto computacional: Analisis exploratorio e inteligencia artificial (IA)
+
+# 4. Prueba de concepto del análisis de datos con aprendizaje automático
+
+### 4.1. Objetivo y alcance
+
+En la etapa TRL 3 de **CompostTech** se desarrollaron ensayos computacionales para estimar valores futuros de temperatura y humedad del compost y detectar combinaciones de ambas variables que resultaran estadísticamente inusuales[5]. En paralelo, se preparó y probó un procedimiento para validar y guardar mensajes con la estructura prevista para las lecturas del ESP32[5].
+
+El análisis se ejecutó en Google Colab con conjuntos de datos externos al banco experimental de CompostTech[5]. La prueba permitió evaluar si era posible preparar series temporales, entrenar modelos, comparar sus resultados con un método de referencia y documentar sus limitaciones[5]. Los ensayos predictivos se limitaron a temperatura y humedad[5]. Los gases quedaron fuera del alcance de los modelos[5].
+
+---
+
+### 4.2. Fuentes de datos y criterios de selección
+
+#### Tabla 4.1. Fuentes de datos y representatividad para el ensayo computacional
+
+| Fuente | Registros reportados | Uso en los ensayos |
+| :--- | :--- | :--- |
+| **`Exp1_2.xlsx`** | 7 378 (4 302 para Exp1 y 3 076 para Exp2) | Series de temperatura y aireación con intervalos de ~5 min. Pronósticos a 30 min y 6 h. |
+| **`BIN 1 FInal.csv`** | 43 | Registros diarios con fecha, temperatura y `soil_Moisture`. Pronóstico al día siguiente y anomalías. |
+| **`Compost Data.csv`** | 452 | Temperatura, humedad e índice de germinación. Análisis exploratorio sin secuencia temporal continua. |
+| **Otros archivos unificados** | 1 506 | Datos exploratorios de temperatura (excluidos de secuencias conjuntas). |
+
+Se preparó una tabla de **495 registros con temperatura y humedad disponibles**, compuesta por 43 registros de BIN 1 y 452 de Compost Data[5]. Se conservó la fuente de cada observación para mantener separados los ensayos[5].
+
+> **Nota de auditoría:** El informe de trabajo reporta **9 336 registros** en la base unificada inicial, mientras que las cantidades de la tabla suman **9 379** (diferencia de 43 registros)[5]. Queda pendiente verificar en el cuaderno de preparación qué archivos se incluyeron en el primer recuento antes de adoptar un total consolidado[5].
+
+La variable `soil_Moisture` se analizó en las **unidades originales del conjunto de datos**[5]. Su equivalencia con un porcentaje de humedad del sustrato o con las lecturas ADC de los sensores capacitivos de CompostTech requiere verificar el método de medición y calibrar las sondas del montaje[5].
+
+---
+
+### 4.3. Preparación de las series y método de evaluación
+
+Primero se revisaron los tipos de datos, los valores faltantes y las fechas[5]. En Exp1 y Exp2 se consolidaron **21 marcas temporales duplicadas**, pasando de **7 378 a 7 357 mediciones**[5]. Después se formaron pares entre una observación y su valor futuro para los horizontes definidos, respetando el intervalo temporal para evitar saltos anómalos[5].
+
+En BIN 1 se identificaron **41 pares de días consecutivos** a partir de los 43 registros[5]. El informe documenta una división cronológica con margen y reporta **27 pares de entrenamiento y 13 de prueba** (suma 40 pares, quedando 1 par pendiente de verificación en el cuaderno)[5]. Como el conjunto de prueba se consultó más de una vez durante la exploración, los errores se interpretan como resultados exploratorios[5].
+
+Los modelos se compararon con **persistencia** (método de referencia que asume que el valor futuro será igual al valor actual)[5]. Se utilizó el **Error Absoluto Medio (MAE)** para medir la desviación promedio[5]. Para temperatura se reportó en grados Celsius (°C) y para humedad en las unidades originales de BIN 1[5].
+
+---
+
+### 4.4. Pronóstico de temperatura a 30 minutos y seis horas
+
+#### Tabla 4.2. Desempeño de modelos en el pronóstico de temperatura (Exp1 y Exp2)
+
+| Escenario | Método | MAE de temperatura |
+| :--- | :--- | :--- |
+| **Exp1 → Exp2 (30 minutos)** | Random Forest | 0.3713 °C |
+| **Exp1 → Exp2 (30 minutos)** | Persistencia | **0.2349 °C** |
+| **Exp1 (Validación a 6 horas)** | Random Forest inicial | 2.5398 °C |
+| **Exp1 (Validación a 6 horas)** | Random Forest + días transcurridos | 1.0690 °C |
+| **Exp1 (Validación a 6 horas)** | Random Forest + días transcurridos + aireación | 1.0690 °C |
+| **Exp1 (Validación a 6 horas)** | Persistencia | **0.9830 °C** |
+
+A **30 minutos**, el **91.56 %** de los pares de Exp2 presentó cambios absolutos ≤ 0.5 °C, lo cual explica por qué mantener el último valor observado fue una referencia difícil de superar[5].
+
+A **seis horas**, incorporar los días transcurridos redujo el MAE de Random Forest de **2.5398 a 1.0690 °C**[5]. Agregar la variable de aireación mantuvo el mismo error[5]. Persistencia obtuvo el menor MAE (**0.9830 °C**)[5]. En el tramo de la Figura 4.1, la predicción de Random Forest se mantuvo prácticamente constante alrededor de **33.1 °C** mientras la temperatura observada variaba[5].
+
+En el análisis de importancia por impureza, los días transcurridos obtuvieron un valor de **0.8728** y la aireación de **0.0003**[5].
+
+<p align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./Captura%20de%20pantalla%202026-11-10%20185810.png?raw=true" alt="Figura 4.1. Pronóstico de temperatura a 6 horas" width="650" style="border: 1px solid #30363d; border-radius: 6px;"><br>
+  <p align="center"><b>Figura 4.1.</b> <em>Evidencia de Colab: comparación de la temperatura observada, el pronóstico de Random Forest con tiempo transcurrido y la referencia de persistencia para un horizonte de seis horas en Exp1.</em></p>
+</p>
+
+---
+
+### 4.5. Pronóstico diario de temperatura y humedad en BIN 1
+
+Para el pronóstico al día siguiente se probaron **regresión lineal** y **Ridge** (un modelo por variable objetivo)[5].
+
+#### Tabla 4.3. Desempeño de pronósticos al día siguiente en BIN 1
+
+| Método | MAE de temperatura (°C) | MAE de humedad (unidad original) |
+| :--- | :--- | :--- |
+| **Regresión lineal** | 3.9409 | 27.2848 |
+| **Ridge** | 7.0187 | 24.9977 |
+| **Persistencia** | **0.6816** | **13.9541** |
+
+La temperatura de entrenamiento estuvo entre **33.13 y 46.67 °C** (media **37.86 °C**), mientras que en prueba estuvo entre **22.46 y 29.92 °C** (media **24.89 °C**), generando una clara separación de rangos[5]. La humedad media varió de **80.86 unidades** en entrenamiento a **66.32 unidades** en prueba[5].
+
+Entre días consecutivos, la humedad cambió en promedio **12.8398 unidades** (máximo **39.5565 unidades**)[cite: 5]. Con la muestra disponible, **persistencia obtuvo menor error en ambas variables**[5].
+
+---
+
+### 4.6. Detección exploratoria de observaciones inusuales
+
+Se ajustó un modelo no supervisado **Isolation Forest** (Contaminación = 0.10) sobre los **43 registros** de BIN 1[5]. El modelo clasificó **38 observaciones como habituales** y marcó **5 como inusuales** (11.6 % de los registros)[5].
+
+Entre los casos marcados figura una observación de **46.67 °C** con humedad de **60.00 unidades**, y observaciones tardías con temperaturas cercanas a **22–24 °C** y valores bajos de humedad[5].
+
+<p align="center">
+  <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./Captura%20de%20pantalla%202026-11-10%20185441.png?raw=true" alt="Figura 4.2. Observaciones inusuales identificadas por Isolation Forest" width="650" style="border: 1px solid #30363d; border-radius: 6px;"><br>
+  <p align="center"><b>Figura 4.2.</b> <em>Evidencia de Colab: distribución de las 43 mediciones de BIN 1 según temperatura y humedad. Las cruces naranjas representan los cinco registros marcados por Isolation Forest.</em></p>
+</p>
+
+---
+
+### 4.7. Preparación del registro de datos del ESP32
+
+Se preparó la plantilla `compostech_datos_reales.csv` con campos para fecha/hora, temperatura (DS18B20), dos lecturas ADC de humedad, estado de dos ventiladores y registros de agitación y riego[5].
+
+#### Tabla 4.4. Resultados de las pruebas de software para la validación de telemetría
+
+| Prueba de software | Resultado observado |
+| :--- | :--- |
+| **Procesamiento de mensaje JSON estándar** | Interpretado correctamente. |
+| **Mensaje con temperatura de −127 °C** | **Rechazado** por el validador (fallo de lectura OneWire). |
+| **Mensaje con lectura de humedad de 5000 ADC** | **Rechazado** por exceder el rango provisional (0 a 4095). |
+| **Mensaje válido de prueba** | Guardado con éxito en `pruebas_sistema.csv`. |
+| **Archivo destinado a lecturas reales** | Permaneció con 0 filas al finalizar el ensayo. |
+
+---
+
+### 4.8. Evidencias y archivos generados
+
+Entre los respaldos del ensayo computacional destacan:
+* **Modelos en binario (`.joblib`):** `modelo_temperatura_lineal.joblib`, `modelo_humedad_lineal.joblib`, `modelo_temperatura_ridge.joblib`, `modelo_humedad_ridge.joblib`, `modelo_anomalias.joblib`[5].
+* **Archivos de datos y gráficas:** `resultados_modelos.csv`, `resultados_anomalias.csv` y `grafica_anomalias.png`[5].
+
+---
+
+### 4.9. Limitaciones y ensayos pendientes
+
+1. Los datos provienen de fuentes externas con sensores distintos[5].
+2. `BIN 1` solo posee 43 registros y la serie `Compost Data` carece de identificadores por ensayo[5].
+3. Se requiere homologar las unidades de humedad con las sondas capacitivas v1.2 de CompostTech[5].
+4. Falta validar los falsos positivos/negativos del modelo de anomalías con ciclos de compostaje reales[5].
+
+---
+
+### 4.10. Conclusión de la prueba de concepto
+
+La evidencia del TRL 3 demuestra que fue posible **preparar datos, entrenar modelos, medir el error de pronóstico y detectar observaciones inusuales**[5]. Dado que la persistencia superó a los modelos predictivos (MAE < 0.98 °C a 6 h), **no se justifica el despliegue de algoritmos complejos de IA dentro del microcontrolador en esta etapa**[5]. El despliegue de IA quedará reservado para la etapa TRL 4 tras recopilar datos empíricos con los sensores calibrados del prototipo[5].
 ## Referencias Bibliográficas
 
 - [1] M. A. H. Abas, F. A. Chandler, and R. Ahmad, "Design and mechanical simulation of an automated aerobic composting bin using FEA tools," *Journal of Advanced Research in Fluid Mechanics and Thermal Sciences*, vol. 92, no. 1, pp. 110–122, 2022.
