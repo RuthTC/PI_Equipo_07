@@ -78,7 +78,7 @@ Además de la resistencia a la fluencia, la estructura no debe deformarse excesi
 Para garantizar la precisión numérica en SimScale, se realizó un estudio de discretización y convergencia de malla, validando que el esfuerzo calculado sea independiente de la densidad de elementos.
 
 <p align="center">
-  <img width="742" height="317" alt="Visualización de la malla y convergencia" src="https://github.com/user-attachments/assets/58d67385-0424-4c2e-a222-c2ca44169df6">
+  <img width="742" height="742" alt="Visualización de la malla y convergencia" src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./malla.jpeg">
 </p>
 
 > **Figura 2.4:** `mesh_convergence_analysis.png`. A la izquierda, la malla refinada empleada en zonas de alta concentración de esfuerzo. A la derecha, la gráfica de convergencia que confirma la estabilidad del valor numérico de $\sigma_{max}$ al incrementar la densidad de la malla.
@@ -234,8 +234,36 @@ Para validar el funcionamiento del sistema en condiciones reales de operación (
 3. **Fase de Enfriamiento y Maduración (Estabilización a temperatura ambiente):**
    * **Sensores evaluados:** Conjunto completo (Temperatura, Humedad, Gases y Lixiviados)[2,3,4,5].
    * **Dinámica y calibración:** La temperatura desciende y se estabiliza cerca de los valores ambientales[2]. En esta etapa se comprueba la estabilidad a largo plazo de las lecturas del ESP32, asegurando que la disminución de la actividad microbiana se refleje en lecturas estables de $\text{CO}_2$ y una humedad residual controlada antes de dar por concluido el ciclo de prueba TRL 3[2,3,4].
+### 3.7. Prueba de Integración de Telemetría y Visualización en Tiempo Real
 
-# 4. Prueba de concepto computacional: Analisis exploratorio e inteligencia artificial (IA)
+Para validar el flujo completo de información en el nivel TRL 3, se verificó la transmisión de datos desde el firmware del microcontrolador ESP32 hacia la base de datos en la nube (Firebase Realtime Database) y su sincronización inmediata con la interfaz de usuario en la aplicación móvil de CompostTech.
+
+<!-- Estructura de dos imágenes lado a lado -->
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./datacompost%20firebase.png" alt="Imagen 1" height="250" style="object-fit: contain; width: 100%; border: 1px solid #30363d; border-radius: 6px;"><br>
+      <p><b>Imagen 1.</b> <em>Panel de control y registro de variables en tiempo real en Firebase Realtime Database.</em></p>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="https://github.com/RuthTC/PI_Equipo_07/blob/main/Recursos%20_Im%C3%A1genes/imagenes%3ATRL3./pruebas%20tanto%20de%20la%20aplicaci%C3%B3n%20como%20del%20firebase%20(1).png" alt="Imagen 2" height="250" style="object-fit: contain; width: 100%; border: 1px solid #30363d; border-radius: 6px;"><br>
+      <p><b>Imagen 2.</b> <em>Renderizado e interfaz de prueba de sensores en la aplicación móvil CompostTech.</em></p>
+    </td>
+  </tr>
+</table>
+
+#### Tabla 3.7. Verificación de coincidencia de variables en la prueba de integración (Hardware Test)
+
+| Variable en Firebase | Valor en BD | Renderizado en App Móvil | Estado de Validación |
+| :--- | :--- | :--- | :--- |
+| **`temperatureC`** | `23` | Temperatura: `23.0 °C` | **Correcto** |
+| **`humidity1Raw`** | `2825` | Humedad media (sin calibrar): `2825 ADC` | **Correcto** |
+| **`humidity2Raw`** | `2827` | Humedad inferior (sin calibrar): `2827 ADC` | **Correcto** |
+| **`gasRaw`** | `366` | MQ-135 (sin calibrar): `366 ADC` | **Correcto** |
+| **`floatClosed`** | `true` | Contacto del flotador: `Cerrado (LOW)` | **Correcto** |
+| **`mode`** | `"hardware_test"` | Modo de operación: `Prueba sin compost` | **Correcto** |
+
+> **Conclusión de la prueba:** Se confirmó que los paquetes de datos JSON generados bajo la clave `/devices/tests/latest` son interpretados y desplegados de forma síncrona en la aplicación Android en menos de 1 segundo, demostrando la viabilidad del canal de comunicación del sistema IoT.
 
 # 4. Prueba de concepto del análisis de datos con aprendizaje automático
 
