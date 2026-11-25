@@ -1,4 +1,4 @@
-# COMPOSTTECH — TRL 4
+# VALIDACIÓN TECNOLÓGICA EN ENTORNO DE LABORATORIO – PRUEBAS DE BAJA FIDELIDAD — TRL 4
 
 ## Validación de componentes y prototipo funcional en entorno de laboratorio
 
