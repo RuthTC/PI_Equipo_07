@@ -13,7 +13,6 @@
 | **Institución** | Universidad Peruana Cayetano Heredia |
 | **Tema** | TRL 4 de Monitor de Compostaje Doméstico Inteligente (CompostTech) |
 
- [Resultados de los ensayos y análisis de desempeño](#6-resultados-de-los-ensayos-y-análisis-de-desempeño)
 
 ---
 
