@@ -13,18 +13,7 @@
 | **Institución** | Universidad Peruana Cayetano Heredia |
 | **Tema** | TRL 4 de Monitor de Compostaje Doméstico Inteligente (CompostTech) |
 
----
-
-## Contenido
-
-En este nivel se ejecuta la validación tecnológica en entorno de laboratorio del prototipo funcional **CompostTech**, integrando sus subsistemas mecánico, electrónico, de sensado, IoT e inteligencia artificial para demostrar que operan conjuntamente bajo condiciones simuladas de compostaje aeróbico doméstico.
-
-1. [Objetivo de la validación tecnológica](#1-objetivo-de-la-validación-tecnológica)
-2. [Diseño del prototipo](#2-diseño-del-prototipo)
-3. [Integración de componentes](#3-integración-de-componentes)
-4. [Materiales y equipos](#4-materiales-y-equipos)
-5. [Metodología y procedimiento experimental](#5-metodología-y-procedimiento-experimental)
-6. [Resultados de los ensayos y análisis de desempeño](#6-resultados-de-los-ensayos-y-análisis-de-desempeño)
+ [Resultados de los ensayos y análisis de desempeño](#6-resultados-de-los-ensayos-y-análisis-de-desempeño)
 
 ---
 
