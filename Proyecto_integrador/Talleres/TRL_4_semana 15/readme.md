@@ -99,18 +99,18 @@ Para la validación tecnológica del TRL 4 de COMPOSTECH, se realizaron pruebas 
 
 **Procedimiento:** Se conectaron dos sensores capacitivos al controlador ESP32 para monitorear la humedad en la zona media e inferior del compostador. Mediante Arduino IDE se verificó el registro de las lecturas y la respuesta de los sensores ante diferentes condiciones de humedad.
 
-![Figura 1](ruta/de/la/imagen_1.png)
+![Figura 1](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130014.png)
 > **Figura 1.** Montaje de los sensores de humedad de COMPOSTECH.  
 > *Nota. Registro fotográfico propio del equipo COMPOSTECH.*
 
-![Figura 2](ruta/de/la/imagen_2.png)
+![Figura 2](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130102.png))
 > **Figura 2.** Comprobación y funcionamiento del registro de humedad mediante el monitor serial de Arduino IDE.  
 > *Nota. Registro propio de los resultados de Arduino IDE.*
 
 **Justificación de funcionamiento:**  
 Para evaluar la respuesta de los sensores, se consideraron tres condiciones de humedad del compost, estableciendo los siguientes valores de referencia.
 
-![Figura 3](ruta/de/la/imagen_3.png)
+![Figura 3](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130126.png))
 > **Figura 3.** Curva de referencia para la calibración de humedad del compost.  
 > *Nota. Registro propio de los resultados de Arduino IDE.*
 
@@ -122,11 +122,11 @@ Se observa que, a medida que aumenta la humedad del compost, disminuye el valor 
 
 **Procedimiento:** Se conectó el sensor de temperatura DS18B20 al controlador ESP32 para monitorear las condiciones térmicas del compost. Mediante Arduino IDE se verificó la recepción y visualización de las lecturas de temperatura.
 
-![Figura 4](ruta/de/la/imagen_4.png)
+![Figura 4](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130145.png)
 > **Figura 4.** Montaje y conexión del sensor de temperatura DS18B20.  
 > *Nota. Registro fotográfico propio del equipo COMPOSTECH.*
 
-![Figura 5](ruta/de/la/imagen_5.png)
+![Figura 5](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130158.png)
 > **Figura 5.** Comprobación del registro de temperatura mediante Arduino IDE.  
 > *Nota. Registro propio de los resultados de Arduino IDE.*
 
@@ -139,11 +139,11 @@ Durante las pruebas de hardware se registraron temperaturas de 25.50 °C mediant
 
 **Procedimiento:** Se conectó el sensor de gases MQ-135 al controlador ESP32 para monitorear las variaciones de gases generados durante la descomposición de los residuos orgánicos. Mediante Arduino IDE se verificó el registro de sus lecturas.
 
-![Figura 7](ruta/de/la/imagen_7.png)
+![Figura 7](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130219.png)
 > **Figura 7.** Montaje y conexión del sensor de gases MQ-135 de COMPOSTECH.  
 > *Nota. Registro fotográfico propio del equipo COMPOSTECH.*
 
-![Figura 8](ruta/de/la/imagen_8.png)
+![Figura 8](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130325.png)
 > **Figura 8.** Comprobación de las lecturas del sensor de gases MQ-135 mediante Arduino IDE.  
 > *Nota. Registro propio de los resultados de Arduino IDE.*
 
@@ -156,11 +156,11 @@ Durante el compostaje, la descomposición de la materia orgánica genera diferen
 
 **Procedimiento:** Se conectó el sensor de flotación P45 al controlador ESP32. Para evaluar su funcionamiento, se plantea incrementar progresivamente el nivel de agua en el recipiente recolector, simulando la acumulación de lixiviados, y verificar el cambio de estado del sensor mediante Arduino IDE.
 
-![Figura 10](ruta/de/la/imagen_10.png)
+![Figura 10](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130350.png)
 > **Figura 10.** Representación de la prueba del sensor P45 utilizando agua.  
 > *Nota. Registro fotográfico propio del equipo COMPOSTECH.*
 
-![Figura 11](ruta/de/la/imagen_11.png)
+![Figura 11](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130412.png)
 > **Figura 11.** Registro digital del estado del sensor P45 mediante Firebase.  
 > *Nota. Registro propio de los resultados de Firebase.*
 
@@ -173,15 +173,15 @@ El sensor P45 permite detectar el aumento del nivel de líquido mediante el movi
 
 **Procedimiento:** Se conectaron los dos ventiladores al controlador ESP32 y se programaron ciclos de encendido y apagado cada cinco segundos mediante Arduino IDE, con la finalidad de verificar su funcionamiento.
 
-![Figura 12](ruta/de/la/imagen_12.png)
+![Figura 12](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130427.png)
 > **Figura 12.** Montaje y prueba de funcionamiento de los ventiladores de COMPOSTECH.  
 > *Nota. Registro fotográfico propio del equipo COMPOSTECH.*
 
-![Figura 13](ruta/de/la/imagen_13.png)
+![Figura 13](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130450.png)
 > **Figura 13.** Código de programación para la prueba de los ventiladores en ESP32.  
 > *Nota. Registro propio de los resultados de Arduino IDE.*
 
-![Figura 14](ruta/de/la/imagen_14.png)
+![Figura 14](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130505.png)
 > **Figura 14.** Resultado esperado en el monitor serial de Arduino IDE.  
 > *Nota. Registro propio de los resultados de Arduino IDE.*
 
@@ -198,7 +198,7 @@ Esta programación permite controlar la ventilación de COMPOSTECH para favorece
 
 La pantalla OLED permite visualizar directamente las condiciones internas del compostador, facilitando el seguimiento del proceso de compostaje sin necesidad de utilizar una computadora o acceder a Firebase.
 
-![Figura 15](ruta/de/la/imagen_15.png)
+![Figura 15](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130527.png)
 > **Figura 15.** Prueba de funcionamiento y visualización de datos mediante la pantalla OLED de COMPOSTECH.  
 > *Nota. Registro fotográfico propio del funcionamiento de la pantalla OLED.*
 
@@ -212,11 +212,11 @@ La evidencia fotográfica muestra que la pantalla se encuentra encendida y prese
 
 **Procedimiento:** Se plantea conectar el sistema electrónico de COMPOSTECH al powerbank mediante un cable USB para verificar el funcionamiento simultáneo de los sensores, los ventiladores y la pantalla OLED, así como el registro de las lecturas mediante Arduino IDE.
 
-![Figura 16](ruta/de/la/imagen_16.png)
+![Figura 16](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130544.png)
 > **Figura 16.** Representación de la conexión del sistema electrónico al powerbank.  
 > *Nota. Registro fotográfico propio del equipo COMPOSTECH.*
 
-![Figura 17](ruta/de/la/imagen_17.png)
+![Figura 17](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/Captura%20de%20pantalla%202026-11-25%20130602.png)
 > **Figura 17.** Registro esperado del funcionamiento de los componentes mediante Arduino IDE.  
 > *Nota. Registro propio de los resultados de Arduino IDE.*
 
@@ -282,13 +282,13 @@ Se adoptó un horizonte referencial de 90 días para representar las cuatro fase
 
 ### 7.3. Representación gráfica del escenario
 
-![Figura 7.1](ruta/imagen_7_1.png)
+![Figura 7.1](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/7.1.png)
 > **Figura 7.1.** Temperatura estimada durante el ciclo de compostaje. *Nota. Elaboración propia a partir de los datos y datos simulados en Excel.*
 
-![Figura 7.2](ruta/imagen_7_2.png)
+![Figura 7.2](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/7.2.png)
 > **Figura 7.2.** Humedad estimada durante el ciclo de compostaje. *Nota. Elaboración propia a partir de los datos y datos simulados en Excel.*
 
-![Figura 7.3](ruta/imagen_7_3.png)
+![Figura 7.3](https://github.com/RuthTC/PI_Equipo_07/blob/main/Proyecto_integrador/Talleres/TRL_4_semana%2015/imagenes/7.3.png)
 > **Figura 7.3.** Respuesta ilustrativa del MQ-135 durante el ciclo de compostaje. *Nota. Elaboración propia a partir de los datos y datos simulados en Excel.*
 
 ---
